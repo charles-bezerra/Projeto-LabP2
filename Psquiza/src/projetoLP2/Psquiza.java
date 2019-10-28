@@ -3,14 +3,53 @@ package projetoLP2;
 import easyaccept.EasyAccept;
 
 public class Psquiza {
-	/**
-	 * Classe controlodadora da classe Problema e da classe Objetivo.
-	 */
-	ControleProblemaObjetivo problemaObjetivo = new ControleProblemaObjetivo();
+	
     public static void main(String[] args){
     	args = new String[] {"projetoLP2.Psquiza", "aceitacao_teste/use_case_1.txt", "aceitacao_teste/use_case_2.txt", "aceitacao_teste/use_case_3.txt", "aceitacao_teste/use_case_4.txt"};
 		EasyAccept.main(args);
     }
+    
+	/**
+	 * Classe controlodadora da classe Problema e da classe Objetivo.
+	 */
+	ControleProblemaObjetivo problemaObjetivo = new ControleProblemaObjetivo();
+    
+    ControlePesquisa pesquisaControle;
+
+  
+    public Psquiza() {
+    	pesquisaControle = new ControlePesquisa();
+    }
+    
+    public String cadastraPesquisa(String descricao, String campoDeInteresse) {
+		return pesquisaControle.cadastraPesquisa(descricao, campoDeInteresse);
+	}
+	
+	public void alteraPesquisa(String codigo, String conteudoASerAlterado, String novoConteudo) {
+		pesquisaControle.alteraPesquisa(codigo, conteudoASerAlterado, novoConteudo);
+	}
+	
+	
+	public void encerraPesquisa(String codigo, String motivo) {
+		pesquisaControle.encerraPesquisa(codigo, motivo);
+	}
+	
+	
+	public void ativaPesquisa(String codigo) {
+		pesquisaControle.ativaPesquisa(codigo);
+	}
+	
+	
+	public boolean pesquisaEhAtiva(String codigo) {
+		return pesquisaControle.pesquisaEhAtiva(codigo);
+	}
+	
+	
+	public String exibePesquisa(String codigo) {
+		return pesquisaControle.exibePesquisa(codigo);
+	}
+    
+    
     /**
      * Cadastra um problema no sistema.
      * 
