@@ -1,5 +1,6 @@
 package projetoLP2.facades;
 
+import easyaccept.EasyAccept;
 import projetoLP2.controladores.ControleAtividade;
 import projetoLP2.controladores.ControlePesquisa;
 import projetoLP2.controladores.ControleProblemaObjetivo;
@@ -127,5 +128,14 @@ public class Facade {
 
     public int contaItensRealizados(String codigo){
         return this.controleAtividade.contaItensRealizados(codigo);
+    }
+    public static void main(String[] args){
+    	args = new String[] {"projetoLP2.facades.Facade",
+			"aceitacao_teste/use_case_1.txt",
+			"aceitacao_teste/use_case_2.txt",
+			"aceitacao_teste/use_case_3.txt",
+			"aceitacao_teste/use_case_4.txt"
+    	};
+		EasyAccept.main(args);
     }
 }
