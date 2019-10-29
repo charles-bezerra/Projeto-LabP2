@@ -3,31 +3,22 @@ package projetoLP2.facades;
 import easyaccept.EasyAccept;
 import projetoLP2.controladores.ControleAtividade;
 import projetoLP2.controladores.ControlePesquisa;
+import projetoLP2.controladores.ControlePesquisador;
 import projetoLP2.controladores.ControleProblemaObjetivo;
 
 public class Facade {
-    /**
-     * Classe controlodadora da classe Problema e da classe Objetivo.
-     */
+
     ControleProblemaObjetivo problemaObjetivo;
     ControlePesquisa pesquisaControle;
     ControleAtividade controleAtividade;
+    ControlePesquisador controlePesquisadores;
 
 
     public Facade() {
         problemaObjetivo = new ControleProblemaObjetivo();
         pesquisaControle = new ControlePesquisa();
         controleAtividade = new ControleAtividade();
-    }
-
-    public static void main(String[] args){
-        args = new String[] {"projetoLP2.facades.Facade",
-                "aceitacao_teste/use_case_1.txt",
-                "aceitacao_teste/use_case_2.txt",
-                "aceitacao_teste/use_case_3.txt",
-                "aceitacao_teste/use_case_4.txt"
-        };
-        EasyAccept.main(args);
+        controlePesquisadores = new ControlePesquisador();
     }
 
     public String cadastraPesquisa(String descricao, String campoDeInteresse) {
@@ -58,59 +49,52 @@ public class Facade {
         return pesquisaControle.exibePesquisa(codigo);
     }
 
-    /**
-     * Cadastra um problema no sistema.
-     *
-     * @param descricao a descricao do problema
-     * @param viabilidade o valor de viabilidade do problema, numero inteiro de 1 a 5
-     * @return null
-     */
+
+    public void cadastraPesquisador(String nome, String funcao, String biografia, String email, String fotoURL){
+        controlePesquisadores.cadastraPesquisador(nome, funcao, biografia, email, fotoURL);
+    }
+
+    public void alteraPesquisador(String email, String atributo, String novoValor){
+        controlePesquisadores.alteraPesquisador(email, atributo, novoValor);
+    }
+
+    public void desativaPesquisador(String email){
+        controlePesquisadores.desativaPesquisador(email);
+    }
+
+    public void ativaPesquisador(String email){
+        controlePesquisadores.ativaPesquisador(email);
+    }
+
+    public String exibePesquisador(String email){
+        return controlePesquisadores.exibePesquisador(email);
+    }
+
+    public boolean pesquisadorEhAtivo(String email){
+        return controlePesquisadores.pesquisadorEhAtivo(email);
+    }
+
+
     public String cadastraProblema(String descricao, int viabilidade) {
         return problemaObjetivo.cadastraProblema(descricao, viabilidade);
     }
-    /**
-     * Cadastra um objetivo no sistema.
-     *
-     * @param tipo o tipo do objetivo, GERAL ou ESPECIFICO
-     * @param descricao a descricao do objetivo
-     * @param aderencia o valor de aderencia do objetivo, numero inteiro de 1 a 5
-     * @param viabilidade o valor de vibilidade do objetivo, numero inteiro de 1 a 5
-     * @return null
-     */
+
     public String cadastraObjetivo(String tipo, String descricao, int aderencia, int viabilidade) {
         return problemaObjetivo.cadastraObjetivo(tipo, descricao, aderencia, viabilidade);
     }
-    /**
-     * Apaga um problema do sistema.
-     *
-     * @param codigo o codigo de identificacao do problema
-     */
+
     public void apagarProblema(String codigo) {
         problemaObjetivo.apagarProblema(codigo);
     }
-    /**
-     * Apaga um objetivo do sistema.
-     *
-     * @param codigo o codigo de identificacao do objetivo
-     */
+
     public void apagarObjetivo(String codigo) {
         problemaObjetivo.apagarObjetivo(codigo);
     }
-    /**
-     * Exibe um problema cadastrado no sistema.
-     *
-     * @param codigo o codigo de identificacao do problema
-     * @return o codigo de identificacao do problema + a representacao em String de um problema
-     */
+
     public String exibeProblema(String codigo) {
         return problemaObjetivo.exibeProblema(codigo);
     }
-    /**
-     * Exibe um objetivo cadastrado no sistema.
-     *
-     * @param codigo o codigo de identificacao do objetivo
-     * @return o codigo de identificacao do objetivo + a representacao em String de um objetivo
-     */
+
     public String exibeObjetivo(String codigo) {
         return problemaObjetivo.exibeObjetivo(codigo);
     }
@@ -139,5 +123,13 @@ public class Facade {
     public int contaItensRealizados(String codigo){
         return this.controleAtividade.contaItensRealizados(codigo);
     }
-
+    public static void main(String[] args){
+        args = new String[] {"projetoLP2.facades.Facade",
+                "Psquiza/aceitacao_teste/use_case_1.txt",
+                "Psquiza/aceitacao_teste/use_case_2.txt",
+                "Psquiza/aceitacao_teste/use_case_3.txt",
+                "Psquiza/aceitacao_teste/use_case_4.txt"
+        };
+        EasyAccept.main(args);
+    }
 }
