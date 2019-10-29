@@ -13,11 +13,11 @@ import java.util.HashMap;
  */
 public class ControleProblemaObjetivo {
 	/**
-	 * Mapa de problemas, as chaves sao codigos gerados pelo programa "P" + id, a partiir de 1.
+	 * Mapa de problemas, as chaves sao codigos gerados pelo programa "P" + id, a partir de 1.
 	 */
 	private HashMap<String, Problema> problemas = new HashMap<>();
 	/**
-	 * Mapa de objetivos, as chaves sao codigos gerados pelo programa "O" + id, a partiir de 1.
+	 * Mapa de objetivos, as chaves sao codigos gerados pelo programa "O" + id, a partir de 1.
 	 */
 	private HashMap<String, Objetivo> objetivos = new HashMap<>();
 	/**
