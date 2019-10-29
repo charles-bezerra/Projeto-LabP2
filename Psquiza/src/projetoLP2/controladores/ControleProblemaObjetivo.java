@@ -75,7 +75,7 @@ public class ControleProblemaObjetivo {
      * @param codigo o codigo de identificacao do problema
      */
 	public void apagarProblema(String codigo) {
-		Verificador.verificaString("Campo descricao nao pode ser nulo ou vazio.", codigo);
+		Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
 		if(!problemas.containsKey(codigo)) {
 			throw new IllegalArgumentException("Problema nao encontrado");
 		} else {
@@ -88,7 +88,7 @@ public class ControleProblemaObjetivo {
      * @param codigo o codigo de identificacao do objetivo
      */
 	public void apagarObjetivo(String codigo) {
-		Verificador.verificaString("Campo descricao nao pode ser nulo ou vazio.", codigo);
+		Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
 		if(!objetivos.containsKey(codigo)) {
 			throw new IllegalArgumentException("Objetivo nao encontrado");
 		} else {
@@ -102,7 +102,7 @@ public class ControleProblemaObjetivo {
      * @return o codigo de identificacao do problema + a representacao em String de um problema
      */
 	public String exibeProblema(String codigo) {
-		Verificador.verificaString("Campo descricao nao pode ser nulo ou vazio.", codigo);
+		Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
 		if(!problemas.containsKey(codigo)) {
 			throw new IllegalArgumentException("Problema nao encontrado");
 		} else {
@@ -116,7 +116,7 @@ public class ControleProblemaObjetivo {
      * @return o codigo de identificacao do objetivo + a representacao em String de um objetivo
      */
 	public String exibeObjetivo(String codigo) {
-		Verificador.verificaString("Campo descricao nao pode ser nulo ou vazio.", codigo);
+		Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
 		if(!objetivos.containsKey(codigo)) {
 			throw new IllegalArgumentException("Objetivo nao encontrado");
 		} else {
