@@ -47,7 +47,6 @@ public class Facade {
         return pesquisaControle.exibePesquisa(codigo);
     }
 
-
     /**
      * Cadastra um problema no sistema.
      *

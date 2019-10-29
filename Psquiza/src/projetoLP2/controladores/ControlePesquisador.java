@@ -4,10 +4,10 @@ import projetoLP2.classes.Pesquisador;
 
 import java.util.HashMap;
 
-public class PesquisadorController {
+public class ControlePesquisador {
     private HashMap<String, Pesquisador> pesquisadores;
 
-    public PesquisadorController(){
+    public ControlePesquisador(){
         pesquisadores = new HashMap<>();
     }
 

@@ -2,7 +2,6 @@ package projetoLP2;
 import easyaccept.EasyAccept;
 
 public class Psquiza {
-	
     public static void main(String[] args){
     	args = new String[] {"projetoLP2.facades.Facade",
 			"aceitacao_teste/use_case_1.txt",

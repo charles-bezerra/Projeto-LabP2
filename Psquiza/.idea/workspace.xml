@@ -2,31 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d89b21f9-1c29-4a4f-85e8-e86780fe4746" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleAtividade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/projetoLP2/enums/Risco.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/projetoLP2/enums/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/projetoLP2/ControleProblemaObjetivo.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/projetoLP2/ControleProblemaObjetivo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/projetoLP2/Objetivo.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/projetoLP2/Objetivo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/projetoLP2/Problema.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/projetoLP2/Problema.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/projetoLP2/class-use/ControleProblemaObjetivo.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/projetoLP2/class-use/ControleProblemaObjetivo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/projetoLP2/class-use/Objetivo.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/projetoLP2/class-use/Objetivo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/projetoLP2/class-use/Problema.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/projetoLP2/class-use/Problema.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/ControlePesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/ControleProblemaObjetivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleProblemaObjetivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/Objetivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Objetivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/Pesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/Pesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/PesquisadorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/PesquisadorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/Problema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Problema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/Psquiza.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/Psquiza.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/PesquisadorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/Psquiza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/Psquiza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/Verificador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/util/Verificador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/PesquisadorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +94,7 @@
       <workItem from="1571998824069" duration="800000" />
       <workItem from="1572308824266" duration="95000" />
       <workItem from="1572308946215" duration="2576000" />
-      <workItem from="1572315478036" duration="9130000" />
+      <workItem from="1572315478036" duration="9651000" />
     </task>
     <servers />
   </component>

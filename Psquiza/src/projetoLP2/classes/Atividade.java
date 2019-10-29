@@ -77,8 +77,7 @@ public class Atividade {
         );
 
         Iterator<Item> items = this.items.iterator();
-        Item item;
-
+        
         while (items.hasNext()){
             texto.append(" | ");
             texto.append( items.next().toString() );
