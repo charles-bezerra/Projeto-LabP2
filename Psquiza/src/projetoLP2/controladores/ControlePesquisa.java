@@ -1,4 +1,7 @@
-package projetoLP2;
+package projetoLP2.controladores;
+
+import projetoLP2.classes.Pesquisa;
+import projetoLP2.util.Verificador;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -112,7 +115,7 @@ public class ControlePesquisa {
 	}
 	
 	
-	boolean pesquisaEhAtiva(String codigo) {
+	public boolean pesquisaEhAtiva(String codigo) {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
 		
 		if(!pesquisas.containsKey(codigo)) {

@@ -1,4 +1,7 @@
-package projetoLP2;
+package projetoLP2.controladores;
+
+import projetoLP2.classes.Objetivo;
+import projetoLP2.classes.Problema;
 
 import java.util.HashMap;
 
@@ -31,7 +34,7 @@ public class ControleProblemaObjetivo {
      * @param viabilidade o valor de viabilidade do problema, numero inteiro de 1 a 5
      * @return null
      */
-	String cadastraProblema(String descricao, int viabilidade) {
+	public String cadastraProblema(String descricao, int viabilidade) {
 		if(descricao == null || descricao.equals("")) {
 			throw new NullPointerException("Campo descricao nao pode ser nulo ou vazio.");
 		} else if(1 > viabilidade || viabilidade > 5) {
@@ -51,7 +54,7 @@ public class ControleProblemaObjetivo {
      * @param viabilidade o valor de vibilidade do objetivo, numero inteiro de 1 a 5
      * @return null
      */
-	String cadastraObjetivo(String tipo, String descricao, int aderencia, int viabilidade) {
+    public String cadastraObjetivo(String tipo, String descricao, int aderencia, int viabilidade) {
 		if(tipo == null || tipo.equals("")) {
 			throw new NullPointerException("Campo tipo nao pode ser nulo ou vazio.");
 		} else if(descricao == null || descricao.equals("")) {
@@ -73,7 +76,7 @@ public class ControleProblemaObjetivo {
      * 
      * @param codigo o codigo de identificacao do problema
      */
-	void apagarProblema(String codigo) {
+	public void apagarProblema(String codigo) {
 		if(codigo == null || codigo.equals("")) {
 			throw new NullPointerException("Campo codigo nao pode ser nulo ou vazio.");
 		} else if(!problemas.containsKey(codigo)) {
@@ -87,7 +90,7 @@ public class ControleProblemaObjetivo {
      * 
      * @param codigo o codigo de identificacao do objetivo
      */
-	void apagarObjetivo(String codigo) {
+	public void apagarObjetivo(String codigo) {
 		if(codigo == null || codigo.equals("")) {
 			throw new NullPointerException("Campo codigo nao pode ser nulo ou vazio.");
 		} else if(!objetivos.containsKey(codigo)) {
@@ -102,7 +105,7 @@ public class ControleProblemaObjetivo {
      * @param codigo o codigo de identificacao do problema
      * @return o codigo de identificacao do problema + a representacao em String de um problema
      */
-	String exibeProblema(String codigo) {
+	public String exibeProblema(String codigo) {
 		if(codigo == null || codigo.equals("")) {
 			throw new NullPointerException("Campo codigo nao pode ser nulo ou vazio.");
 		} else if(!problemas.containsKey(codigo)) {
@@ -117,7 +120,7 @@ public class ControleProblemaObjetivo {
      * @param codigo o codigo de identificacao do objetivo
      * @return o codigo de identificacao do objetivo + a representacao em String de um objetivo
      */
-	String exibeObjetivo(String codigo) {
+	public String exibeObjetivo(String codigo) {
 		if(codigo == null || codigo.equals("")) {
 			throw new NullPointerException("Campo codigo nao pode ser nulo ou vazio.");
 		} else if(!objetivos.containsKey(codigo)) {

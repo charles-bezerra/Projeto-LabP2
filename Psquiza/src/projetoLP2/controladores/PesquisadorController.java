@@ -1,9 +1,11 @@
-package projetoLP2;
+package projetoLP2.controladores;
+
+import projetoLP2.classes.Pesquisador;
 
 import java.util.HashMap;
 
 public class PesquisadorController {
-    private HashMap<String, Pesquisador > pesquisadores;
+    private HashMap<String, Pesquisador> pesquisadores;
 
     public PesquisadorController(){
         pesquisadores = new HashMap<>();

@@ -1,4 +1,4 @@
-package projetoLP2;
+package projetoLP2.util;
 
 /**	
 * Classe utilitaria usada para verificar se valores sao iguais a nulos ou vazios 
@@ -13,10 +13,11 @@ public class Verificador {
 	*
 	* @param msg a mensagem a ser exibida na excecao
 	* @param valor o valor a ser verificado
+	* @return valor com a verificacao concluida
 	*/
-	public static void verificaString(String msg, String valor) {
-		if(valor == null || valor.trim().isEmpty()) {
+	public static String verificaString(String msg, String valor) {
+		if(valor == null || valor.trim().isEmpty())
 			throw new IllegalArgumentException(msg);
-		}
+		return valor;
 	}
 }

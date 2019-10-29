@@ -1,4 +1,4 @@
-package projetoLP2;
+package projetoLP2.classes;
 
 public class Pesquisador {
     private String nome;
