@@ -2,7 +2,7 @@ package projetoLP2;
 
 import java.util.HashMap;
 
-public class PesquisadorController {
+public class ControlePesquisador {
     private HashMap<String, Pesquisador > pesquisadores;
 
     public PesquisadorController(){
