@@ -6,6 +6,9 @@ import projetoLP2.util.Verificador;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *
+ */
 public class ControleAtividade {
     private Map<String, Atividade> atividades;
 

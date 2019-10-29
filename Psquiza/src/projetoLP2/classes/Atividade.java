@@ -1,6 +1,8 @@
 package projetoLP2.classes;
 
-import projetoLP2.enums.Risco;
+import java.util.*;
+
+import projetoLP2.enums.Risco; 
 import projetoLP2.enums.Status;
 import projetoLP2.util.Verificador;
 
@@ -10,11 +12,12 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- *
+ * Classe que representa uma atividade metodologica
+ * @author Charles Bezerra de Oliveira Júnior
  */
 
 public class Atividade {
-    private static int cotador = 0;
+    private static int contador = 0;
     private String codigo;
     private String descricao;
 
@@ -23,16 +26,14 @@ public class Atividade {
     private List<Item> items;
 
     public Atividade(String descricao, String nivelRisco, String descricaoRisco){
-        this.codigo = "A" + ++cotador;
+        this.codigo = "A" + ++contador;
         this.descricao = Verificador.verificaString("Campo Descricao nao pode ser nulo ou vazio.",descricao);
         this.atribuiRisco(nivelRisco, descricaoRisco);
 
         this.items = new ArrayList<>();
     }
 
-    public String getCodigo(){
-        return this.codigo;
-    }
+    public String getCodigo(){ return this.codigo; }
 
     private void atribuiRisco(String nivelRisco, String descricaoRisco){
         Verificador.verificaString("Campo nivelRisco nao pode ser nulo ou vazio.", nivelRisco);
@@ -51,6 +52,7 @@ public class Atividade {
     }
 
     public void cadastraItem(String item){
+        Verificador.verificaString("Item nao pode ser nulo ou vazio.", item);
         this.items.add(new Item(item));
     }
 
@@ -84,5 +86,20 @@ public class Atividade {
         }
 
         return texto.toString();
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
+
+        Atividade atividade = (Atividade) object;
+        return Objects.equals(codigo, atividade.codigo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codigo);
     }
 }
