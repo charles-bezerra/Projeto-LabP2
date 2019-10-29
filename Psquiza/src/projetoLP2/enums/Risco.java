@@ -12,7 +12,7 @@ public enum Risco {
     /**
      * Descricao do nível de dificuldade de uma atividade.
      */
-    private String risco, descricao;
+    private String risco;
 
     Risco(String risco){
         this.risco = risco;
@@ -22,19 +22,4 @@ public enum Risco {
         return this.risco;
     }
 
-    /**
-     * Retorna a descricao
-     * @return descricao do risco selecionado
-     */
-    public String getDescricao(){
-        return this.descricao;
-    }
-
-    /**
-     * Altera a descricao do risco
-     * @param descricao
-     */
-    public void setDescricao(String descricao){
-        this.descricao = descricao;
-    }
 }

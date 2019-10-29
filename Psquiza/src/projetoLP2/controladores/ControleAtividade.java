@@ -6,6 +6,10 @@ import projetoLP2.util.Verificador;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Controlador das atividades do sistema
+ * @author Charles Bezerra de Oliveira Junior
+ */
 public class ControleAtividade {
     private Map<String, Atividade> atividades;
 

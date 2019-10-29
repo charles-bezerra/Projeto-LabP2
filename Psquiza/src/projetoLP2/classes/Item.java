@@ -3,6 +3,10 @@ package projetoLP2.classes;
 import projetoLP2.enums.Status;
 import projetoLP2.util.Verificador;
 
+/**
+ * Representação de item de uma atividade metodologica
+ * @author Charles Bezerra de Oliveira Júnior
+ */
 public class Item {
     private String item;
     private Status status;
