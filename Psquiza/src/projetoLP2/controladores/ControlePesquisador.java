@@ -1,6 +1,7 @@
 package projetoLP2.controladores;
 
 import projetoLP2.classes.Pesquisador;
+import projetoLP2.util.Verificador;
 
 import java.util.HashMap;
 
@@ -12,35 +13,28 @@ public class ControlePesquisador {
     }
 
     public void cadastraPesquisador(String nome, String funcao, String biografia, String email, String fotoURL){
-        if(nome == null || nome.isEmpty()){
-            throw new IllegalArgumentException("Campo nome nao pode ser nulo ou vazio.");
-        }else if(funcao == null || funcao.isEmpty()){
-            throw new IllegalArgumentException("Campo funcao nao pode ser nulo ou vazio.");
-        }else if(biografia == null || biografia.isEmpty()){
-            throw new IllegalArgumentException("Campo biografia nao pode ser nulo ou vazio.");
-        }else if(email == null || email.isEmpty()){
-            throw new IllegalArgumentException("Campo email nao pode ser nulo ou vazio.");
-        }else if(fotoURL == null || fotoURL.isEmpty()){
-            throw new IllegalArgumentException("Campo fotoURL nao pode ser nulo ou vazio.");
-        }else if(! email.contains("@") || email.startsWith("@") || email.endsWith("@")){
+        Verificador.verificaString("Campo nome nao pode ser nulo ou vazio.", nome);
+        Verificador.verificaString("Campo funcao nao pode ser nulo ou vazio.", funcao);
+        Verificador.verificaString("Campo biografia nao pode ser nulo ou vazio.", biografia);
+        Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
+        Verificador.verificaString("Campo fotoURL nao pode ser nulo ou vazio.", fotoURL);
+
+        if(! email.contains("@") || email.startsWith("@") || email.endsWith("@")){
             throw new IllegalArgumentException("Formato de email invalido.");
         }else if(! fotoURL.startsWith("http://") & ! fotoURL.startsWith("https://")){
             throw new IllegalArgumentException("Formato de foto invalido.");
         }else if(pesquisadores.containsKey(email)){
             throw new IllegalArgumentException();
         }else{
-            pesquisadores.put(email, new Pesquisador(nome, funcao, biografia, email, fotoURL ));
+            pesquisadores.put(email, new Pesquisador(nome, funcao, biografia, email, fotoURL));
         }
     }
 
     public void alteraPesquisador(String email, String atributo, String novoValor){
-        if(email == null || email.isEmpty()){
-            throw new IllegalArgumentException("Campo email nao pode ser nulo ou vazio.");
-        } else if(atributo == null || atributo.isEmpty()){
-            throw new IllegalArgumentException("Campo atributo nao pode ser nulo ou vazio.");
-        } else if(novoValor == null || novoValor.isEmpty()){
-            throw new IllegalArgumentException("Campo " + atributo + " nao pode ser nulo ou vazio.");
-        } else if(! pesquisadores.containsKey(email)){
+        Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
+        Verificador.verificaString("Campo atributo nao pode ser nulo ou vazio.", atributo);
+        Verificador.verificaString("Campo " + atributo + " nao pode ser nulo ou vazio.", novoValor);
+        if(! pesquisadores.containsKey(email)){
             throw new IllegalArgumentException("Pesquisador nao encontrado");
         } else if(pesquisadores.get(email).isAtivado() == false){
             throw new IllegalArgumentException("Pesquisador inativo.");
@@ -69,9 +63,8 @@ public class ControlePesquisador {
 
 
     public void desativaPesquisador(String email){
-        if(email == null || email.isEmpty()){
-            throw new IllegalArgumentException("Campo email nao pode ser nulo ou vazio.");
-        } else if(! email.contains("@") || email.startsWith("@") || email.endsWith("@")){
+        Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
+        if(! email.contains("@") || email.startsWith("@") || email.endsWith("@")){
             throw new IllegalArgumentException("Formato de email invalido.");
         } else if(! pesquisadores.containsKey(email)){
             throw new IllegalArgumentException("Pesquisador nao encontrado");
@@ -82,9 +75,8 @@ public class ControlePesquisador {
         }
     }
     public void ativaPesquisador(String email){
-        if(email == null || email.isEmpty()){
-            throw new IllegalArgumentException("Campo email nao pode ser nulo ou vazio.");
-        } else if(! email.contains("@") || email.startsWith("@") || email.endsWith("@")) {
+        Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
+        if(! email.contains("@") || email.startsWith("@") || email.endsWith("@")) {
             throw new IllegalArgumentException("Formato de email invalido.");
         } else if(! pesquisadores.containsKey(email)){
             throw new IllegalArgumentException("Pesquisador nao encontrado");
@@ -95,9 +87,8 @@ public class ControlePesquisador {
         }
     }
     public String exibePesquisador(String email) {
-        if(email == null || email.isEmpty()){
-            throw new IllegalArgumentException("Campo email nao pode ser nulo ou vazio.");
-        } else if(! email.contains("@") || email.startsWith("@") || email.endsWith("@")) {
+        Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
+        if(! email.contains("@") || email.startsWith("@") || email.endsWith("@")) {
             throw new IllegalArgumentException("Formato de email invalido.");
         }else if(! pesquisadores.containsKey(email)){
             throw new IllegalArgumentException("Pesquisador nao encontrado");
@@ -108,9 +99,8 @@ public class ControlePesquisador {
         }
     }
     public boolean pesquisadorEhAtivo(String email){
-        if(email == null || email.isEmpty()){
-            throw new IllegalArgumentException("Campo email nao pode ser nulo ou vazio.");
-        } else if(! email.contains("@") || email.startsWith("@") || email.endsWith("@")) {
+        Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
+        if(! email.contains("@") || email.startsWith("@") || email.endsWith("@")) {
             throw new IllegalArgumentException("Formato de email invalido.");
         }else if(! pesquisadores.containsKey(email)){
             throw new IllegalArgumentException("Pesquisador nao encontrado");
