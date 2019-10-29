@@ -13,12 +13,13 @@ public class Psquiza {
 	 * Classe controlodadora da classe Problema e da classe Objetivo.
 	 */
 	ControleProblemaObjetivo problemaObjetivo = new ControleProblemaObjetivo();
-    
+    private PesquisadorController pesquisadores;
     ControlePesquisa pesquisaControle;
 
   
     public Psquiza() {
     	pesquisaControle = new ControlePesquisa();
+	pesquisadores = new PesquisadorController();    
     }
     
     public String cadastraPesquisa(String descricao, String campoDeInteresse) {
@@ -49,7 +50,33 @@ public class Psquiza {
 		return pesquisaControle.exibePesquisa(codigo);
 	}
     
-    
+    public void cadastraPesquisador(String nome, String funcao, String biografia, String email, String fotoURL){
+        pesquisadores.cadastraPesquisador(nome, funcao,biografia,email,fotoURL);
+    }
+
+    public void alteraPesquisador(String email, String atributo, String novoValor){
+        pesquisadores.alteraPesquisador(email, atributo,novoValor);
+    }
+
+    public void desativaPesquisador(String email){
+        pesquisadores.desativaPesquisador(email);
+    }
+
+    public void ativaPesquisador(String email){
+        pesquisadores.ativaPesquisador(email);
+    }
+
+    public String exibePesquisador(String email){
+        return pesquisadores.exibePesquisador(email);
+
+    }
+
+    public boolean pesquisadorEhAtivo(String email){
+        return pesquisadores.pesquisadorEhAtivo(email);
+    }
+	
+	
+	
     /**
      * Cadastra um problema no sistema.
      * 
