@@ -123,7 +123,6 @@ public class Facade {
     public int contaItensRealizados(String codigo){
         return this.controleAtividade.contaItensRealizados(codigo);
     }
-
     public static void main(String[] args){
         args = new String[] {"projetoLP2.facades.Facade",
                 "testes/aceitacao/use_case_1.txt",
