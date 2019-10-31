@@ -1,4 +1,4 @@
-package unidade;
+package unidade.controladores;
 
 import org.junit.jupiter.api.BeforeEach;
 import projetoLP2.classes.Problema;
