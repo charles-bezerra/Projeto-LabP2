@@ -8,6 +8,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="209" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -18,6 +31,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -36,16 +50,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AtividadeTest.getCodigo">
-    <configuration name="Facade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="projetoLP2.facades.Facade" />
+  <component name="RunManager" selected="JUnit.ItemTest">
+    <configuration type="JUnit" factoryName="JUnit">
       <module name="Psquiza" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="projetoLP2.facades.*" />
+          <option name="PATTERN" value="unidade.classes.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="unidade.classes" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -61,6 +79,22 @@
       <option name="PACKAGE_NAME" value="unidade.classes" />
       <option name="MAIN_CLASS_NAME" value="unidade.classes.AtividadeTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AtividadeTest.contaItensPendentes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.classes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.classes" />
+      <option name="MAIN_CLASS_NAME" value="unidade.classes.AtividadeTest" />
+      <option name="METHOD_NAME" value="contaItensPendentes" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -113,15 +147,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ItemTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.classes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.classes" />
+      <option name="MAIN_CLASS_NAME" value="unidade.classes.ItemTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit." />
+      <item itemvalue="JUnit.AtividadeTest" />
+      <item itemvalue="JUnit.AtividadeTest.contaItensPendentes" />
+      <item itemvalue="JUnit.AtividadeTest.contaItensRealizados" />
+      <item itemvalue="JUnit.AtividadeTest.getCodigo" />
+      <item itemvalue="JUnit.AtividadeTest.testToString" />
+      <item itemvalue="JUnit.ItemTest" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AtividadeTest" />
         <item itemvalue="JUnit.AtividadeTest.getCodigo" />
+        <item itemvalue="JUnit.AtividadeTest.contaItensPendentes" />
         <item itemvalue="JUnit.AtividadeTest.testToString" />
         <item itemvalue="JUnit.AtividadeTest.contaItensRealizados" />
-        <item itemvalue="JUnit.AtividadeTest" />
-        <item itemvalue="Application.Facade" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -147,15 +210,9 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Psquiza/testes/unidade/classes/AtividadeTest.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Psquiza$ItemTest.ic" NAME="ItemTest Coverage Results" MODIFIED="1572550300177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>unidade.classes.*</FILTER>
+    </SUITE>
   </component>
 </project>

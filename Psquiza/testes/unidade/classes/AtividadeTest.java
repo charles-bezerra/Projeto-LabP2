@@ -13,17 +13,11 @@ class AtividadeTest {
     private Exception e;
 
     @BeforeEach
-    void criarObejetos(){
+    void criaObjetos(){
         atividade1 = new Atividade("Uma simples atividade","BAIXO","E simples, entao e facil.");
         atividade2 = new Atividade("Uma atividade complicada","ALTO","E dificil, porque nao sei..");
         atividade1.cadastraItem("item 1");
         atividade1.cadastraItem("item 2");
-    }
-
-    @Test
-    void getCodigo() {
-        assertEquals("A1", atividade1.getCodigo());
-        assertEquals("A2", atividade2.getCodigo());
     }
 
     @Test
@@ -36,7 +30,7 @@ class AtividadeTest {
 
     @Test
     void contaItensPendentes() {
-        assertEquals(1, atividade1.contaItensPendentes());
+        assertEquals(2, atividade1.contaItensPendentes());
         assertEquals(0, atividade2.contaItensPendentes());
     }
 
