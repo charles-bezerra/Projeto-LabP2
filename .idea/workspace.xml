@@ -18,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -30,10 +31,18 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="projetoLP2.controladores" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\USER\Documents\eclipse-workspace\gitHub2" />
     </key>
@@ -50,7 +59,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ItemTest">
+  <component name="RunManager" selected="JUnit.ControleAtividadeTest">
     <configuration type="JUnit" factoryName="JUnit">
       <module name="Psquiza" />
       <extension name="coverage">
@@ -68,80 +77,80 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AtividadeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControleAtividadeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Psquiza" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="unidade.classes.*" />
+          <option name="PATTERN" value="unidade.controladores.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="unidade.classes" />
-      <option name="MAIN_CLASS_NAME" value="unidade.classes.AtividadeTest" />
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleAtividadeTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AtividadeTest.contaItensPendentes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControleAtividadeTest.cadastraAtividade" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Psquiza" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="unidade.classes.*" />
+          <option name="PATTERN" value="unidade.controladores.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="unidade.classes" />
-      <option name="MAIN_CLASS_NAME" value="unidade.classes.AtividadeTest" />
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleAtividadeTest" />
+      <option name="METHOD_NAME" value="cadastraAtividade" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControleAtividadeTest.cadastraItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.controladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleAtividadeTest" />
+      <option name="METHOD_NAME" value="cadastraItem" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControleAtividadeTest.contaItensPendentes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.controladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleAtividadeTest" />
       <option name="METHOD_NAME" value="contaItensPendentes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AtividadeTest.contaItensRealizados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControleAtividadeTest.contaItensRealizados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Psquiza" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="unidade.classes.*" />
+          <option name="PATTERN" value="unidade.controladores.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="unidade.classes" />
-      <option name="MAIN_CLASS_NAME" value="unidade.classes.AtividadeTest" />
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleAtividadeTest" />
       <option name="METHOD_NAME" value="contaItensRealizados" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AtividadeTest.getCodigo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Psquiza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unidade.classes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unidade.classes" />
-      <option name="MAIN_CLASS_NAME" value="unidade.classes.AtividadeTest" />
-      <option name="METHOD_NAME" value="getCodigo" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AtividadeTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Psquiza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unidade.classes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unidade.classes" />
-      <option name="MAIN_CLASS_NAME" value="unidade.classes.AtividadeTest" />
-      <option name="METHOD_NAME" value="testToString" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -166,20 +175,20 @@
     </configuration>
     <list>
       <item itemvalue="JUnit." />
-      <item itemvalue="JUnit.AtividadeTest" />
-      <item itemvalue="JUnit.AtividadeTest.contaItensPendentes" />
-      <item itemvalue="JUnit.AtividadeTest.contaItensRealizados" />
-      <item itemvalue="JUnit.AtividadeTest.getCodigo" />
-      <item itemvalue="JUnit.AtividadeTest.testToString" />
       <item itemvalue="JUnit.ItemTest" />
+      <item itemvalue="JUnit.ControleAtividadeTest.contaItensPendentes" />
+      <item itemvalue="JUnit.ControleAtividadeTest.contaItensRealizados" />
+      <item itemvalue="JUnit.ControleAtividadeTest" />
+      <item itemvalue="JUnit.ControleAtividadeTest.cadastraAtividade" />
+      <item itemvalue="JUnit.ControleAtividadeTest.cadastraItem" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AtividadeTest" />
-        <item itemvalue="JUnit.AtividadeTest.getCodigo" />
-        <item itemvalue="JUnit.AtividadeTest.contaItensPendentes" />
-        <item itemvalue="JUnit.AtividadeTest.testToString" />
-        <item itemvalue="JUnit.AtividadeTest.contaItensRealizados" />
+        <item itemvalue="JUnit.ControleAtividadeTest" />
+        <item itemvalue="JUnit.ControleAtividadeTest.cadastraAtividade" />
+        <item itemvalue="JUnit.ControleAtividadeTest.cadastraItem" />
+        <item itemvalue="JUnit.ControleAtividadeTest.contaItensRealizados" />
+        <item itemvalue="JUnit.ControleAtividadeTest.contaItensPendentes" />
       </list>
     </recent_temporary>
   </component>

@@ -15,7 +15,7 @@ class AtividadeTest {
     @BeforeEach
     void criaObjetos(){
         atividade1 = new Atividade("Uma simples atividade","BAIXO","E simples, entao e facil.");
-        atividade2 = new Atividade("Uma atividade complicada","ALTO","E dificil, porque nao sei..");
+        atividade2 = new Atividade("Uma atividade complicada","ALTO","E dificil, porque nao sei.");
         atividade1.cadastraItem("item 1");
         atividade1.cadastraItem("item 2");
     }
