@@ -125,10 +125,10 @@ public class Facade {
     }
     public static void main(String[] args){
         args = new String[] {"projetoLP2.facades.Facade",
-                "Psquiza/testes/aceitacao/use_case_1.txt",
-                "Psquiza/testes/aceitacao/use_case_2.txt",
-                "Psquiza/testes/aceitacao/use_case_3.txt",
-                "Psquiza/testes/aceitacao/use_case_4.txt"
+                "testes/aceitacao/use_case_1.txt",
+                "testes/aceitacao/use_case_2.txt",
+                "testes/aceitacao/use_case_3.txt",
+                "testes/aceitacao/use_case_4.txt"
         };
         EasyAccept.main(args);
     }

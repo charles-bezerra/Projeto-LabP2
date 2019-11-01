@@ -2,20 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d89b21f9-1c29-4a4f-85e8-e86780fe4746" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/testes/unidade/AtividadeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/unidade/controladores/ControlePesquisadorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Psquiza.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Psquiza.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aceitacao_teste/use_case_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aceitacao_teste/use_case_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aceitacao_teste/use_case_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aceitacao_teste/use_case_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_4.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Atividade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Atividade.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleAtividade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleAtividade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisa.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleProblemaObjetivo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleProblemaObjetivo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Status.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,7 +49,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -70,6 +68,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="unidade.controladores" />
       <recent name="unidade" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -91,26 +90,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Facade">
+  <component name="RunManager" selected="JUnit.ControlePesquisadorTest">
     <configuration name="Facade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="projetoLP2.facades.Facade" />
       <module name="Psquiza" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="projetoLP2.facades.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Psquiza" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="projetoLP2.Psquiza" />
-      <module name="Psquiza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="projetoLP2.classes.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,17 +120,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AtividadeTest.getCodigo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControlePesquisadorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Psquiza" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="unidade.*" />
+          <option name="PATTERN" value="unidade.controladores.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="unidade" />
-      <option name="MAIN_CLASS_NAME" value="unidade.AtividadeTest" />
-      <option name="METHOD_NAME" value="getCodigo" />
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControlePesquisadorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControlePesquisadorTest.testAlteraPesquisador" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.controladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControlePesquisadorTest" />
+      <option name="METHOD_NAME" value="testAlteraPesquisador" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControlePesquisadorTest.testCadastraPesquisador" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.controladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControlePesquisadorTest" />
+      <option name="METHOD_NAME" value="testCadastraPesquisador" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,10 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ControlePesquisadorTest" />
+        <item itemvalue="JUnit.ControlePesquisadorTest.testAlteraPesquisador" />
+        <item itemvalue="JUnit.ControlePesquisadorTest.testCadastraPesquisador" />
         <item itemvalue="Application.Facade" />
         <item itemvalue="JUnit.AtividadeTest.cadastraItem" />
-        <item itemvalue="JUnit.AtividadeTest.getCodigo" />
-        <item itemvalue="Application.Psquiza" />
       </list>
     </recent_temporary>
   </component>
@@ -176,6 +194,7 @@
       <workItem from="1572359834778" duration="2814000" />
       <workItem from="1572379317246" duration="2429000" />
       <workItem from="1572386083837" duration="600000" />
+      <workItem from="1572571663508" duration="4642000" />
     </task>
     <servers />
   </component>

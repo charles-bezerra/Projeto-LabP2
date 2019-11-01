@@ -107,6 +107,7 @@ public class ControlePesquisa {
 	 */
 	public void alteraPesquisa(String codigo, String conteudoASerAlterado, String novoConteudo) {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
+		Verificador.verificaString("Conteudo a ser alterado nao pode ser nulo ou vazio.", conteudoASerAlterado);
 		
 		if(!pesquisas.containsKey(codigo)) {
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
