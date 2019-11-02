@@ -59,13 +59,11 @@ public class Atividade {
      * @param descricaoRisco
      */
     public Atividade(String descricao, String nivelRisco, String descricaoRisco){
-        this.codigo = "A" + contador;
+        this.codigo = "A" + contador; //gerando o código
         this.descricao = Verificador.verificaString("Campo Descricao nao pode ser nulo ou vazio.",descricao);
-
-        this.atribuiRisco(nivelRisco);
-
         this.descricaoRisco = Verificador.verificaString("Campo descricaoRisco nao pode ser nulo ou vazio.", descricaoRisco);
         this.items = new ArrayList<>();
+        this.atribuiRisco(nivelRisco); //chamando funcao que gera atribui o nivel do risco
         contador++;
     }
 

@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d89b21f9-1c29-4a4f-85e8-e86780fe4746" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/testes/unidade/AtividadeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Psquiza.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Psquiza.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aceitacao_teste/use_case_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aceitacao_teste/use_case_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aceitacao_teste/use_case_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aceitacao_teste/use_case_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Atividade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Atividade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleAtividade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleAtividade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleProblemaObjetivo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleProblemaObjetivo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Status.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +15,20 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="Psquiza" />
@@ -175,7 +178,9 @@
       <workItem from="1572315478036" duration="10624000" />
       <workItem from="1572359834778" duration="2814000" />
       <workItem from="1572379317246" duration="2429000" />
-      <workItem from="1572386083837" duration="600000" />
+      <workItem from="1572386083837" duration="721000" />
+      <workItem from="1572547014453" duration="101000" />
+      <workItem from="1572704083910" duration="892000" />
     </task>
     <servers />
   </component>
