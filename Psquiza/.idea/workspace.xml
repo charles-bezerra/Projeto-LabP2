@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d89b21f9-1c29-4a4f-85e8-e86780fe4746" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" afterDir="false" />
@@ -10,18 +11,16 @@
 =======
       <change afterPath="$PROJECT_DIR$/testes/unidade/controladores/ControlePesquisadorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+=======
+>>>>>>> 4b8f8ad629542fcb632e96e3377f6794f7054a3b
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Psquiza.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Psquiza.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Atividade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Atividade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" afterDir="false" />
 >>>>>>> eae4b9986791546238f6eb2a6f0b22a5d4c94fc7
+=======
+>>>>>>> 4b8f8ad629542fcb632e96e3377f6794f7054a3b
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +71,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="true" />
-    <property name="Repository.Attach.Sources" value="true" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -111,7 +110,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ControlePesquisadorTest">
+  <component name="RunManager" selected="Application.Facade">
     <configuration name="Facade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="projetoLP2.facades.Facade" />
       <module name="Psquiza" />
@@ -190,10 +189,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Facade" />
         <item itemvalue="JUnit.ControlePesquisadorTest" />
         <item itemvalue="JUnit.ControlePesquisadorTest.testAlteraPesquisador" />
         <item itemvalue="JUnit.ControlePesquisadorTest.testCadastraPesquisador" />
-        <item itemvalue="Application.Facade" />
         <item itemvalue="JUnit.AtividadeTest.cadastraItem" />
       </list>
     </recent_temporary>
@@ -220,8 +219,15 @@
       <workItem from="1572704083910" duration="892000" />
 =======
       <workItem from="1572386083837" duration="600000" />
+<<<<<<< HEAD
       <workItem from="1572571663508" duration="4642000" />
 >>>>>>> eae4b9986791546238f6eb2a6f0b22a5d4c94fc7
+=======
+      <workItem from="1572571663508" duration="5047000" />
+      <workItem from="1572643927410" duration="100000" />
+      <workItem from="1572644083488" duration="9000" />
+      <workItem from="1572725787596" duration="2491000" />
+>>>>>>> 4b8f8ad629542fcb632e96e3377f6794f7054a3b
     </task>
     <servers />
   </component>
