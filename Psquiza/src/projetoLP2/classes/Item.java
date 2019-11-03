@@ -8,9 +8,19 @@ import projetoLP2.util.Verificador;
  * @author Charles Bezerra de Oliveira Júnior
  */
 public class Item {
+    /**
+     * Nome do item
+     */
     private String item;
+    /**
+     * Enumerador com o status do item (PENDENTE, REALIZADO)
+     */
     private Status status;
 
+    /**
+     * Construtor
+     * @param nome
+     */
     public Item(String nome){
         this.item = Verificador.verificaString("Item nao pode ser nulo ou vazio.", nome);
         this.status = Status.PENDENTE;
@@ -21,15 +31,13 @@ public class Item {
         Verificador.verificaString("Campo status nao pode ser nulo ou vazio.", status);
 
         switch (status.toUpperCase()){
-            case "PENDENTE": this.status = Status.PENDENTE;
-            case "REALIZADO": this.status = Status.REALIZADO;
+            case "PENDENTE":{ this.status = Status.PENDENTE; break;}
+            case "REALIZADO":{ this.status = Status.REALIZADO; break;}
             default: throw new IllegalArgumentException();
         }
     }
 
-    public Status getStatus(){
-        return this.status;
-    }
+    public Status getStatus(){ return this.status; }
 
     @Override
     public String toString(){

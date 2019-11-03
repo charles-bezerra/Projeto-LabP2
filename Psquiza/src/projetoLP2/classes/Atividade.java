@@ -1,8 +1,6 @@
 package projetoLP2.classes;
 
-import java.util.*;
-
-import projetoLP2.enums.Risco; 
+import projetoLP2.enums.Risco;
 import projetoLP2.enums.Status;
 import projetoLP2.util.Verificador;
 
@@ -10,6 +8,7 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Classe que representa uma atividade metodologica
