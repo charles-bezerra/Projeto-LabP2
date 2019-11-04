@@ -19,6 +19,7 @@
       <list>
         <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -34,11 +35,14 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="projetoLP2.controladores" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="projetoLP2.enums" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -59,7 +63,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ControleAtividadeTest">
+  <component name="RunManager" selected="Application.Facade">
     <configuration type="JUnit" factoryName="JUnit">
       <module name="Psquiza" />
       <extension name="coverage">
@@ -73,6 +77,19 @@
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Facade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="projetoLP2.facades.Facade" />
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="projetoLP2.facades.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,22 +141,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControleAtividadeTest.contaItensPendentes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Psquiza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unidade.controladores.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unidade.controladores" />
-      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleAtividadeTest" />
-      <option name="METHOD_NAME" value="contaItensPendentes" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ControleAtividadeTest.contaItensRealizados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Psquiza" />
       <extension name="coverage">
@@ -174,21 +175,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit." />
       <item itemvalue="JUnit.ItemTest" />
-      <item itemvalue="JUnit.ControleAtividadeTest.contaItensPendentes" />
       <item itemvalue="JUnit.ControleAtividadeTest.contaItensRealizados" />
       <item itemvalue="JUnit.ControleAtividadeTest" />
       <item itemvalue="JUnit.ControleAtividadeTest.cadastraAtividade" />
       <item itemvalue="JUnit.ControleAtividadeTest.cadastraItem" />
+      <item itemvalue="Application.Facade" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Facade" />
         <item itemvalue="JUnit.ControleAtividadeTest" />
         <item itemvalue="JUnit.ControleAtividadeTest.cadastraAtividade" />
         <item itemvalue="JUnit.ControleAtividadeTest.cadastraItem" />
         <item itemvalue="JUnit.ControleAtividadeTest.contaItensRealizados" />
-        <item itemvalue="JUnit.ControleAtividadeTest.contaItensPendentes" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +213,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
