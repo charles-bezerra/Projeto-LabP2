@@ -5,6 +5,7 @@
       <change afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_1.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_2.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_3.txt" beforeDir="false" />
@@ -19,6 +20,8 @@
       <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_4.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Item.java" afterDir="false" />
+=======
+>>>>>>> 455d85f88b9bf93cab0040fbc67024419f0432e2
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,9 +92,25 @@
       <created>1572791295310</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1572791295310</updated>
       <workItem from="1572791307449" duration="1439000" />
       <workItem from="1572830464515" duration="772000" />
+=======
+      <updated>1571926640076</updated>
+      <workItem from="1571998824069" duration="800000" />
+      <workItem from="1572308824266" duration="95000" />
+      <workItem from="1572308946215" duration="2576000" />
+      <workItem from="1572315478036" duration="10624000" />
+      <workItem from="1572359834778" duration="2814000" />
+      <workItem from="1572379317246" duration="2429000" />
+      <workItem from="1572386083837" duration="600000" />
+      <workItem from="1572571663508" duration="5047000" />
+      <workItem from="1572643927410" duration="100000" />
+      <workItem from="1572644083488" duration="9000" />
+      <workItem from="1572725787596" duration="2921000" />
+      <workItem from="1572878566236" duration="633000" />
+>>>>>>> 455d85f88b9bf93cab0040fbc67024419f0432e2
     </task>
     <servers />
   </component>
