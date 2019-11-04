@@ -50,7 +50,7 @@ public class Pesquisa {
 	 */
 	public Pesquisa(String descricao, String campoDeInteresse) {
 		Verificador.verificaString("Descricao nao pode ser nula ou vazia.", descricao);
-		Verificador.verificaString("Campo de interesse nao pode  ser nulo ou vazio.", campoDeInteresse);
+		Verificador.verificaString("Formato do campo de interesse invalido.", campoDeInteresse);
 		verificaCampo(campoDeInteresse);
 
 		this.descricao = descricao;
