@@ -41,6 +41,6 @@ public class Item {
 
     @Override
     public String toString(){
-        return this.status.getValor() + " - " + this.item;
+        return String.format("%s - %s", this.status.getValor(), this.item );
     }
 }

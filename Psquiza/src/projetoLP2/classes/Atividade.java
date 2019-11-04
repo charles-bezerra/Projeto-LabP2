@@ -6,7 +6,6 @@ import projetoLP2.util.Verificador;
 
 import java.time.Period;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
@@ -127,10 +126,7 @@ public class Atividade {
                 this.risco.getRisco() + " - " +
                 this.descricaoRisco + ")"
         );
-        Iterator<Item> items = this.items.iterator();
-        while (items.hasNext()){
-            texto.append(" | ").append( items.next().toString() );
-        }
+        for (Item item : this.items) { texto.append(" | ").append(item.toString()); }
         return texto.toString();
     }
 

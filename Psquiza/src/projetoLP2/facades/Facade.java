@@ -7,18 +7,16 @@ import projetoLP2.controladores.ControlePesquisador;
 import projetoLP2.controladores.ControleProblemaObjetivo;
 
 public class Facade {
-
-    ControleProblemaObjetivo problemaObjetivo;
-    ControlePesquisa pesquisaControle;
-    ControleAtividade controleAtividade;
-    ControlePesquisador controlePesquisadores;
-
+    private ControleProblemaObjetivo problemaObjetivo;
+    private ControlePesquisa pesquisaControle;
+    private ControleAtividade controleAtividade;
+    private ControlePesquisador controlePesquisadores;
 
     public Facade() {
-        problemaObjetivo = new ControleProblemaObjetivo();
-        pesquisaControle = new ControlePesquisa();
-        controleAtividade = new ControleAtividade();
-        controlePesquisadores = new ControlePesquisador();
+        this.problemaObjetivo = new ControleProblemaObjetivo();
+        this.pesquisaControle = new ControlePesquisa();
+        this.controleAtividade = new ControleAtividade();
+        this.controlePesquisadores = new ControlePesquisador();
     }
 
     public String cadastraPesquisa(String descricao, String campoDeInteresse) {
@@ -29,26 +27,21 @@ public class Facade {
         pesquisaControle.alteraPesquisa(codigo, conteudoASerAlterado, novoConteudo);
     }
 
-
     public void encerraPesquisa(String codigo, String motivo) {
         pesquisaControle.encerraPesquisa(codigo, motivo);
     }
-
 
     public void ativaPesquisa(String codigo) {
         pesquisaControle.ativaPesquisa(codigo);
     }
 
-
     public boolean pesquisaEhAtiva(String codigo) {
         return pesquisaControle.pesquisaEhAtiva(codigo);
     }
 
-
     public String exibePesquisa(String codigo) {
         return pesquisaControle.exibePesquisa(codigo);
     }
-
 
     public void cadastraPesquisador(String nome, String funcao, String biografia, String email, String fotoURL){
         controlePesquisadores.cadastraPesquisador(nome, funcao, biografia, email, fotoURL);
@@ -73,7 +66,6 @@ public class Facade {
     public boolean pesquisadorEhAtivo(String email){
         return controlePesquisadores.pesquisadorEhAtivo(email);
     }
-
 
     public String cadastraProblema(String descricao, int viabilidade) {
         return problemaObjetivo.cadastraProblema(descricao, viabilidade);
@@ -123,6 +115,7 @@ public class Facade {
     public int contaItensRealizados(String codigo){
         return this.controleAtividade.contaItensRealizados(codigo);
     }
+
     public static void main(String[] args){
         args = new String[] {"projetoLP2.facades.Facade",
                 "testes/aceitacao/use_case_1.txt",
