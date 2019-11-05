@@ -41,7 +41,7 @@ class ControleAtividadeTeste {
     @Test
     void testEquals() {
     }
-}
+
 	@Test
 	void testCadastraAtividade() {
 		fail("Not yet implemented");

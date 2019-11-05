@@ -7,18 +7,16 @@ import projetoLP2.controladores.ControlePesquisador;
 import projetoLP2.controladores.ControleProblemaObjetivo;
 
 public class Facade {
-
-    ControleProblemaObjetivo problemaObjetivo;
-    ControlePesquisa pesquisaControle;
-    ControleAtividade controleAtividade;
-    ControlePesquisador controlePesquisadores;
-
+    private ControleProblemaObjetivo problemaObjetivo;
+    private ControlePesquisa pesquisaControle;
+    private ControleAtividade controleAtividade;
+    private ControlePesquisador controlePesquisadores;
 
     public Facade() {
-        problemaObjetivo = new ControleProblemaObjetivo();
-        pesquisaControle = new ControlePesquisa();
-        controleAtividade = new ControleAtividade();
-        controlePesquisadores = new ControlePesquisador();
+        this.problemaObjetivo = new ControleProblemaObjetivo();
+        this.pesquisaControle = new ControlePesquisa();
+        this.controleAtividade = new ControleAtividade();
+        this.controlePesquisadores = new ControlePesquisador();
     }
 
     public String cadastraPesquisa(String descricao, String campoDeInteresse) {
@@ -29,29 +27,32 @@ public class Facade {
         pesquisaControle.alteraPesquisa(codigo, conteudoASerAlterado, novoConteudo);
     }
 
-
     public void encerraPesquisa(String codigo, String motivo) {
         pesquisaControle.encerraPesquisa(codigo, motivo);
     }
-
 
     public void ativaPesquisa(String codigo) {
         pesquisaControle.ativaPesquisa(codigo);
     }
 
-
     public boolean pesquisaEhAtiva(String codigo) {
         return pesquisaControle.pesquisaEhAtiva(codigo);
     }
-
 
     public String exibePesquisa(String codigo) {
         return pesquisaControle.exibePesquisa(codigo);
     }
 
-
     public void cadastraPesquisador(String nome, String funcao, String biografia, String email, String fotoURL){
         controlePesquisadores.cadastraPesquisador(nome, funcao, biografia, email, fotoURL);
+    }
+
+    public void cadastraEspecialidadeProfessor(String email, String formacao, String unidade, String data){
+        controlePesquisadores.cadastraEspecialidadeProfessor(email, formacao, unidade, data);
+    }
+
+    public void cadastraEspecialidadeAluno(String email, String semestre, String IEA){
+        controlePesquisadores.cadastraEspecialidadeAluno(email, semestre, IEA);
     }
 
     public void alteraPesquisador(String email, String atributo, String novoValor){
@@ -74,10 +75,7 @@ public class Facade {
         return controlePesquisadores.pesquisadorEhAtivo(email);
     }
 
-public String listaPesquisadores(String tipo){ 
-	return 	controlePesquisadores.listaPesquisadores(tipo); 
-	}
-
+    public String listaPesquisadores(String tipo){ return controlePesquisadores.listaPesquisadores(tipo); }
 
     public String cadastraProblema(String descricao, int viabilidade) {
         return problemaObjetivo.cadastraProblema(descricao, viabilidade);
@@ -133,7 +131,11 @@ public String listaPesquisadores(String tipo){
                 "testes/aceitacao/use_case_1.txt",
                 "testes/aceitacao/use_case_2.txt",
                 "testes/aceitacao/use_case_3.txt",
-                "testes/aceitacao/use_case_4.txt"
+                "testes/aceitacao/use_case_4.txt",
+                "testes/aceitacao/use_case_5.txt",
+                "testes/aceitacao/use_case_6.txt",
+                "testes/aceitacao/use_case_7.txt",
+                "testes/aceitacao/use_case_8.txt"
         };
         EasyAccept.main(args);
     }
