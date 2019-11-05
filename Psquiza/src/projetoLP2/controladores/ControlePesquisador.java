@@ -1,6 +1,6 @@
 package projetoLP2.controladores;
 
-import projetoLP2.classes.Pesquisador;
+import projetoLP2.classes.*;
 import projetoLP2.util.Verificador;
 
 import java.util.HashMap;
@@ -31,8 +31,24 @@ public class ControlePesquisador {
      * @param fotoURL representa a url da foto do pesquisador a ser cadastrado.
      */
     public void cadastraPesquisador(String nome, String funcao, String biografia, String email, String fotoURL){
-        Pesquisador p = new Pesquisador(nome, funcao, biografia, email, fotoURL);
-        pesquisadores.put(p.getEmail(),p );
+        Verificador.verificaString("Campo funcao nao pode ser nulo ou vazio.", funcao);
+        Pesquisador p;
+        switch (funcao.toUpperCase()) {
+            case "ESTUDANTE":
+                p = new PesquisadorAluno(nome, funcao, biografia, email, fotoURL);
+                pesquisadores.put(p.getEmail(),p );
+                break;
+            case "PROFESSOR":
+                p = new PesquisadorProfessor(nome, funcao, biografia, email, fotoURL);
+                pesquisadores.put(p.getEmail(),p );
+                break;
+            case "EXTERNO":
+                p = new PesquisadorExterno(nome, funcao, biografia, email, fotoURL);
+                pesquisadores.put(p.getEmail(),p );
+                break;
+            default:
+                throw new IllegalArgumentException("Tipo " + funcao + " inexistente");
+        }
     }
 
     /**
@@ -43,17 +59,42 @@ public class ControlePesquisador {
      */
     public void alteraPesquisador(String email, String atributo, String novoValor) {
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
+        Verificador.verificaString("Campo " + atributo + " nao pode ser nulo ou vazio.", novoValor);
         if(! pesquisadores.containsKey(email)) {
             throw new IllegalArgumentException("Pesquisador nao encontrado");
         }
 
-        if(atributo.equals("email")){
-            Pesquisador p = pesquisadores.get(email);
-            p.alteraAtributo(atributo, novoValor);
-            pesquisadores.put(p.getEmail(), p);
-            pesquisadores.remove(email);
-        }else {
-            pesquisadores.get(email).alteraAtributo(atributo, novoValor);
+        switch (atributo.toUpperCase()) {
+            case "EMAIL":
+                Pesquisador p = pesquisadores.get(email);
+                p.alteraAtributo(atributo, novoValor);
+                pesquisadores.put(p.getEmail(), p);
+                pesquisadores.remove(email);
+                break;
+            case "FUNCAO":
+                Pesquisador pAntigo = pesquisadores.get(email);
+                Pesquisador pNovo;
+                switch (novoValor.toUpperCase()) {
+                    case "ESTUDANTE":
+                        pNovo = new PesquisadorAluno(pAntigo.getNome(), novoValor, pAntigo.getBiografia(),
+                                pAntigo.getEmail(), pAntigo.getFotoURL());
+                        break;
+                    case "PROFESSOR":
+                        pNovo = new PesquisadorProfessor(pAntigo.getNome(), novoValor, pAntigo.getBiografia(),
+                                pAntigo.getEmail(), pAntigo.getFotoURL());
+                        break;
+                    case "EXTERNO":
+                        pNovo = new PesquisadorExterno(pAntigo.getNome(), novoValor, pAntigo.getBiografia(),
+                                pAntigo.getEmail(), pAntigo.getFotoURL());
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Tipo " + novoValor + " inexistente");
+                }
+
+                pesquisadores.replace(pNovo.getEmail(),pNovo );
+                break;
+            default:
+                pesquisadores.get(email).alteraAtributo(atributo, novoValor);
         }
     }
 

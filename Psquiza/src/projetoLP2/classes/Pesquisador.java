@@ -7,7 +7,7 @@ import java.util.Objects;
 /**
  * Classe responsavel por representar um pesquisador e guardar seus dados.
  */
-public class Pesquisador {
+public abstract class Pesquisador {
     /**
      * Atributo que representa o nome de um pesquisador.
      */
@@ -32,6 +32,10 @@ public class Pesquisador {
      * Atributo que representa o status de ativacao de um pesquisador.
      */
     private boolean ativado;
+    /**
+     * Atributo que representa se os atributos especificos das classes filhas foram inicializados
+     */
+    protected boolean especializado;
 
 
     /**
@@ -59,46 +63,18 @@ public class Pesquisador {
         this.fotoURL = fotoURL;
         this.funcao = funcao;
         this.ativado = true;
+        this.especializado = false;
     }
 
 
-    public void alteraAtributo(String atributo, String novoValor) {
-        Verificador.verificaString("Campo atributo nao pode ser nulo ou vazio.", atributo);
-        Verificador.verificaString("Campo " + atributo + " nao pode ser nulo ou vazio.", novoValor);
-
-        if(!isAtivado()){
-            throw new IllegalArgumentException("Pesquisador inativo.");
-        }
-
-        switch (atributo) {
-            case "email":
-                verificaEmail(novoValor);
-                email = novoValor;
-                break;
-            case "fotoURL":
-                verificaFoto(novoValor);
-                fotoURL = novoValor;
-                break;
-            case "nome":
-                nome = novoValor;
-                break;
-            case "biografia":
-                biografia = novoValor;
-                break;
-            case "funcao":
-                funcao = novoValor;
-                break;
-            default:
-                throw new IllegalArgumentException("Nao e possivel alterar esse valor de pesquisa.");
-        }
-    }
+    public abstract void alteraAtributo(String atributo, String novoValor);
 
 
     /**
      * Verifica se uma string se enquadra nos padroes do email.
      * Tendo pelo menos um caractere antes e depois do @.
      */
-    private void verificaEmail(String email){
+    protected void verificaEmail(String email){
         if(!email.contains("@") || email.startsWith("@") || email.endsWith("@")) {
             throw new IllegalArgumentException("Formato de email invalido.");
         }
@@ -109,7 +85,7 @@ public class Pesquisador {
      * Verifica se uma string se enquadra nos padroes de url.
      * Inciando com http:// ou https://, seguido de um endereço
      */
-    private void verificaFoto(String url){
+    protected void verificaFoto(String url){
         if (!url.startsWith("http://") & !url.startsWith("https://")){
             throw new IllegalArgumentException("Formato de foto invalido.");
         }else if(url.split("://").length == 1){
@@ -126,12 +102,20 @@ public class Pesquisador {
         return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     /**
      * Metodo responsavel por retornar a biografia do pesquisador.
      * @return em String o que estiver contido no atributo briografia.
      */
     public String getBiografia() {
         return biografia;
+    }
+
+    public void setBiografia(String biografia) {
+        this.biografia = biografia;
     }
 
     /**
@@ -142,12 +126,20 @@ public class Pesquisador {
         return email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     /**
      * Metodo responsavel por retornar a url da foto do pesquisador.
      * @return em String o que estiver contido no atributo fotoURL.
      */
     public String getFotoURL() {
         return fotoURL;
+    }
+
+    public void setFotoURL(String fotoURL) {
+        this.fotoURL = fotoURL;
     }
 
     /**
@@ -157,6 +149,7 @@ public class Pesquisador {
     public String getFuncao() {
         return funcao;
     }
+
 
     /**
      * Metodo responsavel por retornar o status de ativacao do pesquisador.
@@ -195,7 +188,7 @@ public class Pesquisador {
         if(!isAtivado()) {
             throw new IllegalArgumentException("Pesquisador inativo.");
         }
-        return nome + " (" + funcao + ") - " + biografia + " - " + email + " - " + fotoURL;
+        return String.format("%s (%s) - %s - %s - %s",getNome(),getFuncao(),getBiografia(),getEmail(),getFotoURL());
     }
 
 
