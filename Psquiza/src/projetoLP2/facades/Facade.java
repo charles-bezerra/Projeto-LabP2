@@ -74,6 +74,10 @@ public class Facade {
         return controlePesquisadores.pesquisadorEhAtivo(email);
     }
 
+public String listaPesquisadores(String tipo){ 
+	return 	controlePesquisadores.listaPesquisadores(tipo); 
+	}
+
 
     public String cadastraProblema(String descricao, int viabilidade) {
         return problemaObjetivo.cadastraProblema(descricao, viabilidade);
