@@ -33,11 +33,6 @@ public class Atividade {
     private String descricao;
 
     /**
-     * Duracao da atividade
-     */
-    private Period duracao;
-
-    /**
      * Risco de realização da atividade
      */
     private Risco risco;
@@ -51,6 +46,10 @@ public class Atividade {
      * Items da atividade
      */
     private List<Item> items;
+
+    private List<String> resultados;
+
+    private int duracao = 0;
 
     /**
      * Construtor de atividade metodoligica
@@ -66,6 +65,7 @@ public class Atividade {
 
         this.descricaoRisco = Verificador.verificaString("Campo descricaoRisco nao pode ser nulo ou vazio.", descricaoRisco);
         this.items = new ArrayList<>();
+        this.resultados = new ArrayList<>();
         contador++;
     }
 
@@ -122,6 +122,36 @@ public class Atividade {
             if (item.getStatus() == Status.REALIZADO) cont++;
         return cont;
     }
+
+    public void executaAtividade(int item, int duracao) {
+        items.get(item - 1).realizaItem();
+        this.duracao += duracao;
+    }
+
+    public int cadastraResultado(String resultado) {
+        resultados.add(resultado);
+        return resultados.size();
+    }
+
+    public boolean removeResultado(int numeroResultado) {
+        if(resultados.size() >= numeroResultado) {
+            if(resultados.get(numeroResultado) != null) {
+                resultados.remove(numeroResultado);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String listaResultado() {
+        String todosResultado = "";
+        for(String resultado : resultados) {
+            todosResultado += resultado + " | ";
+        }
+        return todosResultado.substring(0, resultados.size()-3);
+    }
+
+    public int getDuracao() {return duracao;}
 
     @Override
     public String toString(){
