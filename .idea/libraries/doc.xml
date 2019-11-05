@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="doc">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/Psquiza/doc/package-search-index.zip!/" />
       <root url="jar://$PROJECT_DIR$/Psquiza/doc/member-search-index.zip!/" />
       <root url="jar://$PROJECT_DIR$/Psquiza/doc/type-search-index.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Psquiza/doc/package-search-index.zip!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

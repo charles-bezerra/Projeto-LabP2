@@ -1,6 +1,7 @@
 package projetoLP2.facades;
 
 import easyaccept.EasyAccept;
+
 import projetoLP2.controladores.ControleAtividade;
 import projetoLP2.controladores.ControlePesquisa;
 import projetoLP2.controladores.ControlePesquisador;
@@ -51,7 +52,7 @@ public class Facade {
         controlePesquisadores.cadastraEspecialidadeProfessor(email, formacao, unidade, data);
     }
 
-    public void cadastraEspecialidadeAluno(String email, int semestre, double IEA){
+    public void cadastraEspecialidadeAluno(String email, String semestre, String IEA){
         controlePesquisadores.cadastraEspecialidadeAluno(email, semestre, IEA);
     }
 
@@ -74,6 +75,8 @@ public class Facade {
     public boolean pesquisadorEhAtivo(String email){
         return controlePesquisadores.pesquisadorEhAtivo(email);
     }
+
+    public String listaPesquisadores(String tipo){ return controlePesquisadores.listaPesquisadores(tipo); }
 
     public String cadastraProblema(String descricao, int viabilidade) {
         return problemaObjetivo.cadastraProblema(descricao, viabilidade);

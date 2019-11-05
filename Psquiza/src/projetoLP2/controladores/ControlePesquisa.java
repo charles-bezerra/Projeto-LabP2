@@ -5,7 +5,6 @@ import projetoLP2.util.Verificador;
 
 import java.util.HashMap;
 import java.util.Map;
-
 /**
  * Controlador das pesquisas do sistema
  * @author Iago Henrique de Souza Silva
@@ -24,7 +23,6 @@ public class ControlePesquisa {
 		pesquisas = new HashMap<>();
 	}
 
-
 	/**
 	 * Cadastra uma pesquisa no mapa de pesquisas.
 	 *
@@ -38,7 +36,6 @@ public class ControlePesquisa {
 		return p.getCod();
 	}
 
-
 	/**
 	 * Altera um atributo de um cliente
 	 *
@@ -49,11 +46,11 @@ public class ControlePesquisa {
 	public void alteraPesquisa(String codigo, String conteudoASerAlterado, String novoConteudo) {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
 		Verificador.verificaString("Conteudo a ser alterado nao pode ser nulo ou vazio.", conteudoASerAlterado);
-		
+
 		if(!pesquisas.containsKey(codigo)) {
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
 		}
-		
+
 		switch (conteudoASerAlterado) {
 			case "DESCRICAO":
 				pesquisas.get(codigo).setDescricao(novoConteudo);
@@ -65,6 +62,7 @@ public class ControlePesquisa {
 				throw new IllegalArgumentException("Nao e possivel alterar esse valor de pesquisa.");
 		}
 	}
+
 
 
 	/**
@@ -79,6 +77,7 @@ public class ControlePesquisa {
 		if(!pesquisas.containsKey(codigo)) {
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
 		}
+
 		pesquisas.get(codigo).encerraPesquisa(motivo);
 	}
 
@@ -94,6 +93,7 @@ public class ControlePesquisa {
 		if(!pesquisas.containsKey(codigo)) {
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
 		}
+		
 		pesquisas.get(codigo).ativaPesquisa();
 	}
 
@@ -110,6 +110,7 @@ public class ControlePesquisa {
 		if(!pesquisas.containsKey(codigo)) {
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
 		}
+
 		return pesquisas.get(codigo).getEstado().equals("ATIVA");
 	}
 

@@ -19,6 +19,7 @@ public class Pesquisa {
 	 */
 	private static Map<String, Integer> idPesquisas = new HashMap<>();
 	/**
+	/**
 	 * Descricao da pesquisa
 	 */
 	private String descricao;
@@ -42,7 +43,6 @@ public class Pesquisa {
 	 */
 	private String motivo;
 
-
 	/**
 	 * Constroi uma pesquisa a partir da descricao, campo de interesse
 	 * e seu codigo. Seu estado comeca como 'ATIVA' e seu motivo vazio
@@ -60,7 +60,6 @@ public class Pesquisa {
 		estado = Estado.ATIVA;
 		motivo = "";
 	}
-
 
 	/**
 	 * Verifica se uma string se enquadra nos padroes do campo
@@ -82,7 +81,6 @@ public class Pesquisa {
 		}
 	}
 
-
 	/**
 	 * Gera um novo codigo unico para uma pesquisa.
 	 * Este código é gerado automaticamente pelas primeiras três letras do campo de interesse
@@ -102,17 +100,14 @@ public class Pesquisa {
 		return cod + idPesquisas.get(cod);
 	}
 
-
 	/**
 	 * Altera a descricao da pesquisa
 	 *
 	 * @param descricao a nova descricao
 	 */
 	public void setDescricao(String descricao) {
-		if(getEstado().equals("DESATIVADA")) {
+		if(getEstado().equals("DESATIVADA"))
 			throw new IllegalArgumentException("Pesquisa desativada.");
-		}
-
 		Verificador.verificaString("Descricao nao pode ser nula ou vazia.", descricao);
 		this.descricao = descricao;
 	}
@@ -154,10 +149,8 @@ public class Pesquisa {
 	 * Altera o estado da pesquisa para ATIVA
 	 */
 	public void ativaPesquisa() {
-		if(getEstado().equals("ATIVA")) {
+		if(getEstado().equals("ATIVA"))
 			throw new IllegalArgumentException("Pesquisa ja ativada.");
-		}
-
 		estado = Estado.ATIVA;
 	}
 
@@ -165,17 +158,15 @@ public class Pesquisa {
 	 * Altera o estado da pesquisa para DESATIVADA
 	 */
 	public void encerraPesquisa(String motivo) {
-		if(getEstado().equals("DESATIVADA")) {
+		if(getEstado().equals("DESATIVADA"))
 			throw new IllegalArgumentException("Pesquisa desativada.");
-		}
 		Verificador.verificaString("Motivo nao pode ser nulo ou vazio.", motivo);
-
 		this.motivo = motivo;
 		estado = Estado.DESATIVADA;
 	}
 
 
-    /**
+	/**
 	 * Retorna uma representaçao textual com as informacoes de uma pesquisa
 	 *
 	 * @return a representaçao textual da pesquisa no formato 'codigo - descricao - campo de interesse'
@@ -185,30 +176,31 @@ public class Pesquisa {
 		return String.format("%s - %s - %s", this.cod,this.descricao,this.campoDeInteresse);
 	}
 
-    /**
-     * Retorna se este objeto eh igual a um outro.
-     *
-     * @param o o objeto a ser comparado
-     *
-     * @return a confirmacao se este objeto e igual ao outro
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Pesquisa)) return false;
-        Pesquisa pesquisa = (Pesquisa) o;
-        return getCod().equals(pesquisa.getCod());
-    }
+
+	/**
+	 * Retorna se este objeto eh igual a um outro.
+	 *
+	 * @param o o objeto a ser comparado
+	 *
+	 * @return a confirmacao se este objeto e igual ao outro
+	 */
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Pesquisa)) return false;
+		Pesquisa pesquisa = (Pesquisa) o;
+		return getCod().equals(pesquisa.getCod());
+	}
 
 
-    /**
-     * Gera um valor que identifica esta pesquisa.
-     *
-     * @return o hashcode da pesquisa.
-     */
-    @Override
-    public int hashCode() {
-        return Objects.hash(getCod());
-    }
+	/**
+	 * Gera um valor que identifica esta pesquisa.
+	 *
+	 * @return o hashcode da pesquisa.
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(getCod());
+	}
 
 }

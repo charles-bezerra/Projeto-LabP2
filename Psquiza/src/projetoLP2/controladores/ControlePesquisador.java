@@ -1,6 +1,7 @@
 package projetoLP2.controladores;
 
 import projetoLP2.classes.*;
+import projetoLP2.enums.Funcao;
 import projetoLP2.util.Verificador;
 
 import java.util.HashMap;
@@ -115,10 +116,8 @@ public class ControlePesquisador {
     }
 
 
-    public void cadastraEspecialidadeAluno(String email, Integer semestre, Double IEA){
+    public void cadastraEspecialidadeAluno(String email, String semestre, String IEA){
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
-        if(semestre == null){ throw new NullPointerException("Campo semestre nao pode ser nulo ou vazio.");}
-        if(IEA == null){ throw new NullPointerException("Campo IEA nao pode ser nulo ou vazio.");}
 
         if(!pesquisadores.containsKey(email)){
             throw new IllegalArgumentException("Pesquisadora nao encontrada.");
@@ -127,8 +126,8 @@ public class ControlePesquisador {
         if(!pesquisadores.get(email).getFuncao().toUpperCase().equals("ESTUDANTE")){
             throw new IllegalArgumentException("Pesquisador nao compativel com a especialidade.");
         }
-        pesquisadores.get(email).alteraAtributo("semestre",semestre.toString());
-        pesquisadores.get(email).alteraAtributo("IEA",IEA.toString());
+        pesquisadores.get(email).alteraAtributo("semestre",semestre);
+        pesquisadores.get(email).alteraAtributo("IEA",IEA);
         pesquisadores.get(email).especializa();
     }
 
@@ -166,6 +165,9 @@ public class ControlePesquisador {
         if(! pesquisadores.containsKey(email)){
             throw new IllegalArgumentException("Pesquisador nao encontrado");
         }
+        if(!pesquisadorEhAtivo(email)){
+            throw new IllegalArgumentException("Pesquisador inativo.");
+        }
         return pesquisadores.get(email).toString();
     }
 
@@ -181,6 +183,35 @@ public class ControlePesquisador {
         } else{
             return pesquisadores.get(email).isAtivado();
         }
+    }
+
+
+    public String listaPesquisadores(String tipo){
+        Verificador.verificaString("Campo tipo nao pode ser nulo ou vazio.", tipo);
+
+        Funcao arr[] = Funcao.values();
+        boolean contem = false;
+        for(Funcao f : arr){
+            if(f.toString().equals(tipo.toUpperCase())){
+                contem = true;
+                break;
+            }
+        }
+        if(!contem){
+            throw new IllegalArgumentException("Tipo " + tipo + " inexistente.");
+        }
+
+        String saida = "";
+
+        for (Pesquisador p : pesquisadores.values()) {
+            if(p.getFuncao().toUpperCase().equals(tipo.toUpperCase())) {
+                saida += p.toString() + " | ";
+            }
+        }
+        if (saida.length() > 0){
+            saida = saida.substring(0,saida.length() - 3 );
+        }
+        return saida;
     }
 
 }
