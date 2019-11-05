@@ -16,16 +16,7 @@ public class Item {
         this.status = Status.PENDENTE;
     }
 
-    public Item(String nome, String status){
-        this.item = Verificador.verificaString("Item nao pode ser nulo ou vazio.", nome);
-        Verificador.verificaString("Campo status nao pode ser nulo ou vazio.", status);
-
-        switch (status.toUpperCase()){
-            case "PENDENTE": this.status = Status.PENDENTE;
-            case "REALIZADO": this.status = Status.REALIZADO;
-            default: throw new IllegalArgumentException();
-        }
-    }
+    public void realizaItem() {this.status = Status.REALIZADO;}
 
     public Status getStatus(){
         return this.status;
