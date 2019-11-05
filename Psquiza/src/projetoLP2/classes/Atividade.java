@@ -1,13 +1,15 @@
 package projetoLP2.classes;
 
-import projetoLP2.enums.Risco;
+import java.util.*;
+
+import projetoLP2.enums.Risco; 
 import projetoLP2.enums.Status;
 import projetoLP2.util.Verificador;
 
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Classe que representa uma atividade metodologica
@@ -52,23 +54,24 @@ public class Atividade {
 
     /**
      * Construtor de atividade metodoligica
-     * @param descricao descricao da atividade
-     * @param nivelRisco nivel de risco dessa atividade
-     * @param descricaoRisco descricao do risco envolvido
+     * @param descricao
+     * @param nivelRisco
+     * @param descricaoRisco
      */
     public Atividade(String descricao, String nivelRisco, String descricaoRisco){
-        this.codigo = "A" + contador; //gerando o código
+        this.codigo = "A" + contador;
         this.descricao = Verificador.verificaString("Campo Descricao nao pode ser nulo ou vazio.",descricao);
+
+        this.atribuiRisco(nivelRisco);
+
         this.descricaoRisco = Verificador.verificaString("Campo descricaoRisco nao pode ser nulo ou vazio.", descricaoRisco);
         this.items = new ArrayList<>();
-        this.atribuiRisco(nivelRisco); //chamando funcao que gera atribui o nivel do risco
-
         contador++;
     }
 
     /**
      * Retorna o codifo publicamente
-     * @return String código da Atividade
+     * @return
      */
     public String getCodigo(){ return this.codigo; }
 
@@ -123,9 +126,14 @@ public class Atividade {
     @Override
     public String toString(){
         StringBuilder texto = new StringBuilder(
-            this.descricao + " (" + this.risco.getRisco() + " - " + this.descricaoRisco + ")"
+                this.descricao + " (" +
+                this.risco.getRisco() + " - " +
+                this.descricaoRisco + ")"
         );
-        for (Item item : this.items) { texto.append(" | ").append(item.toString()); }
+        Iterator<Item> items = this.items.iterator();
+        while (items.hasNext()){
+            texto.append(" | ").append( items.next().toString() );
+        }
         return texto.toString();
     }
 

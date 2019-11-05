@@ -87,8 +87,8 @@ public class PesquisadorAluno extends Pesquisador {
         }
 
         if(especializado){
-            return super.toString() + String.format(" - %do SEMESTRE - %.1f",
-                    getSemestre(),getIEA());
+            return super.toString() + String.format(" - %do SEMESTRE - %s",
+                    getSemestre(),getIEA(),String.format("%.1f",getIEA()).replace(",","."));
         }
         return super.toString();
     }

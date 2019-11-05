@@ -8,7 +8,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
     <orderEntry type="library" name="lib" level="project" />
+=======
+>>>>>>> 4f0249b67e00d1ba5e52c03d2d0607b7e8a6ab28
     <orderEntry type="library" name="easyaccept" level="project" />
     <orderEntry type="module-library">
       <library name="JUnit5.2">

@@ -191,9 +191,6 @@ public abstract class Pesquisador {
      */
     @Override
     public String toString() {
-        if(!isAtivado()) {
-            throw new IllegalArgumentException("Pesquisador inativo.");
-        }
         return String.format("%s (%s) - %s - %s - %s",getNome(),getFuncao(),getBiografia(),getEmail(),getFotoURL());
     }
 

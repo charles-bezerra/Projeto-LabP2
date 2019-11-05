@@ -20,6 +20,14 @@ public class ControleProblemaObjetivo {
 	 * Mapa de objetivos, as chaves sao codigos gerados pelo programa "O" + id, a partir de 1.
 	 */
 	private HashMap<String, Objetivo> objetivos = new HashMap<>();
+	/**
+	 * O id dos problemas, gerado a partir de um.
+	 */
+	private int idProblemas = 1;
+	/**
+	 * O id dos objetivos, gerado a partir de um.
+	 */
+	private int idObjetivos = 1;
     /**
      * Cadastra um problema no sistema.
      * 
@@ -28,9 +36,14 @@ public class ControleProblemaObjetivo {
      * @return null
      */
 	public String cadastraProblema(String descricao, int viabilidade) {
-		Problema problema = new Problema(descricao, viabilidade);
-		problemas.put(problema.getId(), problema);
+		Verificador.verificaString("Campo descricao nao pode ser nulo ou vazio.", descricao);
+		if(1 > viabilidade || viabilidade > 5) {
+			throw new IllegalArgumentException("Valor invalido de viabilidade.");
+		} else {
+			problemas.put("P" + idProblemas, new Problema(descricao, viabilidade));
+			idProblemas ++;
 			return null;
+		}
 	}
     /**
      * Cadastra um objetivo no sistema.
@@ -42,9 +55,19 @@ public class ControleProblemaObjetivo {
      * @return null
      */
     public String cadastraObjetivo(String tipo, String descricao, int aderencia, int viabilidade) {
-    	Objetivo objetivo = new Objetivo(tipo, descricao, aderencia, viabilidade);
-    	objetivos.put(objetivo.getId(), objetivo);
-    	return null;
+    	Verificador.verificaString("Campo tipo nao pode ser nulo ou vazio.", tipo);
+    	Verificador.verificaString("Campo descricao nao pode ser nulo ou vazio.", descricao);
+		if(!tipo.equals("GERAL") && !tipo.equals("ESPECIFICO")) {
+			throw new IllegalArgumentException("Valor invalido de tipo.");
+		} else if(1 > aderencia || aderencia > 5) {
+			throw new IllegalArgumentException("Valor invalido de aderencia");
+		} else if(1 > viabilidade || viabilidade > 5) {
+			throw new IllegalArgumentException("Valor invalido de viabilidade.");
+		} else {
+			objetivos.put("O" + idObjetivos, new Objetivo(tipo, descricao, aderencia, viabilidade));
+			idObjetivos ++;
+			return null;
+		}
 	}
     /**
      * Apaga um problema do sistema.
@@ -53,8 +76,11 @@ public class ControleProblemaObjetivo {
      */
 	public void apagarProblema(String codigo) {
 		Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
-		if(!problemas.containsKey(codigo)) { throw new IllegalArgumentException("Problema nao encontrado");
-		} else { problemas.remove(codigo); }
+		if(!problemas.containsKey(codigo)) {
+			throw new IllegalArgumentException("Problema nao encontrado");
+		} else {
+			problemas.remove(codigo);
+		}
 	}
     /**
      * Apaga um objetivo do sistema.
@@ -63,29 +89,38 @@ public class ControleProblemaObjetivo {
      */
 	public void apagarObjetivo(String codigo) {
 		Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
-		if(!objetivos.containsKey(codigo)) { throw new IllegalArgumentException("Objetivo nao encontrado");
-		} else { objetivos.remove(codigo); }
+		if(!objetivos.containsKey(codigo)) {
+			throw new IllegalArgumentException("Objetivo nao encontrado");
+		} else {
+			objetivos.remove(codigo);
+		}
 	}
     /**
      * Exibe um problema cadastrado no sistema.
      * 
      * @param codigo o codigo de identificacao do problema
-     * @return a representacao em String de um problema
+     * @return o codigo de identificacao do problema + a representacao em String de um problema
      */
 	public String exibeProblema(String codigo) {
 		Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
-		if(!problemas.containsKey(codigo)) { throw new IllegalArgumentException("Problema nao encontrado");
-		} else { return problemas.get(codigo).toString(); }
+		if(!problemas.containsKey(codigo)) {
+			throw new IllegalArgumentException("Problema nao encontrado");
+		} else {
+			return codigo + " - " + problemas.get(codigo).toString();
+		}
 	}
     /**
      * Exibe um objetivo cadastrado no sistema.
      * 
      * @param codigo o codigo de identificacao do objetivo
-     * @return a representacao em String de um objetivo
+     * @return o codigo de identificacao do objetivo + a representacao em String de um objetivo
      */
 	public String exibeObjetivo(String codigo) {
 		Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
-		if(!objetivos.containsKey(codigo)) { throw new IllegalArgumentException("Objetivo nao encontrado");
-		} else { return objetivos.get(codigo).toString(); }
+		if(!objetivos.containsKey(codigo)) {
+			throw new IllegalArgumentException("Objetivo nao encontrado");
+		} else {
+			return codigo + " - " + objetivos.get(codigo).toString();
+		}
 	}
 }
