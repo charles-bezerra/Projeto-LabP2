@@ -6,7 +6,7 @@ import projetoLP2.classes.Atividade;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AtividadeTest {
+class ControleAtividadeTeste {
 
     private Atividade atividade1, atividade2;
 
@@ -41,4 +41,35 @@ class AtividadeTest {
     @Test
     void testEquals() {
     }
+}
+	@Test
+	void testCadastraAtividade() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testApagaAtividade() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testCadastraItem() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testExibeAtividade() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testContaItensPendentes() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testContaItensRealizados() {
+		fail("Not yet implemented");
+	}
+
 }
