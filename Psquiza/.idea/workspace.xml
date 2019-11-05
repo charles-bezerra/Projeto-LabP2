@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="134c31d3-b59e-4429-ac39-a1d5d59c1173" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8f4adbd7-71e2-4775-8966-afb28362d3c6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/PesquisadorAluno.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/PesquisadorExterno.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/PesquisadorProfessor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/projetoLP2/classes/PesquisadorAluno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/projetoLP2/classes/PesquisadorExterno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/projetoLP2/classes/PesquisadorProfessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Atividade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Atividade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Item.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/AtividadeTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/util/Verificador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/util/Verificador.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Item.java" afterDir="false" />
-=======
->>>>>>> 455d85f88b9bf93cab0040fbc67024419f0432e2
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Objetivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Objetivo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/util/Verificador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/util/Verificador.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,23 +32,8 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
-  </component>
-  <component name="ProjectId" id="1T88b9xcO5KpXyu5eoQJ9V0FI19" />
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -88,29 +72,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="134c31d3-b59e-4429-ac39-a1d5d59c1173" name="Default Changelist" comment="" />
-      <created>1572791295310</created>
+      <changelist id="8f4adbd7-71e2-4775-8966-afb28362d3c6" name="Default Changelist" comment="" />
+      <created>1572905655348</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-<<<<<<< HEAD
-      <updated>1572791295310</updated>
-      <workItem from="1572791307449" duration="1439000" />
-      <workItem from="1572830464515" duration="772000" />
-=======
-      <updated>1571926640076</updated>
-      <workItem from="1571998824069" duration="800000" />
-      <workItem from="1572308824266" duration="95000" />
-      <workItem from="1572308946215" duration="2576000" />
-      <workItem from="1572315478036" duration="10624000" />
-      <workItem from="1572359834778" duration="2814000" />
-      <workItem from="1572379317246" duration="2429000" />
-      <workItem from="1572386083837" duration="600000" />
-      <workItem from="1572571663508" duration="5047000" />
-      <workItem from="1572643927410" duration="100000" />
-      <workItem from="1572644083488" duration="9000" />
-      <workItem from="1572725787596" duration="2921000" />
-      <workItem from="1572878566236" duration="633000" />
->>>>>>> 455d85f88b9bf93cab0040fbc67024419f0432e2
+      <updated>1572905655348</updated>
+      <workItem from="1572905679346" duration="4631000" />
     </task>
     <servers />
   </component>
@@ -122,9 +89,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>

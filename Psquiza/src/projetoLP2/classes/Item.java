@@ -18,18 +18,23 @@ public class Item {
     private Status status;
 
     /**
-     * Construtor
-     * @param nome
+     * Construtor padrao com argumento unico que atribui o nome do item
+     * e atribui por padrao this.status como PENDENTE
+     * @param nome do item
      */
     public Item(String nome){
         this.item = Verificador.verificaString("Item nao pode ser nulo ou vazio.", nome);
         this.status = Status.PENDENTE;
     }
 
+    /**
+     * Construtor segundario
+     * @param nome nome do item
+     * @param status status do item
+     */
     public Item(String nome, String status){
-        this.item = Verificador.verificaString("Item nao pode ser nulo ou vazio.", nome);
+        this(nome);
         Verificador.verificaString("Campo status nao pode ser nulo ou vazio.", status);
-
         switch (status.toUpperCase()){
             case "PENDENTE":{ this.status = Status.PENDENTE; break;}
             case "REALIZADO":{ this.status = Status.REALIZADO; break;}
@@ -37,6 +42,10 @@ public class Item {
         }
     }
 
+    /**
+     * Retorna o status atual do item
+     * @return Status
+     */
     public Status getStatus(){ return this.status; }
 
     @Override

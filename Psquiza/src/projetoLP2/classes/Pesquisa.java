@@ -5,6 +5,8 @@ import projetoLP2.util.Verificador;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+
 /**
  * Classe que representa uma pesquisa
  * @author Iago Henrique de Souza Silva
@@ -50,7 +52,6 @@ public class Pesquisa {
 	 */
 	public Pesquisa(String descricao, String campoDeInteresse) {
 		Verificador.verificaString("Descricao nao pode ser nula ou vazia.", descricao);
-		Verificador.verificaString("Formato do campo de interesse invalido.", campoDeInteresse);
 		verificaCampo(campoDeInteresse);
 
 		this.descricao = descricao;
@@ -68,6 +69,7 @@ public class Pesquisa {
 	 * e ter até 255 caracteres
 	 */
 	private void verificaCampo(String campo) {
+		Verificador.verificaString("Formato do campo de interesse invalido.", campo);
 		String[] topicos = campo.split(",");
 		if(campo.length() > 255 || topicos.length > 4) {
 			throw new IllegalArgumentException("Formato do campo de interesse invalido.");
@@ -173,7 +175,7 @@ public class Pesquisa {
 	}
 
 
-	/**
+    /**
 	 * Retorna uma representaçao textual com as informacoes de uma pesquisa
 	 *
 	 * @return a representaçao textual da pesquisa no formato 'codigo - descricao - campo de interesse'
@@ -182,5 +184,31 @@ public class Pesquisa {
 	public String toString() {
 		return String.format("%s - %s - %s", this.cod,this.descricao,this.campoDeInteresse);
 	}
+
+    /**
+     * Retorna se este objeto eh igual a um outro.
+     *
+     * @param o o objeto a ser comparado
+     *
+     * @return a confirmacao se este objeto e igual ao outro
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Pesquisa)) return false;
+        Pesquisa pesquisa = (Pesquisa) o;
+        return getCod().equals(pesquisa.getCod());
+    }
+
+
+    /**
+     * Gera um valor que identifica esta pesquisa.
+     *
+     * @return o hashcode da pesquisa.
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCod());
+    }
 
 }

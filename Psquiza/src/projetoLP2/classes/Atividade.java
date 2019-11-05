@@ -52,9 +52,9 @@ public class Atividade {
 
     /**
      * Construtor de atividade metodoligica
-     * @param descricao
-     * @param nivelRisco
-     * @param descricaoRisco
+     * @param descricao descricao da atividade
+     * @param nivelRisco nivel de risco dessa atividade
+     * @param descricaoRisco descricao do risco envolvido
      */
     public Atividade(String descricao, String nivelRisco, String descricaoRisco){
         this.codigo = "A" + contador; //gerando o código
@@ -62,12 +62,13 @@ public class Atividade {
         this.descricaoRisco = Verificador.verificaString("Campo descricaoRisco nao pode ser nulo ou vazio.", descricaoRisco);
         this.items = new ArrayList<>();
         this.atribuiRisco(nivelRisco); //chamando funcao que gera atribui o nivel do risco
+
         contador++;
     }
 
     /**
      * Retorna o codifo publicamente
-     * @return
+     * @return String código da Atividade
      */
     public String getCodigo(){ return this.codigo; }
 
@@ -122,9 +123,7 @@ public class Atividade {
     @Override
     public String toString(){
         StringBuilder texto = new StringBuilder(
-                this.descricao + " (" +
-                this.risco.getRisco() + " - " +
-                this.descricaoRisco + ")"
+            this.descricao + " (" + this.risco.getRisco() + " - " + this.descricaoRisco + ")"
         );
         for (Item item : this.items) { texto.append(" | ").append(item.toString()); }
         return texto.toString();
