@@ -54,6 +54,7 @@ public class PesquisadorProfessor extends Pesquisador {
                 setUnidade(novoValor);
                 break;
             case "DATA":
+                Verificador.verificaData("Atributo data com formato invalido.", novoValor);
                 setData(novoValor);
                 break;
             default:
@@ -98,4 +99,6 @@ public class PesquisadorProfessor extends Pesquisador {
         }
         return super.toString();
     }
+
+
 }

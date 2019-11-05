@@ -46,9 +46,15 @@ public class PesquisadorAluno extends Pesquisador {
                 setBiografia(novoValor);
                 break;
             case "SEMESTRE":
+                if(Integer.parseInt(novoValor) < 1){
+                    throw new IllegalArgumentException("Atributo semestre com formato invalido.");
+                }
                 setSemestre(Integer.parseInt(novoValor));
                 break;
             case "IEA":
+                if(Double.parseDouble(novoValor) < 0.0 || Double.parseDouble(novoValor) > 10.0){
+                    throw new IllegalArgumentException("Atributo IEA com formato invalido.");
+                }
                 setIEA(Float.parseFloat(novoValor));
                 break;
             default:

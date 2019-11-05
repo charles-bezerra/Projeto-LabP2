@@ -54,6 +54,14 @@ public class Facade {
         controlePesquisadores.cadastraPesquisador(nome, funcao, biografia, email, fotoURL);
     }
 
+    public void cadastraEspecialidadeProfessor(String email, String formacao, String unidade, String data){
+        controlePesquisadores.cadastraEspecialidadeProfessor(email, formacao, unidade, data);
+    }
+
+    public void cadastraEspecialidadeAluno(String email, int semestre, double IEA){
+        controlePesquisadores.cadastraEspecialidadeAluno(email, semestre, IEA);
+    }
+
     public void alteraPesquisador(String email, String atributo, String novoValor){
         controlePesquisadores.alteraPesquisador(email, atributo, novoValor);
     }

@@ -142,6 +142,12 @@ public abstract class Pesquisador {
         this.fotoURL = fotoURL;
     }
 
+
+    public void especializa() {
+        this.especializado = true;
+    }
+
+
     /**
      * Metodo responsavel por retornar a funcao do pesquisador.
      * @return em String o que estiver contido no atributo funcao.

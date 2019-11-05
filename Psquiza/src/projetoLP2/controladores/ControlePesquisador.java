@@ -98,6 +98,40 @@ public class ControlePesquisador {
         }
     }
 
+
+    public void cadastraEspecialidadeProfessor(String email, String formacao, String unidade, String data){
+        Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
+        if(!pesquisadores.containsKey(email)){
+            throw new IllegalArgumentException("Pesquisadora nao encontrada.");
+        }
+
+        if(!pesquisadores.get(email).getFuncao().toUpperCase().equals("PROFESSOR")){
+            throw new IllegalArgumentException("Pesquisador nao compativel com a especialidade.");
+        }
+        pesquisadores.get(email).alteraAtributo("formacao",formacao);
+        pesquisadores.get(email).alteraAtributo("unidade",unidade);
+        pesquisadores.get(email).alteraAtributo("data",data);
+        pesquisadores.get(email).especializa();
+    }
+
+
+    public void cadastraEspecialidadeAluno(String email, Integer semestre, Double IEA){
+        Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
+        if(semestre == null){ throw new NullPointerException("Campo semestre nao pode ser nulo ou vazio.");}
+        if(IEA == null){ throw new NullPointerException("Campo IEA nao pode ser nulo ou vazio.");}
+
+        if(!pesquisadores.containsKey(email)){
+            throw new IllegalArgumentException("Pesquisadora nao encontrada.");
+        }
+
+        if(!pesquisadores.get(email).getFuncao().toUpperCase().equals("ESTUDANTE")){
+            throw new IllegalArgumentException("Pesquisador nao compativel com a especialidade.");
+        }
+        pesquisadores.get(email).alteraAtributo("semestre",semestre.toString());
+        pesquisadores.get(email).alteraAtributo("IEA",IEA.toString());
+        pesquisadores.get(email).especializa();
+    }
+
     /**
      * Metodo responsavel por desativar pesquisadores no controle.
      * @param email representa o email do pesquisador.
