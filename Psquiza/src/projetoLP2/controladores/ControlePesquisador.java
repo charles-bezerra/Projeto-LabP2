@@ -1,7 +1,7 @@
 package projetoLP2.controladores;
 
 import projetoLP2.classes.*;
-import projetoLP2.enums.Funcao;
+import projetoLP2.enums.TipoFuncao;
 import projetoLP2.util.Verificador;
 
 import java.util.HashMap;
@@ -34,17 +34,21 @@ public class ControlePesquisador {
     public void cadastraPesquisador(String nome, String funcao, String biografia, String email, String fotoURL){
         Verificador.verificaString("Campo funcao nao pode ser nulo ou vazio.", funcao);
         Pesquisador p;
+        Funcao f;
         switch (funcao.toUpperCase()) {
             case "ESTUDANTE":
-                p = new PesquisadorAluno(nome, funcao, biografia, email, fotoURL);
+                f = new Aluno();
+                p = new Pesquisador(nome, f, biografia, email, fotoURL);
                 pesquisadores.put(p.getEmail(),p );
                 break;
             case "PROFESSOR":
-                p = new PesquisadorProfessor(nome, funcao, biografia, email, fotoURL);
+                f = new Professor();
+                p = new Pesquisador(nome, f, biografia, email, fotoURL);
                 pesquisadores.put(p.getEmail(),p );
                 break;
             case "EXTERNO":
-                p = new PesquisadorExterno(nome, funcao, biografia, email, fotoURL);
+                f = new Externo();
+                p = new Pesquisador(nome, f, biografia, email, fotoURL);
                 pesquisadores.put(p.getEmail(),p );
                 break;
             default:
@@ -73,26 +77,19 @@ public class ControlePesquisador {
                 pesquisadores.remove(email);
                 break;
             case "FUNCAO":
-                Pesquisador pAntigo = pesquisadores.get(email);
-                Pesquisador pNovo;
                 switch (novoValor.toUpperCase()) {
                     case "ESTUDANTE":
-                        pNovo = new PesquisadorAluno(pAntigo.getNome(), novoValor, pAntigo.getBiografia(),
-                                pAntigo.getEmail(), pAntigo.getFotoURL());
+                        pesquisadores.get(email).setFuncao(new Aluno());
                         break;
                     case "PROFESSOR":
-                        pNovo = new PesquisadorProfessor(pAntigo.getNome(), novoValor, pAntigo.getBiografia(),
-                                pAntigo.getEmail(), pAntigo.getFotoURL());
+                        pesquisadores.get(email).setFuncao(new Professor());
                         break;
                     case "EXTERNO":
-                        pNovo = new PesquisadorExterno(pAntigo.getNome(), novoValor, pAntigo.getBiografia(),
-                                pAntigo.getEmail(), pAntigo.getFotoURL());
+                        pesquisadores.get(email).setFuncao(new Externo());
                         break;
                     default:
                         throw new IllegalArgumentException("Tipo " + novoValor + " inexistente");
                 }
-
-                pesquisadores.replace(pNovo.getEmail(),pNovo );
                 break;
             default:
                 pesquisadores.get(email).alteraAtributo(atributo, novoValor);
@@ -112,7 +109,6 @@ public class ControlePesquisador {
         pesquisadores.get(email).alteraAtributo("formacao",formacao);
         pesquisadores.get(email).alteraAtributo("unidade",unidade);
         pesquisadores.get(email).alteraAtributo("data",data);
-        pesquisadores.get(email).especializa();
     }
 
 
@@ -128,7 +124,6 @@ public class ControlePesquisador {
         }
         pesquisadores.get(email).alteraAtributo("semestre",semestre);
         pesquisadores.get(email).alteraAtributo("IEA",IEA);
-        pesquisadores.get(email).especializa();
     }
 
     /**
@@ -165,6 +160,10 @@ public class ControlePesquisador {
         if(! pesquisadores.containsKey(email)){
             throw new IllegalArgumentException("Pesquisador nao encontrado");
         }
+        if(!pesquisadorEhAtivo(email)) {
+            throw new IllegalArgumentException("Pesquisador inativo.");
+        }
+
         if(!pesquisadorEhAtivo(email)){
             throw new IllegalArgumentException("Pesquisador inativo.");
         }
@@ -189,9 +188,9 @@ public class ControlePesquisador {
     public String listaPesquisadores(String tipo){
         Verificador.verificaString("Campo tipo nao pode ser nulo ou vazio.", tipo);
 
-        Funcao arr[] = Funcao.values();
+        TipoFuncao[] arr = TipoFuncao.values();
         boolean contem = false;
-        for(Funcao f : arr){
+        for(TipoFuncao f : arr){
             if(f.toString().equals(tipo.toUpperCase())){
                 contem = true;
                 break;

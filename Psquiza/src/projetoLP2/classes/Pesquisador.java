@@ -7,7 +7,7 @@ import java.util.Objects;
 /**
  * Classe responsavel por representar um pesquisador e guardar seus dados.
  */
-public abstract class Pesquisador {
+public class Pesquisador {
     /**
      * Atributo que representa o nome de um pesquisador.
      */
@@ -27,15 +27,11 @@ public abstract class Pesquisador {
     /**
      * Atributo que representa a funcao de um pesquisador.
      */
-    private String funcao;
+    private Funcao funcao;
     /**
      * Atributo que representa o status de ativacao de um pesquisador.
      */
     private boolean ativado;
-    /**
-     * Atributo que representa se os atributos especificos das classes filhas foram inicializados
-     */
-    protected boolean especializado;
 
 
     /**
@@ -46,9 +42,8 @@ public abstract class Pesquisador {
      * @param email passa o valor contido nele para o atributo email.
      * @param fotoURL passa o valor contido nele para o atributo fotoURL.
      */
-    public Pesquisador(String nome, String funcao, String biografia, String email, String fotoURL) {
+    public Pesquisador(String nome, Funcao funcao, String biografia, String email, String fotoURL) {
         Verificador.verificaString("Campo nome nao pode ser nulo ou vazio.", nome);
-        Verificador.verificaString("Campo funcao nao pode ser nulo ou vazio.", funcao);
         Verificador.verificaString("Campo biografia nao pode ser nulo ou vazio.", biografia);
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
@@ -58,23 +53,47 @@ public abstract class Pesquisador {
         verificaFoto(fotoURL);
 
         this.nome = nome;
+        this.funcao = funcao;
         this.biografia = biografia;
         this.email = email;
         this.fotoURL = fotoURL;
-        this.funcao = funcao;
         this.ativado = true;
-        this.especializado = false;
     }
 
 
-    public abstract void alteraAtributo(String atributo, String novoValor);
+    public void alteraAtributo(String atributo, String novoValor) {
+        Verificador.verificaString("Campo atributo nao pode ser nulo ou vazio.", atributo);
+        Verificador.verificaString("Campo " + atributo + " nao pode ser nulo ou vazio.", novoValor);
+
+        if(!isAtivado()){
+            throw new IllegalArgumentException("Pesquisador inativo.");
+        }
+        switch (atributo.toUpperCase()) {
+            case "EMAIL":
+                verificaEmail(novoValor);
+                setEmail(novoValor);
+                break;
+            case "FOTOURL":
+                verificaFoto(novoValor);
+                setFotoURL(novoValor);
+                break;
+            case "NOME":
+                setNome(novoValor);
+                break;
+            case "BIOGRAFIA":
+                setBiografia(novoValor);
+                break;
+            default:
+                funcao.alteraEspecialidade(atributo,novoValor);
+        }
+    }
 
 
     /**
      * Verifica se uma string se enquadra nos padroes do email.
      * Tendo pelo menos um caractere antes e depois do @.
      */
-    protected void verificaEmail(String email){
+    private void verificaEmail(String email){
         if(!email.contains("@") || email.startsWith("@") || email.endsWith("@")) {
             throw new IllegalArgumentException("Formato de email invalido.");
         }
@@ -85,7 +104,7 @@ public abstract class Pesquisador {
      * Verifica se uma string se enquadra nos padroes de url.
      * Inciando com http:// ou https://, seguido de um endereço
      */
-    protected void verificaFoto(String url){
+    private void verificaFoto(String url){
         if (!url.startsWith("http://") & !url.startsWith("https://")){
             throw new IllegalArgumentException("Formato de foto invalido.");
         }else if(url.split("://").length == 1){
@@ -98,11 +117,11 @@ public abstract class Pesquisador {
      * Metodo responsavel por retornar o nome do pesquisador.
      * @return em String o que estiver contido no atributo nome.
      */
-    public String getNome() {
+    private String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    private void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -110,11 +129,11 @@ public abstract class Pesquisador {
      * Metodo responsavel por retornar a biografia do pesquisador.
      * @return em String o que estiver contido no atributo briografia.
      */
-    public String getBiografia() {
+    private String getBiografia() {
         return biografia;
     }
 
-    public void setBiografia(String biografia) {
+    private void setBiografia(String biografia) {
         this.biografia = biografia;
     }
 
@@ -126,7 +145,7 @@ public abstract class Pesquisador {
         return email;
     }
 
-    public void setEmail(String email) {
+    private void setEmail(String email) {
         this.email = email;
     }
 
@@ -134,26 +153,24 @@ public abstract class Pesquisador {
      * Metodo responsavel por retornar a url da foto do pesquisador.
      * @return em String o que estiver contido no atributo fotoURL.
      */
-    public String getFotoURL() {
+    private String getFotoURL() {
         return fotoURL;
     }
 
-    public void setFotoURL(String fotoURL) {
+    private void setFotoURL(String fotoURL) {
         this.fotoURL = fotoURL;
     }
-
-
-    public void especializa() {
-        this.especializado = true;
-    }
-
 
     /**
      * Metodo responsavel por retornar a funcao do pesquisador.
      * @return em String o que estiver contido no atributo funcao.
      */
     public String getFuncao() {
-        return funcao;
+        return funcao.getNome();
+    }
+
+    public void setFuncao(Funcao funcao) {
+        this.funcao = funcao;
     }
 
 
@@ -191,7 +208,8 @@ public abstract class Pesquisador {
      */
     @Override
     public String toString() {
-        return String.format("%s (%s) - %s - %s - %s",getNome(),getFuncao(),getBiografia(),getEmail(),getFotoURL());
+        return String.format("%s (%s) - %s - %s - %s",getNome(),getFuncao().toLowerCase(),getBiografia(),getEmail(),getFotoURL())
+                + funcao.toString();
     }
 
 
