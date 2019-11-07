@@ -19,7 +19,6 @@ public class Pesquisa implements Comparable<Pesquisa>{
 	 */
 	private static Map<String, Integer> idPesquisas = new HashMap<>();
 	/**
-	/**
 	 * Descricao da pesquisa
 	 */
 	private String descricao;
@@ -42,6 +41,8 @@ public class Pesquisa implements Comparable<Pesquisa>{
 	 * Motivo de desativacao da pesquisa
 	 */
 	private String motivo;
+
+	private Problema problema;
 
 	/**
 	 * Constroi uma pesquisa a partir da descricao, campo de interesse
