@@ -21,6 +21,12 @@ public class Verificador {
 		return valor;
 	}
 
+	/**
+	 *
+	 * @param msg a mensagem a ser exibida na excecao.
+	 * @param valor valor o valor a ser verificado.
+	 * @return valor com a verificacao concluida.
+	 */
 	public static int verificaInteiro(String msg, int valor) {
 		if(valor <= 0)
 			throw new IllegalArgumentException(msg);

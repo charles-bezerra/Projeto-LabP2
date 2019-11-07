@@ -1,6 +1,5 @@
 package projetoLP2.controladores;
 
-import easyaccept.EasyAccept;
 import projetoLP2.util.Verificador;
 
 import java.util.ArrayList;
@@ -145,12 +144,7 @@ public class Controle {
     public String busca(String termo) {
 
         Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
-        ArrayList<String> buscaOrdenada = new ArrayList<String>();
-        buscaOrdenada.addAll(pesquisaControle.ordenaPesquisa(termo));
-        buscaOrdenada.addAll(controlePesquisadores.ordenaPesquisador(termo));
-        buscaOrdenada.addAll(problemaObjetivo.ordenaProblema(termo));
-        buscaOrdenada.addAll(problemaObjetivo.ordenaObjetivo(termo));
-        buscaOrdenada.addAll(controleAtividade.ordenaAtividade(termo));
+        ArrayList<String> buscaOrdenada = new ArrayList<String>(buscasOrdenadas(termo));
 
         String retorno = "";
         int contador = 0;
@@ -171,12 +165,7 @@ public class Controle {
         Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
         Verificador.verificaInteiro("Numero do resultado nao pode ser negativo", numeroDoResultado);
 
-        ArrayList<String> buscaOrdenada = new ArrayList<String>();
-        buscaOrdenada.addAll(pesquisaControle.ordenaPesquisa(termo));
-        buscaOrdenada.addAll(controlePesquisadores.ordenaPesquisador(termo));
-        buscaOrdenada.addAll(problemaObjetivo.ordenaProblema(termo));
-        buscaOrdenada.addAll(problemaObjetivo.ordenaObjetivo(termo));
-        buscaOrdenada.addAll(controleAtividade.ordenaAtividade(termo));
+        ArrayList<String> buscaOrdenada = new ArrayList<String>(buscasOrdenadas(termo));
         String retorno = "";
         int contador = 1;
 
@@ -198,12 +187,7 @@ public class Controle {
     }
     public int contaResultadosBusca(String termo) {
         Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
-        ArrayList<String> buscaOrdenada = new ArrayList<String>();
-        buscaOrdenada.addAll(pesquisaControle.ordenaPesquisa(termo));
-        buscaOrdenada.addAll(controlePesquisadores.ordenaPesquisador(termo));
-        buscaOrdenada.addAll(problemaObjetivo.ordenaProblema(termo));
-        buscaOrdenada.addAll(problemaObjetivo.ordenaObjetivo(termo));
-        buscaOrdenada.addAll(controleAtividade.ordenaAtividade(termo));
+        ArrayList<String> buscaOrdenada = new ArrayList<String>(buscasOrdenadas(termo));
         Verificador.verificaInteiro("Nenhum resultado encontrado",buscaOrdenada.size());
 
         return buscaOrdenada.size();
@@ -212,18 +196,16 @@ public class Controle {
     }
 
 
-    public static void main(String[] args){
-        args = new String[] {"projetoLP2.facades.Facade",
-                "testes/aceitacao/use_case_1.txt",
-                "testes/aceitacao/use_case_2.txt",
-                "testes/aceitacao/use_case_3.txt",
-                "testes/aceitacao/use_case_4.txt",
-                "testes/aceitacao/use_case_5.txt",
-                "testes/aceitacao/use_case_6.txt",
-                "testes/aceitacao/use_case_7.txt",
-                "testes/aceitacao/use_case_8.txt"
-        };
-        EasyAccept.main(args);
+    private ArrayList<String> buscasOrdenadas(String termo){
+        Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
+        ArrayList<String> buscaOrdenada = new ArrayList<String>();
+
+        buscaOrdenada.addAll(pesquisaControle.ordenaPesquisa(termo));
+        buscaOrdenada.addAll(controlePesquisadores.ordenaPesquisador(termo));
+        buscaOrdenada.addAll(problemaObjetivo.ordenaProblema(termo));
+        buscaOrdenada.addAll(problemaObjetivo.ordenaObjetivo(termo));
+        buscaOrdenada.addAll(controleAtividade.ordenaAtividade(termo));
+        return buscaOrdenada;
     }
 }
 

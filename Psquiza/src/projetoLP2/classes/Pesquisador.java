@@ -21,7 +21,7 @@ public class Pesquisador implements Comparable<Pesquisador>{
     /**
      * Atributo que representa o email de um pesquisador.
      */
-    private String email; //id
+    private String email;
     /**
      * Atributo que representa a url da foto de um pesquisador.
      */
