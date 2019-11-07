@@ -1,5 +1,7 @@
 package projetoLP2.classes;
 
+import projetoLP2.controladores.Controle;
+import projetoLP2.controladores.ControleObjetivo;
 import projetoLP2.enums.Estado;
 import projetoLP2.util.Verificador;
 
@@ -42,7 +44,7 @@ public class Pesquisa implements Comparable<Pesquisa>{
 	 */
 	private String motivo;
 
-	private Problema problema;
+	private ControleObjetivo objetivos;
 
 	/**
 	 * Constroi uma pesquisa a partir da descricao, campo de interesse
@@ -58,8 +60,15 @@ public class Pesquisa implements Comparable<Pesquisa>{
 		this.descricao = descricao;
 		this.campoDeInteresse = campoDeInteresse;
 		this.cod = geraCodigo(campoDeInteresse);
+
 		estado = Estado.ATIVA;
 		motivo = "";
+
+		this.objetivos = new ControleObjetivo();
+	}
+
+	public ControleObjetivo getObjetivos(String id){
+		return this.objetivos;
 	}
 
 	/**

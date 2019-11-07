@@ -50,8 +50,9 @@ public class ControleProblema {
      */
     public String exibeProblema(String codigo) {
         Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
-        if(!problemas.containsKey(codigo)) { throw new IllegalArgumentException("Problema nao encontrado");
-        } else { return problemas.get(codigo).toString(); }
+        if(!problemas.containsKey(codigo))
+            throw new IllegalArgumentException("Problema nao encontrado");
+        else return problemas.get(codigo).toString();
     }
 
     public ArrayList<String> ordenaProblema(String termo){
@@ -59,14 +60,9 @@ public class ControleProblema {
         Collections.sort(buscasOrdenadas);
         ArrayList<String> retorno = new ArrayList<>();
 
-        for (Problema problema: buscasOrdenadas){
-            if (problema.getDescricao().toLowerCase().contains(termo.toLowerCase())) {
+        for (Problema problema: buscasOrdenadas)
+            if (problema.getDescricao().toLowerCase().contains(termo.toLowerCase()))
                 retorno.add(problema.getId() + ": " + problema.getDescricao());
-
-            }
-
-        }
-
         return retorno;
     }
 }

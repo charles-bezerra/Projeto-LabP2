@@ -40,8 +40,9 @@ public class ControleObjetivo {
      */
     public void apagarObjetivo(String codigo) {
         Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
-        if(!objetivos.containsKey(codigo)) { throw new IllegalArgumentException("Objetivo nao encontrado");
-        } else { objetivos.remove(codigo); }
+        if(!objetivos.containsKey(codigo))
+            throw new IllegalArgumentException("Objetivo nao encontrado");
+        else objetivos.remove(codigo);
     }
 
     /**
@@ -52,8 +53,9 @@ public class ControleObjetivo {
      */
     public String exibeObjetivo(String codigo) {
         Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
-        if(!objetivos.containsKey(codigo)) { throw new IllegalArgumentException("Objetivo nao encontrado");
-        } else { return objetivos.get(codigo).toString(); }
+        if(!objetivos.containsKey(codigo))
+            throw new IllegalArgumentException("Objetivo nao encontrado");
+        else return objetivos.get(codigo).toString();
     }
 
 
@@ -62,12 +64,9 @@ public class ControleObjetivo {
         Collections.sort(buscasOrdenadas);
         ArrayList<String> retorno = new ArrayList<>();
 
-        for (Objetivo objetivo: buscasOrdenadas){
-            if (objetivo.getDescricao().toLowerCase().contains(termo.toLowerCase())) {
+        for (Objetivo objetivo: buscasOrdenadas)
+            if (objetivo.getDescricao().toLowerCase().contains(termo.toLowerCase()))
                 retorno.add(objetivo.getId() + ": " + objetivo.getDescricao());
-            }
-        }
-
         return retorno;
     }
 

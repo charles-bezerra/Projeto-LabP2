@@ -194,8 +194,6 @@ public class Controle {
         Verificador.verificaInteiro("Nenhum resultado encontrado",buscaOrdenada.size());
 
         return buscaOrdenada.size();
-
-
     }
 
 

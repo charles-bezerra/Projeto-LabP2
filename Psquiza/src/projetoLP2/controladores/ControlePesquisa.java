@@ -127,9 +127,8 @@ public class ControlePesquisa {
 	public String exibePesquisa(String codigo) {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
 		
-		if(!pesquisas.containsKey(codigo)) {
+		if(!pesquisas.containsKey(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
-		}
 		return pesquisas.get(codigo).toString();
 	}
 
@@ -151,14 +150,10 @@ public class ControlePesquisa {
 		for (Pesquisa pesquisa: buscasOrdenadas){
 			if (pesquisa.getDescricao().toLowerCase().contains(termo.toLowerCase())) {
 				retorno.add(pesquisa.getCod() + ": " + pesquisa.getDescricao());
-
-
 			}
 			if(pesquisa.getCampoDeInteresse().toLowerCase().contains(termo.toLowerCase())){
                 retorno.add(pesquisa.getCod() + ": " + pesquisa.getCampoDeInteresse());
-
 			}
-
 		}
 
 		return retorno;
