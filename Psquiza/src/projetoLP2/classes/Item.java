@@ -8,14 +8,29 @@ import projetoLP2.util.Verificador;
  * @author Charles Bezerra de Oliveira Júnior
  */
 public class Item {
+    /**
+     * Nome do item
+     */
     private String item;
+    /**
+     * Status do item REALIZADO|PENDENTE
+     */
     private Status status;
 
+    /**
+     * Constroi com status padrao como PENDENTE
+     * @param nome nome do item
+     */
     public Item(String nome){
         this.item = Verificador.verificaString("Item nao pode ser nulo ou vazio.", nome);
         this.status = Status.PENDENTE;
     }
 
+    /**
+     * Constroi o objeto recebendo como parametro nome do item e status do item(String)
+     * @param nome String c
+     * @param status
+     */
     public Item(String nome, String status) {
         this.item = Verificador.verificaString("Item nao pode ser nulo ou vazio.", nome);
         Verificador.verificaString("Campo status nao pode ser nulo ou vazio.", status);

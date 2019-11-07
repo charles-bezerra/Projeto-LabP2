@@ -1,9 +1,6 @@
 package unidade.controladores;
 
 import org.junit.jupiter.api.BeforeEach;
-import projetoLP2.classes.Problema;
-import projetoLP2.controladores.ControleProblemaObjetivo;
-import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
