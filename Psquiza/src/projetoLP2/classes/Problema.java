@@ -7,7 +7,7 @@ import projetoLP2.util.Verificador;
  * 
  * @author Lucas Alves Vigolvino
  */
-public class Problema {
+public class Problema implements Comparable<Problema>{
 	/**
 	 * Descricao e id do problema.
 	 */
@@ -42,6 +42,11 @@ public class Problema {
 	 * @return o id do problema
 	 */
 	public String getId() { return id; }
+
+	public String getDescricao() {
+		return descricao;
+	}
+
 	/**
 	 * Retorna a representacao em String de um problema.
 	 * 
@@ -49,4 +54,9 @@ public class Problema {
 	 */
 	@Override
 	public String toString() { return id + " - " + descricao + " - " + viabilidade; }
+
+	@Override
+	public int compareTo(Problema o) {
+		return o.getId().compareTo(this.getId());
+	}
 }

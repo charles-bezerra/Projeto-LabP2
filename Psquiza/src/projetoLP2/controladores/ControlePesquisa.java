@@ -3,6 +3,8 @@ package projetoLP2.controladores;
 import projetoLP2.classes.Pesquisa;
 import projetoLP2.util.Verificador;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 /**
@@ -135,5 +137,27 @@ public class ControlePesquisa {
 	public Map<String,Pesquisa> getPesquisas(){
 		return pesquisas;
 	}
-	
+
+	public ArrayList<String> ordenaPesquisa(String termo){
+		ArrayList<Pesquisa> buscasOrdenadas = new ArrayList<Pesquisa>(pesquisas.values());
+		Collections.sort(buscasOrdenadas);
+		ArrayList<String> retorno = new ArrayList<>();
+
+		for (Pesquisa pesquisa: buscasOrdenadas){
+			if (pesquisa.getDescricao().toLowerCase().contains(termo.toLowerCase())) {
+				retorno.add(pesquisa.getCod() + ": " + pesquisa.getDescricao());
+
+
+			}
+			if(pesquisa.getCampoDeInteresse().toLowerCase().contains(termo.toLowerCase())){
+                retorno.add(pesquisa.getCod() + ": " + pesquisa.getCampoDeInteresse());
+
+			}
+
+		}
+
+		return retorno;
+	}
+
+
 }

@@ -16,7 +16,7 @@ import java.util.List;
  * @author Charles Bezerra de Oliveira Júnior
  */
 
-public class Atividade {
+public class Atividade implements Comparable<Atividade>{
     /**
      * Contador que auxilia na geracao do codigo da atividade
      */
@@ -153,6 +153,15 @@ public class Atividade {
 
     public int getDuracao() {return duracao;}
 
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public String getDescricaoRisco() {
+        return descricaoRisco;
+    }
+
     @Override
     public String toString(){
         StringBuilder texto = new StringBuilder(
@@ -181,4 +190,10 @@ public class Atividade {
     public int hashCode() {
         return Objects.hash(codigo);
     }
+
+    @Override
+    public int compareTo(Atividade o) {
+        return o.getCodigo().compareTo(this.getCodigo());
+    }
+
 }

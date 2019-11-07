@@ -8,7 +8,7 @@ import projetoLP2.util.Verificador;
  * 
  * @author Lucas Alves Vigolvino
  */
-public class Objetivo {
+public class Objetivo implements Comparable<Objetivo>{
 	/**
 	 * Descricao e id do objetivo.
 	 */
@@ -43,10 +43,10 @@ public class Objetivo {
 			this.viabilidade = viabilidade;
 			this.id = "O" + count;
 			switch(tipo) {
-				case "GERAL":
+				case "GERAL":{
 					this.tipo = Tipo.GERAL;
-					break;
-				case "ESPECIFICO": this.tipo = Tipo.ESPECIFICO;break;
+					break; }
+				case "ESPECIFICO":{ this.tipo = Tipo.ESPECIFICO; break; }
 				default: throw new IllegalArgumentException("Valor invalido de tipo.");
 			}
 			count ++;
@@ -59,6 +59,11 @@ public class Objetivo {
 	 * @return o id do objetivo
 	 */
 	public String getId() { return id; }
+
+	public String getDescricao() {
+		return descricao;
+	}
+
 	/**
 	 * Retorna a representacao em String de um objetivo.
 	 * 
@@ -66,4 +71,10 @@ public class Objetivo {
 	 */
 	@Override
 	public String toString() { return id + " - " + tipo + " - " + descricao + " - " + (aderencia + viabilidade); }
+
+	@Override
+	public int compareTo(Objetivo o) {
+		return o.getId().compareTo(this.getId());
+	}
+
 }

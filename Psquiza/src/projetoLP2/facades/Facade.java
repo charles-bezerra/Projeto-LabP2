@@ -5,137 +5,138 @@ import easyaccept.EasyAccept;
 import projetoLP2.controladores.*;
 
 public class Facade {
-    private ControleProblemaObjetivo problemaObjetivo;
-    private ControlePesquisa pesquisaControle;
-    private ControleAtividade controleAtividade;
-    private ControlePesquisador controlePesquisadores;
-    private ControlePesquisaPesquisador controlePesquisaPesquisador;
+    private Controle controle;
 
     public Facade() {
-        this.problemaObjetivo = new ControleProblemaObjetivo();
-        this.pesquisaControle = new ControlePesquisa();
-        this.controleAtividade = new ControleAtividade();
-        this.controlePesquisadores = new ControlePesquisador();
-        this.controlePesquisaPesquisador = new ControlePesquisaPesquisador(
-                pesquisaControle.getPesquisas(),
-                controlePesquisadores.getPesquisadores());
-    }
+        this.controle = new Controle();
 
+    }
     public String cadastraPesquisa(String descricao, String campoDeInteresse) {
-        return pesquisaControle.cadastraPesquisa(descricao, campoDeInteresse);
+        return controle.cadastraPesquisa(descricao, campoDeInteresse);
     }
 
     public void alteraPesquisa(String codigo, String conteudoASerAlterado, String novoConteudo) {
-        pesquisaControle.alteraPesquisa(codigo, conteudoASerAlterado, novoConteudo);
+        controle.alteraPesquisa(codigo, conteudoASerAlterado, novoConteudo);
     }
 
     public void encerraPesquisa(String codigo, String motivo) {
-        pesquisaControle.encerraPesquisa(codigo, motivo);
+        controle.encerraPesquisa(codigo, motivo);
     }
 
     public void ativaPesquisa(String codigo) {
-        pesquisaControle.ativaPesquisa(codigo);
+        controle.ativaPesquisa(codigo);
     }
 
     public boolean pesquisaEhAtiva(String codigo) {
-        return pesquisaControle.pesquisaEhAtiva(codigo);
+        return controle.pesquisaEhAtiva(codigo);
     }
 
     public String exibePesquisa(String codigo) {
-        return pesquisaControle.exibePesquisa(codigo);
+        return controle.exibePesquisa(codigo);
     }
 
     public void cadastraPesquisador(String nome, String funcao, String biografia, String email, String fotoURL){
-        controlePesquisadores.cadastraPesquisador(nome, funcao, biografia, email, fotoURL);
+        controle.cadastraPesquisador(nome, funcao, biografia, email, fotoURL);
     }
 
     public void cadastraEspecialidadeProfessor(String email, String formacao, String unidade, String data){
-        controlePesquisadores.cadastraEspecialidadeProfessor(email, formacao, unidade, data);
+        controle.cadastraEspecialidadeProfessor(email, formacao, unidade, data);
     }
 
     public void cadastraEspecialidadeAluno(String email, String semestre, String IEA){
-        controlePesquisadores.cadastraEspecialidadeAluno(email, semestre, IEA);
+        controle.cadastraEspecialidadeAluno(email, semestre, IEA);
     }
 
     public void alteraPesquisador(String email, String atributo, String novoValor){
-        controlePesquisadores.alteraPesquisador(email, atributo, novoValor);
+        controle.alteraPesquisador(email, atributo, novoValor);
     }
 
     public void desativaPesquisador(String email){
-        controlePesquisadores.desativaPesquisador(email);
+        controle.desativaPesquisador(email);
     }
 
     public void ativaPesquisador(String email){
-        controlePesquisadores.ativaPesquisador(email);
+        controle.ativaPesquisador(email);
     }
 
     public String exibePesquisador(String email){
-        return controlePesquisadores.exibePesquisador(email);
+        return controle.exibePesquisador(email);
     }
 
     public boolean pesquisadorEhAtivo(String email){
-        return controlePesquisadores.pesquisadorEhAtivo(email);
+        return controle.pesquisadorEhAtivo(email);
     }
 
-    public String listaPesquisadores(String tipo){ return controlePesquisadores.listaPesquisadores(tipo); }
+    public String controle(String tipo){ return controle.listaPesquisadores(tipo); }
 
     public String cadastraProblema(String descricao, int viabilidade) {
-        return problemaObjetivo.cadastraProblema(descricao, viabilidade);
+        return controle.cadastraProblema(descricao, viabilidade);
     }
 
     public String cadastraObjetivo(String tipo, String descricao, int aderencia, int viabilidade) {
-        return problemaObjetivo.cadastraObjetivo(tipo, descricao, aderencia, viabilidade);
+        return controle.cadastraObjetivo(tipo, descricao, aderencia, viabilidade);
     }
 
     public void apagarProblema(String codigo) {
-        problemaObjetivo.apagarProblema(codigo);
+        controle.apagarProblema(codigo);
     }
 
     public void apagarObjetivo(String codigo) {
-        problemaObjetivo.apagarObjetivo(codigo);
+        controle.apagarObjetivo(codigo);
     }
 
     public String exibeProblema(String codigo) {
-        return problemaObjetivo.exibeProblema(codigo);
+        return controle.exibeProblema(codigo);
     }
 
     public String exibeObjetivo(String codigo) {
-        return problemaObjetivo.exibeObjetivo(codigo);
+        return controle.exibeObjetivo(codigo);
     }
 
 
     public String cadastraAtividade(String descricao, String nivelRisco, String descricaoRisco){
-        return this.controleAtividade.cadastraAtividade(descricao, nivelRisco, descricaoRisco);
+        return this.controle.cadastraAtividade(descricao, nivelRisco, descricaoRisco);
     }
 
     public void apagaAtividade(String codigo){
-        this.controleAtividade.apagaAtividade(codigo);
+        this.controle.apagaAtividade(codigo);
     }
 
     public void cadastraItem(String codigo, String item){
-        this.controleAtividade.cadastraItem(codigo, item);
+        this.controle.cadastraItem(codigo, item);
     }
 
     public String exibeAtividade(String codigo){
-        return this.controleAtividade.exibeAtividade(codigo);
+        return this.controle.exibeAtividade(codigo);
     }
 
     public int contaItensPendentes(String codigo){
-        return this.controleAtividade.contaItensPendentes(codigo);
+        return this.controle.contaItensPendentes(codigo);
     }
 
     public int contaItensRealizados(String codigo){
-        return this.controleAtividade.contaItensRealizados(codigo);
+        return this.controle.contaItensRealizados(codigo);
     }
 
     public boolean associaPesquisador(String idPesquisa, String emailPesquisador){
-        return controlePesquisaPesquisador.associaPesquisador(idPesquisa, emailPesquisador);
+        return controle.associaPesquisador(idPesquisa, emailPesquisador);
     }
 
     public boolean desassociaPesquisador(String idPesquisa, String emailPesquisador){
-        return controlePesquisaPesquisador.desassociaPesquisador(idPesquisa, emailPesquisador);
+        return controle.desassociaPesquisador(idPesquisa, emailPesquisador);
     }
 
+    public String busca(String termo){
+        return this.controle.busca(termo);
+    }
+
+    public String busca(String termo, int numeroDoResultado){
+        return this.controle.busca(termo, numeroDoResultado);
+    }
+
+    public int contaResultadosBusca(String termo){
+        return this.controle.contaResultadosBusca(termo);
+    }
     public static void main(String[] args){
         args = new String[] {"projetoLP2.facades.Facade",
                 "testes/aceitacao/use_case_1.txt",

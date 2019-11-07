@@ -11,7 +11,7 @@ import java.util.Objects;
  * Classe que representa uma pesquisa
  * @author Iago Henrique de Souza Silva
  */
-public class Pesquisa {
+public class Pesquisa implements Comparable<Pesquisa>{
 	/**
 	 * O mapa de codigos das pesquisas e o numero de vezes em que cada um foi usado.
 	 * A chave representa uma combinacao de tres letras e o valor o numero de vezes em
@@ -145,6 +145,14 @@ public class Pesquisa {
 		return cod;
 	}
 
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public String getCampoDeInteresse() {
+		return campoDeInteresse;
+	}
+
 	/**
 	 * Altera o estado da pesquisa para ATIVA
 	 */
@@ -202,5 +210,11 @@ public class Pesquisa {
 	public int hashCode() {
 		return Objects.hash(getCod());
 	}
+
+	@Override
+	public int compareTo(Pesquisa o) {
+		return o.getCod().compareTo(this.getCod());
+	}
+
 
 }

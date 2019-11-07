@@ -3,6 +3,8 @@ package projetoLP2.controladores;
 import projetoLP2.classes.Atividade;
 import projetoLP2.util.Verificador;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -57,4 +59,26 @@ public class ControleAtividade {
             throw new IllegalArgumentException("Atividade nao encontrada");
         return this.atividades.get(codigo).contaItensRealizados();
     }
+
+    public ArrayList<String> ordenaAtividade(String termo) {
+        ArrayList<Atividade> buscasOrdenadas = new ArrayList<Atividade>(atividades.values());
+        Collections.sort(buscasOrdenadas);
+        ArrayList<String> retorno = new ArrayList<>();
+        int contador = 0;
+
+        for (Atividade atividade : buscasOrdenadas) {
+            if (atividade.getDescricao().toLowerCase().contains(termo.toLowerCase())) {
+                retorno.add(atividade.getCodigo() + ": " + atividade.getDescricao());
+
+            }
+            if (atividade.getDescricaoRisco().toLowerCase().contains(termo.toLowerCase())) {
+                retorno.add(atividade.getCodigo() + ": " + atividade.getDescricaoRisco());
+
+            }
+
+        }
+        return retorno;
+
+    }
+
 }

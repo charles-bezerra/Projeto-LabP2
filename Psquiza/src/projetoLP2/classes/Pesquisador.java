@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * Classe responsavel por representar um pesquisador e guardar seus dados.
  */
-public class Pesquisador {
+public class Pesquisador implements Comparable<Pesquisador>{
     /**
      * Atributo que representa o nome de um pesquisador.
      */
@@ -129,7 +129,7 @@ public class Pesquisador {
      * Metodo responsavel por retornar a biografia do pesquisador.
      * @return em String o que estiver contido no atributo briografia.
      */
-    private String getBiografia() {
+    public String getBiografia() {
         return biografia;
     }
 
@@ -238,4 +238,10 @@ public class Pesquisador {
     public int hashCode() {
         return Objects.hash(getEmail());
     }
+
+    @Override
+    public int compareTo(Pesquisador o) {
+        return o.getEmail().compareTo(this.getEmail());
+    }
+
 }

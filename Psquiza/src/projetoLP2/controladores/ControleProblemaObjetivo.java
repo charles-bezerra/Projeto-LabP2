@@ -4,6 +4,8 @@ import projetoLP2.classes.Objetivo;
 import projetoLP2.classes.Problema;
 import projetoLP2.util.Verificador;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 /**
@@ -88,4 +90,35 @@ public class ControleProblemaObjetivo {
 		if(!objetivos.containsKey(codigo)) { throw new IllegalArgumentException("Objetivo nao encontrado");
 		} else { return objetivos.get(codigo).toString(); }
 	}
+
+	public ArrayList<String> ordenaProblema(String termo){
+		ArrayList<Problema> buscasOrdenadas = new ArrayList<Problema>(this.problemas.values());
+		Collections.sort(buscasOrdenadas);
+		ArrayList<String> retorno = new ArrayList<>();
+
+		for (Problema problema: buscasOrdenadas){
+			if (problema.getDescricao().toLowerCase().contains(termo.toLowerCase())) {
+				retorno.add(problema.getId() + ": " + problema.getDescricao());
+
+			}
+
+		}
+
+		return retorno;
+	}
+
+	public ArrayList<String> ordenaObjetivo(String termo){
+		ArrayList<Objetivo> buscasOrdenadas = new ArrayList<Objetivo>(this.objetivos.values());
+		Collections.sort(buscasOrdenadas);
+		ArrayList<String> retorno = new ArrayList<>();
+
+		for (Objetivo objetivo: buscasOrdenadas){
+			if (objetivo.getDescricao().toLowerCase().contains(termo.toLowerCase())) {
+				retorno.add(objetivo.getId() + ": " + objetivo.getDescricao());
+			}
+		}
+
+		return retorno;
+	}
+
 }

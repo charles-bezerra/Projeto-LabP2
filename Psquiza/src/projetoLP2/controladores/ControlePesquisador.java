@@ -5,6 +5,8 @@ import projetoLP2.classes.*;
 import projetoLP2.enums.TipoFuncao;
 import projetoLP2.util.Verificador;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -218,6 +220,23 @@ public class ControlePesquisador {
 
     public Map<String,Pesquisador> getPesquisadores(){
         return pesquisadores;
+    }
+
+
+    public ArrayList<String> ordenaPesquisador(String termo){
+        ArrayList<Pesquisador> buscasOrdenadas = new ArrayList<Pesquisador>(pesquisadores.values());
+        Collections.sort(buscasOrdenadas);
+        ArrayList<String> retorno = new ArrayList<>();
+
+        for (Pesquisador pesquisador: buscasOrdenadas){
+            if (pesquisador.getBiografia().toLowerCase().contains(termo.toLowerCase())) {
+                retorno.add(pesquisador.getEmail() + ": " + pesquisador.getBiografia());
+
+            }
+
+        }
+
+        return retorno;
     }
 
 }
