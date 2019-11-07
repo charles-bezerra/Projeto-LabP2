@@ -1,4 +1,4 @@
-package projetoLP2.classes;
+package projetoLP2.Interfaces;
 
 public interface Funcao {
     void alteraEspecialidade(String atributo, String novoValor);

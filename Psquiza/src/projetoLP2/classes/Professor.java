@@ -1,5 +1,6 @@
 package projetoLP2.classes;
 
+import projetoLP2.Interfaces.Funcao;
 import projetoLP2.enums.TipoFuncao;
 import projetoLP2.util.Verificador;
 

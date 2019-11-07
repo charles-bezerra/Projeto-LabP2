@@ -1,5 +1,6 @@
 package projetoLP2.classes;
 
+import projetoLP2.Interfaces.Funcao;
 import projetoLP2.util.Verificador;
 
 import java.util.Objects;
@@ -45,7 +46,6 @@ public class Pesquisador {
     public Pesquisador(String nome, Funcao funcao, String biografia, String email, String fotoURL) {
         Verificador.verificaString("Campo nome nao pode ser nulo ou vazio.", nome);
         Verificador.verificaString("Campo biografia nao pode ser nulo ou vazio.", biografia);
-        Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
         Verificador.verificaString("Campo fotoURL nao pode ser nulo ou vazio.", fotoURL);
 

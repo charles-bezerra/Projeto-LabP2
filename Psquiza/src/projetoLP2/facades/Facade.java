@@ -2,22 +2,23 @@ package projetoLP2.facades;
 
 import easyaccept.EasyAccept;
 
-import projetoLP2.controladores.ControleAtividade;
-import projetoLP2.controladores.ControlePesquisa;
-import projetoLP2.controladores.ControlePesquisador;
-import projetoLP2.controladores.ControleProblemaObjetivo;
+import projetoLP2.controladores.*;
 
 public class Facade {
     private ControleProblemaObjetivo problemaObjetivo;
     private ControlePesquisa pesquisaControle;
     private ControleAtividade controleAtividade;
     private ControlePesquisador controlePesquisadores;
+    private ControlePesquisaPesquisador controlePesquisaPesquisador;
 
     public Facade() {
         this.problemaObjetivo = new ControleProblemaObjetivo();
         this.pesquisaControle = new ControlePesquisa();
         this.controleAtividade = new ControleAtividade();
         this.controlePesquisadores = new ControlePesquisador();
+        this.controlePesquisaPesquisador = new ControlePesquisaPesquisador(
+                pesquisaControle.getPesquisas(),
+                controlePesquisadores.getPesquisadores());
     }
 
     public String cadastraPesquisa(String descricao, String campoDeInteresse) {
@@ -125,6 +126,14 @@ public class Facade {
 
     public int contaItensRealizados(String codigo){
         return this.controleAtividade.contaItensRealizados(codigo);
+    }
+
+    public boolean associaPesquisador(String idPesquisa, String emailPesquisador){
+        return controlePesquisaPesquisador.associaPesquisador(idPesquisa, emailPesquisador);
+    }
+
+    public boolean desassociaPesquisador(String idPesquisa, String emailPesquisador){
+        return controlePesquisaPesquisador.desassociaPesquisador(idPesquisa, emailPesquisador);
     }
 
     public static void main(String[] args){

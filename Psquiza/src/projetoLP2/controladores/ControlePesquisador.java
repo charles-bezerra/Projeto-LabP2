@@ -1,10 +1,12 @@
 package projetoLP2.controladores;
 
+import projetoLP2.Interfaces.Funcao;
 import projetoLP2.classes.*;
 import projetoLP2.enums.TipoFuncao;
 import projetoLP2.util.Verificador;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Classe responsavel por representar um controle que admnistra pesquisadores.
@@ -14,7 +16,7 @@ public class ControlePesquisador {
      * Atributo que representa um Mapa contendo tipo String e tipo Pesquisador.
      * O tipo String é o email do pesquisador, que serve como identificador.
      */
-    private HashMap<String, Pesquisador> pesquisadores;
+    private Map<String, Pesquisador> pesquisadores;
 
     /**
      * Constroi o HahsMap pesquisadores.
@@ -211,6 +213,11 @@ public class ControlePesquisador {
             saida = saida.substring(0,saida.length() - 3 );
         }
         return saida;
+    }
+
+
+    public Map<String,Pesquisador> getPesquisadores(){
+        return pesquisadores;
     }
 
 }

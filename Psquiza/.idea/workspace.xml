@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86df162d-84f7-4fcc-ac6b-a38339900652" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ae02e91b-2103-44c1-9662-530b87684b46" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Aluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Externo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Externo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/Interfaces/Funcao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/PesquisadorAluno.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/PesquisadorExterno.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/PesquisadorProfessor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Professor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,11 +18,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1TGPHf0zeftJ2W0Ky31WsHUXqvh" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1TGgcMv96dNJh6Kbzhrwwt3w76Z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -64,12 +73,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="86df162d-84f7-4fcc-ac6b-a38339900652" name="Default Changelist" comment="" />
-      <created>1573083372528</created>
+      <changelist id="ae02e91b-2103-44c1-9662-530b87684b46" name="Default Changelist" comment="" />
+      <created>1573091924704</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573083372528</updated>
-      <workItem from="1573083379013" duration="46000" />
+      <updated>1573091924704</updated>
+      <workItem from="1573091931045" duration="2250000" />
     </task>
     <servers />
   </component>

@@ -130,5 +130,10 @@ public class ControlePesquisa {
 		}
 		return pesquisas.get(codigo).toString();
 	}
+
+
+	public Map<String,Pesquisa> getPesquisas(){
+		return pesquisas;
+	}
 	
 }

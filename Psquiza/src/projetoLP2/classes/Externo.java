@@ -1,8 +1,9 @@
 package projetoLP2.classes;
 
+import projetoLP2.Interfaces.Funcao;
 import projetoLP2.enums.TipoFuncao;
 
-public class Externo implements  Funcao {
+public class Externo implements Funcao {
     private TipoFuncao nome;
 
     public Externo(){
