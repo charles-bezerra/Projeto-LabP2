@@ -138,6 +138,11 @@ public class ControlePesquisa {
 		return pesquisas;
 	}
 
+	/**
+	 * Metodo responsavel por
+	 * @param termo o termo a ser buscado
+	 * @return
+	 */
 	public ArrayList<String> ordenaPesquisa(String termo){
 		ArrayList<Pesquisa> buscasOrdenadas = new ArrayList<Pesquisa>(pesquisas.values());
 		Collections.sort(buscasOrdenadas);

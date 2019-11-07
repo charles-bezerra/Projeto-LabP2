@@ -1,6 +1,5 @@
 package projetoLP2.controladores;
 
-import easyaccept.EasyAccept;
 import projetoLP2.util.Verificador;
 
 import java.util.ArrayList;
@@ -11,44 +10,47 @@ import java.util.ArrayList;
  */
 
 public class Controle {
-    private ControleProblemaObjetivo problemaObjetivo;
-    private ControlePesquisa pesquisaControle;
+    private ControleProblema controleProblema;
+    private ControleObjetivo controleObjetivo;
+    private ControlePesquisa controlePesquisa;
     private ControleAtividade controleAtividade;
     private ControlePesquisador controlePesquisadores;
     private ControlePesquisaPesquisador controlePesquisaPesquisador;
 
     public Controle() {
-        this.problemaObjetivo = new ControleProblemaObjetivo();
-        this.pesquisaControle = new ControlePesquisa();
+        this.controleProblema = new ControleProblema();
+        this.controleObjetivo = new ControleObjetivo();
+        this.controlePesquisa = new ControlePesquisa();
         this.controleAtividade = new ControleAtividade();
         this.controlePesquisadores = new ControlePesquisador();
         this.controlePesquisaPesquisador = new ControlePesquisaPesquisador(
-                pesquisaControle.getPesquisas(),
-                controlePesquisadores.getPesquisadores());
+                controlePesquisa.getPesquisas(),
+                controlePesquisadores.getPesquisadores()
+        );
     }
 
     public String cadastraPesquisa(String descricao, String campoDeInteresse) {
-        return pesquisaControle.cadastraPesquisa(descricao, campoDeInteresse);
+        return controlePesquisa.cadastraPesquisa(descricao, campoDeInteresse);
     }
 
     public void alteraPesquisa(String codigo, String conteudoASerAlterado, String novoConteudo) {
-        pesquisaControle.alteraPesquisa(codigo, conteudoASerAlterado, novoConteudo);
+        controlePesquisa.alteraPesquisa(codigo, conteudoASerAlterado, novoConteudo);
     }
 
     public void encerraPesquisa(String codigo, String motivo) {
-        pesquisaControle.encerraPesquisa(codigo, motivo);
+        controlePesquisa.encerraPesquisa(codigo, motivo);
     }
 
     public void ativaPesquisa(String codigo) {
-        pesquisaControle.ativaPesquisa(codigo);
+        controlePesquisa.ativaPesquisa(codigo);
     }
 
     public boolean pesquisaEhAtiva(String codigo) {
-        return pesquisaControle.pesquisaEhAtiva(codigo);
+        return controlePesquisa.pesquisaEhAtiva(codigo);
     }
 
     public String exibePesquisa(String codigo) {
-        return pesquisaControle.exibePesquisa(codigo);
+        return controlePesquisa.exibePesquisa(codigo);
     }
 
     public void cadastraPesquisador(String nome, String funcao, String biografia, String email, String fotoURL){
@@ -86,27 +88,27 @@ public class Controle {
     public String listaPesquisadores(String tipo){ return controlePesquisadores.listaPesquisadores(tipo); }
 
     public String cadastraProblema(String descricao, int viabilidade) {
-        return problemaObjetivo.cadastraProblema(descricao, viabilidade);
+        return controleProblema.cadastraProblema(descricao, viabilidade);
     }
 
     public String cadastraObjetivo(String tipo, String descricao, int aderencia, int viabilidade) {
-        return problemaObjetivo.cadastraObjetivo(tipo, descricao, aderencia, viabilidade);
+        return controleObjetivo.cadastraObjetivo(tipo, descricao, aderencia, viabilidade);
     }
 
     public void apagarProblema(String codigo) {
-        problemaObjetivo.apagarProblema(codigo);
+        controleProblema.apagarProblema(codigo);
     }
 
     public void apagarObjetivo(String codigo) {
-        problemaObjetivo.apagarObjetivo(codigo);
+        controleObjetivo.apagarObjetivo(codigo);
     }
 
     public String exibeProblema(String codigo) {
-        return problemaObjetivo.exibeProblema(codigo);
+        return controleProblema.exibeProblema(codigo);
     }
 
     public String exibeObjetivo(String codigo) {
-        return problemaObjetivo.exibeObjetivo(codigo);
+        return controleObjetivo.exibeObjetivo(codigo);
     }
 
 
@@ -145,12 +147,7 @@ public class Controle {
     public String busca(String termo) {
 
         Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
-        ArrayList<String> buscaOrdenada = new ArrayList<String>();
-        buscaOrdenada.addAll(pesquisaControle.ordenaPesquisa(termo));
-        buscaOrdenada.addAll(controlePesquisadores.ordenaPesquisador(termo));
-        buscaOrdenada.addAll(problemaObjetivo.ordenaProblema(termo));
-        buscaOrdenada.addAll(problemaObjetivo.ordenaObjetivo(termo));
-        buscaOrdenada.addAll(controleAtividade.ordenaAtividade(termo));
+        ArrayList<String> buscaOrdenada = new ArrayList<String>(buscasOrdenadas(termo));
 
         String retorno = "";
         int contador = 0;
@@ -171,12 +168,7 @@ public class Controle {
         Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
         Verificador.verificaInteiro("Numero do resultado nao pode ser negativo", numeroDoResultado);
 
-        ArrayList<String> buscaOrdenada = new ArrayList<String>();
-        buscaOrdenada.addAll(pesquisaControle.ordenaPesquisa(termo));
-        buscaOrdenada.addAll(controlePesquisadores.ordenaPesquisador(termo));
-        buscaOrdenada.addAll(problemaObjetivo.ordenaProblema(termo));
-        buscaOrdenada.addAll(problemaObjetivo.ordenaObjetivo(termo));
-        buscaOrdenada.addAll(controleAtividade.ordenaAtividade(termo));
+        ArrayList<String> buscaOrdenada = new ArrayList<String>(buscasOrdenadas(termo));
         String retorno = "";
         int contador = 1;
 
@@ -198,12 +190,7 @@ public class Controle {
     }
     public int contaResultadosBusca(String termo) {
         Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
-        ArrayList<String> buscaOrdenada = new ArrayList<String>();
-        buscaOrdenada.addAll(pesquisaControle.ordenaPesquisa(termo));
-        buscaOrdenada.addAll(controlePesquisadores.ordenaPesquisador(termo));
-        buscaOrdenada.addAll(problemaObjetivo.ordenaProblema(termo));
-        buscaOrdenada.addAll(problemaObjetivo.ordenaObjetivo(termo));
-        buscaOrdenada.addAll(controleAtividade.ordenaAtividade(termo));
+        ArrayList<String> buscaOrdenada = new ArrayList<String>(buscasOrdenadas(termo));
         Verificador.verificaInteiro("Nenhum resultado encontrado",buscaOrdenada.size());
 
         return buscaOrdenada.size();
@@ -212,18 +199,16 @@ public class Controle {
     }
 
 
-    public static void main(String[] args){
-        args = new String[] {"projetoLP2.facades.Facade",
-                "testes/aceitacao/use_case_1.txt",
-                "testes/aceitacao/use_case_2.txt",
-                "testes/aceitacao/use_case_3.txt",
-                "testes/aceitacao/use_case_4.txt",
-                "testes/aceitacao/use_case_5.txt",
-                "testes/aceitacao/use_case_6.txt",
-                "testes/aceitacao/use_case_7.txt",
-                "testes/aceitacao/use_case_8.txt"
-        };
-        EasyAccept.main(args);
+    private ArrayList<String> buscasOrdenadas(String termo){
+        Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
+        ArrayList<String> buscaOrdenada = new ArrayList<String>();
+
+        buscaOrdenada.addAll(controlePesquisa.ordenaPesquisa(termo));
+        buscaOrdenada.addAll(controlePesquisadores.ordenaPesquisador(termo));
+        buscaOrdenada.addAll(controleProblema.ordenaProblema(termo));
+        buscaOrdenada.addAll(controleObjetivo.ordenaObjetivo(termo));
+        buscaOrdenada.addAll(controleAtividade.ordenaAtividade(termo));
+        return buscaOrdenada;
     }
 }
 
