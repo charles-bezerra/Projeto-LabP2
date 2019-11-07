@@ -1,28 +1,11 @@
 package projetoLP2.classes.Funcoes;
 
-import projetoLP2.Interfaces.Funcao;
 import projetoLP2.enums.TipoFuncao;
 
-public class AlunoSemEspecialidades implements Funcao {
-    private TipoFuncao nome;
-
+public class AlunoSemEspecialidades extends FuncaoSemEspecialidade {
     public AlunoSemEspecialidades(){
-        nome = TipoFuncao.ESTUDANTE;
-    }
-
-    @Override
-    public void alteraEspecialidade(String atributo, String novoValor) {
-        throw new IllegalArgumentException("Nao e possivel alterar esse valor de pesquisa.");
-    }
-
-    @Override
-    public String getNome() {
-        return nome.getFuncao();
+        super(TipoFuncao.ESTUDANTE);
     }
 
 
-    @Override
-    public String toString() {
-            return "";
-    }
 }
