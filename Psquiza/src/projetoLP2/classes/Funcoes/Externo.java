@@ -1,4 +1,4 @@
-package projetoLP2.classes;
+package projetoLP2.classes.Funcoes;
 
 import projetoLP2.Interfaces.Funcao;
 import projetoLP2.enums.TipoFuncao;
