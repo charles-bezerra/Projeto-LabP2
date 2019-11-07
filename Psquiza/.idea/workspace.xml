@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <list default="true" id="d4df9600-9b62-453c-9d50-36ca33f82c38" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/unidade/controladores/ControleProblemaObjetivoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/unidade/controladores/ControleProblemaObjetivoTest.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+=======
+    <list default="true" id="ae02e91b-2103-44c1-9662-530b87684b46" name="Default Changelist" comment="" />
+>>>>>>> ee15c97f4fbfb300c4e8ee27934027e9df0de6af
+=======
     <list default="true" id="ae02e91b-2103-44c1-9662-530b87684b46" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+>>>>>>> faaf4205855296130762e687169225dc32987777
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,35 +24,31 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="36430963">
+    <session id="-203826197">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.9" value="1" />
+          <entry key="project.open.time.0" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="1" />
-          <entry key="java" value="34" />
-          <entry key="txt" value="2" />
+          <entry key="java" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="34" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="JAVA" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1108" />
+          <entry key="java" value="363" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1108" />
+          <entry key="JAVA" value="363" />
         </counts>
       </usages-collector>
     </session>
@@ -75,6 +84,20 @@
     </session>
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Item.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+              <folding>
+                <element signature="e#1257#1258#0" expanded="true" />
+                <element signature="e#1291#1292#0" expanded="true" />
+                <element signature="e#1336#1337#0" expanded="true" />
+                <element signature="e#1401#1402#0" expanded="true" />
+              </folding>
+=======
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java">
@@ -115,6 +138,19 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+>>>>>>> ee15c97f4fbfb300c4e8ee27934027e9df0de6af
+            </state>
+          </provider>
+        </entry>
+      </file>
+=======
+>>>>>>> faaf4205855296130762e687169225dc32987777
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -124,17 +160,20 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>ordenaObjetivo</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/src/projetoLP2/classes/Objetivo.java" />
+        <option value="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" />
+        <option value="$PROJECT_DIR$/src/projetoLP2/controladores/ControleObjetivo.java" />
+        <option value="$PROJECT_DIR$/src/projetoLP2/controladores/ControleProblema.java" />
+        <option value="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" />
+        <option value="$PROJECT_DIR$/src/projetoLP2/classes/Item.java" />
+=======
         <option value="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisaPesquisador.java" />
         <option value="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" />
         <option value="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" />
@@ -147,28 +186,32 @@
         <option value="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" />
         <option value="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" />
         <option value="$PROJECT_DIR$/src/projetoLP2/util/Verificador.java" />
+<<<<<<< HEAD
+>>>>>>> ee15c97f4fbfb300c4e8ee27934027e9df0de6af
+=======
         <option value="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" />
         <option value="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java" />
+>>>>>>> faaf4205855296130762e687169225dc32987777
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="194" />
-    <option name="y" value="118" />
-    <option name="width" value="1380" />
+    <option name="x" value="285" />
+    <option name="y" value="53" />
+    <option name="width" value="1360" />
     <option name="height" value="1000" />
   </component>
-  <component name="ProjectId" id="1TGgcMv96dNJh6Kbzhrwwt3w76Z" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+>>>>>>> ee15c97f4fbfb300c4e8ee27934027e9df0de6af
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -212,25 +255,33 @@
             <path>
               <item name="Psquiza" type="b2602c69:ProjectViewProjectNode" />
               <item name="Psquiza" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="projetoLP2" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Psquiza" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Psquiza" type="462c0819:PsiDirectoryNode" />
               <item name="testes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Psquiza" type="b2602c69:ProjectViewProjectNode" />
               <item name="Psquiza" type="462c0819:PsiDirectoryNode" />
               <item name="testes" type="462c0819:PsiDirectoryNode" />
-              <item name="aceitacao" type="462c0819:PsiDirectoryNode" />
+              <item name="unidade" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Psquiza" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Psquiza" type="462c0819:PsiDirectoryNode" />
+              <item name="testes" type="462c0819:PsiDirectoryNode" />
+              <item name="unidade" type="462c0819:PsiDirectoryNode" />
+              <item name="controladores" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573146671359" />
+=======
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -241,6 +292,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573148713578" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> ee15c97f4fbfb300c4e8ee27934027e9df0de6af
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -254,44 +306,39 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Facade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="projetoLP2.facades.Facade" />
-      <module name="Psquiza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="projetoLP2.facades.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Facade" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ae02e91b-2103-44c1-9662-530b87684b46" name="Default Changelist" comment="" />
-      <created>1573091924704</created>
+      <changelist id="d4df9600-9b62-453c-9d50-36ca33f82c38" name="Default Changelist" comment="" />
+      <created>1573144594040</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573091924704</updated>
-      <workItem from="1573091931045" duration="2250000" />
+      <updated>1573144594040</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="49" y="25" width="1871" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Learn" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986301" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+=======
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25235197" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
@@ -302,6 +349,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32972974" />
+>>>>>>> ee15c97f4fbfb300c4e8ee27934027e9df0de6af
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -319,60 +367,14 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.24958494" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="3" weight="0.32972974" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32972974" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-    </layout-to-restore>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Objetivo.java">
+=======
     <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Aluno.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -380,16 +382,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testes/unidade/controladores/ControleProblemaObjetivoTest.java">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="103">
+          <caret line="130" column="47" selection-start-line="130" selection-start-column="47" selection-end-line="130" selection-end-column="47" />
+          <folding>
+            <element signature="e#4213#4214#0" expanded="true" />
+            <element signature="e#4245#4246#0" expanded="true" />
+            <element signature="e#4286#4287#0" expanded="true" />
+            <element signature="e#4323#4324#0" expanded="true" />
+            <element signature="e#5094#5095#0" expanded="true" />
+            <element signature="e#5158#5159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java">
+>>>>>>> ee15c97f4fbfb300c4e8ee27934027e9df0de6af
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-372">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2291#2292#0" expanded="true" />
+            <element signature="e#2338#2339#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Problema.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/controladores/ControleProblemaObjetivo.java">
+=======
+=======
+>>>>>>> faaf4205855296130762e687169225dc32987777
+    <entry file="file://$PROJECT_DIR$/testes/unidade/controladores/ControleProblemaObjetivoTest.java">
+>>>>>>> ee15c97f4fbfb300c4e8ee27934027e9df0de6af
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-732">
+          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisaPesquisador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1632">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/controladores/ControleProblema.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/controladores/ControleObjetivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-267">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/AssociacaoPesquisaPesquisador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="35" selection-start-line="2" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/facades/Facade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/unidade/controladores/ControleProblemaObjetivoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding>
+            <element signature="e#1257#1258#0" expanded="true" />
+            <element signature="e#1291#1292#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
+            <element signature="e#1401#1402#0" expanded="true" />
+          </folding>
+=======
     <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/jdk/internal/reflect/NativeMethodAccessorImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -524,10 +642,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/projetoLP2/controladores/ControleProblemaObjetivo.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="75">
           <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="478">
+          <caret line="37" column="48" lean-forward="true" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+>>>>>>> ee15c97f4fbfb300c4e8ee27934027e9df0de6af
+=======
+        <state relative-caret-position="165">
+          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+>>>>>>> faaf4205855296130762e687169225dc32987777
+>>>>>>> 6ab09c80013a00919c1337a06433771cb9112bfe
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

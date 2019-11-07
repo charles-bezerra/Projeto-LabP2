@@ -191,6 +191,11 @@ public class Atividade implements Comparable<Atividade>{
         return Objects.hash(codigo);
     }
 
+    /**
+     *
+     * @param o representa outro objeto para a comparação.
+     * @return um inteiro referente a comparação entre os objetos.
+     */
     @Override
     public int compareTo(Atividade o) {
         return o.getCodigo().compareTo(this.getCodigo());

@@ -55,6 +55,11 @@ public class Problema implements Comparable<Problema>{
 	@Override
 	public String toString() { return id + " - " + descricao + " - " + viabilidade; }
 
+	/**
+	 *
+	 * @param o representa outro objeto para a comparação.
+	 * @return um inteiro referente a comparação entre os objetos.
+	 */
 	@Override
 	public int compareTo(Problema o) {
 		return o.getId().compareTo(this.getId());

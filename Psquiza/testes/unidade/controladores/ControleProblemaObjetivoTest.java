@@ -1,10 +1,6 @@
 package unidade.controladores;
 
-import org.junit.jupiter.api.BeforeEach;
-import projetoLP2.classes.Problema;
-import projetoLP2.controladores.ControleProblemaObjetivo;
-import java.util.HashMap;
-
+import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ControleProblemaObjetivoTest {
@@ -17,13 +13,13 @@ class ControleProblemaObjetivoTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void cadastraProblema() {
         assertEquals(null, problemasEObjetivos.cadastraProblema("Qualquer coisa", 4));
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void cadastraProblemaDescricaoVazia() {
         try{
             problemasEObjetivos.cadastraProblema("", 4);
@@ -34,7 +30,7 @@ class ControleProblemaObjetivoTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void cadastraProblemaViabilidadeInvalidaSuperior() {
         try {
             problemasEObjetivos.cadastraProblema("qlqr coisa", 6);
@@ -45,7 +41,7 @@ class ControleProblemaObjetivoTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void cadastraProblemaViabilidadeInvalidaInferior() {
         try {
             problemasEObjetivos.cadastraProblema("Qualquer coisa", 0);
@@ -56,12 +52,12 @@ class ControleProblemaObjetivoTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void cadastraObjetivo() {
         assertEquals(null, problemasEObjetivos.cadastraObjetivo("ESPECIFICO", "Qualquer Coisa", 3,3));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void cadastraObjetivoTipoVazio() {
         try {
             problemasEObjetivos.cadastraObjetivo("","Qualquer coisa",4,4);
@@ -71,7 +67,7 @@ class ControleProblemaObjetivoTest {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void cadastraObjetivoDescricaoVazia() {
         try {
             problemasEObjetivos.cadastraObjetivo("GERAL","",4,4);
@@ -81,7 +77,7 @@ class ControleProblemaObjetivoTest {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void cadastraObjetivoTipoInvalido() {
         try {
             problemasEObjetivos.cadastraObjetivo("Indefinido","Qualquer coisa",4,4);
@@ -91,7 +87,7 @@ class ControleProblemaObjetivoTest {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void cadastraObjetivoAderenciaInvalidaInferior() {
         try {
             problemasEObjetivos.cadastraObjetivo("GERAL","Qualquer coisa",0,4);
@@ -101,7 +97,7 @@ class ControleProblemaObjetivoTest {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void cadastraObjetivoAderenciaInvalidaSuperior() {
         try {
             problemasEObjetivos.cadastraObjetivo("GERAL","Qualquer coisa",6,4);
@@ -111,7 +107,7 @@ class ControleProblemaObjetivoTest {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void cadastraObjetivoViabilidadeInvalidaInferior() {
         try {
             problemasEObjetivos.cadastraObjetivo("GERAL","Qualquer coisa",4,0);
@@ -121,7 +117,7 @@ class ControleProblemaObjetivoTest {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void cadastraObjetivoViabilidadeInvalidaSuperior() {
         try {
             problemasEObjetivos.cadastraObjetivo("GERAL","Qualquer coisa",4,6);
@@ -131,7 +127,7 @@ class ControleProblemaObjetivoTest {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void apagarProblema() {
         problemasEObjetivos.cadastraProblema("Qualquer Coisa", 3);
         problemasEObjetivos.apagarProblema("P1");
@@ -144,7 +140,7 @@ class ControleProblemaObjetivoTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void apagarProblemaCodigoVazio() {
         try {
             problemasEObjetivos.apagarProblema("");
@@ -155,7 +151,7 @@ class ControleProblemaObjetivoTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void apagarProblemaProblemaNaoExiste() {
         try {
             problemasEObjetivos.apagarProblema("P4");
@@ -166,7 +162,7 @@ class ControleProblemaObjetivoTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void apagarObjetivo() {
         problemasEObjetivos.cadastraObjetivo("ESPECIFICO", "Qualquer coisa", 3, 3);
         problemasEObjetivos.apagarObjetivo("O1");
@@ -179,7 +175,7 @@ class ControleProblemaObjetivoTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void apagarObjetivoCodigoVazio() {
         try {
             problemasEObjetivos.apagarObjetivo("");
@@ -189,7 +185,7 @@ class ControleProblemaObjetivoTest {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void apagarObjetivoObjetivoNaoExiste() {
         try {
             problemasEObjetivos.apagarObjetivo("P4");
@@ -200,13 +196,13 @@ class ControleProblemaObjetivoTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void exibeProblema() {
         problemasEObjetivos.cadastraProblema("Qualquer coisa", 2);
         assertEquals("P1 - Qualquer coisa - 2",problemasEObjetivos.exibeProblema("P1"));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void exibeProblemaCodigoVazio() {
         try {
             problemasEObjetivos.exibeProblema("");
@@ -216,7 +212,7 @@ class ControleProblemaObjetivoTest {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void exibeProblemaNaoExiste() {
         try {
             problemasEObjetivos.exibeProblema("P3");
@@ -226,14 +222,14 @@ class ControleProblemaObjetivoTest {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void exibeObjetivo() {
         problemasEObjetivos.cadastraObjetivo("ESPECIFICO", "Qualquer coisa", 2,1);
         assertEquals("O1 - ESPECIFICO - Qualquer coisa - 3",problemasEObjetivos.exibeObjetivo("O1"));
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void exibeObjetivoCodigoVazio() {
         try {
             problemasEObjetivos.exibeObjetivo("");
@@ -243,7 +239,7 @@ class ControleProblemaObjetivoTest {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void exibeObjetivoNaoExiste() {
         try {
             problemasEObjetivos.exibeObjetivo("P3");

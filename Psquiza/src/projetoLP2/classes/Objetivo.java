@@ -13,18 +13,22 @@ public class Objetivo implements Comparable<Objetivo>{
 	 * Descricao e id do objetivo.
 	 */
 	private String descricao, id;
+
 	/**
 	 * Tipo do objetivo, podendo ser GERAL ou ESPECIFICO.
 	 */
 	private Tipo tipo;
+
 	/**
 	 * Valor de aderencia e de viabilidade do objetivo, sedo ambos numeros inteiros de 1 a 5.
 	 */
 	private int aderencia, viabilidade;
+
 	/**
 	 * Contador que ajuda na criação do id do objetivo.
 	 */
 	private static int count = 1;
+
 	/**
 	 * Controi um objetivo a partir de seu tipo, descricao, valor de aderecia e valor de vibilidade.
 	 * 
@@ -36,16 +40,20 @@ public class Objetivo implements Comparable<Objetivo>{
 	public Objetivo(String tipo, String descricao, int aderencia, int viabilidade) {
 		Verificador.verificaString("Campo tipo nao pode ser nulo ou vazio.", tipo);
 		this.descricao = Verificador.verificaString("Campo descricao nao pode ser nulo ou vazio.", descricao);
-		if(1 > aderencia || aderencia > 5) { throw new IllegalArgumentException("Valor invalido de aderencia");
-		} else if(1 > viabilidade || viabilidade > 5) { throw new IllegalArgumentException("Valor invalido de viabilidade.");
-		} else {
+
+		if(1 > aderencia || aderencia > 5)
+			throw new IllegalArgumentException("Valor invalido de aderencia");
+		else if(1 > viabilidade || viabilidade > 5)
+			throw new IllegalArgumentException("Valor invalido de viabilidade.");
+
+		else {
 			this.aderencia = aderencia;
 			this.viabilidade = viabilidade;
 			this.id = "O" + count;
-			switch(tipo) {
-				case "GERAL":{
-					this.tipo = Tipo.GERAL;
-					break; }
+
+			switch(tipo)
+            {
+				case "GERAL":{ this.tipo = Tipo.GERAL; break; }
 				case "ESPECIFICO":{ this.tipo = Tipo.ESPECIFICO; break; }
 				default: throw new IllegalArgumentException("Valor invalido de tipo.");
 			}
@@ -60,9 +68,11 @@ public class Objetivo implements Comparable<Objetivo>{
 	 */
 	public String getId() { return id; }
 
-	public String getDescricao() {
-		return descricao;
-	}
+    /**
+     *
+     * @return
+     */
+	public String getDescricao() { return descricao; }
 
 	/**
 	 * Retorna a representacao em String de um objetivo.
@@ -72,6 +82,11 @@ public class Objetivo implements Comparable<Objetivo>{
 	@Override
 	public String toString() { return id + " - " + tipo + " - " + descricao + " - " + (aderencia + viabilidade); }
 
+	/**
+	 *
+	 * @param o representa outro objeto para a comparação.
+	 * @return um inteiro referente a comparação entre os objetos.
+	 */
 	@Override
 	public int compareTo(Objetivo o) {
 		return o.getId().compareTo(this.getId());

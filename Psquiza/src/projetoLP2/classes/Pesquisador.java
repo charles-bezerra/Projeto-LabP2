@@ -240,6 +240,11 @@ public class Pesquisador implements Comparable<Pesquisador>{
         return Objects.hash(getEmail());
     }
 
+    /**
+     *
+     * @param o representa outro objeto para a comparação.
+     * @return um inteiro referente a comparação entre os objetos.
+     */
     @Override
     public int compareTo(Pesquisador o) {
         return o.getEmail().compareTo(this.getEmail());
