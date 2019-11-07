@@ -28,25 +28,30 @@ public class Item {
 
     /**
      * Constroi o objeto recebendo como parametro nome do item e status do item(String)
-     * @param nome String c
-     * @param status
+     * @param nome String contendo o nome do item
+     * @param status status do item em String
      */
     public Item(String nome, String status) {
         this.item = Verificador.verificaString("Item nao pode ser nulo ou vazio.", nome);
         Verificador.verificaString("Campo status nao pode ser nulo ou vazio.", status);
 
         switch (status.toUpperCase()){
-            case "PENDENTE": this.status = Status.PENDENTE;
-            case "REALIZADO": this.status = Status.REALIZADO;
+            case "PENDENTE":{ this.status = Status.PENDENTE; break; }
+            case "REALIZADO":{ this.status = Status.REALIZADO; break; }
             default: throw new IllegalArgumentException();
         }
     }
 
+    /**
+     * Difine status como realizado
+     */
     public void realizaItem() { this.status = Status.REALIZADO; }
 
-    public Status getStatus(){
-        return this.status;
-    }
+    /**
+     * Retorna o objeto status
+     * @return Status.(PENDENTE|REALIZADO)
+     */
+    public Status getStatus(){ return this.status; }
 
     @Override
     public String toString(){

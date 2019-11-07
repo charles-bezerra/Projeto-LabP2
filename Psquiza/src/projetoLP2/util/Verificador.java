@@ -4,7 +4,7 @@ package projetoLP2.util;
  * Classe utilitaria usada para verificar se valores sao validos
  * e lancar suas reespectivas excecoes
  *
- * @author Iago Henrique de Souza Silva
+ * @authors Iago Henrique de Souza Silva, Melquisedeque Carvalho Silva;
  */
 public class Verificador {
 	/**
@@ -17,6 +17,12 @@ public class Verificador {
 	 */
 	public static String verificaString(String msg, String valor) {
 		if(valor == null || valor.trim().isEmpty())
+			throw new IllegalArgumentException(msg);
+		return valor;
+	}
+
+	public static int verificaInteiro(String msg, int valor) {
+		if(valor <= 0)
 			throw new IllegalArgumentException(msg);
 		return valor;
 	}

@@ -1,12 +1,13 @@
 package projetoLP2.controladores;
 
 import easyaccept.EasyAccept;
+import projetoLP2.util.Verificador;
 
 import java.util.ArrayList;
 
 /**
  * Controller Geral que gerencia e se comunica com os demais controllers mais especializados
- * @authors Charles Bezerra de Oliveira, ...
+ * @authors Charles Bezerra de Oliveira, Melquisedeque Carvalho Silva...
  */
 
 public class Controle {
@@ -141,7 +142,9 @@ public class Controle {
         return controlePesquisaPesquisador.desassociaPesquisador(idPesquisa, emailPesquisador);
     }
 
-    public String busca(String termo){
+    public String busca(String termo) {
+
+        Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
         ArrayList<String> buscaOrdenada = new ArrayList<String>();
         buscaOrdenada.addAll(pesquisaControle.ordenaPesquisa(termo));
         buscaOrdenada.addAll(controlePesquisadores.ordenaPesquisador(termo));
@@ -152,19 +155,22 @@ public class Controle {
         String retorno = "";
         int contador = 0;
 
-        for (String atual : buscaOrdenada){
-            if(contador == 0){
+        for (String atual : buscaOrdenada) {
+            if (contador == 0) {
                 retorno += atual;
                 contador = 1;
-            }else{
+            } else {
                 retorno += " | " + atual;
             }
         }
 
         return retorno;
-    }
 
+    }
     public String busca(String termo, int numeroDoResultado) {
+        Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
+        Verificador.verificaInteiro("Numero do resultado nao pode ser negativo", numeroDoResultado);
+
         ArrayList<String> buscaOrdenada = new ArrayList<String>();
         buscaOrdenada.addAll(pesquisaControle.ordenaPesquisa(termo));
         buscaOrdenada.addAll(controlePesquisadores.ordenaPesquisador(termo));
@@ -172,31 +178,38 @@ public class Controle {
         buscaOrdenada.addAll(problemaObjetivo.ordenaObjetivo(termo));
         buscaOrdenada.addAll(controleAtividade.ordenaAtividade(termo));
         String retorno = "";
-        int contador = 0;
+        int contador = 1;
 
+        if (numeroDoResultado > buscaOrdenada.size()) {
+            throw new IllegalArgumentException("Entidade nao encontrada.");
 
-        for (String atual : buscaOrdenada) {
-            if (contador == numeroDoResultado) {
-                retorno = atual;
-                contador = 1;
+        } else {
 
+            for (String atual : buscaOrdenada) {
+                if (contador == numeroDoResultado) {
+                    retorno += atual;
+                }
+
+                contador += 1;
             }
-
+            return retorno;
         }
-        return retorno;
-    }
 
-    public int contaResultadosBusca(String termo){
+    }
+    public int contaResultadosBusca(String termo) {
+        Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
         ArrayList<String> buscaOrdenada = new ArrayList<String>();
         buscaOrdenada.addAll(pesquisaControle.ordenaPesquisa(termo));
         buscaOrdenada.addAll(controlePesquisadores.ordenaPesquisador(termo));
         buscaOrdenada.addAll(problemaObjetivo.ordenaProblema(termo));
         buscaOrdenada.addAll(problemaObjetivo.ordenaObjetivo(termo));
         buscaOrdenada.addAll(controleAtividade.ordenaAtividade(termo));
+        Verificador.verificaInteiro("Nenhum resultado encontrado",buscaOrdenada.size());
 
         return buscaOrdenada.size();
-    }
 
+
+    }
 
 
     public static void main(String[] args){
