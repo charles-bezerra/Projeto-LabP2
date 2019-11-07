@@ -144,6 +144,11 @@ public class Controle {
         return controlePesquisaPesquisador.desassociaPesquisador(idPesquisa, emailPesquisador);
     }
 
+    /**
+     * Metodo responsavel por retornar os resultados de busca de determinado termo no sistema.
+     * @param termo representa o termo que sera passado para busca no sistema.
+     * @return em String, todos os resultados de busca no sistema, atraves de determinado termo.
+     */
     public String busca(String termo) {
 
         Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
@@ -164,6 +169,13 @@ public class Controle {
         return retorno;
 
     }
+
+    /**
+     * Metodo responsavel por retornar os resultados de busca de determinado termo em uma posicao especifica no sistema.
+     * @param termo representa o termo que sera passado para busca no sistema.
+     * @param numeroDoResultado representa a posicao especifica do termo no sistema, que deve ser buscada.
+     * @return em String, um resultado de busca especifico no sistema, atraves dos parametros numeroDoResultado e termo.
+     */
     public String busca(String termo, int numeroDoResultado) {
         Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
         Verificador.verificaInteiro("Numero do resultado nao pode ser negativo", numeroDoResultado);
@@ -188,17 +200,25 @@ public class Controle {
         }
 
     }
+
+    /**
+     * Metodo responsavel por retornar o numero de resultados de busca de um determinado termo.
+     * @param termo representa o termo que sera passado para busca no sistema.
+     * @return em inteiro, o numero de resultados de busca, de determinado termo, no sistema.
+     */
     public int contaResultadosBusca(String termo) {
         Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
         ArrayList<String> buscaOrdenada = new ArrayList<String>(buscasOrdenadas(termo));
         Verificador.verificaInteiro("Nenhum resultado encontrado",buscaOrdenada.size());
 
         return buscaOrdenada.size();
-
-
     }
 
-
+    /**
+     * Metodo responsavel por concatenar as listas de buscas de Pesquisador, Pesquisa, Objetivo, Problema e Atividade.
+     * @param termo representa o termo que sera passado para busca no sistema.
+     * @return um ArrayList de String com todas as buscas no sistema concatenadas.
+     */
     private ArrayList<String> buscasOrdenadas(String termo){
         Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
         ArrayList<String> buscaOrdenada = new ArrayList<String>();

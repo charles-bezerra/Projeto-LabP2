@@ -127,9 +127,8 @@ public class ControlePesquisa {
 	public String exibePesquisa(String codigo) {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
 		
-		if(!pesquisas.containsKey(codigo)) {
+		if(!pesquisas.containsKey(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
-		}
 		return pesquisas.get(codigo).toString();
 	}
 
@@ -139,9 +138,9 @@ public class ControlePesquisa {
 	}
 
 	/**
-	 * Metodo responsavel por
-	 * @param termo o termo a ser buscado
-	 * @return
+	 * Metodo responsavel por adicionar a um Arraylist de forma ordenada todas as pesquisas que possuem o termo.
+	 * @param termo o termo a ser buscado nas pesquisas.
+	 * @return um ArrayList de Strings com todas as pesquisas que possuem o termo.
 	 */
 	public ArrayList<String> ordenaPesquisa(String termo){
 		ArrayList<Pesquisa> buscasOrdenadas = new ArrayList<Pesquisa>(pesquisas.values());
@@ -151,14 +150,10 @@ public class ControlePesquisa {
 		for (Pesquisa pesquisa: buscasOrdenadas){
 			if (pesquisa.getDescricao().toLowerCase().contains(termo.toLowerCase())) {
 				retorno.add(pesquisa.getCod() + ": " + pesquisa.getDescricao());
-
-
 			}
 			if(pesquisa.getCampoDeInteresse().toLowerCase().contains(termo.toLowerCase())){
                 retorno.add(pesquisa.getCod() + ": " + pesquisa.getCampoDeInteresse());
-
 			}
-
 		}
 
 		return retorno;

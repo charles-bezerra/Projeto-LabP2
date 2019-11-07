@@ -224,6 +224,11 @@ public class ControlePesquisador {
     }
 
 
+    /**
+     * Metodo responsavel por adicionar a um Arraylist de forma ordenada todos os pesquisadores que possuem o termo.
+     * @param termo o termo a ser buscado nos pesquisadores.
+     * @return um ArrayList de Strings com todos os pesquisadores que possuem o termo.
+     */
     public ArrayList<String> ordenaPesquisador(String termo){
         ArrayList<Pesquisador> buscasOrdenadas = new ArrayList<Pesquisador>(pesquisadores.values());
         Collections.sort(buscasOrdenadas);

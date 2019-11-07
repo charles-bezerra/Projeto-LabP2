@@ -60,6 +60,11 @@ public class ControleAtividade {
         return this.atividades.get(codigo).contaItensRealizados();
     }
 
+    /**
+     * Metodo responsavel por adicionar a um Arraylist de forma ordenada todas as atividades que possuem o termo.
+     * @param termo o termo a ser buscado nas atividades.
+     * @return um ArrayList de Strings com todas as atividades que possuem o termo.
+     */
     public ArrayList<String> ordenaAtividade(String termo) {
         ArrayList<Atividade> buscasOrdenadas = new ArrayList<Atividade>(atividades.values());
         Collections.sort(buscasOrdenadas);
