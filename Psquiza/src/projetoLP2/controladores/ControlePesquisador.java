@@ -12,6 +12,7 @@ import java.util.Map;
 
 /**
  * Classe responsavel por representar um controle que admnistra pesquisadores.
+ * @author Melquisedeque Carvalho Silva
  */
 public class ControlePesquisador {
     /**

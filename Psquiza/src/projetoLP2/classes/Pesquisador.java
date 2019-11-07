@@ -7,6 +7,7 @@ import java.util.Objects;
 
 /**
  * Classe responsavel por representar um pesquisador e guardar seus dados.
+ * @author Melquisedeque Carvalho SIlva
  */
 public class Pesquisador implements Comparable<Pesquisador>{
     /**
