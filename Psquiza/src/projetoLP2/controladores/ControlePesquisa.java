@@ -26,6 +26,28 @@ public class ControlePesquisa {
 	}
 
 	/**
+	 * Verifica se existe uma pesquisa
+	 *
+	 * @param id endenreco da pesquisa
+	 * @return boolean
+	 */
+	public boolean encontraPesquisa(String id){
+		return this.pesquisas.containsKey(id);
+	}
+
+	/**
+	 * Retorna uma pesquisa
+	 *
+	 * @param id endereco da pesquisa
+	 * @return Pesquisa
+	 */
+	public Pesquisa getPesquisa(String id){
+		if (!this.encontraPesquisa(id))
+			throw new IllegalArgumentException("Pesquisa nao encontrada.");
+		return this.pesquisas.get(id);
+	}
+
+	/**
 	 * Cadastra uma pesquisa no mapa de pesquisas.
 	 *
 	 * @param descricao a descricao do objetivo
@@ -49,19 +71,13 @@ public class ControlePesquisa {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
 		Verificador.verificaString("Conteudo a ser alterado nao pode ser nulo ou vazio.", conteudoASerAlterado);
 
-		if(!pesquisas.containsKey(codigo)) {
+		if(!this.encontraPesquisa(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
-		}
 
 		switch (conteudoASerAlterado) {
-			case "DESCRICAO":
-				pesquisas.get(codigo).setDescricao(novoConteudo);
-				break;
-			case "CAMPO":
-				pesquisas.get(codigo).setCampoDeInteresse(novoConteudo);
-				break;
-			default:
-				throw new IllegalArgumentException("Nao e possivel alterar esse valor de pesquisa.");
+			case "DESCRICAO":{ pesquisas.get(codigo).setDescricao(novoConteudo); break; }
+			case "CAMPO":{ pesquisas.get(codigo).setCampoDeInteresse(novoConteudo); break; }
+			default: throw new IllegalArgumentException("Nao e possivel alterar esse valor de pesquisa.");
 		}
 	}
 
@@ -75,11 +91,8 @@ public class ControlePesquisa {
 	 */
 	public void encerraPesquisa(String codigo, String motivo) {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
-		
-		if(!pesquisas.containsKey(codigo)) {
+		if(!pesquisas.containsKey(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
-		}
-
 		pesquisas.get(codigo).encerraPesquisa(motivo);
 	}
 
@@ -91,11 +104,8 @@ public class ControlePesquisa {
 	 */
 	public void ativaPesquisa(String codigo) {	
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
-		
-		if(!pesquisas.containsKey(codigo)) {
+		if(!pesquisas.containsKey(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
-		}
-		
 		pesquisas.get(codigo).ativaPesquisa();
 	}
 
@@ -108,11 +118,8 @@ public class ControlePesquisa {
 	 */
 	public boolean pesquisaEhAtiva(String codigo) {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
-		
-		if(!pesquisas.containsKey(codigo)) {
+		if(!pesquisas.containsKey(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
-		}
-
 		return pesquisas.get(codigo).getEstado().equals("ATIVA");
 	}
 
@@ -126,19 +133,16 @@ public class ControlePesquisa {
 	 */
 	public String exibePesquisa(String codigo) {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
-		
 		if(!pesquisas.containsKey(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
 		return pesquisas.get(codigo).toString();
 	}
 
-
-	public Map<String,Pesquisa> getPesquisas(){
-		return pesquisas;
-	}
+	public Map<String,Pesquisa> getPesquisas(){ return pesquisas; }
 
 	/**
 	 * Metodo responsavel por adicionar a um Arraylist de forma ordenada todas as pesquisas que possuem o termo.
+	 *
 	 * @param termo o termo a ser buscado nas pesquisas.
 	 * @return um ArrayList de Strings com todas as pesquisas que possuem o termo.
 	 */
@@ -148,14 +152,18 @@ public class ControlePesquisa {
 		ArrayList<String> retorno = new ArrayList<>();
 
 		for (Pesquisa pesquisa: buscasOrdenadas){
-			if (pesquisa.getDescricao().toLowerCase().contains(termo.toLowerCase())) {
-				retorno.add(pesquisa.getCod() + ": " + pesquisa.getDescricao());
-			}
-			if(pesquisa.getCampoDeInteresse().toLowerCase().contains(termo.toLowerCase())){
-                retorno.add(pesquisa.getCod() + ": " + pesquisa.getCampoDeInteresse());
-			}
-		}
+			if ( pesquisa.getDescricao()
+					.toLowerCase()
+					.contains(termo.toLowerCase()) )
 
+				retorno.add(pesquisa.getCod() + ": " + pesquisa.getDescricao());
+
+			if ( pesquisa.getCampoDeInteresse()
+					.toLowerCase()
+					.contains(termo.toLowerCase()) )
+
+				retorno.add(pesquisa.getCod() + ": " + pesquisa.getCampoDeInteresse());
+		}
 		return retorno;
 	}
 

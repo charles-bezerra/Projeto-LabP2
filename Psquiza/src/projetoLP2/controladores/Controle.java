@@ -150,24 +150,18 @@ public class Controle {
      * @return em String, todos os resultados de busca no sistema, atraves de determinado termo.
      */
     public String busca(String termo) {
-
         Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
         ArrayList<String> buscaOrdenada = new ArrayList<String>(buscasOrdenadas(termo));
 
-        String retorno = "";
-        int contador = 0;
+        String retorno = ""; int contador = 0;
 
         for (String atual : buscaOrdenada) {
             if (contador == 0) {
                 retorno += atual;
-                contador = 1;
-            } else {
-                retorno += " | " + atual;
-            }
+                contador = 1; }
+            else retorno += " | " + atual;
         }
-
         return retorno;
-
     }
 
     /**
@@ -180,25 +174,18 @@ public class Controle {
         Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
         Verificador.verificaInteiro("Numero do resultado nao pode ser negativo", numeroDoResultado);
 
-        ArrayList<String> buscaOrdenada = new ArrayList<String>(buscasOrdenadas(termo));
+        ArrayList<String> buscaOrdenada = new ArrayList<String>( buscasOrdenadas(termo) );
         String retorno = "";
         int contador = 1;
 
-        if (numeroDoResultado > buscaOrdenada.size()) {
+        if (numeroDoResultado > buscaOrdenada.size())
             throw new IllegalArgumentException("Entidade nao encontrada.");
-
-        } else {
-
-            for (String atual : buscaOrdenada) {
-                if (contador == numeroDoResultado) {
-                    retorno += atual;
-                }
-
-                contador += 1;
-            }
-            return retorno;
+        for (String atual : buscaOrdenada) {
+            if (contador == numeroDoResultado)
+                retorno += atual;
+            contador += 1;
         }
-
+        return retorno;
     }
 
     /**
@@ -229,6 +216,26 @@ public class Controle {
         buscaOrdenada.addAll(controleObjetivo.ordenaObjetivo(termo));
         buscaOrdenada.addAll(controleAtividade.ordenaAtividade(termo));
         return buscaOrdenada;
+    }
+
+    public boolean associaProblema(String idPesquisa, String idProblema) {
+        return false;
+    }
+
+    public boolean desassociaProblema(String idPesquisa, String idProblema) {
+        return false;
+    }
+
+    public boolean associaObjetivo(String idPesquisa, String idObjetivo) {
+        return false;
+    }
+
+    public boolean desassociaObjetivo(String idPesquisa, String idObjetivo){
+        return false;
+    }
+
+    public String listaPesquisas(String ordem) {
+        return "";
     }
 }
 

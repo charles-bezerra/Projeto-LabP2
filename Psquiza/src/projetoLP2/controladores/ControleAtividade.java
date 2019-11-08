@@ -13,6 +13,9 @@ import java.util.Map;
  * @author Charles Bezerra de Oliveira Junior
  */
 public class ControleAtividade {
+    /**
+     *
+     */
     private Map<String, Atividade> atividades;
 
     public ControleAtividade(){
@@ -69,21 +72,14 @@ public class ControleAtividade {
         ArrayList<Atividade> buscasOrdenadas = new ArrayList<Atividade>(atividades.values());
         Collections.sort(buscasOrdenadas);
         ArrayList<String> retorno = new ArrayList<>();
-        int contador = 0;
 
         for (Atividade atividade : buscasOrdenadas) {
-            if (atividade.getDescricao().toLowerCase().contains(termo.toLowerCase())) {
+            if (atividade.getDescricao().toLowerCase().contains(termo.toLowerCase()))
                 retorno.add(atividade.getCodigo() + ": " + atividade.getDescricao());
-
-            }
-            if (atividade.getDescricaoRisco().toLowerCase().contains(termo.toLowerCase())) {
+            if (atividade.getDescricaoRisco().toLowerCase().contains(termo.toLowerCase()))
                 retorno.add(atividade.getCodigo() + ": " + atividade.getDescricaoRisco());
-
-            }
-
         }
         return retorno;
-
     }
 
 }

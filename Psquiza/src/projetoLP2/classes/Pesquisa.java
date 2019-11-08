@@ -67,7 +67,7 @@ public class Pesquisa implements Comparable<Pesquisa>{
 		this.objetivos = new ControleObjetivo();
 	}
 
-	public ControleObjetivo getObjetivos(String id){
+	public ControleObjetivo getObjetivos(){
 		return this.objetivos;
 	}
 
