@@ -32,6 +32,12 @@ public class ControlePesquisaPesquisador {
             throw new IllegalArgumentException("Pesquisa desativada.");
         }
 
+        for(AssociacaoPesquisaPesquisador a : associacoes.values()){
+            if(a.getIdPesquisa().equals(idPesquisa) && a.getEmailPesquisador().equals(emailPesquisador)){
+                return false;
+            }
+        }
+
         AssociacaoPesquisaPesquisador a = new AssociacaoPesquisaPesquisador(
                 pesquisas.get(idPesquisa).getCod(),
                 pesquisadores.get(emailPesquisador).getEmail());

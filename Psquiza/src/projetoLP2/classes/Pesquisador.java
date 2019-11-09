@@ -79,28 +79,31 @@ public class Pesquisador implements Comparable<Pesquisador>{
 
 
     public void alteraAtributo(String atributo, String novoValor) {
-        Verificador.verificaString("Campo atributo nao pode ser nulo ou vazio.", atributo);
-        Verificador.verificaString("Campo " + atributo + " nao pode ser nulo ou vazio.", novoValor);
+        Verificador.verificaString("Atributo nao pode ser vazio ou nulo.", atributo);
 
         if(!isAtivado()){
             throw new IllegalArgumentException("Pesquisador inativo.");
         }
-        switch (atributo.toUpperCase()) {
+        switch (atributo) {
             case "EMAIL":
                 verificaEmail(novoValor);
                 setEmail(novoValor);
                 break;
             case "FUNCAO":
+                Verificador.verificaString("Campo " + atributo.toLowerCase() + " nao pode ser nulo ou vazio.", novoValor);
                 alteraFuncao(novoValor);
                 break;
-            case "FOTOURL":
+            case "FOTO":
+                Verificador.verificaString("Campo fotoURL nao pode ser nulo ou vazio.", novoValor);
                 verificaFoto(novoValor);
                 setFotoURL(novoValor);
                 break;
             case "NOME":
+                Verificador.verificaString("Campo " + atributo.toLowerCase() + " nao pode ser nulo ou vazio.", novoValor);
                 setNome(novoValor);
                 break;
             case "BIOGRAFIA":
+                Verificador.verificaString("Campo " + atributo.toLowerCase() + " nao pode ser nulo ou vazio.", novoValor);
                 setBiografia(novoValor);
                 break;
             default:

@@ -12,7 +12,7 @@ public abstract class FuncaoSemEspecialidade implements Funcao {
 
     @Override
     public void alteraEspecialidade(String atributo, String novoValor) {
-        throw new IllegalArgumentException("Nao e possivel alterar esse valor de pesquisa.");
+        throw new IllegalArgumentException("Atributo invalido.");
     }
 
 

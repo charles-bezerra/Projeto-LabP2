@@ -28,6 +28,7 @@ public class Aluno implements Funcao {
 
     @Override
     public void alteraEspecialidade(String atributo, String novoValor) {
+        Verificador.verificaString("Campo " + atributo.toLowerCase() + " nao pode ser nulo ou vazio.", novoValor);
         switch (atributo.toUpperCase()) {
             case "SEMESTRE":
                 if(Integer.parseInt(novoValor) < 1){
@@ -42,7 +43,7 @@ public class Aluno implements Funcao {
                 setIEA(Float.parseFloat(novoValor));
                 break;
             default:
-                throw new IllegalArgumentException("Nao e possivel alterar esse valor de pesquisa.");
+                throw new IllegalArgumentException("Atributo invalido.");
         }
     }
 

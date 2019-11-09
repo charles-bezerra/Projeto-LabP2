@@ -48,13 +48,15 @@ public class ControlePesquisador {
      */
     public void alteraPesquisador(String email, String atributo, String novoValor) {
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
-        Verificador.verificaString("Campo " + atributo + " nao pode ser nulo ou vazio.", novoValor);
+        Verificador.verificaString("Atributo nao pode ser vazio ou nulo.", atributo);
+
         if(! pesquisadores.containsKey(email)) {
             throw new IllegalArgumentException("Pesquisador nao encontrado");
         }
 
         switch (atributo.toUpperCase()) {
             case "EMAIL":
+                Verificador.verificaString("Campo " + atributo.toLowerCase() + " nao pode ser nulo ou vazio.", novoValor);
                 Pesquisador p = pesquisadores.get(email);
                 p.alteraAtributo(atributo, novoValor);
                 pesquisadores.put(p.getEmail(), p);
