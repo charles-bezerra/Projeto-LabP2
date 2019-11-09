@@ -1,13 +1,13 @@
-package projetoLP2.classes;
+package projetoLP2.classes.Funcoes;
 
 import projetoLP2.Interfaces.Funcao;
 import projetoLP2.enums.TipoFuncao;
 
-public class Externo implements Funcao {
+public abstract class FuncaoSemEspecialidade implements Funcao {
     private TipoFuncao nome;
 
-    public Externo(){
-        nome = TipoFuncao.EXTERNO;
+    public FuncaoSemEspecialidade(TipoFuncao nome){
+        this.nome = nome;
     }
 
     @Override

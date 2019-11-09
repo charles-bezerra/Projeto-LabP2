@@ -1,6 +1,8 @@
 package projetoLP2.classes;
 
 import projetoLP2.Interfaces.Funcao;
+import projetoLP2.classes.Funcoes.*;
+import projetoLP2.enums.TipoFuncao;
 import projetoLP2.util.Verificador;
 
 import java.util.Objects;
@@ -44,17 +46,31 @@ public class Pesquisador implements Comparable<Pesquisador>{
      * @param email passa o valor contido nele para o atributo email.
      * @param fotoURL passa o valor contido nele para o atributo fotoURL.
      */
-    public Pesquisador(String nome, Funcao funcao, String biografia, String email, String fotoURL) {
+    public Pesquisador(String nome, String funcao, String biografia, String email, String fotoURL) {
         Verificador.verificaString("Campo nome nao pode ser nulo ou vazio.", nome);
+        Verificador.verificaString("Campo funcao nao pode ser nulo ou vazio.", funcao);
         Verificador.verificaString("Campo biografia nao pode ser nulo ou vazio.", biografia);
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
         Verificador.verificaString("Campo fotoURL nao pode ser nulo ou vazio.", fotoURL);
+
+        switch (funcao.toUpperCase()) {
+            case "ESTUDANTE":
+                this.funcao = new AlunoSemEspecialidades();
+                break;
+            case "PROFESSOR":
+                this.funcao = new ProfessorSemEspecialidades();
+                break;
+            case "EXTERNO":
+                this.funcao = new Externo();
+                break;
+            default:
+                throw new IllegalArgumentException("Tipo " + funcao + " inexistente");
+        }
 
         verificaEmail(email);
         verificaFoto(fotoURL);
 
         this.nome = nome;
-        this.funcao = funcao;
         this.biografia = biografia;
         this.email = email;
         this.fotoURL = fotoURL;
@@ -73,6 +89,9 @@ public class Pesquisador implements Comparable<Pesquisador>{
             case "EMAIL":
                 verificaEmail(novoValor);
                 setEmail(novoValor);
+                break;
+            case "FUNCAO":
+                alteraFuncao(novoValor);
                 break;
             case "FOTOURL":
                 verificaFoto(novoValor);
@@ -170,8 +189,36 @@ public class Pesquisador implements Comparable<Pesquisador>{
         return funcao.getNome();
     }
 
-    public void setFuncao(Funcao funcao) {
-        this.funcao = funcao;
+    private void alteraFuncao(String funcao) {
+        switch (funcao.toUpperCase()) {
+            case "ESTUDANTE":
+                this.funcao = new AlunoSemEspecialidades();
+                break;
+            case "PROFESSOR":
+                this.funcao = new ProfessorSemEspecialidades();
+                break;
+            case "EXTERNO":
+                this.funcao = new Externo();
+                break;
+            default:
+                throw new IllegalArgumentException("Tipo " + funcao + " inexistente");
+        }
+    }
+
+
+    public void setEspecialidadeProfessor(String formacao, String unidade, String data){
+        if(!getFuncao().toUpperCase().equals(TipoFuncao.PROFESSOR.getFuncao())){
+            throw new IllegalArgumentException("Pesquisador nao compativel com a especialidade.");
+        }
+        this.funcao = new Professor(formacao, unidade, data);
+    }
+
+
+    public void setEspecialidadeAluno( String semestre, String IEA){
+        if(!getFuncao().toUpperCase().equals(TipoFuncao.ESTUDANTE.getFuncao())){
+            throw new IllegalArgumentException("Pesquisador nao compativel com a especialidade.");
+        }
+        this.funcao = new Aluno(semestre, IEA);
     }
 
 

@@ -70,4 +70,14 @@ public class ControleProblema {
                 retorno.add(problema.getId() + ": " + problema.getDescricao());
         return retorno;
     }
+
+    public boolean encontraProblema(String id){
+        Verificador.verificaString("Campo idProblema no pode ser vazio ou nulo.", id);
+        return this.problemas.containsKey(id);
+    }
+
+    public Problema getProblema(String id){
+        Verificador.verificaString("Campo idProblema nao pode ser vazio ou nulo.", id);
+        return this.problemas.get(id);
+    }
 }

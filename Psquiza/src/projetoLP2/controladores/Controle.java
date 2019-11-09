@@ -1,6 +1,6 @@
 package projetoLP2.controladores;
 
-import projetoLP2.util.Verificador;
+import  projetoLP2.util.Verificador;
 
 import java.util.ArrayList;
 
@@ -215,27 +215,44 @@ public class Controle {
         buscaOrdenada.addAll(controleProblema.ordenaProblema(termo));
         buscaOrdenada.addAll(controleObjetivo.ordenaObjetivo(termo));
         buscaOrdenada.addAll(controleAtividade.ordenaAtividade(termo));
+
         return buscaOrdenada;
     }
 
     public boolean associaProblema(String idPesquisa, String idProblema) {
-        return false;
+        if (!this.controleProblema.encontraProblema(idProblema))
+            return false;
+        return this.controlePesquisa
+                .associaProblema(
+                        idPesquisa,
+                        this.controleProblema
+                                .getProblema(idProblema)
+                );
     }
 
-    public boolean desassociaProblema(String idPesquisa, String idProblema) {
-        return false;
+    public boolean desassociaProblema(String idPesquisa) {
+        return this.controlePesquisa.desassociaProblema(idPesquisa);
     }
 
     public boolean associaObjetivo(String idPesquisa, String idObjetivo) {
-        return false;
+        if (!this.controleObjetivo.encontraObjetivo(idObjetivo))
+            return false;
+        return this.controlePesquisa
+                .associaObjetivo(
+                        idPesquisa,
+                        this.controleObjetivo
+                            .getObjetivo(idObjetivo)
+                );
     }
 
     public boolean desassociaObjetivo(String idPesquisa, String idObjetivo){
-        return false;
+        return this.controlePesquisa
+                .desassociaObjetivo(idPesquisa, idObjetivo);
     }
 
     public String listaPesquisas(String ordem) {
-        return "";
+        return this.controlePesquisa
+                .listaPesquisas(ordem);
     }
 }
 

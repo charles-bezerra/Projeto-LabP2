@@ -1,4 +1,4 @@
-package projetoLP2.classes;
+package projetoLP2.classes.Funcoes;
 
 import projetoLP2.Interfaces.Funcao;
 import projetoLP2.enums.TipoFuncao;
@@ -10,11 +10,16 @@ public class Professor implements Funcao {
     private String unidade;
     private String data;
 
-    public Professor(){
+    public Professor(String formacao, String unidade, String data){
+        Verificador.verificaString("Campo formacao nao pode ser nulo ou vazio.", formacao);
+        Verificador.verificaString("Campo unidade nao pode ser nulo ou vazio.", unidade);
+        Verificador.verificaString("Campo data nao pode ser nulo ou vazio.", data);
+        Verificador.verificaData("Atributo data com formato invalido.", data);
+
         nome = TipoFuncao.PROFESSOR;
-        formacao = "";
-        unidade = "";
-        data = "";
+        this.formacao = formacao;
+        this.unidade = unidade;
+        this.data = data;
     }
 
     @Override
@@ -56,9 +61,6 @@ public class Professor implements Funcao {
 
     @Override
     public String toString() {
-        if(formacao == "" || unidade == "" || data == ""){
-            return "";
-        }
         return String.format(" - %s - %s - %s",
                 formacao,unidade,data);
     }

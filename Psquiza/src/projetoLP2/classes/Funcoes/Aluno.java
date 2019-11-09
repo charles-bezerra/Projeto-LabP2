@@ -1,17 +1,29 @@
-package projetoLP2.classes;
+package projetoLP2.classes.Funcoes;
 
 import projetoLP2.Interfaces.Funcao;
 import projetoLP2.enums.TipoFuncao;
+import projetoLP2.util.Verificador;
 
 public class Aluno implements Funcao {
     private TipoFuncao nome;
     private int semestre;
     private float IEA;
 
-    public Aluno(){
+    public Aluno(String semestre, String IEA){
+        Verificador.verificaString("Campo semestre nao pode ser nulo ou vazio.", semestre);
+        Verificador.verificaString("Campo IEA nao pode ser nulo ou vazio.", IEA);
+
+        if(Integer.parseInt(semestre) < 1){
+            throw new IllegalArgumentException("Atributo semestre com formato invalido.");
+        }
+
+        if(Float.parseFloat(IEA) < 0.0 || Float.parseFloat(IEA) > 10.0){
+            throw new IllegalArgumentException("Atributo IEA com formato invalido.");
+        }
+
         nome = TipoFuncao.ESTUDANTE;
-        semestre = -1;
-        IEA = -1;
+        this.semestre = Integer.parseInt(semestre);
+        this.IEA = Float.parseFloat(IEA);
     }
 
     @Override
@@ -50,9 +62,6 @@ public class Aluno implements Funcao {
 
     @Override
     public String toString() {
-        if(semestre == -1 || IEA == -1){
-            return "";
-        }
         return String.format(" - %do SEMESTRE - %s",
                 semestre,String.format("%.1f",IEA).replace(",","."));
     }

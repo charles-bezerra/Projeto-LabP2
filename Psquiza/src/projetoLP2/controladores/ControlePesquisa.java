@@ -1,15 +1,18 @@
 package projetoLP2.controladores;
 
+import projetoLP2.classes.Objetivo;
 import projetoLP2.classes.Pesquisa;
+import projetoLP2.classes.Problema;
+import projetoLP2.comparadores.pesquisa.ComparaPorIdPesquisa;
+import projetoLP2.comparadores.pesquisa.ComparaPorIdProblema;
+import projetoLP2.comparadores.pesquisa.ComparaPorObjetivos;
 import projetoLP2.util.Verificador;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+
 /**
  * Controlador das pesquisas do sistema
- * @author Iago Henrique de Souza Silva
+ * @authors Iago Henrique de Souza Silva, Charles Bezerra de Oliveira Júnior
  */
 public class ControlePesquisa {
 	/**
@@ -31,7 +34,7 @@ public class ControlePesquisa {
 	 * @param id endenreco da pesquisa
 	 * @return boolean
 	 */
-	public boolean encontraPesquisa(String id){
+	private boolean encontraPesquisa(String id){
 		return this.pesquisas.containsKey(id);
 	}
 
@@ -91,7 +94,7 @@ public class ControlePesquisa {
 	 */
 	public void encerraPesquisa(String codigo, String motivo) {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
-		if(!pesquisas.containsKey(codigo))
+		if(!this.encontraPesquisa(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
 		pesquisas.get(codigo).encerraPesquisa(motivo);
 	}
@@ -104,7 +107,7 @@ public class ControlePesquisa {
 	 */
 	public void ativaPesquisa(String codigo) {	
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
-		if(!pesquisas.containsKey(codigo))
+		if(!this.encontraPesquisa(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
 		pesquisas.get(codigo).ativaPesquisa();
 	}
@@ -118,7 +121,7 @@ public class ControlePesquisa {
 	 */
 	public boolean pesquisaEhAtiva(String codigo) {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
-		if(!pesquisas.containsKey(codigo))
+		if(!this.encontraPesquisa(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
 		return pesquisas.get(codigo).getEstado().equals("ATIVA");
 	}
@@ -133,7 +136,7 @@ public class ControlePesquisa {
 	 */
 	public String exibePesquisa(String codigo) {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
-		if(!pesquisas.containsKey(codigo))
+		if(!this.encontraPesquisa(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
 		return pesquisas.get(codigo).toString();
 	}
@@ -155,17 +158,67 @@ public class ControlePesquisa {
 			if ( pesquisa.getDescricao()
 					.toLowerCase()
 					.contains(termo.toLowerCase()) )
-
 				retorno.add(pesquisa.getCod() + ": " + pesquisa.getDescricao());
 
 			if ( pesquisa.getCampoDeInteresse()
 					.toLowerCase()
 					.contains(termo.toLowerCase()) )
-
 				retorno.add(pesquisa.getCod() + ": " + pesquisa.getCampoDeInteresse());
 		}
 		return retorno;
 	}
 
+	public boolean associaProblema(String idPesquisa, Problema problema) {
+        Verificador.verificaString("Campo idPesquisa nao pode ser vazio ou nulo.", idPesquisa);
+	    if (!this.encontraPesquisa(idPesquisa)) throw new IllegalArgumentException("Pesquisa nao encontrada.");
+	    return this.pesquisas
+                .get(idPesquisa)
+                .associaProblema(problema);
+	}
+
+	public boolean desassociaProblema(String idPesquisa) {
+        Verificador.verificaString("Campo idPesquisa nao pode ser vazio ou nulo.", idPesquisa);
+        if (!this.encontraPesquisa(idPesquisa)) throw new IllegalArgumentException("Pesquisa nao encontrada.");
+        return this.pesquisas
+                .get(idPesquisa)
+                .desassociaProblema();
+	}
+
+	public boolean associaObjetivo(String idPesquisa, Objetivo objetivo) {
+        Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", idPesquisa);
+        if (!this.encontraPesquisa(idPesquisa)) throw new IllegalArgumentException("Pesquisa nao encontrada.");
+        return this.pesquisas
+                .get(idPesquisa)
+                .associaObjetivo(objetivo);
+	}
+
+	public boolean desassociaObjetivo(String idPesquisa, String idObjetivo){
+        Verificador.verificaString("Campo idObjetivo nao pode ser nulo ou vazio", idPesquisa);
+        if (!this.encontraPesquisa(idPesquisa)) throw new IllegalArgumentException("Pesquisa nao encontrada.");
+        return this.pesquisas
+                .get(idPesquisa)
+                .desassociaObjetivo(idObjetivo);
+    }
+
+	public String listaPesquisas(String ordem) {
+		List<Pesquisa> pesquisas = new ArrayList<>( this.pesquisas.values() );
+		switch (ordem.toUpperCase()){
+			case "PROBLEMA":{ pesquisas.sort(new ComparaPorIdProblema()); break;}
+			case "OBJETIVO":{ pesquisas.sort(new ComparaPorObjetivos()); break;}
+			case "PESQUISA":{ pesquisas.sort(new ComparaPorIdPesquisa()); break;}
+			default: throw new IllegalArgumentException("Valor invalido da ordem");
+		}
+
+		Iterator<Pesquisa> pesquisaIterator = pesquisas.iterator();
+		StringBuilder resultado = new StringBuilder("");
+
+		while (pesquisaIterator.hasNext()){
+			resultado.append( pesquisaIterator.next().toString() );
+			if (pesquisaIterator.hasNext())
+				resultado.append(" | ");
+		}
+
+		return resultado.toString();
+	}
 
 }

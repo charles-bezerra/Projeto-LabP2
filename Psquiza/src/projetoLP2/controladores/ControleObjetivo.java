@@ -74,4 +74,13 @@ public class ControleObjetivo {
         return retorno;
     }
 
+    public boolean encontraObjetivo(String id){
+        Verificador.verificaString("Campo idObjetivo no pode ser vazio ou nulo.", id);
+        return this.objetivos.containsKey(id);
+    }
+
+    public Objetivo getObjetivo(String id){
+        if (!this.encontraObjetivo(id)) throw new IllegalArgumentException("Objetivo nao encontrado.");
+        return this.objetivos.get(id);
+    }
 }

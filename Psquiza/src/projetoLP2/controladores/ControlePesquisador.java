@@ -1,6 +1,5 @@
 package projetoLP2.controladores;
 
-import projetoLP2.Interfaces.Funcao;
 import projetoLP2.classes.*;
 import projetoLP2.enums.TipoFuncao;
 import projetoLP2.util.Verificador;
@@ -37,28 +36,8 @@ public class ControlePesquisador {
      * @param fotoURL representa a url da foto do pesquisador a ser cadastrado.
      */
     public void cadastraPesquisador(String nome, String funcao, String biografia, String email, String fotoURL){
-        Verificador.verificaString("Campo funcao nao pode ser nulo ou vazio.", funcao);
-        Pesquisador p;
-        Funcao f;
-        switch (funcao.toUpperCase()) {
-            case "ESTUDANTE":
-                f = new Aluno();
-                p = new Pesquisador(nome, f, biografia, email, fotoURL);
-                pesquisadores.put(p.getEmail(),p );
-                break;
-            case "PROFESSOR":
-                f = new Professor();
-                p = new Pesquisador(nome, f, biografia, email, fotoURL);
-                pesquisadores.put(p.getEmail(),p );
-                break;
-            case "EXTERNO":
-                f = new Externo();
-                p = new Pesquisador(nome, f, biografia, email, fotoURL);
-                pesquisadores.put(p.getEmail(),p );
-                break;
-            default:
-                throw new IllegalArgumentException("Tipo " + funcao + " inexistente");
-        }
+        Pesquisador p = new Pesquisador(nome, funcao, biografia, email, fotoURL);
+        pesquisadores.put(p.getEmail(),p );
     }
 
     /**
@@ -81,21 +60,6 @@ public class ControlePesquisador {
                 pesquisadores.put(p.getEmail(), p);
                 pesquisadores.remove(email);
                 break;
-            case "FUNCAO":
-                switch (novoValor.toUpperCase()) {
-                    case "ESTUDANTE":
-                        pesquisadores.get(email).setFuncao(new Aluno());
-                        break;
-                    case "PROFESSOR":
-                        pesquisadores.get(email).setFuncao(new Professor());
-                        break;
-                    case "EXTERNO":
-                        pesquisadores.get(email).setFuncao(new Externo());
-                        break;
-                    default:
-                        throw new IllegalArgumentException("Tipo " + novoValor + " inexistente");
-                }
-                break;
             default:
                 pesquisadores.get(email).alteraAtributo(atributo, novoValor);
         }
@@ -107,28 +71,16 @@ public class ControlePesquisador {
         if(!pesquisadores.containsKey(email)){
             throw new IllegalArgumentException("Pesquisadora nao encontrada.");
         }
-
-        if(!pesquisadores.get(email).getFuncao().toUpperCase().equals("PROFESSOR")){
-            throw new IllegalArgumentException("Pesquisador nao compativel com a especialidade.");
-        }
-        pesquisadores.get(email).alteraAtributo("formacao",formacao);
-        pesquisadores.get(email).alteraAtributo("unidade",unidade);
-        pesquisadores.get(email).alteraAtributo("data",data);
+        pesquisadores.get(email).setEspecialidadeProfessor(formacao, unidade, data);
     }
 
 
     public void cadastraEspecialidadeAluno(String email, String semestre, String IEA){
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
-
         if(!pesquisadores.containsKey(email)){
             throw new IllegalArgumentException("Pesquisadora nao encontrada.");
         }
-
-        if(!pesquisadores.get(email).getFuncao().toUpperCase().equals("ESTUDANTE")){
-            throw new IllegalArgumentException("Pesquisador nao compativel com a especialidade.");
-        }
-        pesquisadores.get(email).alteraAtributo("semestre",semestre);
-        pesquisadores.get(email).alteraAtributo("IEA",IEA);
+        pesquisadores.get(email).setEspecialidadeAluno(semestre, IEA);
     }
 
     /**
@@ -166,10 +118,6 @@ public class ControlePesquisador {
             throw new IllegalArgumentException("Pesquisador nao encontrado");
         }
         if(!pesquisadorEhAtivo(email)) {
-            throw new IllegalArgumentException("Pesquisador inativo.");
-        }
-
-        if(!pesquisadorEhAtivo(email)){
             throw new IllegalArgumentException("Pesquisador inativo.");
         }
         return pesquisadores.get(email).toString();

@@ -3,6 +3,7 @@ package projetoLP2.facades;
 import easyaccept.EasyAccept;
 
 import projetoLP2.controladores.*;
+import projetoLP2.util.Verificador;
 
 public class Facade {
     private Controle controle;
@@ -67,7 +68,7 @@ public class Facade {
         return controle.pesquisadorEhAtivo(email);
     }
 
-    public String controle(String tipo){ return controle.listaPesquisadores(tipo); }
+    public String listaPesquisadores(String tipo){ return controle.listaPesquisadores(tipo); }
 
     public String cadastraProblema(String descricao, int viabilidade) {
         return controle.cadastraProblema(descricao, viabilidade);
@@ -134,9 +135,30 @@ public class Facade {
         return this.controle.busca(termo, numeroDoResultado);
     }
 
+    public boolean associaProblema(String idPesquisa, String idProblema) {
+        return this.controle.associaProblema(idPesquisa, idProblema);
+    }
+
+    public boolean desassociaProblema(String idPesquisa) {
+        return this.controle.desassociaProblema(idPesquisa);
+    }
+
+    public boolean associaObjetivo(String idPesquisa, String idObjetivo) {
+        return this.controle.associaObjetivo(idPesquisa, idObjetivo);
+    }
+
+    public boolean desassociaObjetivo(String idPesquisa, String idObjetivo){
+        return this.controle.desassociaObjetivo(idPesquisa, idObjetivo);
+    }
+
+    public String listaPesquisas(String ordem) {
+        return this.controle.listaPesquisas(ordem);
+    }
+
     public int contaResultadosBusca(String termo){
         return this.controle.contaResultadosBusca(termo);
     }
+
     public static void main(String[] args){
         args = new String[] {"projetoLP2.facades.Facade",
                 "testes/aceitacao/use_case_1.txt",
