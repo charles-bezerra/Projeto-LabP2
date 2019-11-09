@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * Classe responsavel por representar um controle que admnistra pesquisadores.
- * @author Melquisedeque Carvalho Silva
+ * @author Melquisedeque Carvalho Silva, Iago Henrique de Souza Silva
  */
 public class ControlePesquisador {
     /**
@@ -68,6 +68,13 @@ public class ControlePesquisador {
     }
 
 
+    /**
+     * Cadastra os atributos especificos de um professor em um pesquisador.
+     * @param email representa o email do pesquisador
+     * @param formacao representa a formacao do pesquisador
+     * @param unidade representa a unidade do pesquisador
+     * @param data representa a data em que o pesquisador se formou
+     */
     public void cadastraEspecialidadeProfessor(String email, String formacao, String unidade, String data){
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
         if(!pesquisadores.containsKey(email)){
@@ -77,6 +84,12 @@ public class ControlePesquisador {
     }
 
 
+    /**
+     * Cadastra os atributos especificos de um aluno em um pesquisador.
+     * @param email representa o email do pesquisador
+     * @param semestre representa o semestre em que o pesquisador esta
+     * @param IEA representa o IEA do pesquisador
+     */
     public void cadastraEspecialidadeAluno(String email, String semestre, String IEA){
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
         if(!pesquisadores.containsKey(email)){
@@ -140,6 +153,11 @@ public class ControlePesquisador {
     }
 
 
+    /**
+     * Metodo responsavel listar todos os pesquisadores de um determinado tipo.
+     * @param tipo o tipo de pesquisadores a serem listados.
+     * @return a concatennaçao das representacoes textuais dos pesquisadores separadas por " - ".
+     */
     public String listaPesquisadores(String tipo){
         Verificador.verificaString("Campo tipo nao pode ser nulo ou vazio.", tipo);
 
@@ -158,7 +176,7 @@ public class ControlePesquisador {
         String saida = "";
 
         for (Pesquisador p : pesquisadores.values()) {
-            if(p.getFuncao().toUpperCase().equals(tipo.toUpperCase())) {
+            if(p.getFuncao().equals(tipo.toUpperCase())) {
                 saida += p.toString() + " | ";
             }
         }
@@ -169,6 +187,10 @@ public class ControlePesquisador {
     }
 
 
+    /**
+     * Captura todos os pesuisadores do sistema e os retornam
+     * @return o mapa de pesquisadores
+     */
     public Map<String,Pesquisador> getPesquisadores(){
         return pesquisadores;
     }

@@ -16,13 +16,12 @@ import java.util.*;
  */
 public class ControlePesquisa {
 	/**
-	 * O mapa de clientes, com os codigos como chave
+	 * O mapa de pesquisas, com os codigos como chave
 	 */
 	private Map<String, Pesquisa> pesquisas;
 
 	/**
 	 * Constroi o Controller de pesquisas. Onde o mapa de pesquisas
-	 * e o mapa de codigos eh incializado
 	 */
 	public ControlePesquisa() {
 		pesquisas = new HashMap<>();
@@ -141,6 +140,11 @@ public class ControlePesquisa {
 		return pesquisas.get(codigo).toString();
 	}
 
+
+	/**
+	 * Captura todas as pesuisasdo sistema e as retornam
+	 * @return o mapa de pesquisas
+	 */
 	public Map<String,Pesquisa> getPesquisas(){ return pesquisas; }
 
 	/**

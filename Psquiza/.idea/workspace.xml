@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8152c08-bdac-4d88-a927-fd7b251ea96e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/Interfaces/Funcao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/Interfaces/Funcao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/AssociacaoPesquisaPesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/AssociacaoPesquisaPesquisador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Aluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/AlunoSemEspecialidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/AlunoSemEspecialidades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Externo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Externo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/FuncaoSemEspecialidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/FuncaoSemEspecialidade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Professor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/ProfessorSemEspecialidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/ProfessorSemEspecialidades.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisaPesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisaPesquisador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" afterDir="false" />
     </list>
@@ -68,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573318862746</updated>
-      <workItem from="1573318869145" duration="2297000" />
+      <workItem from="1573318869145" duration="7958000" />
     </task>
     <servers />
   </component>
