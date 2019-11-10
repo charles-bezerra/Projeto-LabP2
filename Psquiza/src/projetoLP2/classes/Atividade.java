@@ -47,8 +47,14 @@ public class Atividade implements Comparable<Atividade>{
      */
     private List<Item> items;
 
+    /**
+     * Resultados da atividade.
+     */
     private List<String> resultados;
 
+    /**
+     * Tempo de duracao da atividade.
+     */
     private int duracao = 0;
 
     /**
@@ -123,34 +129,62 @@ public class Atividade implements Comparable<Atividade>{
         return cont;
     }
 
+    /**
+     * Realiza um item do sistema.
+     *
+     * @param item o item a ser realizado
+     * @param duracao o tempo que demorou para o item ser realizado
+     */
     public void executaAtividade(int item, int duracao) {
+        Verificador.verificaInteiro("Item nao pode ser nulo ou negativo.", item);
+        Verificador.verificaInteiro("Duracao nao pode ser nula ou negativa.", duracao);
+        if(items.size() < item) { throw new IllegalArgumentException("Item nao encontrado."); }
         items.get(item - 1).realizaItem();
         this.duracao += duracao;
     }
 
+    /**
+     * Cadastra um resultado no sistema.
+     *
+     * @param resultado o resultado a ser cadastrado
+     * @return o numero do resultado que foi cadastrado
+     */
     public int cadastraResultado(String resultado) {
         resultados.add(resultado);
         return resultados.size();
     }
 
+    /**
+     * Remove um resultado do sistema.
+     *
+     * @param numeroResultado o numero do resultado a ser removido
+     * @return true e se a operacao for um sucesso
+     */
     public boolean removeResultado(int numeroResultado) {
-        if(resultados.size() >= numeroResultado) {
-            if(resultados.get(numeroResultado) != null) {
-                resultados.remove(numeroResultado);
-                return true;
-            }
-        }
-        return false;
+        Verificador.verificaInteiro("numeroResultado nao pode ser nulo ou negativo." ,numeroResultado);
+        if(resultados.size() < numeroResultado) { throw new IllegalArgumentException("Resultado nao encontrado."); }
+        resultados.remove(numeroResultado - 1);
+        return true;
     }
 
-    public String listaResultado() {
+    /**
+     * Lista todos os resultados cadastrados nessa atividade.
+     *
+     * @return a lista de todos os resultados nessa atividade
+     */
+    public String listaResultados() {
         String todosResultado = "";
         for(String resultado : resultados) {
             todosResultado += resultado + " | ";
         }
-        return todosResultado.substring(0, resultados.size()-3);
+        return todosResultado.substring(0, todosResultado.length() - 3);
     }
 
+    /**
+     * Retorna a duracao da atividade.
+     *
+     * @return a duracao da atividade
+     */
     public int getDuracao() {return duracao;}
 
 

@@ -254,5 +254,69 @@ public class Controle {
         return this.controlePesquisa
                 .listaPesquisas(ordem);
     }
+
+    /**
+     * Associa uma atividade a uma pesquisa.
+     *
+     * @param codigoPesquisa o codigo da pesquisa a ser associada
+     * @param codigoAtividade o codigo da atividade a ser associada
+     * @return true se a operacao foi um sucesso e false se nao foi
+     */
+    public boolean associaAtividade(String codigoPesquisa, String codigoAtividade) { return controlePesquisa.associaAtividade(codigoPesquisa, controleAtividade.getAtividade(codigoAtividade)); }
+
+    /**
+     * Desassocia uma atividade d euma pesquisa.
+     *
+     * @param codigoPesquisa o codigo da esquisa a ser disassociada
+     * @param codigoAtividade o codigo da atividade a ser disassociada
+     * @return true se a operacao foi um sucesso e false se nao foi
+     */
+    public boolean desassociaAtividade(String codigoPesquisa, String codigoAtividade) { return controlePesquisa.desassociaAtividade(codigoPesquisa, controleAtividade.getAtividade(codigoAtividade)); }
+
+    /**
+     * Executa um item de uma atividade.
+     *
+     * @param codigoAtividade o codigo da atividade a qual o item pertence
+     * @param item o numero item a ser executado
+     * @param duracao o tempo que demorou para o item ser executado
+     */
+    public void executaAtividade(String codigoAtividade, int item, int duracao) {
+        if (!controlePesquisa.encontraAtividade(controleAtividade.getAtividade(codigoAtividade))) { throw new IllegalArgumentException("Atividade sem associacoes com pesquisas."); }
+        controleAtividade.executaAtividade(codigoAtividade, item, duracao);
+    }
+
+    /**
+     * Cadastra um resultado no sistema.
+     *
+     * @param codigoAtividade o codigo da atividade na qual o resultao sera cadastrado
+     * @param resultado o reesultado que sera castrado
+     * @return o numero do resultado cadastrado
+     */
+    public int cadastraResultado(String codigoAtividade, String resultado) { return controleAtividade.cadastraResultado(codigoAtividade, resultado); }
+
+    /**
+     * Remove um resultado do sistema.
+     *
+     * @param codigoAtividade o codigo da atividade na qual o resultado esta cadastrado
+     * @param numeroResultado o numero do resultado a ser exclluido
+     * @return true se a operacao foi um sucesso
+     */
+    public boolean removeResultado(String codigoAtividade, int numeroResultado) { return controleAtividade.removeResultado(codigoAtividade, numeroResultado); }
+
+    /**
+     * Lista todos os resultados de uma atividade.
+     *
+     * @param codigoAtividade o codigo da atividade que tera seus resultados listados
+     * @return a lista de todoas os resultados de uma atividade
+     */
+    public String listaResultados(String codigoAtividade) { return controleAtividade.listaResultados(codigoAtividade); }
+
+    /**
+     * Retorna a duracao de uma atividade.
+     *
+     * @param codigoAtividade o codigo da atividade que se deseja saber a duracao
+     * @return a duracao de uma atividade
+     */
+    public int getDuracao(String codigoAtividade) { return controleAtividade.getDuracao(codigoAtividade); }
 }
 

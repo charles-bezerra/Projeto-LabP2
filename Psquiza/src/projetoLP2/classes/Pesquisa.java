@@ -45,6 +45,11 @@ public class Pesquisa implements Comparable<Pesquisa>{
 	private Problema problema;
 
 	/**
+	 * Mapa de atividade associadas a essa pesquisa.
+	 */
+	private Map<String, Atividade> atividades;
+
+	/**
 	 * Constroi uma pesquisa a partir da descricao, campo de interesse
 	 * e seu codigo. Seu estado comeca como 'ATIVA' e seu motivo vazio
 	 *
@@ -63,6 +68,7 @@ public class Pesquisa implements Comparable<Pesquisa>{
 		this.motivo = "";
 		this.objetivos = new HashMap<>();
 		this.problema = null;
+		this.atividades = new HashMap<>();
 	}
 
 
@@ -235,6 +241,42 @@ public class Pesquisa implements Comparable<Pesquisa>{
 		return String.format("%s - %s - %s", this.cod,this.descricao,this.campoDeInteresse);
 	}
 
+	/**
+	 * Associa uma atividade a uma pesquisa.
+	 *
+	 * @param atividade a atividade a ser associada
+	 * @return true se a operacao foi um sucesso e false se nao foi
+	 */
+	public boolean associaAtividade(Atividade atividade) {
+		if(!this.ehAtiva()) { throw new IllegalArgumentException("Pesquisa desativada."); }
+		if(atividades.containsKey(atividade.getCodigo())) {return false; }
+		atividades.put(atividade.getCodigo(), atividade);
+		return true;
+	}
+
+	/**
+	 * Desassocia uma atividade a uma pesquisa.
+	 *
+	 * @param atividade a atividade a ser desassociada
+	 * @return true se a operacao foi um sucesso e false se nao foi
+	 */
+	public boolean desassociaAtividade(Atividade atividade) {
+		if(!this.ehAtiva()) { throw new IllegalArgumentException("Pesquisa desativada."); }
+		if(!atividades.containsKey(atividade.getCodigo())) {return false; }
+		atividades.remove(atividade.getCodigo());
+		return true;
+	}
+
+	/**
+	 * Testa se uma atividade está associada a essa pesquisa.
+	 *
+	 * @param codigoAtividade o codigo da atividade a ser testada.
+	 * @return true se estiver associada e false se nao estiver
+	 */
+	public boolean encontrAtividade(String codigoAtividade) {
+		if(atividades.containsKey(codigoAtividade)) { return true; }
+		return false;
+	}
 
 	/**
 	 * Retorna se este objeto eh igual a um outro.

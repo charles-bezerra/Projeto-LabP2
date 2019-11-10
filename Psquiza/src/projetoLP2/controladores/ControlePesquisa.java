@@ -1,5 +1,6 @@
 package projetoLP2.controladores;
 
+import projetoLP2.classes.Atividade;
 import projetoLP2.classes.Objetivo;
 import projetoLP2.classes.Pesquisa;
 import projetoLP2.classes.Problema;
@@ -225,4 +226,40 @@ public class ControlePesquisa {
 		return resultado.toString();
 	}
 
+	/**
+	 * Associa uma atividade a uma pesquisa.
+	 *
+	 * @param codigoPesquisa o codigo da pesquisa a ser associada
+	 * @param atividade a atividade a ser associada
+	 * @return true se a operacao foi um sucesso e false se nao foi
+	 */
+	public boolean associaAtividade(String codigoPesquisa, Atividade atividade) {
+		Verificador.verificaString("Campo codigoPesquisa nao pode ser nulo ou vazio.", codigoPesquisa);
+		if(!this.encontraPesquisa(codigoPesquisa)) { throw new IllegalArgumentException("Pesquisa nao encontrada."); }
+		return pesquisas.get(codigoPesquisa).associaAtividade(atividade);
+	}
+
+	/**
+	 * Desassocia uma atividade a uma pesquisa.
+	 *
+	 * @param codigoPesquisa o codigo da pesquisa a ser desassociada
+	 * @param atividade a atividade a ser desassociada
+	 * @return true se a operacao foi um sucesso e false se nao foi
+	 */
+	public boolean desassociaAtividade(String codigoPesquisa, Atividade atividade) {
+		Verificador.verificaString("Campo codigoPesquisa nao pode ser nulo ou vazio.", codigoPesquisa);
+		if(!this.encontraPesquisa(codigoPesquisa)) { throw new IllegalArgumentException("Pesquisa nao encontrada."); }
+		return pesquisas.get(codigoPesquisa).desassociaAtividade(atividade);
+	}
+
+	/**
+	 * Testa se uma atividade está associada a alguma pesquisa.
+	 *
+	 * @param atividade a atividade a ser testada.
+	 * @return true se estiver associada e false se nao estiver
+	 */
+	public boolean encontraAtividade(Atividade atividade) {
+		for(Pesquisa pesquisa : pesquisas.values()) { if(pesquisa.encontrAtividade(atividade.getCodigo())) { return true; } }
+		return false;
+	}
 }
