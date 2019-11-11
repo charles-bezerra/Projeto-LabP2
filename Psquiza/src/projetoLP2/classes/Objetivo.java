@@ -1,5 +1,6 @@
 package projetoLP2.classes;
 
+import projetoLP2.enums.Disponibilidade;
 import projetoLP2.enums.Tipo;
 import projetoLP2.util.Verificador;
 
@@ -30,6 +31,11 @@ public class Objetivo implements Comparable<Objetivo>{
 	private static int count = 1;
 
 	/**
+	 * Enum que representa a disponibilidade do Objetivo
+	 */
+	private Disponibilidade disponibilidade;
+
+	/**
 	 * Controi um objetivo a partir de seu tipo, descricao, valor de aderecia e valor de vibilidade.
 	 * 
      * @param tipo o tipo do objetivo, GERAL ou ESPECIFICO
@@ -50,15 +56,14 @@ public class Objetivo implements Comparable<Objetivo>{
 			this.aderencia = aderencia;
 			this.viabilidade = viabilidade;
 			this.id = "O" + count;
-
-			switch(tipo)
-            {
+			switch(tipo) {
 				case "GERAL":{ this.tipo = Tipo.GERAL; break; }
 				case "ESPECIFICO":{ this.tipo = Tipo.ESPECIFICO; break; }
-				default: throw new IllegalArgumentException("Valor invalido de tipo.");
-			}
+				default: throw new IllegalArgumentException("Valor invalido de tipo."); }
 			count ++;
 		}
+
+		this.disponibilidade = Disponibilidade.DISPONIVEL;
 	}
 
 	/**
@@ -68,7 +73,19 @@ public class Objetivo implements Comparable<Objetivo>{
 	 */
 	public String getId() { return id; }
 
-    /**
+	public boolean getDisponivel() {
+	    return this.disponibilidade == Disponibilidade.DISPONIVEL;
+	}
+
+	public void tornarDisponivel(){
+		this.disponibilidade = Disponibilidade.DISPONIVEL;
+	}
+
+	public void tornarIndisponivel() {
+		this.disponibilidade = Disponibilidade.INDISPONIVEL;
+	}
+
+	/**
      *
      * @return
      */

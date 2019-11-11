@@ -45,7 +45,10 @@ public class Item {
     /**
      * Difine status como realizado
      */
-    public void realizaItem() { this.status = Status.REALIZADO; }
+    public void realizaItem() {
+        if(this.status == Status.REALIZADO) { throw new IllegalArgumentException("Item ja executado."); }
+        this.status = Status.REALIZADO;
+    }
 
     /**
      * Retorna o objeto status

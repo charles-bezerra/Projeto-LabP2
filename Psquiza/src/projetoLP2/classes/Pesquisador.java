@@ -9,7 +9,7 @@ import java.util.Objects;
 
 /**
  * Classe responsavel por representar um pesquisador e guardar seus dados.
- * @author Melquisedeque Carvalho SIlva
+ * @author Melquisedeque Carvalho SIlva, Iago Henrique de Souza Silva
  */
 public class Pesquisador implements Comparable<Pesquisador>{
     /**
@@ -30,6 +30,7 @@ public class Pesquisador implements Comparable<Pesquisador>{
     private String fotoURL;
     /**
      * Atributo que representa a funcao de um pesquisador.
+     * Variando entre Aluno, Professor e externo.
      */
     private Funcao funcao;
     /**
@@ -78,29 +79,36 @@ public class Pesquisador implements Comparable<Pesquisador>{
     }
 
 
+    /**
+     * Metodo responsavel por alterar um atributo do pesquisador
+     * @param atributo representa o atributo que determinado pesquisador quer alterar.
+     * @param novoValor representa o novo valor para o atributo desejado.
+     */
     public void alteraAtributo(String atributo, String novoValor) {
-        Verificador.verificaString("Campo atributo nao pode ser nulo ou vazio.", atributo);
-        Verificador.verificaString("Campo " + atributo + " nao pode ser nulo ou vazio.", novoValor);
+        Verificador.verificaString("Atributo nao pode ser vazio ou nulo.", atributo);
 
         if(!isAtivado()){
             throw new IllegalArgumentException("Pesquisador inativo.");
         }
-        switch (atributo.toUpperCase()) {
+        switch (atributo) {
             case "EMAIL":
-                verificaEmail(novoValor);
+                Verificador.verificaString("Campo " + atributo.toLowerCase() + " nao pode ser nulo ou vazio.", novoValor);
                 setEmail(novoValor);
                 break;
             case "FUNCAO":
+                Verificador.verificaString("Campo " + atributo.toLowerCase() + " nao pode ser nulo ou vazio.", novoValor);
                 alteraFuncao(novoValor);
                 break;
-            case "FOTOURL":
-                verificaFoto(novoValor);
+            case "FOTO":
+                Verificador.verificaString("Campo fotoURL nao pode ser nulo ou vazio.", novoValor);
                 setFotoURL(novoValor);
                 break;
             case "NOME":
+                Verificador.verificaString("Campo " + atributo.toLowerCase() + " nao pode ser nulo ou vazio.", novoValor);
                 setNome(novoValor);
                 break;
             case "BIOGRAFIA":
+                Verificador.verificaString("Campo " + atributo.toLowerCase() + " nao pode ser nulo ou vazio.", novoValor);
                 setBiografia(novoValor);
                 break;
             default:
@@ -140,7 +148,10 @@ public class Pesquisador implements Comparable<Pesquisador>{
     private String getNome() {
         return nome;
     }
-
+    /**
+     * Troca o nome atual do pesquisador por um novo nome
+     * @param nome o novo nome
+     */
     private void setNome(String nome) {
         this.nome = nome;
     }
@@ -152,7 +163,10 @@ public class Pesquisador implements Comparable<Pesquisador>{
     public String getBiografia() {
         return biografia;
     }
-
+    /**
+     * Troca a biografia atual do pesquisador por uma nova biografia
+     * @param biografia a nova biografia
+     */
     private void setBiografia(String biografia) {
         this.biografia = biografia;
     }
@@ -164,8 +178,12 @@ public class Pesquisador implements Comparable<Pesquisador>{
     public String getEmail() {
         return email;
     }
-
+    /**
+     * Troca o email atual do pesquisador por um novo email
+     * @param email o novo email
+     */
     private void setEmail(String email) {
+        verificaEmail(email);
         this.email = email;
     }
 
@@ -176,8 +194,12 @@ public class Pesquisador implements Comparable<Pesquisador>{
     private String getFotoURL() {
         return fotoURL;
     }
-
+    /**
+     * Troca a foto atual do pesquisador por uma nova foto
+     * @param fotoURL a nova foto
+     */
     private void setFotoURL(String fotoURL) {
+        verificaFoto(fotoURL);
         this.fotoURL = fotoURL;
     }
 
@@ -188,7 +210,10 @@ public class Pesquisador implements Comparable<Pesquisador>{
     public String getFuncao() {
         return funcao.getNome();
     }
-
+    /**
+     * Troca a funcao atual do pesquisador por uma nova funcao sem especialidade
+     * @param funcao a nova funcao
+     */
     private void alteraFuncao(String funcao) {
         switch (funcao.toUpperCase()) {
             case "ESTUDANTE":
@@ -206,6 +231,12 @@ public class Pesquisador implements Comparable<Pesquisador>{
     }
 
 
+    /**
+     * Cadastra os atributos especificos da funcao professor no pesquisador.
+     * @param formacao representa a formacao do pesquisador
+     * @param unidade representa a unidade do pesquisador
+     * @param data representa a data em que o pesquisador se formou
+     */
     public void setEspecialidadeProfessor(String formacao, String unidade, String data){
         if(!getFuncao().toUpperCase().equals(TipoFuncao.PROFESSOR.getFuncao())){
             throw new IllegalArgumentException("Pesquisador nao compativel com a especialidade.");
@@ -214,7 +245,12 @@ public class Pesquisador implements Comparable<Pesquisador>{
     }
 
 
-    public void setEspecialidadeAluno( String semestre, String IEA){
+    /**
+     * Cadastra os atributos especificos da funcao aluno no pesquisador.
+     * @param semestre representa o semestre em que o pesquisador esta
+     * @param IEA representa o IEA do pesquisador
+     */
+    public void setEspecialidadeAluno(String semestre, String IEA){
         if(!getFuncao().toUpperCase().equals(TipoFuncao.ESTUDANTE.getFuncao())){
             throw new IllegalArgumentException("Pesquisador nao compativel com a especialidade.");
         }
@@ -288,6 +324,7 @@ public class Pesquisador implements Comparable<Pesquisador>{
     }
 
     /**
+     * Compara se este pesquisador eh igual a outro pelo email deles
      *
      * @param o representa outro objeto para a comparação.
      * @return um inteiro referente a comparação entre os objetos.

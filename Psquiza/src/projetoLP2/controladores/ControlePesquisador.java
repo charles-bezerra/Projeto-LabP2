@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * Classe responsavel por representar um controle que admnistra pesquisadores.
- * @author Melquisedeque Carvalho Silva
+ * @author Melquisedeque Carvalho Silva, Iago Henrique de Souza Silva
  */
 public class ControlePesquisador {
     /**
@@ -48,38 +48,49 @@ public class ControlePesquisador {
      */
     public void alteraPesquisador(String email, String atributo, String novoValor) {
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
-        Verificador.verificaString("Campo " + atributo + " nao pode ser nulo ou vazio.", novoValor);
-        if(! pesquisadores.containsKey(email)) {
+        Verificador.verificaString("Atributo nao pode ser vazio ou nulo.", atributo);
+
+        if(! pesquisadores.containsKey(email))
             throw new IllegalArgumentException("Pesquisador nao encontrado");
-        }
 
         switch (atributo.toUpperCase()) {
             case "EMAIL":
+                Verificador.verificaString("Campo " + atributo.toLowerCase() + " nao pode ser nulo ou vazio.", novoValor);
                 Pesquisador p = pesquisadores.get(email);
                 p.alteraAtributo(atributo, novoValor);
                 pesquisadores.put(p.getEmail(), p);
                 pesquisadores.remove(email);
                 break;
-            default:
-                pesquisadores.get(email).alteraAtributo(atributo, novoValor);
+            default: pesquisadores.get(email).alteraAtributo(atributo, novoValor);
         }
     }
 
 
+    /**
+     * Cadastra os atributos especificos de um professor em um pesquisador.
+     * @param email representa o email do pesquisador
+     * @param formacao representa a formacao do pesquisador
+     * @param unidade representa a unidade do pesquisador
+     * @param data representa a data em que o pesquisador se formou
+     */
     public void cadastraEspecialidadeProfessor(String email, String formacao, String unidade, String data){
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
-        if(!pesquisadores.containsKey(email)){
+        if(!pesquisadores.containsKey(email))
             throw new IllegalArgumentException("Pesquisadora nao encontrada.");
-        }
         pesquisadores.get(email).setEspecialidadeProfessor(formacao, unidade, data);
     }
 
 
+    /**
+     * Cadastra os atributos especificos de um aluno em um pesquisador.
+     * @param email representa o email do pesquisador
+     * @param semestre representa o semestre em que o pesquisador esta
+     * @param IEA representa o IEA do pesquisador
+     */
     public void cadastraEspecialidadeAluno(String email, String semestre, String IEA){
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
-        if(!pesquisadores.containsKey(email)){
+        if(!pesquisadores.containsKey(email))
             throw new IllegalArgumentException("Pesquisadora nao encontrada.");
-        }
         pesquisadores.get(email).setEspecialidadeAluno(semestre, IEA);
     }
 
@@ -89,9 +100,8 @@ public class ControlePesquisador {
      */
     public void desativaPesquisador(String email){
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
-        if(! pesquisadores.containsKey(email)){
+        if(! pesquisadores.containsKey(email))
             throw new IllegalArgumentException("Pesquisador nao encontrado");
-        }
         pesquisadores.get(email).desativaPesquisador();
     }
 
@@ -101,9 +111,8 @@ public class ControlePesquisador {
      */
     public void ativaPesquisador(String email){
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
-        if(! pesquisadores.containsKey(email)){
+        if(! pesquisadores.containsKey(email))
             throw new IllegalArgumentException("Pesquisador nao encontrado");
-        }
         pesquisadores.get(email).ativaPesquisador();
     }
 
@@ -114,12 +123,10 @@ public class ControlePesquisador {
      */
     public String exibePesquisador(String email) {
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
-        if(! pesquisadores.containsKey(email)){
+        if(! pesquisadores.containsKey(email))
             throw new IllegalArgumentException("Pesquisador nao encontrado");
-        }
-        if(!pesquisadorEhAtivo(email)) {
+        if(!pesquisadorEhAtivo(email))
             throw new IllegalArgumentException("Pesquisador inativo.");
-        }
         return pesquisadores.get(email).toString();
     }
 
@@ -130,43 +137,45 @@ public class ControlePesquisador {
      */
     public boolean pesquisadorEhAtivo(String email){
         Verificador.verificaString("Email nao pode ser vazio ou nulo.", email);
-        if(! pesquisadores.containsKey(email)){
+        if(! pesquisadores.containsKey(email))
             throw new IllegalArgumentException("Pesquisador nao encontrado");
-        } else{
-            return pesquisadores.get(email).isAtivado();
-        }
+        else return pesquisadores.get(email).isAtivado();
     }
 
 
+    /**
+     * Metodo responsavel listar todos os pesquisadores de um determinado tipo.
+     * @param tipo o tipo de pesquisadores a serem listados.
+     * @return a concatennaçao das representacoes textuais dos pesquisadores separadas por " - ".
+     */
     public String listaPesquisadores(String tipo){
         Verificador.verificaString("Campo tipo nao pode ser nulo ou vazio.", tipo);
-
         TipoFuncao[] arr = TipoFuncao.values();
         boolean contem = false;
-        for(TipoFuncao f : arr){
+
+        for(TipoFuncao f : arr)
             if(f.toString().equals(tipo.toUpperCase())){
                 contem = true;
-                break;
-            }
-        }
-        if(!contem){
-            throw new IllegalArgumentException("Tipo " + tipo + " inexistente.");
-        }
+                break; }
+
+        if(!contem) throw new IllegalArgumentException("Tipo " + tipo + " inexistente.");
 
         String saida = "";
 
-        for (Pesquisador p : pesquisadores.values()) {
-            if(p.getFuncao().toUpperCase().equals(tipo.toUpperCase())) {
+        for (Pesquisador p : pesquisadores.values())
+            if(p.getFuncao().equals(tipo.toUpperCase()))
                 saida += p.toString() + " | ";
-            }
-        }
-        if (saida.length() > 0){
+
+        if (saida.length() > 0)
             saida = saida.substring(0,saida.length() - 3 );
-        }
         return saida;
     }
 
 
+    /**
+     * Captura todos os pesuisadores do sistema e os retornam
+     * @return o mapa de pesquisadores
+     */
     public Map<String,Pesquisador> getPesquisadores(){
         return pesquisadores;
     }
@@ -182,15 +191,9 @@ public class ControlePesquisador {
         Collections.sort(buscasOrdenadas);
         ArrayList<String> retorno = new ArrayList<>();
 
-        for (Pesquisador pesquisador: buscasOrdenadas){
-            if (pesquisador.getBiografia().toLowerCase().contains(termo.toLowerCase())) {
+        for (Pesquisador pesquisador: buscasOrdenadas)
+            if (pesquisador.getBiografia().toLowerCase().contains(termo.toLowerCase()))
                 retorno.add(pesquisador.getEmail() + ": " + pesquisador.getBiografia());
-
-            }
-
-        }
-
         return retorno;
     }
-
 }

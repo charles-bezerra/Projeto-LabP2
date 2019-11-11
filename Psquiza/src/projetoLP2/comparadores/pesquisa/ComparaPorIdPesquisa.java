@@ -11,7 +11,7 @@ import java.util.Comparator;
 public class ComparaPorIdPesquisa implements Comparator<Pesquisa> {
     @Override
     public int compare(Pesquisa p1, Pesquisa p2){
-        int pos = p1.compareTo(p2);
+        int pos = p1.getCod().compareTo(p2.getCod());
         if (pos == 0) return 0;
         return (pos > 0) ? -1 : 1;
     }

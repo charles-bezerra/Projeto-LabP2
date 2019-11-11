@@ -159,6 +159,20 @@ public class Facade {
         return this.controle.contaResultadosBusca(termo);
     }
 
+    public boolean associaAtividade(String codigoPesquisa, String codigoAtividade) { return this.controle.associaAtividade(codigoPesquisa, codigoAtividade); }
+
+    public boolean desassociaAtividade(String codigoPesquisa, String codigoAtividade) { return this.controle.desassociaAtividade(codigoPesquisa, codigoAtividade); }
+
+    public void executaAtividade(String codigoAtividade, int item, int duracao) { this.controle.executaAtividade(codigoAtividade, item, duracao); }
+
+    public int cadastraResultado(String codigoAtividade, String resultado) { return this.controle.cadastraResultado(codigoAtividade, resultado); }
+
+    public boolean removeResultado(String codigoAtividade, int numeroResultado) { return this.controle.removeResultado(codigoAtividade, numeroResultado); }
+
+    public String listaResultados(String codigoAtividade) { return this.controle.listaResultados(codigoAtividade); }
+
+    public int getDuracao(String codigoAtividade) { return this.controle.getDuracao(codigoAtividade); }
+
     public static void main(String[] args){
         args = new String[] {"projetoLP2.facades.Facade",
                 "testes/aceitacao/use_case_1.txt",

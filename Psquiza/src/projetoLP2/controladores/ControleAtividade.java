@@ -1,6 +1,7 @@
 package projetoLP2.controladores;
 
 import projetoLP2.classes.Atividade;
+import projetoLP2.classes.Problema;
 import projetoLP2.util.Verificador;
 
 import java.util.ArrayList;
@@ -82,4 +83,78 @@ public class ControleAtividade {
         return retorno;
     }
 
+    /**
+     * Retorna uma atividade.
+     *
+     * @param codigoAtividade o codigo da atividade a ser retornada
+     * @return uma atividade
+     */
+    public Atividade getAtividade(String codigoAtividade) {
+        Verificador.verificaString("Campo codigoAtividade nao pode ser nulo ou vazio.", codigoAtividade);
+        if(!this.encontraAtividade(codigoAtividade)) { throw new IllegalArgumentException("Atividade nao encontrada"); }
+        return atividades.get(codigoAtividade);
+    }
+
+    /**
+     * Executa um item de uma atividade.
+     *
+     * @param codigoAtividade o codigo da atividade a qual o item pertence
+     * @param item o numero item a ser executado
+     * @param duracao o tempo que demorou para o item ser executado
+     */
+    public void executaAtividade(String codigoAtividade, int item, int duracao) {
+        if(!this.encontraAtividade(codigoAtividade)) { throw new IllegalArgumentException("Atividade nao encontrada"); }
+        atividades.get(codigoAtividade).executaAtividade(item, duracao);
+    }
+
+    /**
+     * Cadastra um resultado no sistema.
+     *
+     * @param codigoAtividade o codigo da atividade na qual o resultao sera cadastrado
+     * @param resultado o reesultado que sera castrado
+     * @return o numero do resultado cadastrado
+     */
+    public int cadastraResultado(String codigoAtividade, String resultado) {
+        Verificador.verificaString("Campo codigoAtividade nao pode ser nulo ou vazio.", codigoAtividade);
+        Verificador.verificaString("Resultado nao pode ser nulo ou vazio.", resultado);
+        if(!this.encontraAtividade(codigoAtividade)) { throw new IllegalArgumentException("Atividade nao encontrada"); }
+        return atividades.get(codigoAtividade).cadastraResultado(resultado);
+    }
+
+    /**
+     * Remove um resultado do sistema.
+     *
+     * @param codigoAtividade o codigo da atividade na qual o resultado esta cadastrado
+     * @param numeroResultado o numero do resultado a ser exclluido
+     * @return true se a operacao foi um sucesso
+     */
+    public boolean removeResultado(String codigoAtividade, int numeroResultado) {
+        Verificador.verificaString("Campo codigoAtividade nao pode ser nulo ou vazio.", codigoAtividade);
+        if(!this.encontraAtividade(codigoAtividade)) { throw new IllegalArgumentException("Atividade nao encontrada"); }
+        return atividades.get(codigoAtividade).removeResultado(numeroResultado);
+    }
+
+    /**
+     * Lista todos os resultados de uma atividade.
+     *
+     * @param codigoAtividade o codigo da atividade que tera seus resultados listados
+     * @return a lista de todoas os resultados de uma atividade
+     */
+    public String listaResultados(String codigoAtividade) {
+        Verificador.verificaString("Campo codigoAtividade nao pode ser nulo ou vazio.", codigoAtividade);
+        if(!this.encontraAtividade(codigoAtividade)) { throw new IllegalArgumentException("Atividade nao encontrada"); }
+        return atividades.get(codigoAtividade).listaResultados();
+    }
+
+    /**
+     * Retorna a duracao de uma atividade.
+     *
+     * @param codigoAtividade o codigo da atividade que se deseja saber a duracao
+     * @return a duracao de uma atividade
+     */
+    public int getDuracao(String codigoAtividade) {
+        Verificador.verificaString("Campo codigoAtividade nao pode ser nulo ou vazio.", codigoAtividade);
+        if(!this.encontraAtividade(codigoAtividade)) { throw new IllegalArgumentException("Atividade nao encontrada"); }
+        return atividades.get(codigoAtividade).getDuracao();
+    }
 }

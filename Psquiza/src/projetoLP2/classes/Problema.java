@@ -24,11 +24,6 @@ public class Problema implements Comparable<Problema>{
 	private static int count = 1;
 
 	/**
-	 *
-	 */
-	private ControlePesquisa pesquisas;
-
-	/**
 	 * Controi um problema a partir de sua descricao e do seu valor de viabilidade.
 	 * @param descricao a descricao do problema
      * @param viabilidade o valor de viabilidade do problema, numero inteiro de 1 a 5
@@ -43,18 +38,15 @@ public class Problema implements Comparable<Problema>{
 		this.id = "P" + count;
 
 		count ++;
-		this.pesquisas = new ControlePesquisa();
 	}
 
 	/**
 	 * Retorna o id do problema.
 	 * @return o id do problema
 	 */
-	public String getId() { return id; }
+	public String getId() { return this.id; }
 
 	public String getDescricao() { return descricao; }
-
-	public ControlePesquisa getPesquisas(){ return this.pesquisas; }
 
 	/**
 	 * Retorna a representacao em String de um problema.

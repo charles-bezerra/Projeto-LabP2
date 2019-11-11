@@ -45,6 +45,11 @@ public class Pesquisa implements Comparable<Pesquisa>{
 	private Problema problema;
 
 	/**
+	 * Mapa de atividade associadas a essa pesquisa.
+	 */
+	private Map<String, Atividade> atividades;
+
+	/**
 	 * Constroi uma pesquisa a partir da descricao, campo de interesse
 	 * e seu codigo. Seu estado comeca como 'ATIVA' e seu motivo vazio
 	 *
@@ -63,6 +68,7 @@ public class Pesquisa implements Comparable<Pesquisa>{
 		this.motivo = "";
 		this.objetivos = new HashMap<>();
 		this.problema = null;
+		this.atividades = new HashMap<>();
 	}
 
 
@@ -101,10 +107,19 @@ public class Pesquisa implements Comparable<Pesquisa>{
 		return cod + idPesquisas.get(cod);
 	}
 
+	/**
+	 * Retorna se a pesquisa esta ativa
+	 * @return boolean
+	 */
 	private boolean ehAtiva(){
 		return this.estado == Estado.ATIVA;
 	}
 
+	/**
+	 * Associa um problema a pesquisa
+	 * @param problema objeto Problema que esta sendo associado a pesquisa
+	 * @return sucesso da associacao do problema
+	 */
 	public boolean associaProblema(Problema problema){
 		if (!this.ehAtiva())
 			throw new IllegalArgumentException("Pesquisa desativada.");
@@ -116,6 +131,10 @@ public class Pesquisa implements Comparable<Pesquisa>{
 		return true;
 	}
 
+	/**
+	 * Desassocia o problema existente na pesquisa
+	 * @return sucesso da desassociacao
+	 */
 	public boolean desassociaProblema(){
 		if (!this.ehAtiva())
 			throw new IllegalArgumentException("Pesquisa desativada.");
@@ -125,25 +144,45 @@ public class Pesquisa implements Comparable<Pesquisa>{
 		return true;
 	}
 
+	/**
+	 * Associa um objetivo a pesquisa
+	 * @param objetivo objeto do tipo Objetivo que esta sendo associado a pesquisa
+	 * @return sucesso da associacao
+	 */
 	public boolean associaObjetivo(Objetivo objetivo){
 		if (!this.ehAtiva())
 			throw new IllegalArgumentException("Pesquisa desativada.");
 		if (this.objetivos.containsKey(objetivo.getId()))
+			return false;
+		if (!objetivo.getDisponivel())
 			throw new IllegalArgumentException("Objetivo ja associado a uma pesquisa.");
+
+		objetivo.tornarIndisponivel();
+
 		this.objetivos.put(objetivo.getId(), objetivo);
 		return true;
 	}
 
+	/**
+	 * Desassocia um obejtivo da pesquisa
+	 * @param idObjetivo String que consiste no endereco do objetivo
+	 * @return sucesso da desassociacao do objetivo
+	 */
 	public boolean desassociaObjetivo(String idObjetivo){
-		Verificador.verificaString("Campo idObjetivo nao pode ser vazio ou nulo", idObjetivo);
+		Verificador.verificaString("Campo idObjetivo nao pode ser nulo ou vazio.", idObjetivo);
 		if (!this.ehAtiva())
 			throw new IllegalArgumentException("Pesquisa desativada.");
 		if (!this.objetivos.containsKey(idObjetivo))
 			return false;
+		this.objetivos.get(idObjetivo).tornarDisponivel();
 		this.objetivos.remove(idObjetivo);
 		return true;
 	}
 
+	/**
+	 * Retorna a quantidade de objetivos da pesquisa
+	 * @return int da quantidade dos objetivos da pesquisa
+	 */
 	public int qtdObjetivos(){
 		return this.objetivos.size();
 	}
@@ -192,16 +231,26 @@ public class Pesquisa implements Comparable<Pesquisa>{
 		return cod;
 	}
 
+	/**
+	 * Funcao que retorna a descricao da pesquisa
+	 * @return String com a descricao
+	 */
 	public String getDescricao() {
 		return descricao;
 	}
 
+	/**
+	 * Funcao para retorna o campo de interesse da pesquisa
+	 * @return String com o campo de interesse
+	 */
 	public String getCampoDeInteresse() {
 		return campoDeInteresse;
 	}
 
-
-
+	/**
+	 * Funcao para retorna o problema da pesquisa
+	 * @return Um objeto do tipo Problema
+	 */
 	public Problema getProblema(){ return this.problema; }
 
 	/**
@@ -235,6 +284,41 @@ public class Pesquisa implements Comparable<Pesquisa>{
 		return String.format("%s - %s - %s", this.cod,this.descricao,this.campoDeInteresse);
 	}
 
+	/**
+	 * Associa uma atividade a uma pesquisa.
+	 *
+	 * @param atividade a atividade a ser associada
+	 * @return true se a operacao foi um sucesso e false se nao foi
+	 */
+	public boolean associaAtividade(Atividade atividade) {
+		if(!this.ehAtiva()) { throw new IllegalArgumentException("Pesquisa desativada."); }
+		if(atividades.containsKey(atividade.getCodigo())) {return false; }
+		atividades.put(atividade.getCodigo(), atividade);
+		return true;
+	}
+
+	/**
+	 * Desassocia uma atividade a uma pesquisa.
+	 *
+	 * @param atividade a atividade a ser desassociada
+	 * @return true se a operacao foi um sucesso e false se nao foi
+	 */
+	public boolean desassociaAtividade(Atividade atividade) {
+		if(!this.ehAtiva()) { throw new IllegalArgumentException("Pesquisa desativada."); }
+		if(!atividades.containsKey(atividade.getCodigo())) {return false; }
+		atividades.remove(atividade.getCodigo());
+		return true;
+	}
+
+	/**
+	 * Testa se uma atividade está associada a essa pesquisa.
+	 *
+	 * @param codigoAtividade o codigo da atividade a ser testada.
+	 * @return true se estiver associada e false se nao estiver
+	 */
+	public boolean encontrAtividade(String codigoAtividade) {
+		return atividades.containsKey(codigoAtividade);
+	}
 
 	/**
 	 * Retorna se este objeto eh igual a um outro.

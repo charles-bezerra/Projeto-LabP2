@@ -1,5 +1,6 @@
 package projetoLP2.controladores;
 
+import projetoLP2.classes.Atividade;
 import projetoLP2.classes.Objetivo;
 import projetoLP2.classes.Pesquisa;
 import projetoLP2.classes.Problema;
@@ -16,13 +17,12 @@ import java.util.*;
  */
 public class ControlePesquisa {
 	/**
-	 * O mapa de clientes, com os codigos como chave
+	 * O mapa de pesquisas, com os codigos como chave
 	 */
 	private Map<String, Pesquisa> pesquisas;
 
 	/**
 	 * Constroi o Controller de pesquisas. Onde o mapa de pesquisas
-	 * e o mapa de codigos eh incializado
 	 */
 	public ControlePesquisa() {
 		pesquisas = new HashMap<>();
@@ -141,6 +141,11 @@ public class ControlePesquisa {
 		return pesquisas.get(codigo).toString();
 	}
 
+
+	/**
+	 * Captura todas as pesuisasdo sistema e as retornam
+	 * @return o mapa de pesquisas
+	 */
 	public Map<String,Pesquisa> getPesquisas(){ return pesquisas; }
 
 	/**
@@ -169,7 +174,7 @@ public class ControlePesquisa {
 	}
 
 	public boolean associaProblema(String idPesquisa, Problema problema) {
-        Verificador.verificaString("Campo idPesquisa nao pode ser vazio ou nulo.", idPesquisa);
+        Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", idPesquisa);
 	    if (!this.encontraPesquisa(idPesquisa)) throw new IllegalArgumentException("Pesquisa nao encontrada.");
 	    return this.pesquisas
                 .get(idPesquisa)
@@ -177,7 +182,7 @@ public class ControlePesquisa {
 	}
 
 	public boolean desassociaProblema(String idPesquisa) {
-        Verificador.verificaString("Campo idPesquisa nao pode ser vazio ou nulo.", idPesquisa);
+        Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", idPesquisa);
         if (!this.encontraPesquisa(idPesquisa)) throw new IllegalArgumentException("Pesquisa nao encontrada.");
         return this.pesquisas
                 .get(idPesquisa)
@@ -193,32 +198,70 @@ public class ControlePesquisa {
 	}
 
 	public boolean desassociaObjetivo(String idPesquisa, String idObjetivo){
-        Verificador.verificaString("Campo idObjetivo nao pode ser nulo ou vazio", idPesquisa);
-        if (!this.encontraPesquisa(idPesquisa)) throw new IllegalArgumentException("Pesquisa nao encontrada.");
+        Verificador.verificaString("Campo idObjetivo nao pode ser nulo ou vazio.", idPesquisa);
+        if (!this.encontraPesquisa(idPesquisa))
+        	throw new IllegalArgumentException("Pesquisa nao encontrada.");
         return this.pesquisas
                 .get(idPesquisa)
                 .desassociaObjetivo(idObjetivo);
     }
 
 	public String listaPesquisas(String ordem) {
+		Verificador.verificaString("Valor invalido da ordem", ordem);
 		List<Pesquisa> pesquisas = new ArrayList<>( this.pesquisas.values() );
-		switch (ordem.toUpperCase()){
-			case "PROBLEMA":{ pesquisas.sort(new ComparaPorIdProblema()); break;}
-			case "OBJETIVO":{ pesquisas.sort(new ComparaPorObjetivos()); break;}
-			case "PESQUISA":{ pesquisas.sort(new ComparaPorIdPesquisa()); break;}
+		StringBuilder resultado = new StringBuilder("");
+
+		switch (ordem.toUpperCase()) {
+			case "PROBLEMA": { pesquisas.sort(new ComparaPorIdProblema()); break; }
+			case "OBJETIVOS": { pesquisas.sort(new ComparaPorObjetivos()); break; }
+			case "PESQUISA": { pesquisas.sort(new ComparaPorIdPesquisa()); break; }
 			default: throw new IllegalArgumentException("Valor invalido da ordem");
 		}
 
 		Iterator<Pesquisa> pesquisaIterator = pesquisas.iterator();
-		StringBuilder resultado = new StringBuilder("");
 
-		while (pesquisaIterator.hasNext()){
-			resultado.append( pesquisaIterator.next().toString() );
+		while (pesquisaIterator.hasNext()) {
+			resultado.append(pesquisaIterator.next().toString());
 			if (pesquisaIterator.hasNext())
 				resultado.append(" | ");
 		}
-
 		return resultado.toString();
 	}
 
+	/**
+	 * Associa uma atividade a uma pesquisa.
+	 *
+	 * @param codigoPesquisa o codigo da pesquisa a ser associada
+	 * @param atividade a atividade a ser associada
+	 * @return true se a operacao foi um sucesso e false se nao foi
+	 */
+	public boolean associaAtividade(String codigoPesquisa, Atividade atividade) {
+		Verificador.verificaString("Campo codigoPesquisa nao pode ser nulo ou vazio.", codigoPesquisa);
+		if(!this.encontraPesquisa(codigoPesquisa)) { throw new IllegalArgumentException("Pesquisa nao encontrada."); }
+		return pesquisas.get(codigoPesquisa).associaAtividade(atividade);
+	}
+
+	/**
+	 * Desassocia uma atividade a uma pesquisa.
+	 *
+	 * @param codigoPesquisa o codigo da pesquisa a ser desassociada
+	 * @param atividade a atividade a ser desassociada
+	 * @return true se a operacao foi um sucesso e false se nao foi
+	 */
+	public boolean desassociaAtividade(String codigoPesquisa, Atividade atividade) {
+		Verificador.verificaString("Campo codigoPesquisa nao pode ser nulo ou vazio.", codigoPesquisa);
+		if(!this.encontraPesquisa(codigoPesquisa)) { throw new IllegalArgumentException("Pesquisa nao encontrada."); }
+		return pesquisas.get(codigoPesquisa).desassociaAtividade(atividade);
+	}
+
+	/**
+	 * Testa se uma atividade está associada a alguma pesquisa.
+	 *
+	 * @param atividade a atividade a ser testada.
+	 * @return true se estiver associada e false se nao estiver
+	 */
+	public boolean encontraAtividade(Atividade atividade) {
+		for(Pesquisa pesquisa : pesquisas.values()) { if(pesquisa.encontrAtividade(atividade.getCodigo())) { return true; } }
+		return false;
+	}
 }
