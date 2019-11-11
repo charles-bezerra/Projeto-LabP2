@@ -1,75 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c1e84ab7-a9d8-4e06-8f57-cc0a5f570dbc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/AlunoSemEspecialidades.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Externo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/ProfessorSemEspecialidades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/doc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/easyaccept.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+    <list default="true" id="cbb50141-22c2-4efb-b69d-b2beb81a792f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Psquiza.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Psquiza.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/Interfaces/Funcao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Aluno.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/AssociacaoPesquisaPesquisador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Atividade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Externo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Objetivo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Problema.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Professor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/Controle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleAtividade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleObjetivo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisaPesquisador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleProblema.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Estado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Funcao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Risco.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Status.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Tipo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/TipoFuncao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/util/Verificador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/AtividadeTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/ItemTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/PesquisaTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControleAtividadeTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControleObjetivoTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControlePesquisadorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControleProblemaTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Aluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Externo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/FuncaoSemEspecialidade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Professor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleObjetivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleObjetivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleProblema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleProblema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/aceitacao/use_case_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/aceitacao/use_case_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/aceitacao/use_case_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/aceitacao/use_case_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/aceitacao/use_case_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_6.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/aceitacao/use_case_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_7.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/aceitacao/use_case_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_8.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,45 +15,17 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectId" id="1TLTy5Kt4YQshhjpKdbpKGyDrp0" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="1TS4hud3JF6kDHPuu0uanJ38qrr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -132,37 +39,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Facade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="projetoLP2.facades.Facade" />
-      <module name="Psquiza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="projetoLP2.facades.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Facade" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c1e84ab7-a9d8-4e06-8f57-cc0a5f570dbc" name="Default Changelist" comment="" />
-      <created>1573238628895</created>
+      <changelist id="cbb50141-22c2-4efb-b69d-b2beb81a792f" name="Default Changelist" comment="" />
+      <created>1573440286186</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573238628895</updated>
-      <workItem from="1573238643332" duration="16952000" />
+      <updated>1573440286186</updated>
+      <workItem from="1573440307764" duration="324000" />
     </task>
     <servers />
   </component>
