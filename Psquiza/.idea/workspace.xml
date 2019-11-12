@@ -2,40 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ab5b9b1-c422-45e5-92b9-7800f20fdb38" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/projetoLP2/enums/Disponibilidade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/Interfaces/Funcao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/Interfaces/Funcao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/AssociacaoPesquisaPesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/AssociacaoPesquisaPesquisador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Aluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/AlunoSemEspecialidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/AlunoSemEspecialidades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Externo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Externo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/FuncaoSemEspecialidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/FuncaoSemEspecialidade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Professor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/ProfessorSemEspecialidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/ProfessorSemEspecialidades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Objetivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Objetivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Problema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Problema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/comparadores/pesquisa/ComparaPorIdPesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/comparadores/pesquisa/ComparaPorIdPesquisa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/comparadores/pesquisa/ComparaPorIdProblema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/comparadores/pesquisa/ComparaPorIdProblema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/comparadores/pesquisa/ComparaPorObjetivos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/comparadores/pesquisa/ComparaPorObjetivos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleAtividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleAtividade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleObjetivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleObjetivo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisaPesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisaPesquisador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleProblema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleProblema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/aceitacao/use_case_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_5.txt" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -44,8 +23,17 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1TV7jxBaxf9NSEQN3uBrQKgdaYo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
@@ -84,6 +72,28 @@
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ab5b9b1-c422-45e5-92b9-7800f20fdb38" name="Default Changelist" comment="" />
+      <created>1573533550773</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573533550773</updated>
+      <workItem from="1573533570772" duration="1686000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

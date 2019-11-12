@@ -173,6 +173,12 @@ public class ControlePesquisa {
 		return retorno;
 	}
 
+	/**
+	 * Associa um problema a uma pesquisa
+	 * @param idPesquisa endereco da pesquisa que esta sendo associada
+	 * @param problema objeto Problema que esta sendo associado a pesquisa
+	 * @return sucesso da associacao do problema
+	 */
 	public boolean associaProblema(String idPesquisa, Problema problema) {
         Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", idPesquisa);
 	    if (!this.encontraPesquisa(idPesquisa)) throw new IllegalArgumentException("Pesquisa nao encontrada.");
@@ -181,6 +187,11 @@ public class ControlePesquisa {
                 .associaProblema(problema);
 	}
 
+	/**
+	 * Desassocia o problema existente em uma pesquisa
+	 * @param idPesquisa endereco da pesquisa que esta sendo desassociada
+	 * @return sucesso da desassociacao
+	 */
 	public boolean desassociaProblema(String idPesquisa) {
         Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", idPesquisa);
         if (!this.encontraPesquisa(idPesquisa)) throw new IllegalArgumentException("Pesquisa nao encontrada.");
@@ -189,6 +200,12 @@ public class ControlePesquisa {
                 .desassociaProblema();
 	}
 
+	/**
+	 * Associa um objetivo de uma pesquisa
+	 * @param idPesquisa endereco da pesquisa que esta sendo associada
+	 * @param objetivo objeto do tipo Objetivo que esta sendo associado a pesquisa
+	 * @return sucesso da associacao
+	 */
 	public boolean associaObjetivo(String idPesquisa, Objetivo objetivo) {
         Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", idPesquisa);
         if (!this.encontraPesquisa(idPesquisa)) throw new IllegalArgumentException("Pesquisa nao encontrada.");
@@ -197,6 +214,12 @@ public class ControlePesquisa {
                 .associaObjetivo(objetivo);
 	}
 
+	/**
+	 * Desassocia um obejtivo de uma pesquisa
+	 * @param idPesquisa endereco da pesquisa que esta sendo desassociada
+	 * @param idObjetivo String que consiste no endereco do objetivo
+	 * @return sucesso da desassociacao do objetivo
+	 */
 	public boolean desassociaObjetivo(String idPesquisa, String idObjetivo){
         Verificador.verificaString("Campo idObjetivo nao pode ser nulo ou vazio.", idPesquisa);
         if (!this.encontraPesquisa(idPesquisa))
@@ -206,6 +229,11 @@ public class ControlePesquisa {
                 .desassociaObjetivo(idObjetivo);
     }
 
+	/**
+	 * Lista a pesquisas existentes de acorde com um criterio
+	 * @param ordem criterio de ordenacao de listagem (PESQUISA, PROBLEMA, OBJETIVOS)
+	 * @return String contendo a listagem
+	 */
 	public String listaPesquisas(String ordem) {
 		Verificador.verificaString("Valor invalido da ordem", ordem);
 		List<Pesquisa> pesquisas = new ArrayList<>( this.pesquisas.values() );

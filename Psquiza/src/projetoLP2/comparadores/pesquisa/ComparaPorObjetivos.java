@@ -4,6 +4,13 @@ import projetoLP2.classes.Pesquisa;
 
 import java.util.Comparator;
 
+/**
+ * Comparador de pesquisa, onde a maior quantidade de objetivos tem prioridade. Caso, os
+ * dois objetos que estão sendo comparados estejam sem objetivos e comparado qual maior id da pesquisa
+ *
+ * @author Charles Bezerra de Oliveira Junior
+ */
+
 public class ComparaPorObjetivos implements Comparator<Pesquisa> {
     @Override
     public int compare(Pesquisa p1, Pesquisa p2){
