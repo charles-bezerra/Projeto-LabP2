@@ -49,6 +49,12 @@ public class Pesquisa implements Comparable<Pesquisa>{
 	 */
 	private Map<String, Atividade> atividades;
 
+
+	/**
+	 * Mapa de pesquisadores associados a essa pesquisa.
+	 */
+	private Map<String, Pesquisador> pesquisadores;
+
 	/**
 	 * Constroi uma pesquisa a partir da descricao, campo de interesse
 	 * e seu codigo. Seu estado comeca como 'ATIVA' e seu motivo vazio
@@ -69,6 +75,7 @@ public class Pesquisa implements Comparable<Pesquisa>{
 		this.objetivos = new HashMap<>();
 		this.problema = null;
 		this.atividades = new HashMap<>();
+		this.pesquisadores = new HashMap<>();
 	}
 
 
@@ -113,78 +120,6 @@ public class Pesquisa implements Comparable<Pesquisa>{
 	 */
 	private boolean ehAtiva(){
 		return this.estado == Estado.ATIVA;
-	}
-
-	/**
-	 * Associa um problema a pesquisa
-	 * @param problema objeto Problema que esta sendo associado a pesquisa
-	 * @return sucesso da associacao do problema
-	 */
-	public boolean associaProblema(Problema problema){
-		if (!this.ehAtiva())
-			throw new IllegalArgumentException("Pesquisa desativada.");
-		if (this.problema != null && this.problema.equals(problema))
-			return false;
-		if (this.problema != null)
-			throw new IllegalArgumentException("Pesquisa ja associada a um problema.");
-		this.problema = problema;
-		return true;
-	}
-
-	/**
-	 * Desassocia o problema existente na pesquisa
-	 * @return sucesso da desassociacao
-	 */
-	public boolean desassociaProblema(){
-		if (!this.ehAtiva())
-			throw new IllegalArgumentException("Pesquisa desativada.");
-		if (this.problema == null)
-			return false;
-		this.problema = null;
-		return true;
-	}
-
-	/**
-	 * Associa um objetivo a pesquisa
-	 * @param objetivo objeto do tipo Objetivo que esta sendo associado a pesquisa
-	 * @return sucesso da associacao
-	 */
-	public boolean associaObjetivo(Objetivo objetivo){
-		if (!this.ehAtiva())
-			throw new IllegalArgumentException("Pesquisa desativada.");
-		if (this.objetivos.containsKey(objetivo.getId()))
-			return false;
-		if (!objetivo.getDisponivel())
-			throw new IllegalArgumentException("Objetivo ja associado a uma pesquisa.");
-
-		objetivo.tornarIndisponivel();
-
-		this.objetivos.put(objetivo.getId(), objetivo);
-		return true;
-	}
-
-	/**
-	 * Desassocia um obejtivo da pesquisa
-	 * @param idObjetivo String que consiste no endereco do objetivo
-	 * @return sucesso da desassociacao do objetivo
-	 */
-	public boolean desassociaObjetivo(String idObjetivo){
-		Verificador.verificaString("Campo idObjetivo nao pode ser nulo ou vazio.", idObjetivo);
-		if (!this.ehAtiva())
-			throw new IllegalArgumentException("Pesquisa desativada.");
-		if (!this.objetivos.containsKey(idObjetivo))
-			return false;
-		this.objetivos.get(idObjetivo).tornarDisponivel();
-		this.objetivos.remove(idObjetivo);
-		return true;
-	}
-
-	/**
-	 * Retorna a quantidade de objetivos da pesquisa
-	 * @return int da quantidade dos objetivos da pesquisa
-	 */
-	public int qtdObjetivos(){
-		return this.objetivos.size();
 	}
 
 	/**
@@ -318,6 +253,104 @@ public class Pesquisa implements Comparable<Pesquisa>{
 	 */
 	public boolean encontrAtividade(String codigoAtividade) {
 		return atividades.containsKey(codigoAtividade);
+	}
+
+	/**
+	 * Associa um problema a pesquisa
+	 * @param problema objeto Problema que esta sendo associado a pesquisa
+	 * @return sucesso da associacao do problema
+	 */
+	public boolean associaProblema(Problema problema){
+		if (!this.ehAtiva())
+			throw new IllegalArgumentException("Pesquisa desativada.");
+		if (this.problema != null && this.problema.equals(problema))
+			return false;
+		if (this.problema != null)
+			throw new IllegalArgumentException("Pesquisa ja associada a um problema.");
+		this.problema = problema;
+		return true;
+	}
+
+	/**
+	 * Desassocia o problema existente na pesquisa
+	 * @return sucesso da desassociacao
+	 */
+	public boolean desassociaProblema(){
+		if (!this.ehAtiva())
+			throw new IllegalArgumentException("Pesquisa desativada.");
+		if (this.problema == null)
+			return false;
+		this.problema = null;
+		return true;
+	}
+
+	/**
+	 * Associa um objetivo a pesquisa
+	 * @param objetivo objeto do tipo Objetivo que esta sendo associado a pesquisa
+	 * @return sucesso da associacao
+	 */
+	public boolean associaObjetivo(Objetivo objetivo){
+		if (!this.ehAtiva())
+			throw new IllegalArgumentException("Pesquisa desativada.");
+		if (this.objetivos.containsKey(objetivo.getId()))
+			return false;
+		if (!objetivo.getDisponivel())
+			throw new IllegalArgumentException("Objetivo ja associado a uma pesquisa.");
+
+		objetivo.tornarIndisponivel();
+
+		this.objetivos.put(objetivo.getId(), objetivo);
+		return true;
+	}
+
+	/**
+	 * Desassocia um obejtivo da pesquisa
+	 * @param idObjetivo String que consiste no endereco do objetivo
+	 * @return sucesso da desassociacao do objetivo
+	 */
+	public boolean desassociaObjetivo(String idObjetivo){
+		Verificador.verificaString("Campo idObjetivo nao pode ser nulo ou vazio.", idObjetivo);
+		if (!this.ehAtiva())
+			throw new IllegalArgumentException("Pesquisa desativada.");
+		if (!this.objetivos.containsKey(idObjetivo))
+			return false;
+		this.objetivos.get(idObjetivo).tornarDisponivel();
+		this.objetivos.remove(idObjetivo);
+		return true;
+	}
+
+	/**
+	 * Retorna a quantidade de objetivos da pesquisa
+	 * @return int da quantidade dos objetivos da pesquisa
+	 */
+	public int qtdObjetivos(){
+		return this.objetivos.size();
+	}
+
+	/**
+	 * Associa um pesquisador a uma pesquisa.
+	 *
+	 * @param pesquisador o pesquisador a ser associado
+	 * @return true se a operacao foi um sucesso e false se nao foi
+	 */
+	public boolean associaPesquisador(Pesquisador pesquisador) {
+		if(!this.ehAtiva()) { throw new IllegalArgumentException("Pesquisa desativada."); }
+		if(pesquisadores.containsKey(pesquisador.getEmail())) {return false; }
+		pesquisadores.put(pesquisador.getEmail(), pesquisador);
+		return true;
+	}
+
+	/**
+	 * Desassocia um pesquisador a uma pesquisa.
+	 *
+	 * @param pesquisador o pesquisador a ser desassociado
+	 * @return true se a operacao foi um sucesso e false se nao foi
+	 */
+	public boolean desassociaPesquisador(Pesquisador pesquisador) {
+		if(!this.ehAtiva()) { throw new IllegalArgumentException("Pesquisa desativada."); }
+		if(!pesquisadores.containsKey(pesquisador.getEmail())) {return false; }
+		pesquisadores.remove(pesquisador.getEmail());
+		return true;
 	}
 
 	/**

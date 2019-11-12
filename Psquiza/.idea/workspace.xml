@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ab5b9b1-c422-45e5-92b9-7800f20fdb38" name="Default Changelist" comment="">
+    <list default="true" id="b5eaf6c6-6589-4e54-a599-b75e2219fbcb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/comparadores/pesquisa/ComparaPorIdProblema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/comparadores/pesquisa/ComparaPorIdProblema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/comparadores/pesquisa/ComparaPorObjetivos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/comparadores/pesquisa/ComparaPorObjetivos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/AssociacaoPesquisaPesquisador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisaPesquisador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,28 +16,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Enum" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
-  </component>
-  <component name="ProjectId" id="1TV7jxBaxf9NSEQN3uBrQKgdaYo" />
+  <component name="ProjectId" id="1TXGlbrW58Wg35ii8NKZAAdnzLt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -73,12 +62,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1ab5b9b1-c422-45e5-92b9-7800f20fdb38" name="Default Changelist" comment="" />
-      <created>1573533550773</created>
+      <changelist id="b5eaf6c6-6589-4e54-a599-b75e2219fbcb" name="Default Changelist" comment="" />
+      <created>1573599178126</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573533550773</updated>
-      <workItem from="1573533570772" duration="1686000" />
+      <updated>1573599178126</updated>
+      <workItem from="1573599186488" duration="2206000" />
     </task>
     <servers />
   </component>

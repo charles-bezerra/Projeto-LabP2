@@ -182,6 +182,20 @@ public class ControlePesquisador {
 
 
     /**
+     * Retorna um pesquisador
+     *
+     * @param emailPesquisador email do pesquisador
+     * @return O pesquisador
+     */
+    public Pesquisador getPesquisador(String emailPesquisador){
+        Verificador.verificaString("Campo emailPesquisador nao pode ser nulo ou vazio.",emailPesquisador);
+        if (!pesquisadores.containsKey(emailPesquisador))
+            throw new IllegalArgumentException("Pesquisador nao encontrado");
+        return this.pesquisadores.get(emailPesquisador);
+    }
+
+
+    /**
      * Metodo responsavel por adicionar a um Arraylist de forma ordenada todos os pesquisadores que possuem o termo.
      * @param termo o termo a ser buscado nos pesquisadores.
      * @return um ArrayList de Strings com todos os pesquisadores que possuem o termo.
