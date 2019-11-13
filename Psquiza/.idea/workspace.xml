@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1ab5b9b1-c422-45e5-92b9-7800f20fdb38" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/comparadores/pesquisa/ComparaPorIdProblema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/comparadores/pesquisa/ComparaPorIdProblema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/comparadores/pesquisa/ComparaPorObjetivos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/comparadores/pesquisa/ComparaPorObjetivos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,6 +76,9 @@
       <option name="presentableId" value="Default" />
       <updated>1573533550773</updated>
       <workItem from="1573533570772" duration="1686000" />
+      <workItem from="1573574634178" duration="603000" />
+      <workItem from="1573589763539" duration="163000" />
+      <workItem from="1573590376048" duration="859000" />
     </task>
     <servers />
   </component>
@@ -90,7 +90,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
