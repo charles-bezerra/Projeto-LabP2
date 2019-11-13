@@ -1,11 +1,11 @@
 package projetoLP2.classes;
 
-import projetoLP2.controladores.ControlePesquisa;
 import projetoLP2.util.Verificador;
 
 /**
  * Classe que representa um problema.
- * @authors Lucas Alves Vigolvino, Charles Bezerra de Oliveria Júnior
+ * @author Lucas Alves Vigolvino
+ * @author Charles Bezerra de Oliveria Júnior
  */
 public class Problema implements Comparable<Problema>{
 	/**

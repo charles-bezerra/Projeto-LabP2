@@ -1,9 +1,6 @@
 package projetoLP2.controladores;
 
-import projetoLP2.classes.Atividade;
-import projetoLP2.classes.Objetivo;
-import projetoLP2.classes.Pesquisa;
-import projetoLP2.classes.Problema;
+import projetoLP2.classes.*;
 import projetoLP2.comparadores.pesquisa.ComparaPorIdPesquisa;
 import projetoLP2.comparadores.pesquisa.ComparaPorIdProblema;
 import projetoLP2.comparadores.pesquisa.ComparaPorObjetivos;
@@ -13,7 +10,8 @@ import java.util.*;
 
 /**
  * Controlador das pesquisas do sistema
- * @authors Iago Henrique de Souza Silva, Charles Bezerra de Oliveira Júnior
+ * @author Iago Henrique de Souza Silva
+ * @author Charles Bezerra de Oliveira Júnior
  */
 public class ControlePesquisa {
 	/**
@@ -291,5 +289,31 @@ public class ControlePesquisa {
 	public boolean encontraAtividade(Atividade atividade) {
 		for(Pesquisa pesquisa : pesquisas.values()) { if(pesquisa.encontrAtividade(atividade.getCodigo())) { return true; } }
 		return false;
+	}
+
+	/**
+	 * Associa um pesquisador a uma pesquisa.
+	 *
+	 * @param codigoPesquisa o codigo da pesquisa a ser associada
+	 * @param pesquisador o pesquisador a ser associado
+	 * @return true se a operacao foi um sucesso e false se nao foi
+	 */
+	public boolean associaPesquisador(String codigoPesquisa, Pesquisador pesquisador) {
+		Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", codigoPesquisa);
+		if(!this.encontraPesquisa(codigoPesquisa)) { throw new IllegalArgumentException("Pesquisa nao encontrada."); }
+		return pesquisas.get(codigoPesquisa).associaPesquisador(pesquisador);
+	}
+
+	/**
+	 * Desassocia um pesquisador a uma pesquisa.
+	 *
+	 * @param codigoPesquisa o codigo da pesquisa a ser desassociada
+	 * @param pesquisador o pesquisador a ser desassociado
+	 * @return true se a operacao foi um sucesso e false se nao foi
+	 */
+	public boolean desassociaPesquisador(String codigoPesquisa, Pesquisador pesquisador) {
+		Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", codigoPesquisa);
+		if(!this.encontraPesquisa(codigoPesquisa)) { throw new IllegalArgumentException("Pesquisa nao encontrada."); }
+		return pesquisas.get(codigoPesquisa).desassociaPesquisador(pesquisador);
 	}
 }

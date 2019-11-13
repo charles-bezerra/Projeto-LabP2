@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Controller Geral que gerencia e se comunica com os demais controllers mais especializados
- * @authors Charles Bezerra de Oliveira, Melquisedeque Carvalho Silva...
+ * @authors Charles Bezerra de Oliveira, Melquisedeque Carvalho Silva, Iago Henrique de Souza Silva
  */
 
 public class Controle {
@@ -15,7 +15,6 @@ public class Controle {
     private ControlePesquisa controlePesquisa;
     private ControleAtividade controleAtividade;
     private ControlePesquisador controlePesquisadores;
-    private ControlePesquisaPesquisador controlePesquisaPesquisador;
 
     public Controle() {
         this.controleProblema = new ControleProblema();
@@ -23,10 +22,6 @@ public class Controle {
         this.controlePesquisa = new ControlePesquisa();
         this.controleAtividade = new ControleAtividade();
         this.controlePesquisadores = new ControlePesquisador();
-        this.controlePesquisaPesquisador = new ControlePesquisaPesquisador(
-                controlePesquisa.getPesquisas(),
-                controlePesquisadores.getPesquisadores()
-        );
     }
 
     public String cadastraPesquisa(String descricao, String campoDeInteresse) {
@@ -134,14 +129,6 @@ public class Controle {
 
     public int contaItensRealizados(String codigo){
         return this.controleAtividade.contaItensRealizados(codigo);
-    }
-
-    public boolean associaPesquisador(String idPesquisa, String emailPesquisador){
-        return controlePesquisaPesquisador.associaPesquisador(idPesquisa, emailPesquisador);
-    }
-
-    public boolean desassociaPesquisador(String idPesquisa, String emailPesquisador){
-        return controlePesquisaPesquisador.desassociaPesquisador(idPesquisa, emailPesquisador);
     }
 
     /**
@@ -284,6 +271,25 @@ public class Controle {
         if (!controlePesquisa.encontraAtividade(controleAtividade.getAtividade(codigoAtividade))) { throw new IllegalArgumentException("Atividade sem associacoes com pesquisas."); }
         controleAtividade.executaAtividade(codigoAtividade, item, duracao);
     }
+
+    /**
+     * Associa um pesquisador a uma pesquisa.
+     *
+     * @param idPesquisa o codigo da pesquisa a ser associada
+     * @param emailPesquisador o pesquisador a ser associado
+     * @return true se a operacao foi um sucesso e false se nao foi
+     */
+    public boolean associaPesquisador(String idPesquisa, String emailPesquisador) { return controlePesquisa.associaPesquisador(idPesquisa, controlePesquisadores.getPesquisador(emailPesquisador)); }
+
+    /**
+     * Desassocia um pesquisador a uma pesquisa.
+     *
+     * @param idPesquisa o codigo da pesquisa a ser desassociada
+     * @param emailPesquisador o pesquisador a ser desassociado
+     * @return true se a operacao foi um sucesso e false se nao foi
+     */
+    public boolean desassociaPesquisador(String idPesquisa, String emailPesquisador) { return controlePesquisa.desassociaPesquisador(idPesquisa, controlePesquisadores.getPesquisador(emailPesquisador)); }
+
 
     /**
      * Cadastra um resultado no sistema.

@@ -1,7 +1,6 @@
 package projetoLP2.controladores;
 
 import projetoLP2.classes.Atividade;
-import projetoLP2.classes.Problema;
 import projetoLP2.util.Verificador;
 
 import java.util.ArrayList;
@@ -15,49 +14,88 @@ import java.util.Map;
  */
 public class ControleAtividade {
     /**
-     *
+     * Mapa contendo todas as atividades cadastradas e seu id
      */
     private Map<String, Atividade> atividades;
 
+    /**
+     * Constroi o controle e atribui o mapa de atividades com HashMap
+     */
     public ControleAtividade(){
         this.atividades = new HashMap<>();
     }
 
+    /**
+     * Verifica se existe uma determinada pesquisa
+     * @param codigo endereco e identificacao da atividade
+     * @return boolean atestando se existe a atividade ou nao
+     */
     private boolean encontraAtividade(String codigo){
         Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
         return this.atividades.containsKey(codigo);
     }
 
+    /**
+     * Cadastra uma atividade no controle
+     * @param descricao descricao da atividade
+     * @param nivelRisco nivel do risco da realizacao da atividade
+     * @param descricaoRisco descricao do risco envolvido
+     * @return retorna o codigo da tividade gerado automaticamente (A + Inteiro)
+     */
     public String cadastraAtividade(String descricao, String nivelRisco, String descricaoRisco){
         Atividade atividade = new Atividade(descricao, nivelRisco, descricaoRisco);
         this.atividades.put(atividade.getCodigo(), atividade);
         return atividade.getCodigo();
     }
 
+    /**
+     * Apaga uma atividade
+     * @param codigo endereco e identificacao da atividade
+     */
     public void apagaAtividade(String codigo){
         if (!encontraAtividade(codigo))
             throw new IllegalArgumentException("Atividade nao encontrada");
         this.atividades.remove(codigo);
     }
 
+    /**
+     * Cadastra ou adiciona um Item no sistema
+     * @param codigo endereco e identificacao da atividade
+     * @param item item a ser adicionado ao controle
+     */
     public void cadastraItem(String codigo, String item){
         if (!encontraAtividade(codigo))
             throw new IllegalArgumentException("Atividade nao encontrada");
         this.atividades.get(codigo).cadastraItem(item);
     }
 
+    /**
+     * Retorna uma exibicao de uma atividade
+     * @param codigo endereco e identificacao da atividade
+     * @return retorna um String com a represantacao da atividade
+     */
     public String exibeAtividade(String codigo){
         if (!encontraAtividade(codigo))
             throw new IllegalArgumentException("Atividade nao encontrada");
         return this.atividades.get(codigo).toString();
     }
 
+    /**
+     * Retorna a quantidade do items com status PENDENTES de uma atividade
+     * @param codigo endereco e identificacao da atividade
+     * @return quantidade de items
+     */
     public int contaItensPendentes(String codigo){
         if (!encontraAtividade(codigo))
             throw new IllegalArgumentException("Atividade nao encontrada");
         return this.atividades.get(codigo).contaItensPendentes();
     }
 
+    /**
+     * Retorna a quantidade do items com status REALIZADO de uma atividade
+     * @param codigo endereco e identificacao da atividade
+     * @return quantidade de items
+     */
     public int contaItensRealizados(String codigo){
         if (!encontraAtividade(codigo))
             throw new IllegalArgumentException("Atividade nao encontrada");
@@ -91,7 +129,8 @@ public class ControleAtividade {
      */
     public Atividade getAtividade(String codigoAtividade) {
         Verificador.verificaString("Campo codigoAtividade nao pode ser nulo ou vazio.", codigoAtividade);
-        if(!this.encontraAtividade(codigoAtividade)) { throw new IllegalArgumentException("Atividade nao encontrada"); }
+        if(!this.encontraAtividade(codigoAtividade))
+            throw new IllegalArgumentException("Atividade nao encontrada");
         return atividades.get(codigoAtividade);
     }
 
@@ -103,8 +142,10 @@ public class ControleAtividade {
      * @param duracao o tempo que demorou para o item ser executado
      */
     public void executaAtividade(String codigoAtividade, int item, int duracao) {
-        if(!this.encontraAtividade(codigoAtividade)) { throw new IllegalArgumentException("Atividade nao encontrada"); }
-        atividades.get(codigoAtividade).executaAtividade(item, duracao);
+        if(!this.encontraAtividade(codigoAtividade))
+            throw new IllegalArgumentException("Atividade nao encontrada");
+        atividades.get(codigoAtividade)
+                .executaAtividade(item, duracao);
     }
 
     /**
@@ -117,7 +158,8 @@ public class ControleAtividade {
     public int cadastraResultado(String codigoAtividade, String resultado) {
         Verificador.verificaString("Campo codigoAtividade nao pode ser nulo ou vazio.", codigoAtividade);
         Verificador.verificaString("Resultado nao pode ser nulo ou vazio.", resultado);
-        if(!this.encontraAtividade(codigoAtividade)) { throw new IllegalArgumentException("Atividade nao encontrada"); }
+        if(!this.encontraAtividade(codigoAtividade))
+            throw new IllegalArgumentException("Atividade nao encontrada");
         return atividades.get(codigoAtividade).cadastraResultado(resultado);
     }
 

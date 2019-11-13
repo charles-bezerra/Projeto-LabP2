@@ -11,7 +11,8 @@ import java.util.Map;
 
 /**
  * Classe responsavel por representar um controle que admnistra pesquisadores.
- * @author Melquisedeque Carvalho Silva, Iago Henrique de Souza Silva
+ * @author Melquisedeque Carvalho Silva
+ * @author Iago Henrique de Souza Silva
  */
 public class ControlePesquisador {
     /**
@@ -178,6 +179,20 @@ public class ControlePesquisador {
      */
     public Map<String,Pesquisador> getPesquisadores(){
         return pesquisadores;
+    }
+
+
+    /**
+     * Retorna um pesquisador
+     *
+     * @param emailPesquisador email do pesquisador
+     * @return O pesquisador
+     */
+    public Pesquisador getPesquisador(String emailPesquisador){
+        Verificador.verificaString("Campo emailPesquisador nao pode ser nulo ou vazio.",emailPesquisador);
+        if (!pesquisadores.containsKey(emailPesquisador))
+            throw new IllegalArgumentException("Pesquisador nao encontrado");
+        return this.pesquisadores.get(emailPesquisador);
     }
 
 
