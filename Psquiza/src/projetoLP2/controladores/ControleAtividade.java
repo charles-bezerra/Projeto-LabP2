@@ -256,7 +256,7 @@ public class ControleAtividade {
      */
     public String pegaProximo(String idAtividade, int enesimaAtividade){
         Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idAtividade);
-        Verificador.verificaInteiro("EnesimaAtividade nao pode ser negativa.",enesimaAtividade);
+        Verificador.verificaInteiro("Atividade nao pode ser nulo ou vazio.",enesimaAtividade);
 
         if (!atividades.containsKey(idAtividade)) {
             throw new IllegalArgumentException("Atividade nao encontrada.");
