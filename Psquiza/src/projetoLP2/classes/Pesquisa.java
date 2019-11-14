@@ -3,13 +3,14 @@ package projetoLP2.classes;
 import projetoLP2.enums.Estado;
 import projetoLP2.util.Verificador;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * Classe que representa uma pesquisa
  * @author Iago Henrique de Souza Silva
  */
-public class Pesquisa implements Comparable<Pesquisa>{
+public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	/**
 	 * O mapa de codigos das pesquisas e o numero de vezes em que cada um foi usado.
 	 * A chave representa uma combinacao de tres letras e o valor o numero de vezes em
@@ -40,6 +41,9 @@ public class Pesquisa implements Comparable<Pesquisa>{
 	 */
 	private String motivo;
 
+	/**
+	 *
+	 */
 	private Map<String, Objetivo> objetivos;
 
 	private Problema problema;

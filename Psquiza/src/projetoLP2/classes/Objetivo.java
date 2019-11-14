@@ -28,7 +28,7 @@ public class Objetivo implements Comparable<Objetivo>{
 	/**
 	 * Contador que ajuda na criação do id do objetivo.
 	 */
-	private static int count = 1;
+	private static int contador = 1;
 
 	/**
 	 * Enum que representa a disponibilidade do Objetivo
@@ -55,12 +55,12 @@ public class Objetivo implements Comparable<Objetivo>{
 		else {
 			this.aderencia = aderencia;
 			this.viabilidade = viabilidade;
-			this.id = "O" + count;
+			this.id = "O" + contador;
 			switch(tipo) {
 				case "GERAL":{ this.tipo = Tipo.GERAL; break; }
 				case "ESPECIFICO":{ this.tipo = Tipo.ESPECIFICO; break; }
 				default: throw new IllegalArgumentException("Valor invalido de tipo."); }
-			count ++;
+			contador++;
 		}
 
 		this.disponibilidade = Disponibilidade.DISPONIVEL;
@@ -73,21 +73,33 @@ public class Objetivo implements Comparable<Objetivo>{
 	 */
 	public String getId() { return id; }
 
+	/**
+	 * Recupera a disponibilidade do Objetivo
+	 *
+	 * @return Disponibilidade
+	 */
 	public boolean getDisponivel() {
 	    return this.disponibilidade == Disponibilidade.DISPONIVEL;
 	}
 
+	/**
+	 * Torna o objetivo disponivel
+	 */
 	public void tornarDisponivel(){
 		this.disponibilidade = Disponibilidade.DISPONIVEL;
 	}
 
+	/**
+	 * Torna o objetivo indisponivel
+	 */
 	public void tornarIndisponivel() {
 		this.disponibilidade = Disponibilidade.INDISPONIVEL;
 	}
 
 	/**
-     *
-     * @return
+     * Retorna a descricao do objetivo
+	 *
+     * @return String com a descricao do objetivo
      */
 	public String getDescricao() { return descricao; }
 

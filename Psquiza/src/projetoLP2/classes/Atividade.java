@@ -1,5 +1,6 @@
 package projetoLP2.classes;
 
+import java.io.Serializable;
 import java.util.*;
 
 import projetoLP2.enums.Risco; 
@@ -16,7 +17,7 @@ import java.util.List;
  * @author Charles Bezerra de Oliveira Júnior, Iago Henrique de Souza Silva
  */
 
-public class Atividade implements Comparable<Atividade>{
+public class Atividade implements Comparable<Atividade>, Serializable {
     /**
      * Contador que auxilia na geracao do codigo da atividade
      */
@@ -64,9 +65,9 @@ public class Atividade implements Comparable<Atividade>{
 
     /**
      * Construtor de atividade metodoligica
-     * @param descricao
-     * @param nivelRisco
-     * @param descricaoRisco
+     * @param descricao descricao da atividade
+     * @param nivelRisco nivel de risco de execucao da atividade
+     * @param descricaoRisco descricao do risco da atividade
      */
     public Atividade(String descricao, String nivelRisco, String descricaoRisco){
         this.codigo = "A" + contador;
@@ -77,6 +78,7 @@ public class Atividade implements Comparable<Atividade>{
         this.descricaoRisco = Verificador.verificaString("Campo descricaoRisco nao pode ser nulo ou vazio.", descricaoRisco);
         this.items = new ArrayList<>();
         this.resultados = new ArrayList<>();
+
         contador++;
     }
 
@@ -167,7 +169,8 @@ public class Atividade implements Comparable<Atividade>{
      */
     public boolean removeResultado(int numeroResultado) {
         Verificador.verificaInteiro("numeroResultado nao pode ser nulo ou negativo." ,numeroResultado);
-        if(resultados.size() < numeroResultado) { throw new IllegalArgumentException("Resultado nao encontrado."); }
+        if(resultados.size() < numeroResultado)
+            throw new IllegalArgumentException("Resultado nao encontrado.");
         resultados.remove(numeroResultado - 1);
         return true;
     }
@@ -190,7 +193,7 @@ public class Atividade implements Comparable<Atividade>{
      *
      * @return a duracao da atividade
      */
-    public int getDuracao() {return duracao;}
+    public int getDuracao() { return duracao; }
 
 
     public String getDescricao() {

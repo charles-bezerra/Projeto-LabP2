@@ -5,6 +5,7 @@ import projetoLP2.classes.Funcoes.*;
 import projetoLP2.enums.TipoFuncao;
 import projetoLP2.util.Verificador;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -12,7 +13,7 @@ import java.util.Objects;
  * @author Melquisedeque Carvalho SIlva
  * @author Iago Henrique de Souza Silva
  */
-public class Pesquisador implements Comparable<Pesquisador>{
+public class Pesquisador implements Comparable<Pesquisador>, Serializable {
     /**
      * Atributo que representa o nome de um pesquisador.
      */

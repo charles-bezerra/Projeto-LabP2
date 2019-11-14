@@ -2,12 +2,14 @@ package projetoLP2.classes;
 
 import projetoLP2.util.Verificador;
 
+import java.io.Serializable;
+
 /**
  * Classe que representa um problema.
  * @author Lucas Alves Vigolvino
  * @author Charles Bezerra de Oliveria Júnior
  */
-public class Problema implements Comparable<Problema>{
+public class Problema implements Comparable<Problema>, Serializable {
 	/**
 	 * Descricao e id do problema.
 	 */
