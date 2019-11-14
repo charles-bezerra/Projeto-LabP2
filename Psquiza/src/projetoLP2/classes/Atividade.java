@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * Classe que representa uma atividade metodologica
- * @author Charles Bezerra de Oliveira Júnior
+ * @author Charles Bezerra de Oliveira Júnior, Iago Henrique de Souza Silva
  */
 
 public class Atividade implements Comparable<Atividade>{
@@ -56,6 +56,11 @@ public class Atividade implements Comparable<Atividade>{
      * Tempo de duracao da atividade.
      */
     private int duracao = 0;
+
+    /**
+     * A atividade subsequente a esta na ordem de execucao
+     */
+    private Atividade prox;
 
     /**
      * Construtor de atividade metodoligica
@@ -194,6 +199,127 @@ public class Atividade implements Comparable<Atividade>{
 
     public String getDescricaoRisco() {
         return descricaoRisco;
+    }
+
+    public Risco getRisco() { return risco; }
+
+    /**
+     * Retorna a sua subsequente.
+     *
+     * @return a subsequente
+     */
+    public Atividade getProx() {
+        return prox;
+    }
+
+    /**
+     * Define a atividade subsequente a esta na ordem de execucao
+     *
+     * @param atv A atividade subsequente
+     */
+    public void addProx(Atividade atv){
+        if(prox == null){
+            prox = atv;
+        }else {
+            throw new IllegalArgumentException("Atividade ja possui uma subsequente.");
+        }
+    }
+
+    /**
+     * Retira a atividade subsequente a esta na ordem de execucao
+     */
+    public void tiraProx(){
+        if(prox != null){
+            prox = null;
+        }
+    }
+
+    /**
+     * Verifica se uma atividade especifica esta na lista de proximos desta atividade
+     *
+     * @param cod O ocodigo da atividade que queremos encontrar
+     * @return Se a atividade esta ou nao entre os proximos desta atividade
+     */
+    public boolean contemProx(String cod){
+        if(prox == null){
+            return false;
+        }
+        if(prox.getCodigo() == cod){
+            return true;
+        }
+        return prox.contemProx(cod);
+    }
+
+    /**
+     * Conta quantas atividades estao na lista de proximos desta atividade
+     *
+     * @return O numero de proximos desta atividade
+     */
+    public int contaProx(){
+        if(prox == null){
+            return 0;
+        }
+        return 1 + prox.contaProx();
+    }
+
+    /**
+     * Retorna o codigo da enesima atividade na lista de proximos
+     *
+     * @param index O indice da enesima atividade na lista
+     * @return O codigo da enesima atividade
+     */
+    public String pegaProx(int index){
+        if(prox == null){
+            throw new IllegalArgumentException("Atividade inexistente.");
+        }
+        if(index == 1){
+            return prox.getCodigo();
+        }
+        return prox.pegaProx(index - 1);
+    }
+
+    /**
+     * Verifica se um Risco eh maior que outro
+     *
+     * @param r1 O primeiro valor de Risco
+     * @param r2 O segundo valor de Risco
+     * @return Se r1 eh maior que r2
+     */
+    public boolean verificaMaiorRisco(Risco r1, Risco r2) {
+        if (r1.equals(r2)) {
+            return true;
+        }
+
+        if (r1.equals(Risco.ALTO)) {
+            return true;
+        } else if (r1.equals(Risco.BAIXO)) {
+            return false;
+        } else {
+            if (r2.equals(Risco.ALTO)) {
+                return false;
+            } else if (r2.equals(Risco.BAIXO)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Encontra a atividade com o maior risco na lista de proximos de uma atividade
+     *
+     * @param codMaior O codigo da atividade com o maior risco
+     * @param MaiorRisco O risco da atividade com o maior risco
+     * @return O codigo da atividade com o maior risco
+     */
+    public String pegaMaiorRisco(String codMaior, Risco MaiorRisco){
+        if(verificaMaiorRisco(this.risco,MaiorRisco)){
+            codMaior = this.codigo;
+            MaiorRisco = this.risco;
+        }
+        if(prox == null){
+            return codMaior;
+        }
+        return prox.pegaMaiorRisco(codMaior, MaiorRisco);
     }
 
     @Override

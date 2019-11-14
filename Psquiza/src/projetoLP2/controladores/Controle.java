@@ -131,6 +131,15 @@ public class Controle {
         return this.controleAtividade.contaItensRealizados(codigo);
     }
 
+    public void defineProximaAtividade(String idPrecedente, String idSubsquente){controleAtividade.defineProximaAtividade(idPrecedente, idSubsquente); }
+
+    public void tiraProximaAtividade(String idPrecedente){controleAtividade.tiraProximaAtividade(idPrecedente);}
+
+    public int contaProximos(String idPrecedente){ return controleAtividade.contaProximos(idPrecedente); }
+
+    public String pegaProximo(String idAtividade, int enesimaAtividade){return controleAtividade.pegaProximo(idAtividade, enesimaAtividade);}
+
+    public String pegaMaiorRiscoAtividades(String idAtividade){return controleAtividade.pegaMaiorRiscoAtividades(idAtividade);}
     /**
      * Metodo responsavel por retornar os resultados de busca de determinado termo no sistema.
      * @param termo representa o termo que sera passado para busca no sistema.

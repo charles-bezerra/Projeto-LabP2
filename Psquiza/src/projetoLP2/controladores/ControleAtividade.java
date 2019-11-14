@@ -199,4 +199,86 @@ public class ControleAtividade {
         if(!this.encontraAtividade(codigoAtividade)) { throw new IllegalArgumentException("Atividade nao encontrada"); }
         return atividades.get(codigoAtividade).getDuracao();
     }
+
+    /**
+     * Define a atividade subsequente a uma outra na ordem de execucao
+     *
+     * @param idPrecedente O id da atividade que ira ter sua subsequente definida
+     * @param idSubsquente O id da atividade subsequente
+     */
+    public void defineProximaAtividade(String idPrecedente, String idSubsquente){
+        Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idPrecedente);
+        Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idSubsquente);
+
+        if (!atividades.containsKey(idPrecedente) || !atividades.containsKey(idSubsquente)) {
+            throw new IllegalArgumentException("Atividade nao encontrada.");
+        }
+        if(atividades.get(idSubsquente).contemProx(idPrecedente)){
+            throw new IllegalArgumentException("Criacao de loops negada.");
+        }
+        atividades.get(idPrecedente).addProx(atividades.get(idSubsquente));
+    }
+
+    /**
+     * Retira a atividade subsequente a esta na ordem de execucao
+     *
+     * @param idPrecedente O id da atividade que ira ter sua subsequente retirada
+     */
+    public void tiraProximaAtividade(String idPrecedente){
+        Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idPrecedente);
+
+        if (!atividades.containsKey(idPrecedente)) {
+            throw new IllegalArgumentException("Atividade nao encontrada.");
+        }
+        atividades.get(idPrecedente).tiraProx();
+    }
+
+    /**
+     * Conta quantas atividades estao na lista de proximos de uma atividade
+     *
+     * @param idPrecedente O id da atividade que inicia a lista
+     * @return O numero de proximos da atividade
+     */
+    public int contaProximos(String idPrecedente){
+        Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idPrecedente);
+        if (!atividades.containsKey(idPrecedente)) {
+            throw new IllegalArgumentException("Atividade nao encontrada.");
+        }
+        return atividades.get(idPrecedente).contaProx();
+    }
+
+    /**
+     * Retorna o codigo da enesima atividade na lista de proximos de uma atividade
+     *
+     * @param idAtividade O codigo da primeira atividade da lista
+     * @param enesimaAtividade O indice da enesima atividade na lista
+     * @return O codigo da enesima atividade
+     */
+    public String pegaProximo(String idAtividade, int enesimaAtividade){
+        Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idAtividade);
+        Verificador.verificaInteiro("EnesimaAtividade nao pode ser negativa.",enesimaAtividade);
+
+        if (!atividades.containsKey(idAtividade)) {
+            throw new IllegalArgumentException("Atividade nao encontrada.");
+        }
+        return atividades.get(idAtividade).pegaProx(enesimaAtividade);
+    }
+
+    /**
+     * Encontra a atividade com o maior risco na lista de proximos de uma atividade
+     *
+     * @param idAtividade O codigo da primeira atividade da lista
+     * @return O codigo da atividade com o maior risco
+     */
+    public String pegaMaiorRiscoAtividades(String idAtividade){
+        Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idAtividade);
+        if (!atividades.containsKey(idAtividade)) {
+            throw new IllegalArgumentException("Atividade nao encontrada.");
+        }
+        Atividade a = atividades.get(idAtividade);
+        if(a.getProx() == null){
+            return "Nao existe proxima atividade.";
+        }
+        return a.pegaMaiorRisco(a.getCodigo(),a.getRisco());
+    }
 }

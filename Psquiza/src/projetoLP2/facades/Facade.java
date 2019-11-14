@@ -173,6 +173,16 @@ public class Facade {
 
     public int getDuracao(String codigoAtividade) { return this.controle.getDuracao(codigoAtividade); }
 
+    public void defineProximaAtividade(String idPrecedente, String idSubsquente){controle.defineProximaAtividade(idPrecedente, idSubsquente); }
+
+    public void tiraProximaAtividade(String idPrecedente){controle.tiraProximaAtividade(idPrecedente);}
+
+    public int contaProximos(String idPrecedente){ return controle.contaProximos(idPrecedente); }
+
+    public String pegaProximo(String idAtividade, int enesimaAtividade){return controle.pegaProximo(idAtividade, enesimaAtividade);}
+
+    public String pegaMaiorRiscoAtividades(String idAtividade){return controle.pegaMaiorRiscoAtividades(idAtividade);}
+
     public static void main(String[] args){
         args = new String[] {"projetoLP2.facades.Facade",
                 "testes/aceitacao/use_case_1.txt",
