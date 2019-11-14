@@ -55,6 +55,8 @@ public class Pesquisa implements Comparable<Pesquisa>{
 	 */
 	private Map<String, Pesquisador> pesquisadores;
 
+	private String estrategiaOrdemAtividade = "MAIS_ANTIGA";
+
 	/**
 	 * Constroi uma pesquisa a partir da descricao, campo de interesse
 	 * e seu codigo. Seu estado comeca como 'ATIVA' e seu motivo vazio
@@ -353,6 +355,9 @@ public class Pesquisa implements Comparable<Pesquisa>{
 		return true;
 	}
 
+	public void setEstrategiaOrdemAtividade(String novaEstrategia) { this.estrategiaOrdemAtividade = novaEstrategia; }
+
+
 	/**
 	 * Retorna se este objeto eh igual a um outro.
 	 *
@@ -385,7 +390,5 @@ public class Pesquisa implements Comparable<Pesquisa>{
 	 * @return um inteiro referente a comparação entre os objetos.
 	 */
 	@Override
-	public int compareTo(Pesquisa o) {
-		return o.getCod().compareTo(this.getCod());
-	}
+	public int compareTo(Pesquisa o) { return o.getCod().compareTo(this.getCod()); }
 }

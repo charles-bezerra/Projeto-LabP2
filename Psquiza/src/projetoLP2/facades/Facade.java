@@ -3,7 +3,6 @@ package projetoLP2.facades;
 import easyaccept.EasyAccept;
 
 import projetoLP2.controladores.*;
-import projetoLP2.util.Verificador;
 
 public class Facade {
     private Controle controle;
