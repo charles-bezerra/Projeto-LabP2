@@ -82,7 +82,7 @@ public class Atividade implements Comparable<Atividade>{
 
     /**
      * Retorna o codifo publicamente
-     * @return
+     * @return O codigo da atividade
      */
     public String getCodigo(){ return this.codigo; }
 
@@ -244,7 +244,7 @@ public class Atividade implements Comparable<Atividade>{
         if(prox == null){
             return false;
         }
-        if(prox.getCodigo() == cod){
+        if(prox.getCodigo().equals(cod)){
             return true;
         }
         return prox.contemProx(cod);
@@ -285,7 +285,7 @@ public class Atividade implements Comparable<Atividade>{
      * @param r2 O segundo valor de Risco
      * @return Se r1 eh maior que r2
      */
-    public boolean verificaMaiorRisco(Risco r1, Risco r2) {
+    private boolean verificaMaiorRisco(Risco r1, Risco r2) {
         if (r1.equals(r2)) {
             return true;
         }
@@ -297,11 +297,8 @@ public class Atividade implements Comparable<Atividade>{
         } else {
             if (r2.equals(Risco.ALTO)) {
                 return false;
-            } else if (r2.equals(Risco.BAIXO)) {
-                return true;
-            }
+            } else return r2.equals(Risco.BAIXO);
         }
-        return false;
     }
 
     /**
