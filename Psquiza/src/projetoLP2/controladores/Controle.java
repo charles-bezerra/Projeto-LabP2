@@ -80,7 +80,9 @@ public class Controle {
         return controlePesquisadores.pesquisadorEhAtivo(email);
     }
 
-    public String listaPesquisadores(String tipo){ return controlePesquisadores.listaPesquisadores(tipo); }
+    public String listaPesquisadores(String tipo){
+        return controlePesquisadores.listaPesquisadores(tipo);
+    }
 
     public String cadastraProblema(String descricao, int viabilidade) {
         return controleProblema.cadastraProblema(descricao, viabilidade);
@@ -131,15 +133,26 @@ public class Controle {
         return this.controleAtividade.contaItensRealizados(codigo);
     }
 
-    public void defineProximaAtividade(String idPrecedente, String idSubsquente){controleAtividade.defineProximaAtividade(idPrecedente, idSubsquente); }
+    public void defineProximaAtividade(String idPrecedente, String idSubsquente){
+        controleAtividade.defineProximaAtividade(idPrecedente, idSubsquente);
+    }
 
-    public void tiraProximaAtividade(String idPrecedente){controleAtividade.tiraProximaAtividade(idPrecedente);}
+    public void tiraProximaAtividade(String idPrecedente){
+        controleAtividade.tiraProximaAtividade(idPrecedente);
+    }
 
-    public int contaProximos(String idPrecedente){ return controleAtividade.contaProximos(idPrecedente); }
+    public int contaProximos(String idPrecedente){
+        return controleAtividade.contaProximos(idPrecedente);
+    }
 
-    public String pegaProximo(String idAtividade, int enesimaAtividade){return controleAtividade.pegaProximo(idAtividade, enesimaAtividade);}
+    public String pegaProximo(String idAtividade, int enesimaAtividade){
+        return controleAtividade.pegaProximo(idAtividade, enesimaAtividade);
+    }
 
-    public String pegaMaiorRiscoAtividades(String idAtividade){return controleAtividade.pegaMaiorRiscoAtividades(idAtividade);}
+    public String pegaMaiorRiscoAtividades(String idAtividade){
+        return controleAtividade.pegaMaiorRiscoAtividades(idAtividade);
+    }
+
     /**
      * Metodo responsavel por retornar os resultados de busca de determinado termo no sistema.
      * @param termo representa o termo que sera passado para busca no sistema.
@@ -215,6 +228,12 @@ public class Controle {
         return buscaOrdenada;
     }
 
+    /**
+     * Associa um problema a uma pesquisa
+     * @param idPesquisa endereco da pesquisa que esta sendo associada
+     * @param idProblema endereco do objeto Problema que esta sendo associado a pesquisa
+     * @return sucesso da associacao do problema
+     */
     public boolean associaProblema(String idPesquisa, String idProblema) {
         if (!this.controleProblema.encontraProblema(idProblema))
             return false;
@@ -226,10 +245,21 @@ public class Controle {
                 );
     }
 
+    /**
+     * Desassocia o problema existente em uma pesquisa
+     * @param idPesquisa endereco da pesquisa que esta sendo desassociada
+     * @return sucesso da desassociacao
+     */
     public boolean desassociaProblema(String idPesquisa) {
         return this.controlePesquisa.desassociaProblema(idPesquisa);
     }
 
+    /**
+     * Associa um objetivo de uma pesquisa
+     * @param idPesquisa endereco da pesquisa que esta sendo associada
+     * @param idObjetivo endereco do objeto do tipo Objetivo que esta sendo associado a pesquisa
+     * @return sucesso da associacao
+     */
     public boolean associaObjetivo(String idPesquisa, String idObjetivo) {
         if (!this.controleObjetivo.encontraObjetivo(idObjetivo))
             return false;
@@ -241,11 +271,22 @@ public class Controle {
                 );
     }
 
+    /**
+     * Desassocia um obejtivo de uma pesquisa
+     * @param idPesquisa endereco da pesquisa que esta sendo desassociada
+     * @param idObjetivo String que consiste no endereco do objetivo
+     * @return sucesso da desassociacao do objetivo
+     */
     public boolean desassociaObjetivo(String idPesquisa, String idObjetivo){
         return this.controlePesquisa
                 .desassociaObjetivo(idPesquisa, idObjetivo);
     }
 
+    /**
+     * Lista a pesquisas existentes de acorde com um criterio
+     * @param ordem criterio de ordenacao de listagem (PESQUISA, PROBLEMA, OBJETIVOS)
+     * @return String contendo a listagem
+     */
     public String listaPesquisas(String ordem) {
         return this.controlePesquisa
                 .listaPesquisas(ordem);
@@ -258,7 +299,9 @@ public class Controle {
      * @param codigoAtividade o codigo da atividade a ser associada
      * @return true se a operacao foi um sucesso e false se nao foi
      */
-    public boolean associaAtividade(String codigoPesquisa, String codigoAtividade) { return controlePesquisa.associaAtividade(codigoPesquisa, controleAtividade.getAtividade(codigoAtividade)); }
+    public boolean associaAtividade(String codigoPesquisa, String codigoAtividade) {
+        return controlePesquisa.associaAtividade(codigoPesquisa, controleAtividade.getAtividade(codigoAtividade));
+    }
 
     /**
      * Desassocia uma atividade d euma pesquisa.
@@ -267,7 +310,9 @@ public class Controle {
      * @param codigoAtividade o codigo da atividade a ser disassociada
      * @return true se a operacao foi um sucesso e false se nao foi
      */
-    public boolean desassociaAtividade(String codigoPesquisa, String codigoAtividade) { return controlePesquisa.desassociaAtividade(codigoPesquisa, controleAtividade.getAtividade(codigoAtividade)); }
+    public boolean desassociaAtividade(String codigoPesquisa, String codigoAtividade) {
+        return controlePesquisa.desassociaAtividade(codigoPesquisa, controleAtividade.getAtividade(codigoAtividade));
+    }
 
     /**
      * Executa um item de uma atividade.
@@ -277,7 +322,9 @@ public class Controle {
      * @param duracao o tempo que demorou para o item ser executado
      */
     public void executaAtividade(String codigoAtividade, int item, int duracao) {
-        if (!controlePesquisa.encontraAtividade(controleAtividade.getAtividade(codigoAtividade))) { throw new IllegalArgumentException("Atividade sem associacoes com pesquisas."); }
+        if (!controlePesquisa.encontraAtividade(controleAtividade.getAtividade(codigoAtividade))) {
+            throw new IllegalArgumentException("Atividade sem associacoes com pesquisas.");
+        }
         controleAtividade.executaAtividade(codigoAtividade, item, duracao);
     }
 
@@ -288,7 +335,9 @@ public class Controle {
      * @param emailPesquisador o pesquisador a ser associado
      * @return true se a operacao foi um sucesso e false se nao foi
      */
-    public boolean associaPesquisador(String idPesquisa, String emailPesquisador) { return controlePesquisa.associaPesquisador(idPesquisa, controlePesquisadores.getPesquisador(emailPesquisador)); }
+    public boolean associaPesquisador(String idPesquisa, String emailPesquisador) {
+        return controlePesquisa.associaPesquisador(idPesquisa, controlePesquisadores.getPesquisador(emailPesquisador));
+    }
 
     /**
      * Desassocia um pesquisador a uma pesquisa.
@@ -297,7 +346,9 @@ public class Controle {
      * @param emailPesquisador o pesquisador a ser desassociado
      * @return true se a operacao foi um sucesso e false se nao foi
      */
-    public boolean desassociaPesquisador(String idPesquisa, String emailPesquisador) { return controlePesquisa.desassociaPesquisador(idPesquisa, controlePesquisadores.getPesquisador(emailPesquisador)); }
+    public boolean desassociaPesquisador(String idPesquisa, String emailPesquisador) {
+        return controlePesquisa.desassociaPesquisador(idPesquisa, controlePesquisadores.getPesquisador(emailPesquisador));
+    }
 
 
     /**
@@ -307,7 +358,9 @@ public class Controle {
      * @param resultado o reesultado que sera castrado
      * @return o numero do resultado cadastrado
      */
-    public int cadastraResultado(String codigoAtividade, String resultado) { return controleAtividade.cadastraResultado(codigoAtividade, resultado); }
+    public int cadastraResultado(String codigoAtividade, String resultado) {
+        return controleAtividade.cadastraResultado(codigoAtividade, resultado);
+    }
 
     /**
      * Remove um resultado do sistema.
@@ -316,7 +369,9 @@ public class Controle {
      * @param numeroResultado o numero do resultado a ser exclluido
      * @return true se a operacao foi um sucesso
      */
-    public boolean removeResultado(String codigoAtividade, int numeroResultado) { return controleAtividade.removeResultado(codigoAtividade, numeroResultado); }
+    public boolean removeResultado(String codigoAtividade, int numeroResultado) {
+        return controleAtividade.removeResultado(codigoAtividade, numeroResultado);
+    }
 
     /**
      * Lista todos os resultados de uma atividade.
@@ -324,7 +379,9 @@ public class Controle {
      * @param codigoAtividade o codigo da atividade que tera seus resultados listados
      * @return a lista de todoas os resultados de uma atividade
      */
-    public String listaResultados(String codigoAtividade) { return controleAtividade.listaResultados(codigoAtividade); }
+    public String listaResultados(String codigoAtividade) {
+        return controleAtividade.listaResultados(codigoAtividade);
+    }
 
     /**
      * Retorna a duracao de uma atividade.
@@ -332,6 +389,22 @@ public class Controle {
      * @param codigoAtividade o codigo da atividade que se deseja saber a duracao
      * @return a duracao de uma atividade
      */
-    public int getDuracao(String codigoAtividade) { return controleAtividade.getDuracao(codigoAtividade); }
+    public int getDuracao(String codigoAtividade) {
+        return controleAtividade.getDuracao(codigoAtividade);
+    }
+
+    /**
+     *
+     */
+    public void salva(){
+
+    }
+
+    /**
+     *
+     */
+    public void carrega(){
+
+    }
 }
 

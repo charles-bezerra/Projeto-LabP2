@@ -37,18 +37,6 @@ public class ControlePesquisa {
 	}
 
 	/**
-	 * Retorna uma pesquisa
-	 *
-	 * @param id endereco da pesquisa
-	 * @return Pesquisa
-	 */
-	public Pesquisa getPesquisa(String id){
-		if (!this.encontraPesquisa(id))
-			throw new IllegalArgumentException("Pesquisa nao encontrada.");
-		return this.pesquisas.get(id);
-	}
-
-	/**
 	 * Cadastra uma pesquisa no mapa de pesquisas.
 	 *
 	 * @param descricao a descricao do objetivo
@@ -179,7 +167,8 @@ public class ControlePesquisa {
 	 */
 	public boolean associaProblema(String idPesquisa, Problema problema) {
         Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", idPesquisa);
-	    if (!this.encontraPesquisa(idPesquisa)) throw new IllegalArgumentException("Pesquisa nao encontrada.");
+	    if (!this.encontraPesquisa(idPesquisa))
+	    	throw new IllegalArgumentException("Pesquisa nao encontrada.");
 	    return this.pesquisas
                 .get(idPesquisa)
                 .associaProblema(problema);
@@ -192,7 +181,8 @@ public class ControlePesquisa {
 	 */
 	public boolean desassociaProblema(String idPesquisa) {
         Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", idPesquisa);
-        if (!this.encontraPesquisa(idPesquisa)) throw new IllegalArgumentException("Pesquisa nao encontrada.");
+        if (!this.encontraPesquisa(idPesquisa))
+        	throw new IllegalArgumentException("Pesquisa nao encontrada.");
         return this.pesquisas
                 .get(idPesquisa)
                 .desassociaProblema();
@@ -263,8 +253,11 @@ public class ControlePesquisa {
 	 */
 	public boolean associaAtividade(String codigoPesquisa, Atividade atividade) {
 		Verificador.verificaString("Campo codigoPesquisa nao pode ser nulo ou vazio.", codigoPesquisa);
-		if(!this.encontraPesquisa(codigoPesquisa)) { throw new IllegalArgumentException("Pesquisa nao encontrada."); }
-		return pesquisas.get(codigoPesquisa).associaAtividade(atividade);
+		if(!this.encontraPesquisa(codigoPesquisa))
+			throw new IllegalArgumentException("Pesquisa nao encontrada.");
+		return pesquisas
+				.get(codigoPesquisa)
+				.associaAtividade(atividade);
 	}
 
 	/**
@@ -276,8 +269,11 @@ public class ControlePesquisa {
 	 */
 	public boolean desassociaAtividade(String codigoPesquisa, Atividade atividade) {
 		Verificador.verificaString("Campo codigoPesquisa nao pode ser nulo ou vazio.", codigoPesquisa);
-		if(!this.encontraPesquisa(codigoPesquisa)) { throw new IllegalArgumentException("Pesquisa nao encontrada."); }
-		return pesquisas.get(codigoPesquisa).desassociaAtividade(atividade);
+		if(!this.encontraPesquisa(codigoPesquisa))
+			throw new IllegalArgumentException("Pesquisa nao encontrada.");
+		return pesquisas
+				.get(codigoPesquisa)
+				.desassociaAtividade(atividade);
 	}
 
 	/**
@@ -287,7 +283,10 @@ public class ControlePesquisa {
 	 * @return true se estiver associada e false se nao estiver
 	 */
 	public boolean encontraAtividade(Atividade atividade) {
-		for(Pesquisa pesquisa : pesquisas.values()) { if(pesquisa.encontrAtividade(atividade.getCodigo())) { return true; } }
+		for(Pesquisa pesquisa : pesquisas.values()) {
+			if (pesquisa.encontrAtividade(atividade.getCodigo()))
+				return true;
+		}
 		return false;
 	}
 
@@ -301,7 +300,9 @@ public class ControlePesquisa {
 	public boolean associaPesquisador(String codigoPesquisa, Pesquisador pesquisador) {
 		Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", codigoPesquisa);
 		if(!this.encontraPesquisa(codigoPesquisa)) { throw new IllegalArgumentException("Pesquisa nao encontrada."); }
-		return pesquisas.get(codigoPesquisa).associaPesquisador(pesquisador);
+		return pesquisas
+				.get(codigoPesquisa)
+				.associaPesquisador(pesquisador);
 	}
 
 	/**
@@ -314,6 +315,8 @@ public class ControlePesquisa {
 	public boolean desassociaPesquisador(String codigoPesquisa, Pesquisador pesquisador) {
 		Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", codigoPesquisa);
 		if(!this.encontraPesquisa(codigoPesquisa)) { throw new IllegalArgumentException("Pesquisa nao encontrada."); }
-		return pesquisas.get(codigoPesquisa).desassociaPesquisador(pesquisador);
+		return pesquisas
+				.get(codigoPesquisa)
+				.desassociaPesquisador(pesquisador);
 	}
 }
