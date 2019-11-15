@@ -16,7 +16,12 @@ public class ComparaAtividadeMaiorDuracao implements Comparator<Atividade> {
             return -1;
         } else if(atividade1.getDuracao() < atividade2.getDuracao()) {
             return 1;
+        } else {
+            Integer numero1 = Integer.parseInt(atividade1.getCodigo().substring(1));
+            Integer numero2 = Integer.parseInt(atividade2.getCodigo().substring(1));
+            if(numero1 > numero2) { return 1; }
+            else if(numero1 < numero2) { return -1; }
+            else { return 0; }
         }
-        return 0;
     }
 }

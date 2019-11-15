@@ -360,6 +360,6 @@ public class ControlePesquisa {
 		}
 		List<Atividade> atividades = pesquisas.get(codigoPesquisa).ordenaAtividades(estrategiaOrdemAtividade);
 		contaAtividade ++;
-		return atividades.get(contaAtividade-1).getCodigo();
+		return atividades.get(contaAtividade - 1).getCodigo();
 	}
 }
