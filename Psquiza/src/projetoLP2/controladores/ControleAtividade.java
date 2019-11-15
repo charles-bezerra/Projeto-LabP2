@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  * Controlador das atividades do sistema
- * @author Charles Bezerra de Oliveira Junior
+ * @author Charles Bezerra de Oliveira Junior, Lucas Alves Vigolvino
  */
 public class ControleAtividade {
     /**

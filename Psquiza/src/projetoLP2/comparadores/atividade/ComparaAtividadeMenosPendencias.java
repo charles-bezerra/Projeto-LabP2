@@ -4,6 +4,11 @@ import projetoLP2.classes.Atividade;
 
 import java.util.Comparator;
 
+/**
+ * Classe comparadora de atividade, a ordem e da que tem menos itens pendentes para a que tem mais itens pendentes.
+ *
+ * @author Lucas Alves Vigolvino
+ */
 public class ComparaAtividadeMenosPendencias implements Comparator<Atividade> {
     @Override
     public int compare(Atividade atividade1, Atividade atividade2) {

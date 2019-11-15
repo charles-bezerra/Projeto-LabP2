@@ -5,7 +5,7 @@ import projetoLP2.util.Verificador;
 
 /**
  * Representação de item de uma atividade metodologica
- * @author Charles Bezerra de Oliveira Júnior
+ * @author Charles Bezerra de Oliveira Júnior, Lucas Alves Vigolvino
  */
 public class Item {
     /**

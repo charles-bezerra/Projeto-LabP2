@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * Classe que representa uma atividade metodologica
- * @author Charles Bezerra de Oliveira Júnior, Iago Henrique de Souza Silva
+ * @author Charles Bezerra de Oliveira Júnior, Iago Henrique de Souza Silva, Lucas Alves Vigolvino
  */
 
 public class Atividade implements Comparable<Atividade>, Serializable {

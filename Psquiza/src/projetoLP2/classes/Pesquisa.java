@@ -1,5 +1,9 @@
 package projetoLP2.classes;
 
+import projetoLP2.comparadores.atividade.ComparaAtividadeMaiorDuracao;
+import projetoLP2.comparadores.atividade.ComparaAtividadeMaiorRisco;
+import projetoLP2.comparadores.atividade.ComparaAtividadeMaisAntiga;
+import projetoLP2.comparadores.atividade.ComparaAtividadeMenosPendencias;
 import projetoLP2.enums.Estado;
 import projetoLP2.util.Verificador;
 
@@ -58,8 +62,6 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	 * Mapa de pesquisadores associados a essa pesquisa.
 	 */
 	private Map<String, Pesquisador> pesquisadores;
-
-	private String estrategiaOrdemAtividade = "MAIS_ANTIGA";
 
 	/**
 	 * Constroi uma pesquisa a partir da descricao, campo de interesse
@@ -359,9 +361,6 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 		return true;
 	}
 
-	public void setEstrategiaOrdemAtividade(String novaEstrategia) { this.estrategiaOrdemAtividade = novaEstrategia; }
-
-
 	/**
 	 * Retorna se este objeto eh igual a um outro.
 	 *
@@ -376,7 +375,6 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 		Pesquisa pesquisa = (Pesquisa) o;
 		return getCod().equals(pesquisa.getCod());
 	}
-
 
 	/**
 	 * Gera um valor que identifica esta pesquisa.
@@ -395,4 +393,30 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	 */
 	@Override
 	public int compareTo(Pesquisa o) { return o.getCod().compareTo(this.getCod()); }
+
+	/**
+	 * Ordena as atividades vinculadas a pesquisa que possuem itens pendentes, através de uma estrategia cadastrada.
+	 *
+	 * @param estrategia a estrategia de ordenacao cadastrada
+	 * @return as atividades ordenadas
+	 */
+	public List<Atividade> ordenaAtividades(String estrategia) {
+		if(!this.ehAtiva()) { throw new IllegalArgumentException("Pesquisa desativada."); }
+		List<Atividade> atividades = new ArrayList<>();
+		for(Atividade atividade : this.atividades.values()) {
+			if(atividade.contaItensPendentes() != 0) {
+				atividades.add(atividade);
+			}
+		}
+		if(atividades.equals(new ArrayList<>())) {
+			throw new IllegalArgumentException("Pesquisa sem atividades com pendencias.");
+		}
+		switch (estrategia) {
+			case "MAIS_ANTIGA": { atividades.sort(new ComparaAtividadeMaisAntiga()); break; }
+			case "MENOS_PENDENCIAS": { atividades.sort(new ComparaAtividadeMenosPendencias()); break; }
+			case "MAIOR_RISCO": { atividades.sort(new ComparaAtividadeMaiorRisco()); break; }
+			case "MAIOR_DURACAO": { atividades.sort(new ComparaAtividadeMaiorDuracao()); break; }
+		}
+		return atividades;
+	}
 }
