@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ab9238b6-7c85-44e1-8acb-24cb1d0cfe00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleAtividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleAtividade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControlePesquisadorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControlePesquisadorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/unidade/controladores/ControlePesquisadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/unidade/controladores/ControlePesquisadorTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +15,13 @@
   <component name="FavoritesManager">
     <favorites_list name="Psquiza" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -23,7 +31,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573757648031" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/testes/unidade/classes" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="unidade.classes" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -37,23 +57,92 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Facade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="projetoLP2.facades.Facade" />
+  <component name="RunManager" selected="JUnit.PesquisadorTest.testPesquisador">
+    <configuration name="ControlePesquisadorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Psquiza" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="projetoLP2.facades.*" />
+          <option name="PATTERN" value="unidade.controladores.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControlePesquisadorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControlePesquisadorTest.testAlteraPesquisador" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.controladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControlePesquisadorTest" />
+      <option name="METHOD_NAME" value="testAlteraPesquisador" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControlePesquisadorTest.testPesquisadorEhAtivo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.controladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControlePesquisadorTest" />
+      <option name="METHOD_NAME" value="testPesquisadorEhAtivo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PesquisadorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.classes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.classes" />
+      <option name="MAIN_CLASS_NAME" value="unidade.classes.PesquisadorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PesquisadorTest.testPesquisador" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.classes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.classes" />
+      <option name="MAIN_CLASS_NAME" value="unidade.classes.PesquisadorTest" />
+      <option name="METHOD_NAME" value="testPesquisador" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Facade" />
+        <item itemvalue="JUnit.PesquisadorTest.testPesquisador" />
+        <item itemvalue="JUnit.PesquisadorTest" />
+        <item itemvalue="JUnit.ControlePesquisadorTest.testPesquisadorEhAtivo" />
+        <item itemvalue="JUnit.ControlePesquisadorTest.testAlteraPesquisador" />
+        <item itemvalue="JUnit.ControlePesquisadorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -67,7 +156,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573756967784</updated>
-      <workItem from="1573944139937" duration="465000" />
+      <workItem from="1573944139937" duration="2920000" />
+      <workItem from="1574008012533" duration="2861000" />
     </task>
     <servers />
   </component>

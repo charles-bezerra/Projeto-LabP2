@@ -11,7 +11,7 @@ class ControlePesquisadorTest {
     private Exception e;
 
     @BeforeEach
-    void criaAtividade() {
+    void criaPesquisador() {
         c = new ControlePesquisador();
         c.cadastraPesquisador("iago", "Estudante",
                 "aaa","teste@gmail.com", "https://Cordyceps");
@@ -76,14 +76,14 @@ class ControlePesquisadorTest {
         assertEquals("Formato de foto invalido.", e.getMessage());
 
 
-       /* e = assertThrows(IllegalArgumentException.class,()-> c.cadastraPesquisador("iago", "Estudante",
+        e = assertThrows(IllegalArgumentException.class,()-> c.cadastraPesquisador("iago", "Estudante",
                 "aaa","teste@gmail.com", "https://"));
-        assertEquals("Formato de foto invalido.", e.getMessage());*/
+        assertEquals("Formato de foto invalido.", e.getMessage());
 
 
-        /*e = assertThrows(IllegalArgumentException.class,()-> c.cadastraPesquisador("iago", "Estudante",
+        e = assertThrows(IllegalArgumentException.class,()-> c.cadastraPesquisador("iago", "Estudante",
                 "aaa","teste@gmail.com", "http://"));
-        assertEquals("Formato de foto invalido.", e.getMessage());*/
+        assertEquals("Formato de foto invalido.", e.getMessage());
 
         e = assertThrows(IllegalArgumentException.class,()-> c.cadastraPesquisador("iago", "Estudante",
                 "aaa","teste@gmail.com", "teste://teste"));
@@ -107,98 +107,97 @@ class ControlePesquisadorTest {
 
         e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","",
                 "Hiago"));
-        assertEquals("Campo atributo nao pode ser nulo ou vazio.", e.getMessage());
+        assertEquals("Atributo nao pode ser vazio ou nulo.", e.getMessage());
 
         e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com",null,
                 "Hiago"));
-        assertEquals("Campo atributo nao pode ser nulo ou vazio.", e.getMessage());
+        assertEquals("Atributo nao pode ser vazio ou nulo.", e.getMessage());
 
         e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","NOME",
                 ""));
-        assertEquals("Campo NOME nao pode ser nulo ou vazio.", e.getMessage());
+        assertEquals("Campo nome nao pode ser nulo ou vazio.", e.getMessage());
 
         e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","NOME",
                 null));
-        assertEquals("Campo NOME nao pode ser nulo ou vazio.", e.getMessage());
+        assertEquals("Campo nome nao pode ser nulo ou vazio.", e.getMessage());
 
         e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","FUNCAO",
                 ""));
-        assertEquals("Campo FUNCAO nao pode ser nulo ou vazio.", e.getMessage());
+        assertEquals("Campo funcao nao pode ser nulo ou vazio.", e.getMessage());
 
         e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","FUNCAO",
                 null));
-        assertEquals("Campo FUNCAO nao pode ser nulo ou vazio.", e.getMessage());
+        assertEquals("Campo funcao nao pode ser nulo ou vazio.", e.getMessage());
 
-        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","BIOGRAFRIA",
+        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","BIOGRAFIA",
                 ""));
-        assertEquals("Campo BIOGRAFRIA nao pode ser nulo ou vazio.", e.getMessage());
+        assertEquals("Campo biografia nao pode ser nulo ou vazio.", e.getMessage());
 
-        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","BIOGRAFRIA",
+        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","BIOGRAFIA",
                 null));
-        assertEquals("Campo BIOGRAFRIA nao pode ser nulo ou vazio.", e.getMessage());
+        assertEquals("Campo biografia nao pode ser nulo ou vazio.", e.getMessage());
 
         e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","EMAIL",
                 ""));
-        assertEquals("Campo EMAIL nao pode ser nulo ou vazio.", e.getMessage());
+        assertEquals("Campo email nao pode ser nulo ou vazio.", e.getMessage());
 
         e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","EMAIL",
                 null));
-        assertEquals("Campo EMAIL nao pode ser nulo ou vazio.", e.getMessage());
+        assertEquals("Campo email nao pode ser nulo ou vazio.", e.getMessage());
 
-        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","fotoURL",
+        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","FOTO",
                 ""));
         assertEquals("Campo fotoURL nao pode ser nulo ou vazio.", e.getMessage());
 
-        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","fotoURL",
+        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","FOTO",
                 null));
         assertEquals("Campo fotoURL nao pode ser nulo ou vazio.", e.getMessage());
 
-
-        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","fotoURL",
-                "httpsteste"));
-        assertEquals("Formato de foto invalido.", e.getMessage());
-
-        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","fotoURL",
-                "httpteste"));
-        assertEquals("Formato de foto invalido.", e.getMessage());
-
-
-        /*e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","fotoURL",
-                "https://"));
-        assertEquals("Formato de foto invalido.", e.getMessage());*/
-
-
-        /*e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","fotoURL",
-                "http://"));
-        assertEquals("Formato de foto invalido.", e.getMessage());*/
-
-        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","email",
-                "aa"));
-        assertEquals("Formato de email invalido.", e.getMessage());
-
-        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","email",
-                "@a"));
-        assertEquals("Formato de email invalido.", e.getMessage());
-
-        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@gmail.com","email",
-                "a@"));
-        assertEquals("Formato de email invalido.", e.getMessage());
-
-        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@outlook.com","nome",
+        e = assertThrows(IllegalArgumentException.class,()-> c.alteraPesquisador("teste@outlook.com","NOME",
                 "Hiago"));
         assertEquals("Pesquisador nao encontrado", e.getMessage());
 
-        assertEquals("iago (Estudante) - aaa - teste@gmail.com - https://Cordyceps",
+        assertEquals("iago (estudante) - aaa - teste@gmail.com - https://Cordyceps",
                 c.exibePesquisador("teste@gmail.com"));
 
-        c.alteraPesquisador("teste@gmail.com","nome", "Hiago");
-        c.alteraPesquisador("teste@gmail.com","funcao", "Professor");
-        c.alteraPesquisador("teste@gmail.com","biografia", "Fez nada");
-        c.alteraPesquisador("teste@gmail.com","email", "teste@outlook.com");
-        c.alteraPesquisador("teste@outlook.com","fotoURL", "http://aaa");
+        c.alteraPesquisador("teste@gmail.com","NOME", "Hiago");
+        c.alteraPesquisador("teste@gmail.com","FUNCAO", "Professor");
+        c.alteraPesquisador("teste@gmail.com","BIOGRAFIA", "Fez nada");
+        c.alteraPesquisador("teste@gmail.com","EMAIL", "teste@outlook.com");
+        c.alteraPesquisador("teste@outlook.com","FOTO", "http://aaa");
 
-        assertEquals("Hiago (Professor) - Fez nada - teste@outlook.com - http://aaa",
+        assertEquals("Hiago (professor) - Fez nada - teste@outlook.com - http://aaa",
                 c.exibePesquisador("teste@outlook.com"));
+
+        e = assertThrows(IllegalArgumentException.class,()-> c.exibePesquisador("teste@gmail.com"));
+        assertEquals("Pesquisador nao encontrado", e.getMessage());
+    }
+
+
+    @Test
+    void testPesquisadorEhAtivo() {
+        c.desativaPesquisador("teste@gmail.com");
+        assertFalse(c.pesquisadorEhAtivo("teste@gmail.com"));
+        c.ativaPesquisador("teste@gmail.com");
+        assertTrue(c.pesquisadorEhAtivo("teste@gmail.com"));
+
+        e = assertThrows(IllegalArgumentException.class,()-> c.pesquisadorEhAtivo(null));
+        assertEquals("Email nao pode ser vazio ou nulo.", e.getMessage());
+
+        e = assertThrows(IllegalArgumentException.class,()-> c.ativaPesquisador(null));
+        assertEquals("Campo email nao pode ser nulo ou vazio.", e.getMessage());
+
+        e = assertThrows(IllegalArgumentException.class,()-> c.desativaPesquisador(null));
+        assertEquals("Campo email nao pode ser nulo ou vazio.", e.getMessage());
+
+
+        e = assertThrows(IllegalArgumentException.class,()-> c.ativaPesquisador("teste@gmail.com"));
+        assertEquals("Pesquisador ja ativado.", e.getMessage());
+
+        c.desativaPesquisador("teste@gmail.com");
+        e = assertThrows(IllegalArgumentException.class,()-> c.desativaPesquisador("teste@gmail.com"));
+        assertEquals("Pesquisador inativo.", e.getMessage());
+
     }
 
 }
