@@ -42,10 +42,13 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	private String motivo;
 
 	/**
-	 *
+	 * Mapa contendo os objetivos de uma pesquisa
 	 */
 	private Map<String, Objetivo> objetivos;
 
+    /**
+     * Problema da pesquisa
+     */
 	private Problema problema;
 
 	/**
@@ -359,7 +362,9 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 		return true;
 	}
 
-	public void setEstrategiaOrdemAtividade(String novaEstrategia) { this.estrategiaOrdemAtividade = novaEstrategia; }
+	public void setEstrategiaOrdemAtividade(String novaEstrategia) {
+	    this.estrategiaOrdemAtividade = novaEstrategia;
+	}
 
 
 	/**
@@ -394,5 +399,8 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	 * @return um inteiro referente a comparação entre os objetos.
 	 */
 	@Override
-	public int compareTo(Pesquisa o) { return o.getCod().compareTo(this.getCod()); }
+	public int compareTo(Pesquisa o) {
+	    return o.getCod()
+                .compareTo( this.getCod() );
+	}
 }
