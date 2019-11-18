@@ -2,38 +2,40 @@ package projetoLP2.util;
 
 import projetoLP2.excessoes.PesistenciaException;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @param <Objeto>
  */
 
-public class Pesistencia <Objeto> {
-    private String diretorio;
+public class Pesistencia <ID, Objeto> {
+    private String diretorio, entidade;
 
-    public Pesistencia(String diretorio){
-        this.diretorio = Verificador.verificaString("Campo diretorio nao pode ser vazio ou nulo", diretorio);
+    public Pesistencia(String diretorio, String entidade){
+        this.diretorio = Verificador
+                .verificaString("Campo diretorio nao pode ser vazio ou nulo.", diretorio);
+        this.entidade = Verificador
+                .verificaString("Campo entidade nao pode ser vazio ou nulo.", entidade);
     }
 
-    public void salvar(List<Objeto> objetos) throws PesistenciaException {
+    public void salvar(Map<ID, Objeto> objetos) throws PesistenciaException {
         FileOutputStream arquivoSaida = null;
-        try {
-            arquivoSaida = new FileOutputStream(this.diretorio + File.separator + Objeto.getNameClass());
 
+        try {
+            arquivoSaida = new FileOutputStream(this.diretorio + File.separator + this.entidade + ".ser");
             @SuppressWarnings("resource")
             ObjectOutputStream oos = new ObjectOutputStream(arquivoSaida);
-
-            for (Objeto obj: objetos)
-                oos.writeObject(obj);
+            oos.writeObject(objetos);
         }
+
         catch (IOException e){
             throw new PesistenciaException(e);
         }
+
         finally {
             if ( arquivoSaida != null){
                 try{ arquivoSaida.close(); }
@@ -42,7 +44,15 @@ public class Pesistencia <Objeto> {
         }
     }
 
-    public void carregar(){
-
+    public void carregar(Map<ID, Objeto> objetos) throws PesistenciaException{
+        FileInputStream arquivoEntrada;
+        try {
+            arquivoEntrada = new FileInputStream(this.diretorio + File.separator + this.entidade + ".ser");
+            @SuppressWarnings("resource")
+            ObjectInputStream ois = new ObjectInputStream(arquivoEntrada);
+            objetos = (Map<ID, Objeto>) ois.readObject();
+        }catch (Exception e){
+            throw new PesistenciaException(e);
+        }
     }
 }

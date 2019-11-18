@@ -3,21 +3,22 @@ package projetoLP2.classes;
 import java.io.Serializable;
 import java.util.*;
 
-import projetoLP2.enums.Risco; 
+import projetoLP2.enums.Risco;
 import projetoLP2.enums.Status;
 import projetoLP2.util.Verificador;
 
-import java.time.Period;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 /**
  * Classe que representa uma atividade metodologica
- * @author Charles Bezerra de Oliveira Júnior, Iago Henrique de Souza Silva, Lucas Alves Vigolvino
+ * @author Charles Bezerra de Oliveira Júnior
+ * @author Iago Henrique de Souza Silva,
+ * @author Lucas Alves Vigolvino
  */
 
-public class Atividade implements Comparable<Atividade>, Serializable, {
+public class Atividade implements Comparable<Atividade>, Serializable {
     /**
      * Contador que auxilia na geracao do codigo da atividade
      */
@@ -304,18 +305,16 @@ public class Atividade implements Comparable<Atividade>, Serializable, {
      * @return Se r1 eh maior que r2
      */
     private boolean verificaMaiorRisco(Risco r1, Risco r2) {
-        if (r1.equals(r2)) {
+        if (r1.equals(r2))
             return true;
-        }
 
-        if (r1.equals(Risco.ALTO)) {
+        if (r1.equals(Risco.ALTO))
             return true;
-        } else if (r1.equals(Risco.BAIXO)) {
+        else if (r1.equals(Risco.BAIXO))
             return false;
-        } else {
-            if (r2.equals(Risco.ALTO)) {
-                return false;
-            } else return r2.equals(Risco.BAIXO);
+        else {
+            if (r2.equals(Risco.ALTO)) return false;
+            else return r2.equals(Risco.BAIXO);
         }
     }
 

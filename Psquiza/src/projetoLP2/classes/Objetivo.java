@@ -11,7 +11,7 @@ import java.io.Serializable;
  * 
  * @author Lucas Alves Vigolvino
  */
-public class Objetivo implements Comparable<Objetivo>, Serializable{
+public class Objetivo implements Comparable<Objetivo>, Serializable {
 	/**
 	 * Descricao e id do objetivo.
 	 */

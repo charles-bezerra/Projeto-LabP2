@@ -1,123 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8b04c56-79cd-483d-bfcd-555e0d5f510a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/COM1-Resultados.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/COM2-Resultados.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/COM3-Resultados.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_11.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/atividade/ComparaAtividadeMaiorDuracao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/atividade/ComparaAtividadeMaiorRisco.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/atividade/ComparaAtividadeMaisAntiga.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/atividade/ComparaAtividadeMenosPendencias.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/PesquisadorTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControlePesquisadorTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/projetoLP2/Interfaces/RegrasPesistencia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/projetoLP2/excessoes/PesistenciaException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/aceitacao/COM1-Resultados.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/aceitacao/COM2-Resultados.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/aceitacao/COM3-Resultados.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/unidade/classes/PesquisadorTest.java" afterDir="false" />
+    <list default="true" id="9a9a25ce-fb14-4a7c-8751-02679e689f90" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/projetoLP2/Interfaces/Pesistivel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/Interfaces/Funcao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/Interfaces/Funcao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Atividade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Atividade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/Aluno.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/Aluno.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/AlunoSemEspecialidades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/AlunoSemEspecialidades.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/Externo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/Externo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/FuncaoSemEspecialidade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/FuncaoSemEspecialidade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/Professor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/Professor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/ProfessorSemEspecialidades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/ProfessorSemEspecialidades.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Objetivo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Objetivo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Problema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Problema.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/pesquisa/ComparaPorIdPesquisa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/pesquisa/ComparaPorIdPesquisa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/pesquisa/ComparaPorIdProblema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/pesquisa/ComparaPorIdProblema.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/pesquisa/ComparaPorObjetivos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/pesquisa/ComparaPorObjetivos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/Controle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/Controle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleAtividade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleAtividade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleObjetivo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleObjetivo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleProblema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleProblema.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Disponibilidade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Disponibilidade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Estado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Estado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Funcao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Funcao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Risco.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Risco.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Status.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Tipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Tipo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/TipoFuncao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/TipoFuncao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/util/Verificador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/util/Verificador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_12CARREGAR.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_12CARREGAR.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_12SALVAR.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_12SALVAR.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_6.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_7.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/aceitacao/use_case_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/aceitacao/use_case_9.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/unidade/classes/AtividadeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/AtividadeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/unidade/classes/ItemTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/ItemTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/unidade/classes/PesquisaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/PesquisaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/unidade/controladores/ControleAtividadeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControleAtividadeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/unidade/controladores/ControleObjetivoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControleObjetivoTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/unidade/controladores/ControlePesquisaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControlePesquisaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/unidade/controladores/ControlePesquisadorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Psquiza/unidade/controladores/ControleProblemaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControleProblemaTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/Interfaces/RegrasPesistencia.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Objetivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Objetivo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/comparadores/atividade/ComparaAtividadeMaiorDuracao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/comparadores/atividade/ComparaAtividadeMaiorDuracao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/comparadores/atividade/ComparaAtividadeMaiorRisco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/comparadores/atividade/ComparaAtividadeMaiorRisco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/comparadores/atividade/ComparaAtividadeMaisAntiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/comparadores/atividade/ComparaAtividadeMaisAntiga.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/comparadores/atividade/ComparaAtividadeMenosPendencias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/comparadores/atividade/ComparaAtividadeMenosPendencias.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleAtividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleAtividade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/enums/Disponibilidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/enums/Disponibilidade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Problema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Problema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/util/Pesistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/util/Pesistencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/aceitacao/use_case_10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/aceitacao/use_case_11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_11.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/aceitacao/use_case_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testes/aceitacao/use_case_9.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/unidade/controladores/ControlePesquisadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/unidade/controladores/ControlePesquisadorTest.java" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
+  <component name="FUSProjectUsageTrigger">
+    <session id="-203826197">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="791" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="791" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/projetoLP2/util/Pesistencia.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="693">
+              <caret line="52" column="20" lean-forward="true" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+              <folding>
+                <element signature="e#729#758#1" expanded="true" />
+                <element signature="e#1496#1525#2" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projetoLP2/Interfaces/Pesistivel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#10097#10098#0" expanded="true" />
+                <element signature="e#10140#10141#0" expanded="true" />
+                <element signature="e#10344#10345#0" expanded="true" />
+                <element signature="e#10408#10409#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Objetivo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1485">
+              <caret line="105" column="54" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5157">
+              <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3777">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Problema.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
       </list>
     </option>
@@ -125,14 +144,87 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/projetoLP2/classes/Objetivo.java" />
+        <option value="$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java" />
+        <option value="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" />
+        <option value="$PROJECT_DIR$/src/projetoLP2/classes/Problema.java" />
+        <option value="$PROJECT_DIR$/src/projetoLP2/Interfaces/Pesistivel.java" />
+        <option value="$PROJECT_DIR$/src/projetoLP2/util/Pesistencia.java" />
+      </list>
+    </option>
   </component>
-  <component name="ProjectId" id="1TmPTLLrijHfsM9HRMKbGj9iB11" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="285" />
+    <option name="y" value="53" />
+    <option name="width" value="1360" />
+    <option name="height" value="1000" />
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Psquiza" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Psquiza" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Psquiza" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Psquiza" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Psquiza" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Psquiza" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="projetoLP2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Psquiza" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Psquiza" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="projetoLP2" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Psquiza" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Psquiza" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="projetoLP2" type="462c0819:PsiDirectoryNode" />
+              <item name="comparadores" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Psquiza" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Psquiza" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="projetoLP2" type="462c0819:PsiDirectoryNode" />
+              <item name="Interfaces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Psquiza" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Psquiza" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="projetoLP2" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574096000697" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -146,52 +238,143 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Facade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="projetoLP2.facades.Facade" />
-      <module name="Psquiza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="projetoLP2.facades.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Facade" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a8b04c56-79cd-483d-bfcd-555e0d5f510a" name="Default Changelist" comment="" />
-      <created>1574062306027</created>
+      <changelist id="9a9a25ce-fb14-4a7c-8751-02679e689f90" name="Default Changelist" comment="" />
+      <created>1574092776964</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1574062306027</updated>
-      <workItem from="1574062325558" duration="7459000" />
+      <updated>1574092776964</updated>
     </task>
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+  <component name="ToolWindowManager">
+    <frame x="49" y="25" width="1871" height="1055" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Learn" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986301" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/Interfaces/Funcao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Atividade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10097#10098#0" expanded="true" />
+            <element signature="e#10140#10141#0" expanded="true" />
+            <element signature="e#10344#10345#0" expanded="true" />
+            <element signature="e#10408#10409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Objetivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="105" column="54" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5157">
+          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Problema.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/classes/Pesquisador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3777">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/Interfaces/Pesistivel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projetoLP2/util/Pesistencia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="52" column="20" lean-forward="true" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+          <folding>
+            <element signature="e#729#758#1" expanded="true" />
+            <element signature="e#1496#1525#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

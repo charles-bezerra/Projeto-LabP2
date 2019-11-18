@@ -13,6 +13,7 @@ import java.util.*;
 /**
  * Classe que representa uma pesquisa
  * @author Iago Henrique de Souza Silva
+ * @author Charles Bezerra de Oliveira Junior
  */
 public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	/**

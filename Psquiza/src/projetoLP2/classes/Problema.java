@@ -23,7 +23,7 @@ public class Problema implements Comparable<Problema>, Serializable {
 	/**
 	 * Contador que ajuda a criar o id do problema.
 	 */
-	private static int count = 1;
+	private static int contador = 1;
 
 	/**
 	 * Controi um problema a partir de sua descricao e do seu valor de viabilidade.
@@ -37,9 +37,9 @@ public class Problema implements Comparable<Problema>, Serializable {
 			throw new IllegalArgumentException("Valor invalido de viabilidade.");
 
 		this.viabilidade = viabilidade;
-		this.id = "P" + count;
+		this.id = "P" + contador;
 
-		count ++;
+		contador++;
 	}
 
 	/**
