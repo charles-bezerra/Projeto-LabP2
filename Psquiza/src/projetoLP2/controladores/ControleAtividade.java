@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  * Controlador das atividades do sistema
- * @author Charles Bezerra de Oliveira Junior
+ * @author Charles Bezerra de Oliveira Junior, Lucas Alves Vigolvino
  */
 public class ControleAtividade {
     /**
@@ -216,7 +216,9 @@ public class ControleAtividade {
         if(atividades.get(idSubsquente).contemProx(idPrecedente)){
             throw new IllegalArgumentException("Criacao de loops negada.");
         }
-        atividades.get(idPrecedente).addProx(atividades.get(idSubsquente));
+        atividades
+                .get(idPrecedente)
+                .addProx(atividades.get(idSubsquente));
     }
 
     /**
@@ -230,7 +232,9 @@ public class ControleAtividade {
         if (!atividades.containsKey(idPrecedente)) {
             throw new IllegalArgumentException("Atividade nao encontrada.");
         }
-        atividades.get(idPrecedente).tiraProx();
+        atividades
+                .get(idPrecedente)
+                .tiraProx();
     }
 
     /**
@@ -244,7 +248,9 @@ public class ControleAtividade {
         if (!atividades.containsKey(idPrecedente)) {
             throw new IllegalArgumentException("Atividade nao encontrada.");
         }
-        return atividades.get(idPrecedente).contaProx();
+        return atividades
+                .get(idPrecedente)
+                .contaProx();
     }
 
     /**
@@ -256,12 +262,14 @@ public class ControleAtividade {
      */
     public String pegaProximo(String idAtividade, int enesimaAtividade){
         Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idAtividade);
-        Verificador.verificaInteiro("Atividade nao pode ser nulo ou vazio.",enesimaAtividade);
+        Verificador.verificaInteiro("EnesimaAtividade nao pode ser negativa ou zero.",enesimaAtividade);
 
         if (!atividades.containsKey(idAtividade)) {
             throw new IllegalArgumentException("Atividade nao encontrada.");
         }
-        return atividades.get(idAtividade).pegaProx(enesimaAtividade);
+        return atividades
+                .get(idAtividade)
+                .pegaProx(enesimaAtividade);
     }
 
     /**
@@ -277,7 +285,7 @@ public class ControleAtividade {
         }
         Atividade a = atividades.get(idAtividade);
         if(a.getProx() == null){
-            return "Nao existe proxima atividade.";
+            throw new IllegalArgumentException("Nao existe proxima atividade.");
         }
         return a.pegaMaiorRisco(a.getCodigo(),a.getRisco());
     }

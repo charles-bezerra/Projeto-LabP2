@@ -394,6 +394,21 @@ public class Controle {
     }
 
     /**
+     * Cadastra uma nova estrategia de ordenacao de atividade, substituindo a anterior.
+     *
+     * @param estrategia a nova estrategia de ordenacao de atividade
+     */
+    public void configuraEstrategia(String estrategia) { controlePesquisa.setEstrategiaOrdemAtividade(estrategia); }
+
+    /**
+     * Retorna o id da proxima atividade, de acordo com a estrategia de ordenacao cadastrada.
+     *
+     * @param codigoPesquisa o codigo da pesquisa que se deseja saber a proxima atividade
+     * @return a id da proxima atividade
+     */
+    public String proximaAtividade(String codigoPesquisa) { return controlePesquisa.proximaAtividade(codigoPesquisa); }
+
+    /**
      *
      */
     public void salva(){

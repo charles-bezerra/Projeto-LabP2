@@ -12,6 +12,7 @@ import java.util.*;
  * Controlador das pesquisas do sistema
  * @author Iago Henrique de Souza Silva
  * @author Charles Bezerra de Oliveira Júnior
+ * @author Lucas Alves Vigolvino
  */
 public class ControlePesquisa {
 	/**
@@ -20,10 +21,22 @@ public class ControlePesquisa {
 	private Map<String, Pesquisa> pesquisas;
 
 	/**
+	 * A estrategia que será usada para ordenar as atividade, por padrao e pela mais antiga cadastrada.
+	 */
+	private String estrategiaOrdemAtividade;
+
+	/**
+	 * O contador de atividades passadas como proximas.
+	 */
+	private int contaAtividade;
+
+	/**
 	 * Constroi o Controller de pesquisas. Onde o mapa de pesquisas
 	 */
 	public ControlePesquisa() {
 		pesquisas = new HashMap<>();
+		estrategiaOrdemAtividade = "MAIS_ANTIGA";
+		contaAtividade = 0;
 	}
 
 	/**
@@ -318,5 +331,35 @@ public class ControlePesquisa {
 		return pesquisas
 				.get(codigoPesquisa)
 				.desassociaPesquisador(pesquisador);
+	}
+
+	/**
+	 * Cadastra uma nova estrategia de ordenacao de atividade, substituindo a anterior.
+	 *
+	 * @param estrategia a nova estrategia de ordenacao de atividade
+	 */
+	public void setEstrategiaOrdemAtividade(String estrategia) {
+		Verificador.verificaString("Estrategia nao pode ser nula ou vazia.", estrategia);
+		if(!estrategia.equals("MAIS_ANTIGA") && !estrategia.equals("MENOS_PENDENCIAS") && !estrategia.equals("MAIOR_RISCO") && !estrategia.equals("MAIOR_DURACAO")) {
+			throw new IllegalArgumentException("Valor invalido da estrategia");
+		}
+		this.estrategiaOrdemAtividade = estrategia;
+		contaAtividade = 0;
+	}
+
+	/**
+	 * Retorna o id da proxima atividade, de acordo com a estrategia de ordenacao cadastrada.
+	 *
+	 * @param codigoPesquisa o codigo da pesquisa que se deseja saber a proxima atividade
+	 * @return a id da proxima atividade
+	 */
+	public String proximaAtividade(String codigoPesquisa) {
+		Verificador.verificaString("Pesquisa nao pode ser nula ou vazia.", codigoPesquisa);
+		if(!this.encontraPesquisa(codigoPesquisa)) {
+			throw new IllegalArgumentException("Pesquisa nao encontrada.");
+		}
+		List<Atividade> atividades = pesquisas.get(codigoPesquisa).ordenaAtividades(estrategiaOrdemAtividade);
+		contaAtividade ++;
+		return atividades.get(contaAtividade - 1).getCodigo();
 	}
 }

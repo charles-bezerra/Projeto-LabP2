@@ -182,6 +182,10 @@ public class Facade {
 
     public String pegaMaiorRiscoAtividades(String idAtividade){return controle.pegaMaiorRiscoAtividades(idAtividade);}
 
+    public void configuraEstrategia(String estrategia) { controle.configuraEstrategia(estrategia); }
+
+    public String proximaAtividade(String codigoPesquisa) { return controle.proximaAtividade(codigoPesquisa); }
+
     public static void main(String[] args){
         args = new String[] {"projetoLP2.facades.Facade",
                 "testes/aceitacao/use_case_1.txt",

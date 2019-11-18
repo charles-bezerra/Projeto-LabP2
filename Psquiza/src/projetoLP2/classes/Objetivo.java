@@ -4,12 +4,14 @@ import projetoLP2.enums.Disponibilidade;
 import projetoLP2.enums.Tipo;
 import projetoLP2.util.Verificador;
 
+import java.io.Serializable;
+
 /**
  * Classe que representa um objetivo.
  * 
  * @author Lucas Alves Vigolvino
  */
-public class Objetivo implements Comparable<Objetivo>{
+public class Objetivo implements Comparable<Objetivo>, Serializable{
 	/**
 	 * Descricao e id do objetivo.
 	 */

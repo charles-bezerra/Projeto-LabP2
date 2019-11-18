@@ -14,10 +14,10 @@ import java.util.List;
 
 /**
  * Classe que representa uma atividade metodologica
- * @author Charles Bezerra de Oliveira Júnior, Iago Henrique de Souza Silva
+ * @author Charles Bezerra de Oliveira Júnior, Iago Henrique de Souza Silva, Lucas Alves Vigolvino
  */
 
-public class Atividade implements Comparable<Atividade>, Serializable {
+public class Atividade implements Comparable<Atividade>, Serializable, {
     /**
      * Contador que auxilia na geracao do codigo da atividade
      */
@@ -206,6 +206,21 @@ public class Atividade implements Comparable<Atividade>, Serializable {
 
     public Risco getRisco() { return risco; }
 
+    public List<Item> getItems(){
+        return this.items;
+    }
+
+    public void setItems(List<Item> items){
+        this.items = items;
+    }
+
+    public List<String> getResultados() {
+        return this.resultados;
+    }
+
+    public void setResultados(List<String> resultados){
+        this.resultados = resultados;
+    }
     /**
      * Retorna a sua subsequente.
      *
