@@ -1,6 +1,9 @@
 package projetoLP2.controladores;
 
+import projetoLP2.Interfaces.ControlePesistivel;
 import projetoLP2.classes.Problema;
+import projetoLP2.excessoes.PesistenciaException;
+import projetoLP2.util.Pesistencia;
 import projetoLP2.util.Verificador;
 
 import java.util.ArrayList;
@@ -12,11 +15,21 @@ import java.util.HashMap;
  *
  * @author Lucas Alves Vigolvino
  */
-public class ControleProblema {
+public class ControleProblema implements ControlePesistivel {
     /**
      * Mapa de problemas, as chaves sao codigos gerados pelo programa "P" + id, a partir de 1.
      */
-    private HashMap<String, Problema> problemas = new HashMap<>();
+    private HashMap<String, Problema> problemas;
+
+    /**
+     * Objeto responsavel por carregar e salvar os problema pesistindo-os
+     */
+    private Pesistencia<String, Problema> pesistencia;
+
+    public ControleProblema(){
+        this.problemas = new HashMap<>();
+        this.pesistencia = new Pesistencia<>("/src/arquivos/problemas", "Problema");
+    }
 
     /**
      * Cadastra um problema no sistema.
@@ -79,5 +92,15 @@ public class ControleProblema {
     public Problema getProblema(String id){
         Verificador.verificaString("Campo idProblema nao pode ser nulo ou vazio.", id);
         return this.problemas.get(id);
+    }
+
+    @Override
+    public void salva() throws PesistenciaException {
+        this.pesistencia.salva(this.problemas);
+    }
+
+    @Override
+    public void carrega() throws PesistenciaException {
+        this.pesistencia.carrega(this.problemas);
     }
 }

@@ -3,11 +3,13 @@ package projetoLP2.classes;
 import projetoLP2.enums.Status;
 import projetoLP2.util.Verificador;
 
+import java.io.Serializable;
+
 /**
  * Representação de item de uma atividade metodologica
  * @author Charles Bezerra de Oliveira Júnior, Lucas Alves Vigolvino
  */
-public class Item {
+public class Item implements Serializable {
     /**
      * Nome do item
      */

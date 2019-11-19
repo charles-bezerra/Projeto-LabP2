@@ -4,15 +4,16 @@ import projetoLP2.excessoes.PesistenciaException;
 
 import java.io.*;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
- *
- * @param <Objeto>
+ * Classe util responsavel por pesistir objetos de um mapa de um controle.
+ * @param <Chave> tipo chave do mapa pesistido
+ * @param <Objeto> tipo do valor do objeto do mapa pesistido
+ * @author Charles Bezerra de Oliveira Júnior
  */
 
-public class Pesistencia <ID, Objeto> {
+public class Pesistencia <Chave, Objeto> {
     private String diretorio, entidade;
 
     public Pesistencia(String diretorio, String entidade){
@@ -22,20 +23,17 @@ public class Pesistencia <ID, Objeto> {
                 .verificaString("Campo entidade nao pode ser vazio ou nulo.", entidade);
     }
 
-    public void salvar(Map<ID, Objeto> objetos) throws PesistenciaException {
+    public void salva(Map<Chave, Objeto> objetos) throws PesistenciaException {
         FileOutputStream arquivoSaida = null;
-
         try {
             arquivoSaida = new FileOutputStream(this.diretorio + File.separator + this.entidade + ".ser");
             @SuppressWarnings("resource")
             ObjectOutputStream oos = new ObjectOutputStream(arquivoSaida);
             oos.writeObject(objetos);
         }
-
         catch (IOException e){
             throw new PesistenciaException(e);
         }
-
         finally {
             if ( arquivoSaida != null){
                 try{ arquivoSaida.close(); }
@@ -44,14 +42,17 @@ public class Pesistencia <ID, Objeto> {
         }
     }
 
-    public void carregar(Map<ID, Objeto> objetos) throws PesistenciaException{
+    public void carrega(Map<Chave, Objeto> objetos) throws PesistenciaException {
         FileInputStream arquivoEntrada;
         try {
             arquivoEntrada = new FileInputStream(this.diretorio + File.separator + this.entidade + ".ser");
             @SuppressWarnings("resource")
             ObjectInputStream ois = new ObjectInputStream(arquivoEntrada);
-            objetos = (Map<ID, Objeto>) ois.readObject();
-        }catch (Exception e){
+            Map<Chave, Objeto> objetosCarregados = (HashMap<Chave, Objeto>) ois.readObject();
+            objetos.clear();
+            objetos.putAll( objetosCarregados );
+        }
+        catch (Exception e){
             throw new PesistenciaException(e);
         }
     }

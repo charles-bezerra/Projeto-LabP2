@@ -3,6 +3,7 @@ package projetoLP2.facades;
 import easyaccept.EasyAccept;
 
 import projetoLP2.controladores.*;
+import projetoLP2.excessoes.PesistenciaException;
 
 public class Facade {
     private Controle controle;
@@ -185,6 +186,14 @@ public class Facade {
     public void configuraEstrategia(String estrategia) { controle.configuraEstrategia(estrategia); }
 
     public String proximaAtividade(String codigoPesquisa) { return controle.proximaAtividade(codigoPesquisa); }
+
+    public void salvar() throws PesistenciaException{
+        this.controle.salva();
+    }
+
+    public void carrega() throws PesistenciaException {
+        this.controle.carrega();
+    }
 
     public static void main(String[] args){
         args = new String[] {"projetoLP2.facades.Facade",

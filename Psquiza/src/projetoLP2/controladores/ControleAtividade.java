@@ -1,6 +1,9 @@
 package projetoLP2.controladores;
 
+import projetoLP2.Interfaces.ControlePesistivel;
 import projetoLP2.classes.Atividade;
+import projetoLP2.excessoes.PesistenciaException;
+import projetoLP2.util.Pesistencia;
 import projetoLP2.util.Verificador;
 
 import java.util.ArrayList;
@@ -12,17 +15,24 @@ import java.util.Map;
  * Controlador das atividades do sistema
  * @author Charles Bezerra de Oliveira Junior, Lucas Alves Vigolvino
  */
-public class ControleAtividade {
+public class ControleAtividade implements ControlePesistivel {
     /**
      * Mapa contendo todas as atividades cadastradas e seu id
      */
     private Map<String, Atividade> atividades;
 
     /**
+     * Objeto que pesiste as informações e objetos do controle
+     */
+    private Pesistencia<String, Atividade> pesistencia;
+
+
+    /**
      * Constroi o controle e atribui o mapa de atividades com HashMap
      */
     public ControleAtividade(){
         this.atividades = new HashMap<>();
+        this.pesistencia = new Pesistencia<>("/src/arquivos/atividades/", "Atividade");
     }
 
     /**
@@ -210,12 +220,10 @@ public class ControleAtividade {
         Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idPrecedente);
         Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idSubsquente);
 
-        if (!atividades.containsKey(idPrecedente) || !atividades.containsKey(idSubsquente)) {
+        if (!atividades.containsKey(idPrecedente) || !atividades.containsKey(idSubsquente))
             throw new IllegalArgumentException("Atividade nao encontrada.");
-        }
-        if(atividades.get(idSubsquente).contemProx(idPrecedente)){
+        if(atividades.get(idSubsquente).contemProx(idPrecedente))
             throw new IllegalArgumentException("Criacao de loops negada.");
-        }
         atividades
                 .get(idPrecedente)
                 .addProx(atividades.get(idSubsquente));
@@ -229,9 +237,8 @@ public class ControleAtividade {
     public void tiraProximaAtividade(String idPrecedente){
         Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idPrecedente);
 
-        if (!atividades.containsKey(idPrecedente)) {
+        if (!atividades.containsKey(idPrecedente))
             throw new IllegalArgumentException("Atividade nao encontrada.");
-        }
         atividades
                 .get(idPrecedente)
                 .tiraProx();
@@ -245,9 +252,8 @@ public class ControleAtividade {
      */
     public int contaProximos(String idPrecedente){
         Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idPrecedente);
-        if (!atividades.containsKey(idPrecedente)) {
+        if (!atividades.containsKey(idPrecedente))
             throw new IllegalArgumentException("Atividade nao encontrada.");
-        }
         return atividades
                 .get(idPrecedente)
                 .contaProx();
@@ -264,9 +270,8 @@ public class ControleAtividade {
         Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idAtividade);
         Verificador.verificaInteiro("EnesimaAtividade nao pode ser negativa ou zero.",enesimaAtividade);
 
-        if (!atividades.containsKey(idAtividade)) {
+        if (!atividades.containsKey(idAtividade))
             throw new IllegalArgumentException("Atividade nao encontrada.");
-        }
         return atividades
                 .get(idAtividade)
                 .pegaProx(enesimaAtividade);
@@ -280,13 +285,25 @@ public class ControleAtividade {
      */
     public String pegaMaiorRiscoAtividades(String idAtividade){
         Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idAtividade);
-        if (!atividades.containsKey(idAtividade)) {
+
+        if (!atividades.containsKey(idAtividade))
             throw new IllegalArgumentException("Atividade nao encontrada.");
-        }
+
         Atividade a = atividades.get(idAtividade);
-        if(a.getProx() == null){
+
+        if(a.getProx() == null)
             throw new IllegalArgumentException("Nao existe proxima atividade.");
-        }
+
         return a.pegaMaiorRisco(a.getCodigo(),a.getRisco());
+    }
+
+    @Override
+    public void salva() throws PesistenciaException {
+        this.pesistencia.salva(this.atividades);
+    }
+
+    @Override
+    public void carrega() throws PesistenciaException {
+        this.pesistencia.carrega(this.atividades);
     }
 }

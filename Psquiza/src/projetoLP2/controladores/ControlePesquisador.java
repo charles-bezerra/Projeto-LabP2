@@ -1,7 +1,10 @@
 package projetoLP2.controladores;
 
+import projetoLP2.Interfaces.ControlePesistivel;
 import projetoLP2.classes.*;
 import projetoLP2.enums.TipoFuncao;
+import projetoLP2.excessoes.PesistenciaException;
+import projetoLP2.util.Pesistencia;
 import projetoLP2.util.Verificador;
 
 import java.util.ArrayList;
@@ -14,7 +17,7 @@ import java.util.Map;
  * @author Melquisedeque Carvalho Silva
  * @author Iago Henrique de Souza Silva
  */
-public class ControlePesquisador {
+public class ControlePesquisador implements ControlePesistivel {
     /**
      * Atributo que representa um Mapa contendo tipo String e tipo Pesquisador.
      * O tipo String é o email do pesquisador, que serve como identificador.
@@ -22,10 +25,16 @@ public class ControlePesquisador {
     private Map<String, Pesquisador> pesquisadores;
 
     /**
+     * Objeto responsavel pelo carregamento e salvamento dos pesquisadores em arquivos
+     */
+    private Pesistencia<String, Pesquisador> pesistencia;
+
+    /**
      * Constroi o HahsMap pesquisadores.
      */
     public ControlePesquisador(){
-        pesquisadores = new HashMap<>();
+        this.pesquisadores = new HashMap<>();
+        this.pesistencia = new Pesistencia<>("/src/arquivos/pesquisadores/","Pesquisador");
     }
 
     /**
@@ -210,5 +219,15 @@ public class ControlePesquisador {
             if (pesquisador.getBiografia().toLowerCase().contains(termo.toLowerCase()))
                 retorno.add(pesquisador.getEmail() + ": " + pesquisador.getBiografia());
         return retorno;
+    }
+
+    @Override
+    public void salva() throws PesistenciaException {
+        this.pesistencia.salva(this.pesquisadores);
+    }
+
+    @Override
+    public void carrega() throws PesistenciaException {
+        this.pesistencia.carrega(this.pesquisadores);
     }
 }

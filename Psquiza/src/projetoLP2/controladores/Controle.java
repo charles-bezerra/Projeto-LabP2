@@ -1,12 +1,15 @@
 package projetoLP2.controladores;
 
+import projetoLP2.excessoes.PesistenciaException;
 import  projetoLP2.util.Verificador;
 
 import java.util.ArrayList;
 
 /**
  * Controller Geral que gerencia e se comunica com os demais controllers mais especializados
- * @authors Charles Bezerra de Oliveira, Melquisedeque Carvalho Silva, Iago Henrique de Souza Silva
+ * @author Charles Bezerra de Oliveira
+ * @author Melquisedeque Carvalho Silva
+ * @author Iago Henrique de Souza Silva
  */
 
 public class Controle {
@@ -409,17 +412,25 @@ public class Controle {
     public String proximaAtividade(String codigoPesquisa) { return controlePesquisa.proximaAtividade(codigoPesquisa); }
 
     /**
-     *
+     * Salva todos os objetos do sistema
      */
-    public void salva(){
-
+    public void salva() throws PesistenciaException {
+        controleObjetivo.salva();
+        controleProblema.salva();
+        controlePesquisa.salva();
+        controlePesquisadores.salva();
+        controleAtividade.salva();
     }
 
     /**
-     *
+     * Carrega todos objetos do sistema
      */
-    public void carrega(){
-
+    public void carrega() throws PesistenciaException{
+        controleObjetivo.carrega();
+        controleProblema.carrega();
+        controlePesquisa.carrega();
+        controlePesquisadores.carrega();
+        controleAtividade.carrega();
     }
 }
 
