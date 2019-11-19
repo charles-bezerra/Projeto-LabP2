@@ -27,6 +27,7 @@ public class ControleObjetivo implements ControlePesistivel {
     private Pesistencia<String, Objetivo> pesistencia;
 
     public ControleObjetivo(){
+        this.objetivos = new HashMap<>();
         this.pesistencia = new Pesistencia<>("/src/arquivos/objetivos/","Objetivo");
     }
 
