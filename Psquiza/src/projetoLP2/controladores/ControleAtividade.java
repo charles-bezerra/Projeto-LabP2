@@ -274,17 +274,33 @@ public class ControleAtividade implements Serializable {
      * @param idAtividade O codigo da primeira atividade da lista
      * @return O codigo da atividade com o maior risco
      */
-    public String pegaMaiorRiscoAtividades(String idAtividade){
-        Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idAtividade);
+    public String pegaMaiorRiscoAtividades(String idAtividade) {
+        Verificador.verificaString("Atividade nao pode ser nulo ou vazio.", idAtividade);
 
         if (!atividades.containsKey(idAtividade))
             throw new IllegalArgumentException("Atividade nao encontrada.");
 
         Atividade a = atividades.get(idAtividade);
 
-        if(a.getProx() == null)
+        if (a.getProx() == null)
             throw new IllegalArgumentException("Nao existe proxima atividade.");
+        Atividade p = a.getProx();
 
+<<<<<<< HEAD
         return a.pegaMaiorRisco(a.getCodigo(),a.getRisco());
+=======
+
+        return p.pegaMaiorRisco(p.getCodigo(), p.getRisco());
+
+    }
+    @Override
+    public void salva() throws PesistenciaException {
+        this.pesistencia.salva(this.atividades);
+    }
+
+    @Override
+    public void carrega() throws PesistenciaException {
+        this.pesistencia.carrega(this.atividades);
+>>>>>>> 9e138973f27e2b1628a65f1676ea3c1eb0c6fd12
     }
 }

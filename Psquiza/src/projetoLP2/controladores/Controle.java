@@ -1,7 +1,11 @@
 package projetoLP2.controladores;
 
+<<<<<<< HEAD
 import projetoLP2.Interfaces.ControlePesistivel;
 import projetoLP2.classes.Funcoes.SalvaArquivoTexto;
+=======
+import projetoLP2.util.SalvaArquivoTexto;
+>>>>>>> 9e138973f27e2b1628a65f1676ea3c1eb0c6fd12
 import projetoLP2.excessoes.PesistenciaException;
 import projetoLP2.util.Pesistencia;
 import  projetoLP2.util.Verificador;
