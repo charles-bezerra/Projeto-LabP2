@@ -1,11 +1,9 @@
 package projetoLP2.controladores;
 
-import projetoLP2.Interfaces.ControlePesistivel;
 import projetoLP2.classes.Atividade;
-import projetoLP2.excessoes.PesistenciaException;
-import projetoLP2.util.Pesistencia;
 import projetoLP2.util.Verificador;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -15,24 +13,17 @@ import java.util.Map;
  * Controlador das atividades do sistema
  * @author Charles Bezerra de Oliveira Junior, Lucas Alves Vigolvino
  */
-public class ControleAtividade implements ControlePesistivel {
+public class ControleAtividade implements Serializable {
     /**
      * Mapa contendo todas as atividades cadastradas e seu id
      */
     private Map<String, Atividade> atividades;
 
     /**
-     * Objeto que pesiste as informações e objetos do controle
-     */
-    private Pesistencia<String, Atividade> pesistencia;
-
-
-    /**
      * Constroi o controle e atribui o mapa de atividades com HashMap
      */
     public ControleAtividade(){
         this.atividades = new HashMap<>();
-        this.pesistencia = new Pesistencia<>("/src/arquivos/atividades/", "Atividade");
     }
 
     /**
@@ -295,15 +286,5 @@ public class ControleAtividade implements ControlePesistivel {
             throw new IllegalArgumentException("Nao existe proxima atividade.");
 
         return a.pegaMaiorRisco(a.getCodigo(),a.getRisco());
-    }
-
-    @Override
-    public void salva() throws PesistenciaException {
-        this.pesistencia.salva(this.atividades);
-    }
-
-    @Override
-    public void carrega() throws PesistenciaException {
-        this.pesistencia.carrega(this.atividades);
     }
 }

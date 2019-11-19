@@ -6,6 +6,7 @@ import projetoLP2.excessoes.PesistenciaException;
 import projetoLP2.util.Pesistencia;
 import projetoLP2.util.Verificador;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -15,20 +16,15 @@ import java.util.HashMap;
  *
  * @author Lucas Alves Vigolvino
  */
-public class ControleObjetivo implements ControlePesistivel {
+public class ControleObjetivo implements Serializable {
     /**
      * Mapa de objetivos, as chaves sao codigos gerados pelo programa "O" + id, a partir de 1.
      */
     private HashMap<String, Objetivo> objetivos;
 
-    /**
-     * Objeto que realiza o carregamento ou pesistencia dos objetivos
-     */
-    private Pesistencia<String, Objetivo> pesistencia;
 
     public ControleObjetivo(){
         this.objetivos = new HashMap<>();
-        this.pesistencia = new Pesistencia<>("/src/arquivos/objetivos/","Objetivo");
     }
 
     /**
@@ -95,15 +91,5 @@ public class ControleObjetivo implements ControlePesistivel {
     public Objetivo getObjetivo(String id){
         if (!this.encontraObjetivo(id)) throw new IllegalArgumentException("Objetivo nao encontrado.");
         return this.objetivos.get(id);
-    }
-
-    @Override
-    public void salva() throws PesistenciaException {
-        this.pesistencia.salva(this.objetivos);
-    }
-
-    @Override
-    public void carrega() throws PesistenciaException {
-        this.pesistencia.carrega(this.objetivos);
     }
 }

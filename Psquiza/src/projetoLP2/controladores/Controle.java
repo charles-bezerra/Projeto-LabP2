@@ -1,7 +1,9 @@
 package projetoLP2.controladores;
 
+import projetoLP2.Interfaces.ControlePesistivel;
 import projetoLP2.classes.Funcoes.SalvaArquivoTexto;
 import projetoLP2.excessoes.PesistenciaException;
+import projetoLP2.util.Pesistencia;
 import  projetoLP2.util.Verificador;
 
 import java.util.ArrayList;
@@ -13,7 +15,7 @@ import java.util.ArrayList;
  * @author Iago Henrique de Souza Silva
  */
 
-public class Controle {
+public class Controle implements ControlePesistivel {
     private ControleProblema controleProblema;
     private ControleObjetivo controleObjetivo;
     private ControlePesquisa controlePesquisa;
@@ -428,7 +430,6 @@ public class Controle {
         Verificador.verificaString("Pesquisa nao pode ser nula ou vazia.", codigoPesquisa);
         if (! controlePesquisa.getPesquisas().containsKey(codigoPesquisa)) {
             throw new IllegalArgumentException("Pesquisa nao encontrada.");
-
         }
         salvatxt.gravarResultados(controlePesquisa.getPesquisas().get(codigoPesquisa));
     }
@@ -438,22 +439,24 @@ public class Controle {
      * Salva todos os objetos do sistema
      */
     public void salva() throws PesistenciaException {
-        controleObjetivo.salva();
-        controleProblema.salva();
-        controlePesquisa.salva();
-        controlePesquisadores.salva();
-        controleAtividade.salva();
+        Pesistencia pesistencia = new Pesistencia("./bd/bd");
+
+        pesistencia.salva(this.controleAtividade);
+        pesistencia.salva(this.controleObjetivo);
+        pesistencia.salva(this.controleProblema);
+        pesistencia.salva(this.controlePesquisadores);
+        pesistencia.salva(this.controlePesquisa);
+
+        pesistencia.fechar();
     }
 
     /**
      * Carrega todos objetos do sistema
      */
     public void carrega() throws PesistenciaException{
-        controleObjetivo.carrega();
-        controleProblema.carrega();
-        controlePesquisa.carrega();
-        controlePesquisadores.carrega();
-        controleAtividade.carrega();
+        Pesistencia pesistencia = new Pesistencia("./bd/bd");
+
+        pesistencia.carrega();
     }
 }
 

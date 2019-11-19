@@ -3,30 +3,36 @@ package projetoLP2.util;
 import projetoLP2.excessoes.PesistenciaException;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
  * Classe util responsavel por pesistir objetos de um mapa de um controle.
- * @param <Chave> tipo chave do mapa pesistido
- * @param <Objeto> tipo do valor do objeto do mapa pesistido
+ *
  * @author Charles Bezerra de Oliveira Júnior
  */
 
-public class Pesistencia <Chave, Objeto> {
-    private String diretorio, entidade;
+public class Pesistencia {
+    private String diretorio;
+    private FileOutputStream arquivoSaida = null;
 
-    public Pesistencia(String diretorio, String entidade){
+    public Pesistencia(String diretorio){
         this.diretorio = Verificador
                 .verificaString("Campo diretorio nao pode ser vazio ou nulo.", diretorio);
-        this.entidade = Verificador
-                .verificaString("Campo entidade nao pode ser vazio ou nulo.", entidade);
     }
 
-    public void salva(Map<Chave, Objeto> objetos) throws PesistenciaException {
-        FileOutputStream arquivoSaida = null;
+    public void conectar() throws PesistenciaException{
         try {
-            arquivoSaida = new FileOutputStream(this.diretorio + File.separator + this.entidade + ".ser");
+            arquivoSaida = new FileOutputStream(this.diretorio + ".ser");
+        }catch (IOException e){
+            throw new PesistenciaException(e);
+        }
+    }
+
+    public void inseri(Object objetos) throws PesistenciaException {
+        try {
             @SuppressWarnings("resource")
             ObjectOutputStream oos = new ObjectOutputStream(arquivoSaida);
             oos.writeObject(objetos);
@@ -34,23 +40,22 @@ public class Pesistencia <Chave, Objeto> {
         catch (IOException e){
             throw new PesistenciaException(e);
         }
-        finally {
-            if ( arquivoSaida != null){
-                try{ arquivoSaida.close(); }
-                catch (IOException e){ throw new PesistenciaException(e); }
-            }
+    }
+
+    public void fechar() throws PesistenciaException{
+        if ( arquivoSaida != null){
+            try{ arquivoSaida.close(); }
+            catch (IOException e){ throw new PesistenciaException(e); }
         }
     }
 
-    public void carrega(Map<Chave, Objeto> objetos) throws PesistenciaException {
+    public List<Object> carrega() throws PesistenciaException {
         FileInputStream arquivoEntrada;
         try {
-            arquivoEntrada = new FileInputStream(this.diretorio + File.separator + this.entidade + ".ser");
+            arquivoEntrada = new FileInputStream(this.diretorio + ".ser");
             @SuppressWarnings("resource")
             ObjectInputStream ois = new ObjectInputStream(arquivoEntrada);
-            Map<Chave, Objeto> objetosCarregados = (HashMap<Chave, Objeto>) ois.readObject();
-            objetos.clear();
-            objetos.putAll( objetosCarregados );
+            return (ArrayList<Object>) ois.readObject();
         }
         catch (Exception e){
             throw new PesistenciaException(e);

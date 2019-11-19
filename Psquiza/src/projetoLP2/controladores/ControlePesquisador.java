@@ -7,6 +7,7 @@ import projetoLP2.excessoes.PesistenciaException;
 import projetoLP2.util.Pesistencia;
 import projetoLP2.util.Verificador;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,24 +18,19 @@ import java.util.Map;
  * @author Melquisedeque Carvalho Silva
  * @author Iago Henrique de Souza Silva
  */
-public class ControlePesquisador implements ControlePesistivel {
+public class ControlePesquisador implements Serializable {
     /**
      * Atributo que representa um Mapa contendo tipo String e tipo Pesquisador.
      * O tipo String é o email do pesquisador, que serve como identificador.
      */
     private Map<String, Pesquisador> pesquisadores;
 
-    /**
-     * Objeto responsavel pelo carregamento e salvamento dos pesquisadores em arquivos
-     */
-    private Pesistencia<String, Pesquisador> pesistencia;
 
     /**
      * Constroi o HahsMap pesquisadores.
      */
     public ControlePesquisador(){
         this.pesquisadores = new HashMap<>();
-        this.pesistencia = new Pesistencia<>("/src/arquivos/pesquisadores/","Pesquisador");
     }
 
     /**
@@ -219,15 +215,5 @@ public class ControlePesquisador implements ControlePesistivel {
             if (pesquisador.getBiografia().toLowerCase().contains(termo.toLowerCase()))
                 retorno.add(pesquisador.getEmail() + ": " + pesquisador.getBiografia());
         return retorno;
-    }
-
-    @Override
-    public void salva() throws PesistenciaException {
-        this.pesistencia.salva(this.pesquisadores);
-    }
-
-    @Override
-    public void carrega() throws PesistenciaException {
-        this.pesistencia.carrega(this.pesquisadores);
     }
 }

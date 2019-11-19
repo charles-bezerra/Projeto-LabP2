@@ -1,14 +1,12 @@
 package projetoLP2.controladores;
 
-import projetoLP2.Interfaces.ControlePesistivel;
 import projetoLP2.classes.*;
 import projetoLP2.comparadores.pesquisa.ComparaPorIdPesquisa;
 import projetoLP2.comparadores.pesquisa.ComparaPorIdProblema;
 import projetoLP2.comparadores.pesquisa.ComparaPorObjetivos;
-import projetoLP2.excessoes.PesistenciaException;
-import projetoLP2.util.Pesistencia;
 import projetoLP2.util.Verificador;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -17,7 +15,7 @@ import java.util.*;
  * @author Charles Bezerra de Oliveira Júnior
  * @author Lucas Alves Vigolvino
  */
-public class ControlePesquisa implements ControlePesistivel {
+public class ControlePesquisa implements Serializable {
 	/**
 	 * O mapa de pesquisas, com os codigos como chave
 	 */
@@ -33,10 +31,6 @@ public class ControlePesquisa implements ControlePesistivel {
 	 */
 	private int contaAtividade;
 
-	/**
-	 * Objeto que realiza a pesistencia ou carrega as pesquisas
-	 */
-	private Pesistencia<String, Pesquisa> pesistencia;
 
 	/**
 	 * Constroi o Controller de pesquisas. Onde o mapa de pesquisas
@@ -45,8 +39,6 @@ public class ControlePesquisa implements ControlePesistivel {
 		this.pesquisas = new HashMap<>();
 		this.estrategiaOrdemAtividade = "MAIS_ANTIGA";
 		this.contaAtividade = 0;
-
-		this.pesistencia = new Pesistencia<>("/src/arquivos/pesquisas/", "Pesquisa");
 	}
 
 	/**
@@ -376,15 +368,5 @@ public class ControlePesquisa implements ControlePesistivel {
 		List<Atividade> atividades = pesquisas.get(codigoPesquisa).ordenaAtividades(estrategiaOrdemAtividade);
 		contaAtividade ++;
 		return atividades.get(contaAtividade - 1).getCodigo();
-	}
-
-	@Override
-	public void salva() throws PesistenciaException {
-		this.pesistencia.salva(this.pesquisas);
-	}
-
-	@Override
-	public void carrega() throws PesistenciaException {
-		this.pesistencia.carrega(this.pesquisas);
 	}
 }
