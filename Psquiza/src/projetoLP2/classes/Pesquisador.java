@@ -212,6 +212,12 @@ public class Pesquisador implements Comparable<Pesquisador>, Serializable {
     public String getFuncao() {
         return funcao.getNome();
     }
+
+
+
+    public String getFuncaoEspecialidade(){
+        return funcao.toString();
+    }
     /**
      * Troca a funcao atual do pesquisador por uma nova funcao sem especialidade
      * @param funcao a nova funcao

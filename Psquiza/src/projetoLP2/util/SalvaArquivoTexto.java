@@ -1,4 +1,4 @@
-package projetoLP2.classes.Funcoes;
+package projetoLP2.util;
 
 import projetoLP2.classes.*;
 

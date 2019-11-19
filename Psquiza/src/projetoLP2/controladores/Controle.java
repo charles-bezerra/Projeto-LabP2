@@ -1,6 +1,6 @@
 package projetoLP2.controladores;
 
-import projetoLP2.classes.Funcoes.SalvaArquivoTexto;
+import projetoLP2.util.SalvaArquivoTexto;
 import projetoLP2.excessoes.PesistenciaException;
 import  projetoLP2.util.Verificador;
 

@@ -448,13 +448,9 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 		String retorno = "- Pesquisadores:";
 		for (Pesquisador pesquisador : pesquisadores.values()) {
 			retorno += "\n        - " + pesquisador.getNome() + " (" + pesquisador.getFuncao().toLowerCase() + ")" +
-					" - " + pesquisador.getBiografia() + " - " + pesquisador.getEmail() + " - " + pesquisador.getFotoURL();
+					" - " + pesquisador.getBiografia() + " - " + pesquisador.getEmail() + " - "
+					+ pesquisador.getFotoURL() + pesquisador.getFuncaoEspecialidade();
 
-			if (pesquisador.getFuncao().toLowerCase().equals("professor")) {
-				//retorno += pesquisador.getEspecialidadeProfessor();
-			} else if (pesquisador.getFuncao().toLowerCase() == "aluno") {
-
-			}
 		}
 		return retorno;
 	}
