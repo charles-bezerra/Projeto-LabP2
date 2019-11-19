@@ -20,6 +20,12 @@ public class Item implements Serializable {
     private Status status;
 
     /**
+     * Tempo de duracao de cada item.
+     */
+    private int duracao = 0;
+
+
+    /**
      * Constroi com status padrao como PENDENTE
      * @param nome nome do item
      */
@@ -47,16 +53,22 @@ public class Item implements Serializable {
     /**
      * Difine status como realizado
      */
-    public void realizaItem() {
+    public void realizaItem(int duracao) {
         if(this.status == Status.REALIZADO) { throw new IllegalArgumentException("Item ja executado."); }
         this.status = Status.REALIZADO;
+        this.duracao = duracao;
     }
+
 
     /**
      * Retorna o objeto status
      * @return Status.(PENDENTE|REALIZADO)
      */
     public Status getStatus(){ return this.status; }
+
+    public int getDuracao() {
+        return duracao;
+    }
 
     @Override
     public String toString(){

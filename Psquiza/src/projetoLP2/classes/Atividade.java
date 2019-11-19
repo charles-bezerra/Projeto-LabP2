@@ -54,10 +54,6 @@ public class Atividade implements Comparable<Atividade>, Serializable {
      */
     private List<String> resultados;
 
-    /**
-     * Tempo de duracao da atividade.
-     */
-    private int duracao = 0;
 
     /**
      * A atividade subsequente a esta na ordem de execucao
@@ -147,8 +143,8 @@ public class Atividade implements Comparable<Atividade>, Serializable {
         Verificador.verificaInteiro("Item nao pode ser nulo ou negativo.", item);
         Verificador.verificaInteiro("Duracao nao pode ser nula ou negativa.", duracao);
         if(items.size() < item) { throw new IllegalArgumentException("Item nao encontrado."); }
-        items.get(item - 1).realizaItem();
-        this.duracao += duracao;
+        items.get(item - 1).realizaItem(duracao);
+
     }
 
     /**
@@ -194,7 +190,15 @@ public class Atividade implements Comparable<Atividade>, Serializable {
      *
      * @return a duracao da atividade
      */
-    public int getDuracao() { return duracao; }
+    public int getDuracao() {
+        int retorno = 0;
+        for (Item item: items){
+            retorno += item.getDuracao();
+
+        }
+        return retorno;
+    }
+
 
 
     public String getDescricao() {

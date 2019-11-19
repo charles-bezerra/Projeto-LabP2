@@ -147,7 +147,7 @@ public class Pesquisador implements Comparable<Pesquisador>, Serializable {
      * Metodo responsavel por retornar o nome do pesquisador.
      * @return em String o que estiver contido no atributo nome.
      */
-    private String getNome() {
+    public String getNome() {
         return nome;
     }
     /**
@@ -193,7 +193,7 @@ public class Pesquisador implements Comparable<Pesquisador>, Serializable {
      * Metodo responsavel por retornar a url da foto do pesquisador.
      * @return em String o que estiver contido no atributo fotoURL.
      */
-    private String getFotoURL() {
+    protected String getFotoURL() {
         return fotoURL;
     }
     /**

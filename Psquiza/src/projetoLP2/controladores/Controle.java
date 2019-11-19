@@ -1,5 +1,6 @@
 package projetoLP2.controladores;
 
+import projetoLP2.classes.Funcoes.SalvaArquivoTexto;
 import projetoLP2.excessoes.PesistenciaException;
 import  projetoLP2.util.Verificador;
 
@@ -18,13 +19,14 @@ public class Controle {
     private ControlePesquisa controlePesquisa;
     private ControleAtividade controleAtividade;
     private ControlePesquisador controlePesquisadores;
-
+    private SalvaArquivoTexto salvatxt = new SalvaArquivoTexto();
     public Controle() {
         this.controleProblema = new ControleProblema();
         this.controleObjetivo = new ControleObjetivo();
         this.controlePesquisa = new ControlePesquisa();
         this.controleAtividade = new ControleAtividade();
         this.controlePesquisadores = new ControlePesquisador();
+
     }
 
     public String cadastraPesquisa(String descricao, String campoDeInteresse) {
@@ -410,6 +412,27 @@ public class Controle {
      * @return a id da proxima atividade
      */
     public String proximaAtividade(String codigoPesquisa) { return controlePesquisa.proximaAtividade(codigoPesquisa); }
+
+
+    public void gravarResumo(String codigoPesquisa){
+        Verificador.verificaString("Pesquisa nao pode ser nula ou vazia.", codigoPesquisa);
+
+        if (! controlePesquisa.getPesquisas().containsKey(codigoPesquisa)){
+            throw new IllegalArgumentException("Pesquisa nao encontrada.");
+
+        }
+        salvatxt.gravarResumo(controlePesquisa.getPesquisas().get(codigoPesquisa));
+
+    }
+    public void gravarResultados(String codigoPesquisa) {
+        Verificador.verificaString("Pesquisa nao pode ser nula ou vazia.", codigoPesquisa);
+        if (! controlePesquisa.getPesquisas().containsKey(codigoPesquisa)) {
+            throw new IllegalArgumentException("Pesquisa nao encontrada.");
+
+        }
+        salvatxt.gravarResultados(controlePesquisa.getPesquisas().get(codigoPesquisa));
+    }
+
 
     /**
      * Salva todos os objetos do sistema

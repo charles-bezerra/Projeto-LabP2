@@ -187,6 +187,13 @@ public class Facade {
 
     public String proximaAtividade(String codigoPesquisa) { return controle.proximaAtividade(codigoPesquisa); }
 
+    public void gravarResumo(String codigoPesquisa){
+        controle.gravarResumo(codigoPesquisa);
+    }
+    public void gravarResultados(String codigoPesquisa) {
+        controle.gravarResultados(codigoPesquisa);
+    }
+
     public void salvar() throws PesistenciaException{
         this.controle.salva();
     }

@@ -49,7 +49,7 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	/**
 	 * Mapa contendo os objetivos de uma pesquisa
 	 */
-	private Map<String, Objetivo> objetivos;
+	private LinkedHashMap<String, Objetivo> objetivos;
 
     /**
      * Problema da pesquisa
@@ -59,13 +59,13 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	/**
 	 * Mapa de atividade associadas a essa pesquisa.
 	 */
-	private Map<String, Atividade> atividades;
+	private LinkedHashMap<String, Atividade> atividades;
 
 
 	/**
 	 * Mapa de pesquisadores associados a essa pesquisa.
 	 */
-	private Map<String, Pesquisador> pesquisadores;
+	private LinkedHashMap<String, Pesquisador> pesquisadores;
 
 	/**
 	 * Constroi uma pesquisa a partir da descricao, campo de interesse
@@ -84,10 +84,10 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 
 		this.estado = Estado.ATIVA;
 		this.motivo = "";
-		this.objetivos = new HashMap<>();
+		this.objetivos = new LinkedHashMap<>();
 		this.problema = null;
-		this.atividades = new HashMap<>();
-		this.pesquisadores = new HashMap<>();
+		this.atividades = new LinkedHashMap<>();
+		this.pesquisadores = new LinkedHashMap();
 	}
 
 
@@ -425,5 +425,91 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 			case "MAIOR_DURACAO": { atividades.sort(new ComparaAtividadeMaiorDuracao()); break; }
 		}
 		return atividades;
+	}
+
+	public String getObjetivos() {
+		String retorno = "\n    - Objetivos:\n    ";
+		for (Objetivo objetivos : objetivos.values()) {
+			retorno += "    - " + objetivos.toString() + "\n";
+		}
+		return retorno;
+	}
+
+	public String getAtividades() {
+		String retorno = "\n    - Atividades:\n    ";
+		for (Atividade atividade : atividades.values()) {
+			retorno += "    - " + atividade.toString() + "\n";
+		}
+		return retorno;
+	}
+
+
+	public String getPesquisadores() {
+		String retorno = "- Pesquisadores:";
+		for (Pesquisador pesquisador : pesquisadores.values()) {
+			retorno += "\n        - " + pesquisador.getNome() + " (" + pesquisador.getFuncao().toLowerCase() + ")" +
+					" - " + pesquisador.getBiografia() + " - " + pesquisador.getEmail() + " - " + pesquisador.getFotoURL();
+
+			if (pesquisador.getFuncao().toLowerCase().equals("professor")) {
+				//retorno += pesquisador.getEspecialidadeProfessor();
+			} else if (pesquisador.getFuncao().toLowerCase() == "aluno") {
+
+			}
+		}
+		return retorno;
+	}
+
+	public String getItemsResultados() {
+
+
+		String retorno = "";
+
+		for (Atividade atividade : atividades.values()) {
+			retorno += "\n        - " + atividade.getDescricao();
+			int cont = 1;
+			for (Item item : atividade.getItems()) {
+				if (item.getDuracao() > 0) {
+					retorno += "\n            - " + "ITEM" + cont + " - " + item.getDuracao();
+					cont++;
+
+				}
+			}
+			for (String resultados : atividade.getResultados()) {
+				retorno += "\n            - " + resultados;
+			}
+
+		}
+		return retorno;
+	}
+
+	public String getItemsResumo() {
+		String retorno = "    - Atividades:\n    ";
+		for (Atividade atividade : atividades.values()) {
+			retorno += "    - " + atividade.getDescricao() + " (" + atividade.getRisco() + " - "
+					+ atividade.getDescricaoRisco() + ")" + "\n";
+			int cont = 1;
+
+			for (Item item : atividade.getItems()) {
+				retorno += "            - " + item.getStatus() + " - ITEM" + cont + "\n";
+				cont++;
+
+			}
+		}
+		return retorno;
+	}
+
+
+
+	public String retornaDadosResultados(){
+		return "\"- Pesquisa: " + toString() + "\n    - Resultados:" + getItemsResultados() + "\"";
+
+	}
+
+	public String retornaDadosResumo() {
+		return "- Pesquisa: " + toString() + "\n    " + getPesquisadores() +
+				"\n    - Problema:\n        - " + problema.toString()
+				+ getObjetivos() + getItemsResumo();
+
+
 	}
 }
