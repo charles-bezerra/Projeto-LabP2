@@ -61,50 +61,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AtividadeTest.testCadastraResultado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControleAtividadeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Psquiza" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="unidade.classes.*" />
+          <option name="PATTERN" value="unidade.controladores.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="unidade.classes" />
-      <option name="MAIN_CLASS_NAME" value="unidade.classes.AtividadeTest" />
-      <option name="METHOD_NAME" value="testCadastraResultado" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AtividadeTest.testExecutaAtividade" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Psquiza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unidade.classes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unidade.classes" />
-      <option name="MAIN_CLASS_NAME" value="unidade.classes.AtividadeTest" />
-      <option name="METHOD_NAME" value="testExecutaAtividade" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AtividadeTest.testRemoveResultado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Psquiza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unidade.classes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unidade.classes" />
-      <option name="MAIN_CLASS_NAME" value="unidade.classes.AtividadeTest" />
-      <option name="METHOD_NAME" value="testRemoveResultado" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleAtividadeTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,13 +91,70 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
+    <configuration name="AtividadeTest.testRemoveResultado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+=======
+    <configuration name="ControleTest.testBusca" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+>>>>>>> 04b35af3ae8a47c209afe9e3c96462b80f893b3b
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.controladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+<<<<<<< HEAD
+      <option name="PACKAGE_NAME" value="unidade.classes" />
+      <option name="MAIN_CLASS_NAME" value="unidade.classes.AtividadeTest" />
+      <option name="METHOD_NAME" value="testRemoveResultado" />
+=======
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleTest" />
+      <option name="METHOD_NAME" value="testBusca" />
+>>>>>>> 04b35af3ae8a47c209afe9e3c96462b80f893b3b
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+<<<<<<< HEAD
+    <configuration name="ControleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+=======
+    <configuration name="ControleTest.testContaResultadosBusca" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+>>>>>>> 04b35af3ae8a47c209afe9e3c96462b80f893b3b
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.controladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleTest" />
+<<<<<<< HEAD
+      <option name="TEST_OBJECT" value="class" />
+=======
+      <option name="METHOD_NAME" value="testContaResultadosBusca" />
+      <option name="TEST_OBJECT" value="method" />
+>>>>>>> 04b35af3ae8a47c209afe9e3c96462b80f893b3b
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ControleTest" />
+<<<<<<< HEAD
         <item itemvalue="Application.Psquiza" />
         <item itemvalue="JUnit.AtividadeTest.testExecutaAtividade" />
         <item itemvalue="JUnit.AtividadeTest.testCadastraResultado" />
         <item itemvalue="JUnit.AtividadeTest.testRemoveResultado" />
+=======
+        <item itemvalue="JUnit.ControleTest.testContaResultadosBusca" />
+        <item itemvalue="JUnit.ControleAtividadeTest" />
+        <item itemvalue="JUnit.ControleTest.testBusca" />
+        <item itemvalue="Application.Psquiza" />
+>>>>>>> 04b35af3ae8a47c209afe9e3c96462b80f893b3b
       </list>
     </recent_temporary>
   </component>

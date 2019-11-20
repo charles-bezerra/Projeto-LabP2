@@ -27,6 +27,10 @@ class AtividadeTest {
             atividade1.cadastraItem("");
         });
         assertEquals("Item nao pode ser nulo ou vazio.", e.getMessage());
+        e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            atividade1.cadastraItem(null);
+        });
+        assertEquals("Item nao pode ser nulo ou vazio.", e.getMessage());
     }
 
     @Test
