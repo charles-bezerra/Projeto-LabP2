@@ -5,6 +5,8 @@ import easyaccept.EasyAccept;
 import projetoLP2.controladores.*;
 import projetoLP2.excessoes.PesistenciaException;
 
+import java.io.IOException;
+
 public class Facade {
     private Controle controle;
 
@@ -187,10 +189,10 @@ public class Facade {
 
     public String proximaAtividade(String codigoPesquisa) { return controle.proximaAtividade(codigoPesquisa); }
 
-    public void gravarResumo(String codigoPesquisa){
+    public void gravarResumo(String codigoPesquisa) throws IOException {
         controle.gravarResumo(codigoPesquisa);
     }
-    public void gravarResultados(String codigoPesquisa) {
+    public void gravarResultados(String codigoPesquisa) throws IOException {
         controle.gravarResultados(codigoPesquisa);
     }
 

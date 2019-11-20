@@ -1,19 +1,24 @@
 package unidade.classes;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import projetoLP2.classes.Atividade;
 import projetoLP2.classes.Pesquisa;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class PesquisaTest {
 
     private Pesquisa pesquisa1;
+    private Atividade a1;
+    private Exception e;
 
     @BeforeEach
     void criarObjetos(){
         this.pesquisa1 = new Pesquisa("Uma simples pesquisa academica", "Estudo");
+        a1 = new Atividade("Uma simples atividade","BAIXO","E simples, entao e facil.");
     }
 
 
@@ -95,5 +100,31 @@ class PesquisaTest {
         }catch (IllegalArgumentException erro) {
             assertEquals("java.lang.IllegalArgumentException: Formato do campo de interesse invalido.", erro.toString());
         }
+    }
+
+    @Test
+    void testAssociaAtividade() {
+        assertTrue(pesquisa1.associaAtividade(a1));
+        assertFalse(pesquisa1.associaAtividade(a1));
+
+        pesquisa1.encerraPesquisa("AAAA");
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                pesquisa1.associaAtividade(a1));
+
+        assertEquals("Pesquisa desativada.", e.getMessage());
+    }
+
+    @Test
+    void testDesassociaAtividade() {
+        pesquisa1.associaAtividade(a1);
+        assertTrue(pesquisa1.desassociaAtividade(a1));
+        assertFalse(pesquisa1.desassociaAtividade(a1));
+
+        pesquisa1.encerraPesquisa("AAAA");
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                pesquisa1.desassociaAtividade(a1));
+        assertEquals("Pesquisa desativada.", e.getMessage());
     }
 }

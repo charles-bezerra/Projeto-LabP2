@@ -16,8 +16,7 @@ class ControleProblemaTest {
 
     @Test
     void cadastraProblema() {
-        assertEquals(null, controleProblema.cadastraProblema("Qualquer coisa", 4));
-
+        assertNull(controleProblema.cadastraProblema("Qualquer coisa", 4));
     }
 
     @Test
