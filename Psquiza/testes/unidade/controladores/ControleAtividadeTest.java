@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import projetoLP2.controladores.ControleAtividade;
 
+import static junit.framework.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ControleAtividadeTest {
@@ -115,5 +116,111 @@ class ControleAtividadeTest {
         assertEquals("Atividade nao encontrada", e.getMessage());
         assertEquals(0, controle.contaItensRealizados("A1"));
         assertEquals(0, controle.contaItensRealizados("A2"));
+    }
+
+
+    @org.junit.jupiter.api.Test
+    void testExecutaAtividade() {
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.executaAtividade("",1,1));
+        assertEquals("Campo codigo nao pode ser nulo ou vazio.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.executaAtividade(null,1,1));
+        assertEquals("Campo codigo nao pode ser nulo ou vazio.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.executaAtividade("A1",-1,1));
+        assertEquals("Item nao pode ser nulo ou negativo.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.executaAtividade("A1",4,1));
+        assertEquals("Item nao encontrado.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.executaAtividade("A1",1,-1));
+        assertEquals("Duracao nao pode ser nula ou negativa.", e.getMessage());
+
+        controle.executaAtividade("A1",1,2);
+        assertEquals(controle.getDuracao("A1"),2);
+    }
+
+    @org.junit.jupiter.api.Test
+    void testCadastraResultado() {
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.cadastraResultado("","aaa"));
+        assertEquals("Campo codigoAtividade nao pode ser nulo ou vazio.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.cadastraResultado(null,"aaa"));
+        assertEquals("Campo codigoAtividade nao pode ser nulo ou vazio.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.cadastraResultado("A1",""));
+        assertEquals("Resultado nao pode ser nulo ou vazio.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.cadastraResultado("A1",null));
+        assertEquals("Resultado nao pode ser nulo ou vazio.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.cadastraResultado("A","aaa"));
+        assertEquals("Atividade nao encontrada", e.getMessage());
+
+        assertEquals(controle.cadastraResultado("A1","bbb"),1);
+    }
+
+
+    @org.junit.jupiter.api.Test
+    void testRemoveResultado() {
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.removeResultado("",1));
+        assertEquals("Campo codigoAtividade nao pode ser nulo ou vazio.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.removeResultado(null,1));
+        assertEquals("Campo codigoAtividade nao pode ser nulo ou vazio.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.removeResultado("A1",-1));
+        assertEquals("numeroResultado nao pode ser nulo ou negativo.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.removeResultado("A1",0));
+        assertEquals("numeroResultado nao pode ser nulo ou negativo.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.removeResultado("A",1));
+        assertEquals("Atividade nao encontrada", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.removeResultado("A1",10));
+        assertEquals("Resultado nao encontrado.", e.getMessage());
+
+        controle.cadastraResultado("A1","aaa");
+        assertTrue(controle.removeResultado("A1",1));
+    }
+
+    @org.junit.jupiter.api.Test
+    void testListaResultados() {
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.listaResultados(""));
+        assertEquals("Campo codigoAtividade nao pode ser nulo ou vazio.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.listaResultados(null));
+        assertEquals("Campo codigoAtividade nao pode ser nulo ou vazio.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                controle.listaResultados("A"));
+        assertEquals("Atividade nao encontrada", e.getMessage());
+
+        controle.cadastraResultado("A1","aaa");
+        assertEquals(controle.listaResultados("A1"),"aaa");
+        controle.cadastraResultado("A1","bbb");
+        assertEquals(controle.listaResultados("A1"),"aaa | bbb");
+        controle.removeResultado("A1",1);
+        assertEquals(controle.listaResultados("A1"),"bbb");
+        controle.removeResultado("A1",1);
     }
 }
