@@ -34,7 +34,10 @@ public class ControleProblema implements Serializable {
      */
     public String cadastraProblema(String descricao, int viabilidade) {
         Problema problema = new Problema(descricao, viabilidade);
-        problemas.put(problema.getId(), problema);
+
+        problemas
+                .put(problema.getId(), problema);
+
         return null;
     }
 
@@ -45,8 +48,12 @@ public class ControleProblema implements Serializable {
      */
     public void apagarProblema(String codigo) {
         Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
-        if(!problemas.containsKey(codigo)) { throw new IllegalArgumentException("Problema nao encontrado");
-        } else { problemas.remove(codigo); }
+
+        if(!problemas.containsKey(codigo))
+            throw new IllegalArgumentException("Problema nao encontrado");
+
+        else
+            problemas.remove(codigo);
     }
 
     /**
@@ -57,8 +64,10 @@ public class ControleProblema implements Serializable {
      */
     public String exibeProblema(String codigo) {
         Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
+
         if(!problemas.containsKey(codigo))
             throw new IllegalArgumentException("Problema nao encontrado");
+
         else return problemas.get(codigo).toString();
     }
 
@@ -75,6 +84,7 @@ public class ControleProblema implements Serializable {
         for (Problema problema: buscasOrdenadas)
             if (problema.getDescricao().toLowerCase().contains(termo.toLowerCase()))
                 retorno.add(problema.getId() + ": " + problema.getDescricao());
+
         return retorno;
     }
 
@@ -86,7 +96,9 @@ public class ControleProblema implements Serializable {
      */
     public boolean encontraProblema(String id){
         Verificador.verificaString("Campo idProblema nao pode ser nulo ou vazio.", id);
-        return this.problemas.containsKey(id);
+
+        return this.problemas
+                .containsKey(id);
     }
 
     /**
@@ -97,6 +109,8 @@ public class ControleProblema implements Serializable {
      */
     public Problema getProblema(String id){
         Verificador.verificaString("Campo idProblema nao pode ser nulo ou vazio.", id);
-        return this.problemas.get(id);
+
+        return this.problemas
+                .get(id);
     }
 }

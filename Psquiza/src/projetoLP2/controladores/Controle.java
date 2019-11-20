@@ -142,7 +142,11 @@ public class Controle implements ControlePesistivel {
     }
 
     public void defineProximaAtividade(String idPrecedente, String idSubsquente){
-        controleAtividade.defineProximaAtividade(idPrecedente, idSubsquente);
+        controleAtividade
+                .defineProximaAtividade(
+                        idPrecedente,
+                        idSubsquente
+                );
     }
 
     public void tiraProximaAtividade(String idPrecedente){
@@ -154,11 +158,16 @@ public class Controle implements ControlePesistivel {
     }
 
     public String pegaProximo(String idAtividade, int enesimaAtividade){
-        return controleAtividade.pegaProximo(idAtividade, enesimaAtividade);
+        return controleAtividade
+                .pegaProximo(
+                        idAtividade,
+                        enesimaAtividade
+                );
     }
 
     public String pegaMaiorRiscoAtividades(String idAtividade){
-        return controleAtividade.pegaMaiorRiscoAtividades(idAtividade);
+        return controleAtividade
+                .pegaMaiorRiscoAtividades(idAtividade);
     }
 
     /**
@@ -170,15 +179,21 @@ public class Controle implements ControlePesistivel {
         Verificador.verificaString("Campo termo nao pode ser nulo ou vazio.", termo);
         ArrayList<String> buscaOrdenada = new ArrayList<String>(buscasOrdenadas(termo));
 
-        String retorno = ""; int contador = 0;
+        StringBuilder retorno = new StringBuilder(); int contador = 0;
 
         for (String atual : buscaOrdenada) {
             if (contador == 0) {
-                retorno += atual;
+                retorno.append(atual);
                 contador = 1; }
-            else retorno += " | " + atual;
+
+            else
+                retorno
+                        .append(" | ")
+                        .append(atual);
         }
-        return retorno;
+
+        return retorno
+                .toString();
     }
 
     /**

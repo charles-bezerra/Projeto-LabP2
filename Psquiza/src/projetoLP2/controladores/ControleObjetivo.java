@@ -35,7 +35,10 @@ public class ControleObjetivo implements Serializable {
      */
     public String cadastraObjetivo(String tipo, String descricao, int aderencia, int viabilidade) {
         Objetivo objetivo = new Objetivo(tipo, descricao, aderencia, viabilidade);
-        objetivos.put(objetivo.getId(), objetivo);
+
+        objetivos
+                .put(objetivo.getId(), objetivo);
+
         return null;
     }
 
@@ -46,8 +49,10 @@ public class ControleObjetivo implements Serializable {
      */
     public void apagarObjetivo(String codigo) {
         Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
+
         if(!objetivos.containsKey(codigo))
             throw new IllegalArgumentException("Objetivo nao encontrado");
+
         else objetivos.remove(codigo);
     }
 
@@ -59,8 +64,10 @@ public class ControleObjetivo implements Serializable {
      */
     public String exibeObjetivo(String codigo) {
         Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
+
         if(!objetivos.containsKey(codigo))
             throw new IllegalArgumentException("Objetivo nao encontrado");
+
         else return objetivos.get(codigo).toString();
     }
 
@@ -77,6 +84,7 @@ public class ControleObjetivo implements Serializable {
         for (Objetivo objetivo: buscasOrdenadas)
             if (objetivo.getDescricao().toLowerCase().contains(termo.toLowerCase()))
                 retorno.add(objetivo.getId() + ": " + objetivo.getDescricao());
+
         return retorno;
     }
 
@@ -88,7 +96,10 @@ public class ControleObjetivo implements Serializable {
      */
     public boolean encontraObjetivo(String id){
         Verificador.verificaString("Campo idObjetivo nao pode ser nulo ou vazio.", id);
-        return this.objetivos.containsKey(id);
+
+        return this
+                .objetivos
+                .containsKey(id);
     }
 
     /**
@@ -98,7 +109,10 @@ public class ControleObjetivo implements Serializable {
      * @return o objetivo selecionado
      */
     public Objetivo getObjetivo(String id){
-        if (!this.encontraObjetivo(id)) throw new IllegalArgumentException("Objetivo nao encontrado.");
-        return this.objetivos.get(id);
+        if (!this.encontraObjetivo(id))
+            throw new IllegalArgumentException("Objetivo nao encontrado.");
+
+        return this.objetivos
+                .get(id);
     }
 }

@@ -2,71 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dde9f5c9-28ef-4b0e-9d6e-84813388e10d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/projetoLP2/Psquiza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Psquiza.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Psquiza.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/Interfaces/ControlePesistivel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/Interfaces/ControlePesistivel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/Interfaces/Funcao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/Interfaces/Funcao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Atividade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Atividade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/Aluno.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/Aluno.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/AlunoSemEspecialidades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/AlunoSemEspecialidades.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/Externo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/Externo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/FuncaoSemEspecialidade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/FuncaoSemEspecialidade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/Professor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/Professor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/ProfessorSemEspecialidades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Funcoes/ProfessorSemEspecialidades.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Objetivo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Objetivo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Pesquisador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Problema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/classes/Problema.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/atividade/ComparaAtividadeMaiorDuracao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/atividade/ComparaAtividadeMaiorDuracao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/atividade/ComparaAtividadeMaiorRisco.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/atividade/ComparaAtividadeMaiorRisco.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/atividade/ComparaAtividadeMaisAntiga.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/atividade/ComparaAtividadeMaisAntiga.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/atividade/ComparaAtividadeMenosPendencias.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/atividade/ComparaAtividadeMenosPendencias.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/pesquisa/ComparaPorIdPesquisa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/pesquisa/ComparaPorIdPesquisa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/pesquisa/ComparaPorIdProblema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/pesquisa/ComparaPorIdProblema.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/pesquisa/ComparaPorObjetivos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/comparadores/pesquisa/ComparaPorObjetivos.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/Controle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/Controle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleAtividade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleAtividade.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleObjetivo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleObjetivo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisa.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControlePesquisador.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleProblema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/controladores/ControleProblema.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Disponibilidade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Disponibilidade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Estado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Estado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Funcao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Funcao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Risco.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Risco.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Status.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Tipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/Tipo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/TipoFuncao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/enums/TipoFuncao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/excessoes/PesistenciaException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/excessoes/PesistenciaException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/facades/Facade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/util/Pesistencia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/util/Pesistencia.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/util/SalvaArquivoTexto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/util/SalvaArquivoTexto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/util/Verificador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/projetoLP2/util/Verificador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/AtividadeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/AtividadeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/ItemTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/ItemTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/PesquisaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/PesquisaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/PesquisadorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/classes/PesquisadorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControleAtividadeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControleAtividadeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControleObjetivoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControleObjetivoTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControlePesquisaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControlePesquisaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControlePesquisadorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControlePesquisadorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControleProblemaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Psquiza/unidade/controladores/ControleProblemaTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/Interfaces/ControlePesistivel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/Interfaces/ControlePesistivel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Aluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Externo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Externo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/FuncaoSemEspecialidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/FuncaoSemEspecialidade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Funcoes/Professor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/classes/Pesquisa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleAtividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleAtividade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleObjetivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleObjetivo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControlePesquisador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleProblema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/ControleProblema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/facades/Facade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/util/Pesistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/util/Pesistencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/unidade/controladores/ControlePesquisaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/unidade/controladores/ControlePesquisaTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +80,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Psquiza">
+  <component name="RunManager" selected="JUnit.ControlePesquisaTest.cadastraPesquisaComDescricaoNula">
     <configuration name="Facade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="projetoLP2.facades.Facade" />
       <module name="Psquiza" />
@@ -153,6 +107,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ControlePesquisaTest.cadastraPesquisa" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.controladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControlePesquisaTest" />
+      <option name="METHOD_NAME" value="cadastraPesquisa" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControlePesquisaTest.cadastraPesquisaComDescricaoNula" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.controladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControlePesquisaTest" />
+      <option name="METHOD_NAME" value="cadastraPesquisaComDescricaoNula" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PesquisaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Psquiza" />
       <extension name="coverage">
@@ -170,9 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ControlePesquisaTest.cadastraPesquisaComDescricaoNula" />
         <item itemvalue="Application.Psquiza" />
-        <item itemvalue="JUnit.PesquisaTest" />
         <item itemvalue="Application.Facade" />
+        <item itemvalue="JUnit.ControlePesquisaTest.cadastraPesquisa" />
+        <item itemvalue="JUnit.PesquisaTest" />
       </list>
     </recent_temporary>
   </component>
@@ -188,6 +176,8 @@
       <updated>1574223946537</updated>
       <workItem from="1574223969707" duration="3970000" />
       <workItem from="1574228149175" duration="472000" />
+      <workItem from="1574228919998" duration="114000" />
+      <workItem from="1574263636470" duration="7163000" />
     </task>
     <servers />
   </component>

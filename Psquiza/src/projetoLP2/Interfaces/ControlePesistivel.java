@@ -2,8 +2,6 @@ package projetoLP2.Interfaces;
 
 import projetoLP2.excessoes.PesistenciaException;
 
-import java.util.Map;
-
 /**
  * Interface que padroniza metodos que devem ser adicionado em um
  * Controle que pesiste as entidades gravadas nesse crud
@@ -11,7 +9,20 @@ import java.util.Map;
  * @author Charles Bezerra de Oliveira Júnior
  */
 public interface ControlePesistivel {
-    String diretorio = "banco/dados.ser";
-    public void salva() throws PesistenciaException;
-    public void carrega() throws PesistenciaException;
+    /**
+     * Endereco do banco padrao do sistema
+     */
+    String banco = "banco/dados.ser";
+
+    /**
+     * Metodo de salvar
+     * @throws PesistenciaException
+     */
+    void salva() throws PesistenciaException;
+
+    /**
+     * Metodo para carregars
+     * @throws PesistenciaException
+     */
+    void carrega() throws PesistenciaException;
 }

@@ -33,7 +33,9 @@ public class ControleAtividade implements Serializable {
      */
     private boolean encontraAtividade(String codigo){
         Verificador.verificaString("Campo codigo nao pode ser nulo ou vazio.", codigo);
-        return this.atividades.containsKey(codigo);
+
+        return this.atividades
+                .containsKey(codigo);
     }
 
     /**
@@ -45,8 +47,12 @@ public class ControleAtividade implements Serializable {
      */
     public String cadastraAtividade(String descricao, String nivelRisco, String descricaoRisco){
         Atividade atividade = new Atividade(descricao, nivelRisco, descricaoRisco);
-        this.atividades.put(atividade.getCodigo(), atividade);
-        return atividade.getCodigo();
+
+        this.atividades
+                .put(atividade.getCodigo(), atividade);
+
+        return atividade
+                .getCodigo();
     }
 
     /**
@@ -56,6 +62,7 @@ public class ControleAtividade implements Serializable {
     public void apagaAtividade(String codigo){
         if (!encontraAtividade(codigo))
             throw new IllegalArgumentException("Atividade nao encontrada");
+
         this.atividades.remove(codigo);
     }
 
@@ -67,7 +74,10 @@ public class ControleAtividade implements Serializable {
     public void cadastraItem(String codigo, String item){
         if (!encontraAtividade(codigo))
             throw new IllegalArgumentException("Atividade nao encontrada");
-        this.atividades.get(codigo).cadastraItem(item);
+
+        this.atividades
+                .get(codigo)
+                .cadastraItem(item);
     }
 
     /**
@@ -78,7 +88,10 @@ public class ControleAtividade implements Serializable {
     public String exibeAtividade(String codigo){
         if (!encontraAtividade(codigo))
             throw new IllegalArgumentException("Atividade nao encontrada");
-        return this.atividades.get(codigo).toString();
+
+        return this.atividades
+                .get(codigo)
+                .toString();
     }
 
     /**
@@ -89,7 +102,10 @@ public class ControleAtividade implements Serializable {
     public int contaItensPendentes(String codigo){
         if (!encontraAtividade(codigo))
             throw new IllegalArgumentException("Atividade nao encontrada");
-        return this.atividades.get(codigo).contaItensPendentes();
+
+        return this.atividades
+                .get(codigo)
+                .contaItensPendentes();
     }
 
     /**
@@ -100,7 +116,10 @@ public class ControleAtividade implements Serializable {
     public int contaItensRealizados(String codigo){
         if (!encontraAtividade(codigo))
             throw new IllegalArgumentException("Atividade nao encontrada");
-        return this.atividades.get(codigo).contaItensRealizados();
+
+        return this.atividades
+                .get(codigo)
+                .contaItensRealizados();
     }
 
     /**
@@ -116,9 +135,11 @@ public class ControleAtividade implements Serializable {
         for (Atividade atividade : buscasOrdenadas) {
             if (atividade.getDescricao().toLowerCase().contains(termo.toLowerCase()))
                 retorno.add(atividade.getCodigo() + ": " + atividade.getDescricao());
+
             if (atividade.getDescricaoRisco().toLowerCase().contains(termo.toLowerCase()))
                 retorno.add(atividade.getCodigo() + ": " + atividade.getDescricaoRisco());
         }
+
         return retorno;
     }
 
@@ -130,8 +151,10 @@ public class ControleAtividade implements Serializable {
      */
     public Atividade getAtividade(String codigoAtividade) {
         Verificador.verificaString("Campo codigoAtividade nao pode ser nulo ou vazio.", codigoAtividade);
+
         if(!this.encontraAtividade(codigoAtividade))
             throw new IllegalArgumentException("Atividade nao encontrada");
+
         return atividades.get(codigoAtividade);
     }
 
@@ -145,6 +168,7 @@ public class ControleAtividade implements Serializable {
     public void executaAtividade(String codigoAtividade, int item, int duracao) {
         if(!this.encontraAtividade(codigoAtividade))
             throw new IllegalArgumentException("Atividade nao encontrada");
+
         atividades.get(codigoAtividade)
                 .executaAtividade(item, duracao);
     }
@@ -159,9 +183,13 @@ public class ControleAtividade implements Serializable {
     public int cadastraResultado(String codigoAtividade, String resultado) {
         Verificador.verificaString("Campo codigoAtividade nao pode ser nulo ou vazio.", codigoAtividade);
         Verificador.verificaString("Resultado nao pode ser nulo ou vazio.", resultado);
+
         if(!this.encontraAtividade(codigoAtividade))
             throw new IllegalArgumentException("Atividade nao encontrada");
-        return atividades.get(codigoAtividade).cadastraResultado(resultado);
+
+        return atividades
+                .get(codigoAtividade)
+                .cadastraResultado(resultado);
     }
 
     /**
@@ -173,8 +201,13 @@ public class ControleAtividade implements Serializable {
      */
     public boolean removeResultado(String codigoAtividade, int numeroResultado) {
         Verificador.verificaString("Campo codigoAtividade nao pode ser nulo ou vazio.", codigoAtividade);
-        if(!this.encontraAtividade(codigoAtividade)) { throw new IllegalArgumentException("Atividade nao encontrada"); }
-        return atividades.get(codigoAtividade).removeResultado(numeroResultado);
+
+        if(!this.encontraAtividade(codigoAtividade))
+            throw new IllegalArgumentException("Atividade nao encontrada");
+
+        return atividades
+                .get(codigoAtividade)
+                .removeResultado(numeroResultado);
     }
 
     /**
@@ -185,8 +218,13 @@ public class ControleAtividade implements Serializable {
      */
     public String listaResultados(String codigoAtividade) {
         Verificador.verificaString("Campo codigoAtividade nao pode ser nulo ou vazio.", codigoAtividade);
-        if(!this.encontraAtividade(codigoAtividade)) { throw new IllegalArgumentException("Atividade nao encontrada"); }
-        return atividades.get(codigoAtividade).listaResultados();
+
+        if(!this.encontraAtividade(codigoAtividade))
+            throw new IllegalArgumentException("Atividade nao encontrada");
+
+        return atividades
+                .get(codigoAtividade)
+                .listaResultados();
     }
 
     /**
@@ -197,8 +235,13 @@ public class ControleAtividade implements Serializable {
      */
     public int getDuracao(String codigoAtividade) {
         Verificador.verificaString("Campo codigoAtividade nao pode ser nulo ou vazio.", codigoAtividade);
-        if(!this.encontraAtividade(codigoAtividade)) { throw new IllegalArgumentException("Atividade nao encontrada"); }
-        return atividades.get(codigoAtividade).getDuracao();
+
+        if(!this.encontraAtividade(codigoAtividade))
+            throw new IllegalArgumentException("Atividade nao encontrada");
+
+        return atividades
+                .get(codigoAtividade)
+                .getDuracao();
     }
 
     /**
@@ -213,8 +256,10 @@ public class ControleAtividade implements Serializable {
 
         if (!atividades.containsKey(idPrecedente) || !atividades.containsKey(idSubsquente))
             throw new IllegalArgumentException("Atividade nao encontrada.");
+
         if(atividades.get(idSubsquente).contemProx(idPrecedente))
             throw new IllegalArgumentException("Criacao de loops negada.");
+
         atividades
                 .get(idPrecedente)
                 .addProx(atividades.get(idSubsquente));
@@ -230,6 +275,7 @@ public class ControleAtividade implements Serializable {
 
         if (!atividades.containsKey(idPrecedente))
             throw new IllegalArgumentException("Atividade nao encontrada.");
+
         atividades
                 .get(idPrecedente)
                 .tiraProx();
@@ -243,8 +289,10 @@ public class ControleAtividade implements Serializable {
      */
     public int contaProximos(String idPrecedente){
         Verificador.verificaString("Atividade nao pode ser nulo ou vazio.",idPrecedente);
+
         if (!atividades.containsKey(idPrecedente))
             throw new IllegalArgumentException("Atividade nao encontrada.");
+
         return atividades
                 .get(idPrecedente)
                 .contaProx();
@@ -263,6 +311,7 @@ public class ControleAtividade implements Serializable {
 
         if (!atividades.containsKey(idAtividade))
             throw new IllegalArgumentException("Atividade nao encontrada.");
+
         return atividades
                 .get(idAtividade)
                 .pegaProx(enesimaAtividade);
@@ -284,6 +333,7 @@ public class ControleAtividade implements Serializable {
 
         if (a.getProx() == null)
             throw new IllegalArgumentException("Nao existe proxima atividade.");
+
         Atividade p = a.getProx();
 
         return p.pegaMaiorRisco(p.getCodigo(), p.getRisco());

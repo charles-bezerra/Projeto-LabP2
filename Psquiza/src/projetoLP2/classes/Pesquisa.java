@@ -100,8 +100,10 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	private void verificaCampo(String campo) {
 		Verificador.verificaString("Formato do campo de interesse invalido.", campo);
 		String[] topicos = campo.split(",");
+
 		if(campo.length() > 255 || topicos.length > 4)
 			throw new IllegalArgumentException("Formato do campo de interesse invalido.");
+
 		for(String topico : topicos)
 			if (topico.length() < 3 || topico.trim().isEmpty())
 				throw new IllegalArgumentException("Formato do campo de interesse invalido.");
@@ -198,7 +200,9 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	 * Funcao para retorna o problema da pesquisa
 	 * @return Um objeto do tipo Problema
 	 */
-	public Problema getProblema(){ return this.problema; }
+	public Problema getProblema(){
+		return this.problema;
+	}
 
 	/**
 	 * Altera o estado da pesquisa para ATIVA
@@ -216,6 +220,7 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 		if(getEstado().equals("DESATIVADA"))
 			throw new IllegalArgumentException("Pesquisa desativada.");
 		Verificador.verificaString("Motivo nao pode ser nulo ou vazio.", motivo);
+
 		this.motivo = motivo;
 		estado = Estado.DESATIVADA;
 	}
@@ -228,7 +233,11 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	 */
 	@Override
 	public String toString() {
-		return String.format("%s - %s - %s", this.cod,this.descricao,this.campoDeInteresse);
+		return String.format("%s - %s - %s",
+				this.cod,
+				this.descricao,
+				this.campoDeInteresse
+		);
 	}
 
 	/**
@@ -238,8 +247,12 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	 * @return true se a operacao foi um sucesso e false se nao foi
 	 */
 	public boolean associaAtividade(Atividade atividade) {
-		if(!this.ehAtiva()) { throw new IllegalArgumentException("Pesquisa desativada."); }
-		if(atividades.containsKey(atividade.getCodigo())) {return false; }
+		if(!this.ehAtiva())
+			throw new IllegalArgumentException("Pesquisa desativada.");
+
+		if(atividades.containsKey( atividade.getCodigo() ))
+			return false;
+
 		atividades.put(atividade.getCodigo(), atividade);
 		return true;
 	}
@@ -251,8 +264,12 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	 * @return true se a operacao foi um sucesso e false se nao foi
 	 */
 	public boolean desassociaAtividade(Atividade atividade) {
-		if(!this.ehAtiva()) { throw new IllegalArgumentException("Pesquisa desativada."); }
-		if(!atividades.containsKey(atividade.getCodigo())) {return false; }
+		if(!this.ehAtiva())
+			throw new IllegalArgumentException("Pesquisa desativada.");
+
+		if(!atividades.containsKey( atividade.getCodigo() ))
+			return false;
+
 		atividades.remove(atividade.getCodigo());
 		return true;
 	}
@@ -275,10 +292,13 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	public boolean associaProblema(Problema problema){
 		if (!this.ehAtiva())
 			throw new IllegalArgumentException("Pesquisa desativada.");
+
 		if (this.problema != null && this.problema.equals(problema))
 			return false;
+
 		if (this.problema != null)
 			throw new IllegalArgumentException("Pesquisa ja associada a um problema.");
+
 		this.problema = problema;
 		return true;
 	}
@@ -290,8 +310,10 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	public boolean desassociaProblema(){
 		if (!this.ehAtiva())
 			throw new IllegalArgumentException("Pesquisa desativada.");
+
 		if (this.problema == null)
 			return false;
+
 		this.problema = null;
 		return true;
 	}
@@ -304,8 +326,10 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	public boolean associaObjetivo(Objetivo objetivo){
 		if (!this.ehAtiva())
 			throw new IllegalArgumentException("Pesquisa desativada.");
+
 		if (this.objetivos.containsKey(objetivo.getId()))
 			return false;
+
 		if (!objetivo.getDisponivel())
 			throw new IllegalArgumentException("Objetivo ja associado a uma pesquisa.");
 
@@ -326,8 +350,10 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 			throw new IllegalArgumentException("Pesquisa desativada.");
 		if (!this.objetivos.containsKey(idObjetivo))
 			return false;
+
 		this.objetivos.get(idObjetivo).tornarDisponivel();
 		this.objetivos.remove(idObjetivo);
+
 		return true;
 	}
 
@@ -346,8 +372,12 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	 * @return true se a operacao foi um sucesso e false se nao foi
 	 */
 	public boolean associaPesquisador(Pesquisador pesquisador) {
-		if(!this.ehAtiva()) { throw new IllegalArgumentException("Pesquisa desativada."); }
-		if(pesquisadores.containsKey(pesquisador.getEmail())) {return false; }
+		if(!this.ehAtiva())
+			throw new IllegalArgumentException("Pesquisa desativada.");
+
+		if(pesquisadores.containsKey( pesquisador.getEmail() ))
+			return false;
+
 		pesquisadores.put(pesquisador.getEmail(), pesquisador);
 		return true;
 	}
@@ -359,8 +389,12 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	 * @return true se a operacao foi um sucesso e false se nao foi
 	 */
 	public boolean desassociaPesquisador(Pesquisador pesquisador) {
-		if(!this.ehAtiva()) { throw new IllegalArgumentException("Pesquisa desativada."); }
-		if(!pesquisadores.containsKey(pesquisador.getEmail())) {return false; }
+		if(!this.ehAtiva())
+			throw new IllegalArgumentException("Pesquisa desativada.");
+
+		if(!pesquisadores.containsKey( pesquisador.getEmail() ))
+			return false;
+
 		pesquisadores.remove(pesquisador.getEmail());
 		return true;
 	}
@@ -374,8 +408,10 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	 */
 	@Override
 	public boolean equals(Object o) {
+		if (o == null) return false;
 		if (this == o) return true;
-		if (!(o instanceof Pesquisa)) return false;
+		if ( !(o.getClass() == this.getClass()) ) return false;
+
 		Pesquisa pesquisa = (Pesquisa) o;
 		return getCod().equals(pesquisa.getCod());
 	}
@@ -408,16 +444,18 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	 * @return as atividades ordenadas
 	 */
 	public List<Atividade> ordenaAtividades(String estrategia) {
-		if(!this.ehAtiva()) { throw new IllegalArgumentException("Pesquisa desativada."); }
+		if(!this.ehAtiva())
+			throw new IllegalArgumentException("Pesquisa desativada.");
+
 		List<Atividade> atividades = new ArrayList<>();
-		for(Atividade atividade : this.atividades.values()) {
-			if(atividade.contaItensPendentes() != 0) {
+
+		for(Atividade atividade : this.atividades.values())
+			if(atividade.contaItensPendentes() != 0)
 				atividades.add(atividade);
-			}
-		}
-		if(atividades.equals(new ArrayList<>())) {
+
+		if(atividades.equals(new ArrayList<>()))
 			throw new IllegalArgumentException("Pesquisa sem atividades com pendencias.");
-		}
+
 		switch (estrategia) {
 			case "MAIS_ANTIGA": { atividades.sort(new ComparaAtividadeMaisAntiga()); break; }
 			case "MENOS_PENDENCIAS": { atividades.sort(new ComparaAtividadeMenosPendencias()); break; }
@@ -428,70 +466,104 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 	}
 
 	public String getObjetivos() {
-		String retorno = "\n    - Objetivos:\n    ";
+		StringBuilder retorno = new StringBuilder("\n    - Objetivos:\n    ");
 		for (Objetivo objetivos : objetivos.values()) {
-			retorno += "    - " + objetivos.toString() + "\n";
+			retorno
+					.append("    - ")
+					.append(objetivos.toString())
+					.append("\n");
 		}
-		return retorno;
+		return retorno.toString();
 	}
 
 	public String getAtividades() {
-		String retorno = "\n    - Atividades:\n    ";
+		StringBuilder retorno = new StringBuilder("\n    - Atividades:\n    ");
 		for (Atividade atividade : atividades.values()) {
-			retorno += "    - " + atividade.toString() + "\n";
+			retorno
+					.append("    - ")
+					.append(atividade.toString())
+					.append("\n");
 		}
-		return retorno;
+		return retorno.toString();
 	}
 
 
 	public String getPesquisadores() {
-		String retorno = "- Pesquisadores:";
+		StringBuilder retorno = new StringBuilder("- Pesquisadores:");
 		for (Pesquisador pesquisador : pesquisadores.values()) {
-			retorno += "\n        - " + pesquisador.getNome() + " (" + pesquisador.getFuncao().toLowerCase() + ")" +
-					" - " + pesquisador.getBiografia() + " - " + pesquisador.getEmail() + " - "
-					+ pesquisador.getFotoURL() + pesquisador.getFuncaoEspecialidade();
+			retorno
+					.append("\n        - ")
+					.append( pesquisador.getNome() )
+					.append(" (")
+					.append( pesquisador
+							.getFuncao()
+							.toLowerCase()
+					)
+					.append(")")
+					.append(" - ")
+					.append( pesquisador.getBiografia() )
+					.append(" - ")
+					.append( pesquisador.getEmail() )
+					.append(" - ")
+					.append( pesquisador.getFotoURL() )
+					.append( pesquisador.getFuncaoEspecialidade() );
 
 		}
-		return retorno;
+		return retorno.toString();
 	}
 
 	public String getItemsResultados() {
-
-
-		String retorno = "";
-
+		StringBuilder retorno = new StringBuilder();
 		for (Atividade atividade : atividades.values()) {
-			retorno += "\n        - " + atividade.getDescricao();
+			retorno.append("\n        - ")
+					.append(atividade.getDescricao());
+
 			int cont = 1;
+
 			for (Item item : atividade.getItems()) {
 				if (item.getDuracao() > 0) {
-					retorno += "\n            - " + "ITEM" + cont + " - " + item.getDuracao();
+					retorno.append("\n            - " + "ITEM")
+							.append(cont)
+							.append(" - ")
+							.append(item.getDuracao());
 					cont++;
-
 				}
 			}
-			for (String resultados : atividade.getResultados()) {
-				retorno += "\n            - " + resultados;
-			}
+
+			for (String resultados : atividade.getResultados())
+				retorno.append("\n            - ")
+						.append(resultados);
 
 		}
-		return retorno;
+		return retorno.toString();
 	}
 
 	public String getItemsResumo() {
-		String retorno = "    - Atividades:\n    ";
+		StringBuilder retorno = new StringBuilder("    - Atividades:\n    ");
 		for (Atividade atividade : atividades.values()) {
-			retorno += "    - " + atividade.getDescricao() + " (" + atividade.getRisco() + " - "
-					+ atividade.getDescricaoRisco() + ")" + "\n";
+			retorno
+					.append("    - ")
+					.append( atividade.getDescricao() )
+					.append(" (")
+					.append( atividade.getRisco() )
+					.append(" - ")
+					.append( atividade.getDescricaoRisco() )
+					.append(")")
+					.append("\n");
 			int cont = 1;
 
 			for (Item item : atividade.getItems()) {
-				retorno += "            - " + item.getStatus() + " - ITEM" + cont + "\n";
+				retorno
+						.append("            - ")
+						.append(item.getStatus())
+						.append(" - ITEM")
+						.append(cont)
+						.append("\n");
 				cont++;
 
 			}
 		}
-		return retorno;
+		return retorno.toString();
 	}
 
 

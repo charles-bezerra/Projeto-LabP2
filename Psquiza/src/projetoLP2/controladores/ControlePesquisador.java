@@ -22,7 +22,6 @@ public class ControlePesquisador implements Serializable {
      */
     private Map<String, Pesquisador> pesquisadores;
 
-
     /**
      * Constroi o HahsMap pesquisadores.
      */
@@ -40,7 +39,8 @@ public class ControlePesquisador implements Serializable {
      */
     public void cadastraPesquisador(String nome, String funcao, String biografia, String email, String fotoURL){
         Pesquisador p = new Pesquisador(nome, funcao, biografia, email, fotoURL);
-        pesquisadores.put(p.getEmail(),p );
+        pesquisadores
+                .put(p.getEmail(),p );
     }
 
     /**
@@ -56,16 +56,21 @@ public class ControlePesquisador implements Serializable {
         if(! pesquisadores.containsKey(email))
             throw new IllegalArgumentException("Pesquisador nao encontrado");
 
-        switch (atributo.toUpperCase()) {
-            case "EMAIL":
-                Verificador.verificaString("Campo " + atributo.toLowerCase() + " nao pode ser nulo ou vazio.", novoValor);
-                Pesquisador p = pesquisadores.get(email);
-                p.alteraAtributo(atributo, novoValor);
-                pesquisadores.put(p.getEmail(), p);
-                pesquisadores.remove(email);
-                break;
-            default: pesquisadores.get(email).alteraAtributo(atributo, novoValor);
+        if ( atributo
+                .toUpperCase()
+                .equals("EMAIL") )
+        {
+            Verificador.verificaString("Campo " + atributo.toLowerCase() + " nao pode ser nulo ou vazio.", novoValor);
+            Pesquisador p = pesquisadores.get(email);
+            p.alteraAtributo(atributo, novoValor);
+            pesquisadores.put(p.getEmail(), p);
+            pesquisadores.remove(email);
         }
+
+        else
+            pesquisadores
+                    .get(email)
+                    .alteraAtributo(atributo, novoValor);
     }
 
 
@@ -78,9 +83,13 @@ public class ControlePesquisador implements Serializable {
      */
     public void cadastraEspecialidadeProfessor(String email, String formacao, String unidade, String data){
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
+
         if(!pesquisadores.containsKey(email))
             throw new IllegalArgumentException("Pesquisadora nao encontrada.");
-        pesquisadores.get(email).setEspecialidadeProfessor(formacao, unidade, data);
+
+        pesquisadores
+                .get(email)
+                .setEspecialidadeProfessor(formacao, unidade, data);
     }
 
 
@@ -92,9 +101,13 @@ public class ControlePesquisador implements Serializable {
      */
     public void cadastraEspecialidadeAluno(String email, String semestre, String IEA){
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
+
         if(!pesquisadores.containsKey(email))
             throw new IllegalArgumentException("Pesquisadora nao encontrada.");
-        pesquisadores.get(email).setEspecialidadeAluno(semestre, IEA);
+
+        pesquisadores
+                .get(email)
+                .setEspecialidadeAluno(semestre, IEA);
     }
 
     /**
@@ -103,9 +116,13 @@ public class ControlePesquisador implements Serializable {
      */
     public void desativaPesquisador(String email){
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
+
         if(! pesquisadores.containsKey(email))
             throw new IllegalArgumentException("Pesquisador nao encontrado");
-        pesquisadores.get(email).desativaPesquisador();
+
+        pesquisadores
+                .get(email)
+                .desativaPesquisador();
     }
 
     /**
@@ -114,9 +131,13 @@ public class ControlePesquisador implements Serializable {
      */
     public void ativaPesquisador(String email){
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
+
         if(! pesquisadores.containsKey(email))
             throw new IllegalArgumentException("Pesquisador nao encontrado");
-        pesquisadores.get(email).ativaPesquisador();
+
+        pesquisadores
+                .get(email)
+                .ativaPesquisador();
     }
 
     /**
@@ -126,11 +147,16 @@ public class ControlePesquisador implements Serializable {
      */
     public String exibePesquisador(String email) {
         Verificador.verificaString("Campo email nao pode ser nulo ou vazio.", email);
+
         if(! pesquisadores.containsKey(email))
             throw new IllegalArgumentException("Pesquisador nao encontrado");
+
         if(!pesquisadorEhAtivo(email))
             throw new IllegalArgumentException("Pesquisador inativo.");
-        return pesquisadores.get(email).toString();
+
+        return pesquisadores
+                .get(email)
+                .toString();
     }
 
     /**
@@ -140,9 +166,13 @@ public class ControlePesquisador implements Serializable {
      */
     public boolean pesquisadorEhAtivo(String email){
         Verificador.verificaString("Email nao pode ser vazio ou nulo.", email);
+
         if(! pesquisadores.containsKey(email))
             throw new IllegalArgumentException("Pesquisador nao encontrado");
-        else return pesquisadores.get(email).isAtivado();
+
+        else return pesquisadores
+                .get(email)
+                .isAtivado();
     }
 
 
@@ -159,19 +189,24 @@ public class ControlePesquisador implements Serializable {
         for(TipoFuncao f : arr)
             if(f.toString().equals(tipo.toUpperCase())){
                 contem = true;
-                break; }
+                break;
+            }
 
-        if(!contem) throw new IllegalArgumentException("Tipo " + tipo + " inexistente.");
+        if(!contem)
+            throw new IllegalArgumentException("Tipo " + tipo + " inexistente.");
 
-        String saida = "";
+        StringBuilder saida = new StringBuilder();
 
         for (Pesquisador p : pesquisadores.values())
             if(p.getFuncao().equals(tipo.toUpperCase()))
-                saida += p.toString() + " | ";
+                saida
+                   .append( p.toString() )
+                   .append(" | ");
 
         if (saida.length() > 0)
-            saida = saida.substring(0,saida.length() - 3 );
-        return saida;
+            saida = new StringBuilder( saida.substring(0, saida.length() - 3) );
+
+        return saida.toString();
     }
 
 
@@ -192,9 +227,12 @@ public class ControlePesquisador implements Serializable {
      */
     public Pesquisador getPesquisador(String emailPesquisador){
         Verificador.verificaString("Campo emailPesquisador nao pode ser nulo ou vazio.",emailPesquisador);
+
         if (!pesquisadores.containsKey(emailPesquisador))
             throw new IllegalArgumentException("Pesquisador nao encontrado");
-        return this.pesquisadores.get(emailPesquisador);
+
+        return this.pesquisadores
+                .get(emailPesquisador);
     }
 
 
@@ -211,6 +249,7 @@ public class ControlePesquisador implements Serializable {
         for (Pesquisador pesquisador: buscasOrdenadas)
             if (pesquisador.getBiografia().toLowerCase().contains(termo.toLowerCase()))
                 retorno.add(pesquisador.getEmail() + ": " + pesquisador.getBiografia());
+
         return retorno;
     }
 }

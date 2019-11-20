@@ -48,7 +48,9 @@ public class ControlePesquisa implements Serializable {
 	 * @return boolean
 	 */
 	private boolean encontraPesquisa(String id){
-		return this.pesquisas.containsKey(id);
+		return this
+				.pesquisas
+				.containsKey(id);
 	}
 
 	/**
@@ -79,9 +81,16 @@ public class ControlePesquisa implements Serializable {
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
 
 		switch (conteudoASerAlterado) {
-			case "DESCRICAO":{ pesquisas.get(codigo).setDescricao(novoConteudo); break; }
-			case "CAMPO":{ pesquisas.get(codigo).setCampoDeInteresse(novoConteudo); break; }
-			default: throw new IllegalArgumentException("Nao e possivel alterar esse valor de pesquisa.");
+			case "DESCRICAO":{
+				pesquisas.get(codigo).setDescricao(novoConteudo);
+				break;
+			}
+			case "CAMPO":{
+				pesquisas.get(codigo).setCampoDeInteresse(novoConteudo);
+				break;
+			}
+			default:
+				throw new IllegalArgumentException("Nao e possivel alterar esse valor de pesquisa.");
 		}
 	}
 
@@ -95,9 +104,13 @@ public class ControlePesquisa implements Serializable {
 	 */
 	public void encerraPesquisa(String codigo, String motivo) {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
+
 		if(!this.encontraPesquisa(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
-		pesquisas.get(codigo).encerraPesquisa(motivo);
+
+		pesquisas
+				.get(codigo)
+				.encerraPesquisa(motivo);
 	}
 
 
@@ -108,9 +121,13 @@ public class ControlePesquisa implements Serializable {
 	 */
 	public void ativaPesquisa(String codigo) {	
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
+
 		if(!this.encontraPesquisa(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
-		pesquisas.get(codigo).ativaPesquisa();
+
+		pesquisas
+				.get(codigo)
+				.ativaPesquisa();
 	}
 
 
@@ -122,9 +139,14 @@ public class ControlePesquisa implements Serializable {
 	 */
 	public boolean pesquisaEhAtiva(String codigo) {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
+
 		if(!this.encontraPesquisa(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
-		return pesquisas.get(codigo).getEstado().equals("ATIVA");
+
+		return pesquisas
+				.get(codigo)
+				.getEstado()
+				.equals("ATIVA");
 	}
 
 
@@ -137,9 +159,13 @@ public class ControlePesquisa implements Serializable {
 	 */
 	public String exibePesquisa(String codigo) {
 		Verificador.verificaString("Codigo nao pode ser nulo ou vazio.", codigo);
+
 		if(!this.encontraPesquisa(codigo))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
-		return pesquisas.get(codigo).toString();
+
+		return pesquisas
+				.get(codigo)
+				.toString();
 	}
 
 
@@ -161,16 +187,19 @@ public class ControlePesquisa implements Serializable {
 		ArrayList<String> retorno = new ArrayList<>();
 
 		for (Pesquisa pesquisa: buscasOrdenadas){
-			if ( pesquisa.getDescricao()
+			if ( pesquisa
+					.getDescricao()
 					.toLowerCase()
-					.contains(termo.toLowerCase()) )
-				retorno.add(pesquisa.getCod() + ": " + pesquisa.getDescricao());
+					.contains( termo.toLowerCase() ) )
+				retorno.add( pesquisa.getCod() + ": " + pesquisa.getDescricao() );
 
-			if ( pesquisa.getCampoDeInteresse()
+			if ( pesquisa
+					.getCampoDeInteresse()
 					.toLowerCase()
 					.contains(termo.toLowerCase()) )
 				retorno.add(pesquisa.getCod() + ": " + pesquisa.getCampoDeInteresse());
 		}
+
 		return retorno;
 	}
 
@@ -182,8 +211,10 @@ public class ControlePesquisa implements Serializable {
 	 */
 	public boolean associaProblema(String idPesquisa, Problema problema) {
         Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", idPesquisa);
+
 	    if (!this.encontraPesquisa(idPesquisa))
 	    	throw new IllegalArgumentException("Pesquisa nao encontrada.");
+
 	    return this.pesquisas
                 .get(idPesquisa)
                 .associaProblema(problema);
@@ -196,8 +227,10 @@ public class ControlePesquisa implements Serializable {
 	 */
 	public boolean desassociaProblema(String idPesquisa) {
         Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", idPesquisa);
+
         if (!this.encontraPesquisa(idPesquisa))
         	throw new IllegalArgumentException("Pesquisa nao encontrada.");
+
         return this.pesquisas
                 .get(idPesquisa)
                 .desassociaProblema();
@@ -211,7 +244,10 @@ public class ControlePesquisa implements Serializable {
 	 */
 	public boolean associaObjetivo(String idPesquisa, Objetivo objetivo) {
         Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", idPesquisa);
-        if (!this.encontraPesquisa(idPesquisa)) throw new IllegalArgumentException("Pesquisa nao encontrada.");
+
+        if (!this.encontraPesquisa(idPesquisa))
+        	throw new IllegalArgumentException("Pesquisa nao encontrada.");
+
         return this.pesquisas
                 .get(idPesquisa)
                 .associaObjetivo(objetivo);
@@ -225,8 +261,10 @@ public class ControlePesquisa implements Serializable {
 	 */
 	public boolean desassociaObjetivo(String idPesquisa, String idObjetivo){
         Verificador.verificaString("Campo idObjetivo nao pode ser nulo ou vazio.", idPesquisa);
+
         if (!this.encontraPesquisa(idPesquisa))
         	throw new IllegalArgumentException("Pesquisa nao encontrada.");
+
         return this.pesquisas
                 .get(idPesquisa)
                 .desassociaObjetivo(idObjetivo);
@@ -268,8 +306,10 @@ public class ControlePesquisa implements Serializable {
 	 */
 	public boolean associaAtividade(String codigoPesquisa, Atividade atividade) {
 		Verificador.verificaString("Campo codigoPesquisa nao pode ser nulo ou vazio.", codigoPesquisa);
+
 		if(!this.encontraPesquisa(codigoPesquisa))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
+
 		return pesquisas
 				.get(codigoPesquisa)
 				.associaAtividade(atividade);
@@ -284,8 +324,10 @@ public class ControlePesquisa implements Serializable {
 	 */
 	public boolean desassociaAtividade(String codigoPesquisa, Atividade atividade) {
 		Verificador.verificaString("Campo codigoPesquisa nao pode ser nulo ou vazio.", codigoPesquisa);
+
 		if(!this.encontraPesquisa(codigoPesquisa))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
+
 		return pesquisas
 				.get(codigoPesquisa)
 				.desassociaAtividade(atividade);
@@ -298,10 +340,10 @@ public class ControlePesquisa implements Serializable {
 	 * @return true se estiver associada e false se nao estiver
 	 */
 	public boolean encontraAtividade(Atividade atividade) {
-		for(Pesquisa pesquisa : pesquisas.values()) {
+		for(Pesquisa pesquisa : pesquisas.values())
 			if (pesquisa.encontrAtividade(atividade.getCodigo()))
 				return true;
-		}
+
 		return false;
 	}
 
@@ -314,8 +356,10 @@ public class ControlePesquisa implements Serializable {
 	 */
 	public boolean associaPesquisador(String codigoPesquisa, Pesquisador pesquisador) {
 		Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", codigoPesquisa);
+
 		if(!this.encontraPesquisa(codigoPesquisa))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
+
 		return pesquisas
 				.get(codigoPesquisa)
 				.associaPesquisador(pesquisador);
@@ -330,8 +374,10 @@ public class ControlePesquisa implements Serializable {
 	 */
 	public boolean desassociaPesquisador(String codigoPesquisa, Pesquisador pesquisador) {
 		Verificador.verificaString("Campo idPesquisa nao pode ser nulo ou vazio.", codigoPesquisa);
+
 		if(!this.encontraPesquisa(codigoPesquisa))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
+
 		return pesquisas
 				.get(codigoPesquisa)
 				.desassociaPesquisador(pesquisador);
@@ -344,6 +390,7 @@ public class ControlePesquisa implements Serializable {
 	 */
 	public void setEstrategiaOrdemAtividade(String estrategia) {
 		Verificador.verificaString("Estrategia nao pode ser nula ou vazia.", estrategia);
+
 		if(!estrategia.equals("MAIS_ANTIGA") &&
 				!estrategia.equals("MENOS_PENDENCIAS") &&
 				!estrategia.equals("MAIOR_RISCO") &&
@@ -351,6 +398,7 @@ public class ControlePesquisa implements Serializable {
 		{
 			throw new IllegalArgumentException("Valor invalido da estrategia");
 		}
+
 		this.estrategiaOrdemAtividade = estrategia;
 		contaAtividade = 0;
 	}
@@ -363,10 +411,16 @@ public class ControlePesquisa implements Serializable {
 	 */
 	public String proximaAtividade(String codigoPesquisa) {
 		Verificador.verificaString("Pesquisa nao pode ser nula ou vazia.", codigoPesquisa);
+
 		if(!this.encontraPesquisa(codigoPesquisa))
 			throw new IllegalArgumentException("Pesquisa nao encontrada.");
+
 		List<Atividade> atividades = pesquisas.get(codigoPesquisa).ordenaAtividades(estrategiaOrdemAtividade);
+
 		contaAtividade ++;
-		return atividades.get(contaAtividade - 1).getCodigo();
+
+		return atividades
+				.get(contaAtividade - 1)
+				.getCodigo();
 	}
 }
