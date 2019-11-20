@@ -51,7 +51,9 @@ public class Item implements Serializable {
     }
 
     /**
+     /**
      * Difine status como realizado
+     * @param duracao duracao de cada item.
      */
     public void realizaItem(int duracao) {
         if(this.status == Status.REALIZADO) { throw new IllegalArgumentException("Item ja executado."); }

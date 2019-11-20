@@ -427,6 +427,10 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 		return atividades;
 	}
 
+	/**
+	 * metodo que retorna os objetivos relacionados a determinada pesquisa.
+	 * @return uma representacao em String de todos objetivos relacionados a determinada pesquisa.
+	 */
 	public String getObjetivos() {
 		String retorno = "\n    - Objetivos:\n    ";
 		for (Objetivo objetivos : objetivos.values()) {
@@ -435,6 +439,10 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 		return retorno;
 	}
 
+	/**
+	 * metodo que retorna as atividades relacionadas a determinada pesquisa.
+	 * @return uma representacao em String de todas atividades relacionadas a determinada pesquisa.
+	 */
 	public String getAtividades() {
 		String retorno = "\n    - Atividades:\n    ";
 		for (Atividade atividade : atividades.values()) {
@@ -443,7 +451,10 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 		return retorno;
 	}
 
-
+	/**
+	 * metodo que retorna dados dos pesquisadores associados a determinada pesquisa.
+	 * @return uma representacao em String de  dados pesquisadores relacionados a determinada pesquisa.
+	 */
 	public String getPesquisadores() {
 		String retorno = "- Pesquisadores:";
 		for (Pesquisador pesquisador : pesquisadores.values()) {
@@ -455,6 +466,10 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 		return retorno;
 	}
 
+	/**
+	 * metodo que retorna dados das ativididades, seus items e resultados;
+	 * @return uma representacao em String de dados das ativididades, seus items e resultados.
+	 **/
 	public String getItemsResultados() {
 
 
@@ -478,6 +493,10 @@ public class Pesquisa implements Comparable<Pesquisa>, Serializable {
 		return retorno;
 	}
 
+	/**
+	 * metodo que retorna dados das ativididades e seus items;
+	 * @return uma representacao em String de dados das ativididades e seus items.
+	 */
 	public String getItemsResumo() {
 		String retorno = "    - Atividades:\n    ";
 		for (Atividade atividade : atividades.values()) {

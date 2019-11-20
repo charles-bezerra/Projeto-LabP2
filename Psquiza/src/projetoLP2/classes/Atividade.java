@@ -139,6 +139,7 @@ public class Atividade implements Comparable<Atividade>, Serializable {
      * @param item o item a ser realizado
      * @param duracao o tempo que demorou para o item ser realizado
      */
+
     public void executaAtividade(int item, int duracao) {
         Verificador.verificaInteiro("Item nao pode ser nulo ou negativo.", item);
         Verificador.verificaInteiro("Duracao nao pode ser nula ou negativa.", duracao);
@@ -186,9 +187,9 @@ public class Atividade implements Comparable<Atividade>, Serializable {
     }
 
     /**
-     * Retorna a duracao da atividade.
+     * Retorna a duracao de cada item da atividade.
      *
-     * @return a duracao da atividade
+     * @return a duracao de dacada item da atividade.
      */
     public int getDuracao() {
         int retorno = 0;
@@ -200,29 +201,56 @@ public class Atividade implements Comparable<Atividade>, Serializable {
     }
 
 
-
+    /**
+     * metodo que retorna a descricao de uma atividade
+     * @return representacao em String da descricao de uma atividade.
+     */
     public String getDescricao() {
         return descricao;
     }
 
+    /**
+     * metodo que retorna a descricao de risco de uma atividade.
+     * @return representacao em String da descricao de risco de uma atividade.
+     */
     public String getDescricaoRisco() {
         return descricaoRisco;
     }
 
+    /**
+     * metodo que retorna o risco de uma atividade.
+     * @return O risco de uma atividade.
+     */
     public Risco getRisco() { return risco; }
 
+    /**
+     * metodo que retorna os items de uma atividade.
+     * @return uma lista dos items de uma atividade.
+     */
     public List<Item> getItems(){
         return this.items;
     }
 
+    /**
+     * metodo responsavel por alterar o valor de items, atraves do parametro recebido.
+     * @param items parametro que sera passado para atributo items.
+     */
     public void setItems(List<Item> items){
         this.items = items;
     }
 
+    /**
+     * metodo que retorna os resultados de uma atividade.
+     * @return uma lista dos resultados de uma atividade.
+     */
     public List<String> getResultados() {
         return this.resultados;
     }
 
+    /**
+     * metodo responsavel por alterar o valor de resultados, atraves do parametro recebido.
+     * @param resultados parametro que sera passado para atributo resultados.
+     **/
     public void setResultados(List<String> resultados){
         this.resultados = resultados;
     }

@@ -6,6 +6,7 @@ import projetoLP2.excessoes.PesistenciaException;
 import projetoLP2.util.Pesistencia;
 import  projetoLP2.util.Verificador;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -419,7 +420,7 @@ public class Controle implements ControlePesistivel {
     public String proximaAtividade(String codigoPesquisa) { return controlePesquisa.proximaAtividade(codigoPesquisa); }
 
 
-    public void gravarResumo(String codigoPesquisa){
+    public void gravarResumo(String codigoPesquisa) throws IOException {
         Verificador.verificaString("Pesquisa nao pode ser nula ou vazia.", codigoPesquisa);
 
         if (! controlePesquisa.getPesquisas().containsKey(codigoPesquisa)){
@@ -429,7 +430,7 @@ public class Controle implements ControlePesistivel {
         salvatxt.gravarResumo(controlePesquisa.getPesquisas().get(codigoPesquisa));
 
     }
-    public void gravarResultados(String codigoPesquisa) {
+    public void gravarResultados(String codigoPesquisa) throws IOException {
         Verificador.verificaString("Pesquisa nao pode ser nula ou vazia.", codigoPesquisa);
         if (! controlePesquisa.getPesquisas().containsKey(codigoPesquisa)) {
             throw new IllegalArgumentException("Pesquisa nao encontrada.");
