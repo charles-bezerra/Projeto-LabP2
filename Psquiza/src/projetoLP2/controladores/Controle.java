@@ -14,6 +14,7 @@ import java.util.List;
  * @author Charles Bezerra de Oliveira
  * @author Melquisedeque Carvalho Silva
  * @author Iago Henrique de Souza Silva
+ * @author Lucas Alves Vigolvino
  */
 
 public class Controle implements ControlePesistivel {

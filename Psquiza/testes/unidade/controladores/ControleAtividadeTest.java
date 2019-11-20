@@ -9,9 +9,9 @@ import static junit.framework.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ControleAtividadeTest {
-    static ControleAtividade controle = new ControleAtividade();
-    Exception e;
-    static boolean only = true;
+    private static ControleAtividade controle = new ControleAtividade();
+    private Exception e;
+    private static boolean only = true;
 
     @BeforeEach
     void criaAtividade() {
@@ -39,6 +39,18 @@ class ControleAtividadeTest {
         });
         assertEquals("Campo descricaoRisco nao pode ser nulo ou vazio.", e.getMessage());
         e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            controle.cadastraAtividade(null, "BAIXO","E nada, entao e facil");
+        });
+        assertEquals("Campo Descricao nao pode ser nulo ou vazio.", e.getMessage());
+        e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            controle.cadastraAtividade("nada", null,"E nada, entao e facil");
+        });
+        assertEquals("Campo nivelRisco nao pode ser nulo ou vazio.", e.getMessage());
+        e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            controle.cadastraAtividade("nada", "BAIXO",null);
+        });
+        assertEquals("Campo descricaoRisco nao pode ser nulo ou vazio.", e.getMessage());
+        e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
             controle.cadastraAtividade("nada", "EXTREMAMENTE BAIXO","E nada, entao e facil");
         });
         assertEquals("Valor invalido do nivel do risco.", e.getMessage());
@@ -49,6 +61,10 @@ class ControleAtividadeTest {
         controle.cadastraAtividade("Uma simples atividade","BAIXO","E simples, entao e facil.");
         e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
             controle.apagaAtividade("");
+        });
+        assertEquals("Campo codigo nao pode ser nulo ou vazio.", e.getMessage());
+        e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            controle.apagaAtividade(null);
         });
         assertEquals("Campo codigo nao pode ser nulo ou vazio.", e.getMessage());
         controle.apagaAtividade("A3");
@@ -69,6 +85,14 @@ class ControleAtividadeTest {
         });
         assertEquals("Item nao pode ser nulo ou vazio.", e.getMessage());
         e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            controle.cadastraItem(null, "item 1");
+        });
+        assertEquals("Campo codigo nao pode ser nulo ou vazio.", e.getMessage());
+        e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            controle.cadastraItem("A2", null);
+        });
+        assertEquals("Item nao pode ser nulo ou vazio.", e.getMessage());
+        e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
             controle.cadastraItem("A", "item 1");
         });
         assertEquals("Atividade nao encontrada", e.getMessage());
@@ -78,6 +102,10 @@ class ControleAtividadeTest {
     void exibeAtividade() {
         e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
             controle.exibeAtividade("");
+        });
+        assertEquals("Campo codigo nao pode ser nulo ou vazio.", e.getMessage());
+        e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            controle.exibeAtividade(null);
         });
         assertEquals("Campo codigo nao pode ser nulo ou vazio.", e.getMessage());
         e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
@@ -96,6 +124,10 @@ class ControleAtividadeTest {
         });
         assertEquals("Campo codigo nao pode ser nulo ou vazio.", e.getMessage());
         e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            controle.contaItensPendentes(null);
+        });
+        assertEquals("Campo codigo nao pode ser nulo ou vazio.", e.getMessage());
+        e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
             controle.contaItensPendentes("O3");
         });
         assertEquals("Atividade nao encontrada", e.getMessage());
@@ -108,6 +140,10 @@ class ControleAtividadeTest {
 
         e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
             controle.contaItensRealizados("");
+        });
+        assertEquals("Campo codigo nao pode ser nulo ou vazio.", e.getMessage());
+        e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            controle.contaItensRealizados(null);
         });
         assertEquals("Campo codigo nao pode ser nulo ou vazio.", e.getMessage());
         e = Assertions.assertThrows(IllegalArgumentException.class, () -> {
