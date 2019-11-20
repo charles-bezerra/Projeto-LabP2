@@ -11,6 +11,7 @@ import java.util.Map;
  * @author Charles Bezerra de Oliveira Júnior
  */
 public interface ControlePesistivel {
+    String diretorio = "banco/dados.ser";
     public void salva() throws PesistenciaException;
     public void carrega() throws PesistenciaException;
 }

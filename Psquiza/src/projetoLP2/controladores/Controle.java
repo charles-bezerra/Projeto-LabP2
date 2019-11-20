@@ -1,16 +1,13 @@
 package projetoLP2.controladores;
 
-<<<<<<< HEAD
 import projetoLP2.Interfaces.ControlePesistivel;
-import projetoLP2.classes.Funcoes.SalvaArquivoTexto;
-=======
 import projetoLP2.util.SalvaArquivoTexto;
->>>>>>> 9e138973f27e2b1628a65f1676ea3c1eb0c6fd12
 import projetoLP2.excessoes.PesistenciaException;
 import projetoLP2.util.Pesistencia;
 import  projetoLP2.util.Verificador;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Controller Geral que gerencia e se comunica com os demais controllers mais especializados
@@ -258,6 +255,7 @@ public class Controle implements ControlePesistivel {
 
     /**
      * Desassocia o problema existente em uma pesquisa
+     *
      * @param idPesquisa endereco da pesquisa que esta sendo desassociada
      * @return sucesso da desassociacao
      */
@@ -267,6 +265,7 @@ public class Controle implements ControlePesistivel {
 
     /**
      * Associa um objetivo de uma pesquisa
+     *
      * @param idPesquisa endereco da pesquisa que esta sendo associada
      * @param idObjetivo endereco do objeto do tipo Objetivo que esta sendo associado a pesquisa
      * @return sucesso da associacao
@@ -440,27 +439,41 @@ public class Controle implements ControlePesistivel {
 
 
     /**
-     * Salva todos os objetos do sistema
+     * Salva todos os objetos do sistema em uma lista,
+     * seguindo a ordem de insercao
      */
     public void salva() throws PesistenciaException {
-        Pesistencia pesistencia = new Pesistencia("./bd/bd");
+        Pesistencia pesistencia = new Pesistencia();
 
-        pesistencia.salva(this.controleAtividade);
-        pesistencia.salva(this.controleObjetivo);
-        pesistencia.salva(this.controleProblema);
-        pesistencia.salva(this.controlePesquisadores);
-        pesistencia.salva(this.controlePesquisa);
+        //Estabelece o stream com o arquivo
+        pesistencia.conectar();
 
-        pesistencia.fechar();
+        //Insere informacoes ou objetos para serem salvos
+        pesistencia.insere(this.controleAtividade);
+        pesistencia.insere(this.controleObjetivo);
+        pesistencia.insere(this.controleProblema);
+        pesistencia.insere(this.controlePesquisadores);
+        pesistencia.insere(this.controlePesquisa);
+
+        //Salva o que foi inserido
+        pesistencia.salva();
+
+        //Fecha o stream com o arquivo
+        pesistencia.fecha();
     }
 
     /**
      * Carrega todos objetos do sistema
      */
     public void carrega() throws PesistenciaException{
-        Pesistencia pesistencia = new Pesistencia("./bd/bd");
+        Pesistencia pesistencia = new Pesistencia();
+        List<Object> controles = pesistencia.carrega();
 
-        pesistencia.carrega();
+        this.controleAtividade = (ControleAtividade) controles.get(0);
+        this.controleObjetivo = (ControleObjetivo) controles.get(1);
+        this.controleProblema = (ControleProblema) controles.get(2);
+        this.controlePesquisadores = (ControlePesquisador) controles.get(3);
+        this.controlePesquisa = (ControlePesquisa) controles.get(4);
     }
 }
 

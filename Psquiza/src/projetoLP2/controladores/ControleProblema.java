@@ -1,9 +1,6 @@
 package projetoLP2.controladores;
 
-import projetoLP2.Interfaces.ControlePesistivel;
 import projetoLP2.classes.Problema;
-import projetoLP2.excessoes.PesistenciaException;
-import projetoLP2.util.Pesistencia;
 import projetoLP2.util.Verificador;
 
 import java.io.Serializable;
@@ -15,6 +12,7 @@ import java.util.HashMap;
  * Classe controlodadora da classe Problema e da classe Objetivo.
  *
  * @author Lucas Alves Vigolvino
+ * @author Charles Bezerra de Oliveira Júnior
  */
 public class ControleProblema implements Serializable {
     /**
@@ -80,11 +78,23 @@ public class ControleProblema implements Serializable {
         return retorno;
     }
 
+    /**
+     * Verifica se um problema existe um determinado problema
+     *
+     * @param id endereco do objeto do problema
+     * @return um boolean com a afirmacao se o problema existe
+     */
     public boolean encontraProblema(String id){
         Verificador.verificaString("Campo idProblema nao pode ser nulo ou vazio.", id);
         return this.problemas.containsKey(id);
     }
 
+    /**
+     * Retorna um determinado problema
+     *
+     * @param id endereco do objeto do problema
+     * @return o problema selecionado
+     */
     public Problema getProblema(String id){
         Verificador.verificaString("Campo idProblema nao pode ser nulo ou vazio.", id);
         return this.problemas.get(id);

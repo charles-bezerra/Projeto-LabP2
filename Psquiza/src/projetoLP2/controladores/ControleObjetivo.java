@@ -1,9 +1,6 @@
 package projetoLP2.controladores;
 
-import projetoLP2.Interfaces.ControlePesistivel;
 import projetoLP2.classes.Objetivo;
-import projetoLP2.excessoes.PesistenciaException;
-import projetoLP2.util.Pesistencia;
 import projetoLP2.util.Verificador;
 
 import java.io.Serializable;
@@ -83,11 +80,23 @@ public class ControleObjetivo implements Serializable {
         return retorno;
     }
 
+    /**
+     * Verifica se um problema existe um determinado problema
+     *
+     * @param id endereco do objeto do objetivo
+     * @return um boolean com a afirmacao se o objetivo existe
+     */
     public boolean encontraObjetivo(String id){
         Verificador.verificaString("Campo idObjetivo nao pode ser nulo ou vazio.", id);
         return this.objetivos.containsKey(id);
     }
 
+    /**
+     * Retorna um determinado objetivo
+     *
+     * @param id endereco do objeto do objetivo
+     * @return o objetivo selecionado
+     */
     public Objetivo getObjetivo(String id){
         if (!this.encontraObjetivo(id)) throw new IllegalArgumentException("Objetivo nao encontrado.");
         return this.objetivos.get(id);

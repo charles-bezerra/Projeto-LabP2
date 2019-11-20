@@ -1,10 +1,7 @@
 package projetoLP2.controladores;
 
-import projetoLP2.Interfaces.ControlePesistivel;
 import projetoLP2.classes.*;
 import projetoLP2.enums.TipoFuncao;
-import projetoLP2.excessoes.PesistenciaException;
-import projetoLP2.util.Pesistencia;
 import projetoLP2.util.Verificador;
 
 import java.io.Serializable;

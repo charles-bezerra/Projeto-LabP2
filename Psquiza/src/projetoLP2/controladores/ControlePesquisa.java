@@ -347,8 +347,8 @@ public class ControlePesquisa implements Serializable {
 		if(!estrategia.equals("MAIS_ANTIGA") &&
 				!estrategia.equals("MENOS_PENDENCIAS") &&
 				!estrategia.equals("MAIOR_RISCO") &&
-				!estrategia.equals("MAIOR_DURACAO")
-		) {
+				!estrategia.equals("MAIOR_DURACAO") )
+		{
 			throw new IllegalArgumentException("Valor invalido da estrategia");
 		}
 		this.estrategiaOrdemAtividade = estrategia;

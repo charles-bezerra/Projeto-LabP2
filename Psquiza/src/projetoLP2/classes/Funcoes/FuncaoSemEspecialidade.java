@@ -2,13 +2,16 @@ package projetoLP2.classes.Funcoes;
 
 import projetoLP2.Interfaces.Funcao;
 import projetoLP2.enums.TipoFuncao;
+
+import java.io.Serializable;
+
 /**
  * Classe abstrata que representa uma funcao que nao possui
  * ou  ainda nao definiu seus atributos especificos.
  * Contendo apenas o seu nome.
  * @author Iago Henrique de Souza Silva
  */
-public abstract class FuncaoSemEspecialidade implements Funcao {
+public abstract class FuncaoSemEspecialidade implements Funcao, Serializable {
     /**
      * O nome da funcao
      */

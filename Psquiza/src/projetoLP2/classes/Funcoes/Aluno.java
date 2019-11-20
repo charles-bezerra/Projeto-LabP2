@@ -3,13 +3,16 @@ package projetoLP2.classes.Funcoes;
 import projetoLP2.Interfaces.Funcao;
 import projetoLP2.enums.TipoFuncao;
 import projetoLP2.util.Verificador;
+
+import java.io.Serializable;
+
 /**
  * Representa a escialidade Aluno de um pesquisador.
  * Contendo as características da função 'Estudante'
  * de um pesquisador.
  * @author Iago Henrique de Souza Silva
  */
-public class Aluno implements Funcao {
+public class Aluno implements Funcao, Serializable {
     /**
      * O nome da função, contante como 'ESTUDANTE'
      */

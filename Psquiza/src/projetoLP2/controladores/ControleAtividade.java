@@ -286,21 +286,7 @@ public class ControleAtividade implements Serializable {
             throw new IllegalArgumentException("Nao existe proxima atividade.");
         Atividade p = a.getProx();
 
-<<<<<<< HEAD
-        return a.pegaMaiorRisco(a.getCodigo(),a.getRisco());
-=======
-
         return p.pegaMaiorRisco(p.getCodigo(), p.getRisco());
 
-    }
-    @Override
-    public void salva() throws PesistenciaException {
-        this.pesistencia.salva(this.atividades);
-    }
-
-    @Override
-    public void carrega() throws PesistenciaException {
-        this.pesistencia.carrega(this.atividades);
->>>>>>> 9e138973f27e2b1628a65f1676ea3c1eb0c6fd12
     }
 }

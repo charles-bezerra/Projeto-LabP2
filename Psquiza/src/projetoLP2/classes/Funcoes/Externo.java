@@ -1,6 +1,9 @@
 package projetoLP2.classes.Funcoes;
 
 import projetoLP2.enums.TipoFuncao;
+
+import java.io.Serializable;
+
 /**
  * Classe de marcacao. Que representa
  * a escialidade Externo de um pesquisador.
