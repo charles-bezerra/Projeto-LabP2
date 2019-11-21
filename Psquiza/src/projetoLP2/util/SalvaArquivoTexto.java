@@ -12,7 +12,7 @@ public class SalvaArquivoTexto {
     /**
      * Metodo resposanvel por salvar o arquivo txt no formato resultado, solicitado
      * @param pesquisa a pesquisa que ira ceder os dados a serem salvos no arquivo txt
-     * @throws IOException
+     * @throws IOException excecao caso haja falha ao gravar arquivo.
      */
     public String gravarResultados(Pesquisa pesquisa) throws IOException {
         String nomeArquivo = pesquisa.getCod() + "-Resultados.txt";
@@ -25,7 +25,7 @@ public class SalvaArquivoTexto {
     /**
      * Metodo resposanvel por salvar o arquivo txt no formato resumo, solicitado
      * @param pesquisa a pesquisa que ira ceder os dados a serem salvos no arquivo txt
-     * @throws IOException
+     * @throws IOException excecao caso haja falha ao gravar arquivo.
      */
     public String gravarResumo(Pesquisa pesquisa) throws IOException {
         String nomeArquivo = "_" + pesquisa.getCod() + ".txt";
@@ -37,7 +37,7 @@ public class SalvaArquivoTexto {
      *
      * @param nomeArquivo o nome que sera dado ao arquivo
      * @param dadosDoTxt String com o resumo ou o resultado, que sera salvo no arquivo txt.
-     * @throws IOException
+     * @throws IOException excecao caso haja falha ao gravar arquivo.
      */
     private String gravar(String nomeArquivo, String dadosDoTxt) throws IOException {
         File file = null;

@@ -436,6 +436,12 @@ public class Controle implements ControlePesistivel {
     public String proximaAtividade(String codigoPesquisa) { return controlePesquisa.proximaAtividade(codigoPesquisa); }
 
 
+    /**
+     * metodo responsavel por gerar arquivo txt com base no resumo geral da pesquisa.
+     * @param codigoPesquisa o codigo da pesquisa a ser salvada no arquivo txt.
+     * @return
+     * @throws IOException excecao caso haja falha ao gravar arquivo.
+     */
     public String gravarResumo(String codigoPesquisa) throws IOException {
         Verificador.verificaString("Pesquisa nao pode ser nula ou vazia.", codigoPesquisa);
 
@@ -446,6 +452,13 @@ public class Controle implements ControlePesistivel {
         return salvatxt.gravarResumo(controlePesquisa.getPesquisas().get(codigoPesquisa));
 
     }
+
+    /**
+     * metodo responsavel por gerar arquivo txt com base nos resultados da pesquisa.
+     * @param codigoPesquisa o codigo da pesquisa a ser salvada no arquivo txt.
+     * @throws IOException excecao caso haja falha ao gravar aqruivo.
+     */
+
     public void gravarResultados(String codigoPesquisa) throws IOException {
         Verificador.verificaString("Pesquisa nao pode ser nula ou vazia.", codigoPesquisa);
         if (! controlePesquisa.getPesquisas().containsKey(codigoPesquisa)) {
