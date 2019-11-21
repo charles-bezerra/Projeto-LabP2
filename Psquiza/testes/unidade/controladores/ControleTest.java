@@ -1,7 +1,5 @@
 package unidade.controladores;
 
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,15 +12,25 @@ class ControleTest {
     private static Controle c = new Controle();
     private Exception e;
 
+    /**
+     * @BeforeEach void criaObjetosPraBusca() {
+     * c.cadastraPesquisa("pesquisa1", "teste para o buscador");
+     * c.cadastraPesquisa("teste pra busca", "pesquisa2");
+     * c.cadastraAtividade("atividade1", "ALTO", "teste para o buscador");
+     * c.cadastraAtividade("teste pra busca", "ALTO", "paradoxo");
+     * c.cadastraObjetivo("GERAL", "teste pra busca", 2, 3);
+     * c.cadastraObjetivo("ESPECIFICO", "teste para o buscador", 2, 3);
+     * c.cadastraProblema("teste pra busca", 3);
+     * c.cadastraProblema("teste para o buscador", 2);
+     * c.cadastraPesquisador("Lucas", "ESTUDANTE", "testador de busca", "lucas@busca", "http://Teste");
+     * c.cadastraPesquisador("Luarte", "ESTUDANTE", "testador do buscador", "luarte@busca", "http://Teste");
+     * }
+     */
     @BeforeEach
-    void criaAtividade() {
-        c.cadastraAtividade("Uma simples atividade","BAIXO","E simples, entao e facil.");
-        c.cadastraAtividade("Uma atividade complicada","ALTO","E dificil, porque nao sei.");
-        c.cadastraPesquisa("teste","TESTE");
-    }
-
-    @BeforeEach
-    void criaObjetosPraBusca() {
+    void criaObjetos() {
+        c.cadastraAtividade("Uma simples atividade", "BAIXO", "E simples, entao e facil.");
+        c.cadastraAtividade("Uma atividade complicada", "ALTO", "E dificil, porque nao sei.");
+        c.cadastraPesquisa("teste", "TESTE");
         c.cadastraPesquisa("pesquisa1", "teste para o buscador");
         c.cadastraPesquisa("teste pra busca", "pesquisa2");
         c.cadastraAtividade("atividade1", "ALTO", "teste para o buscador");
@@ -33,6 +41,35 @@ class ControleTest {
         c.cadastraProblema("teste para o buscador", 2);
         c.cadastraPesquisador("Lucas", "ESTUDANTE", "testador de busca", "lucas@busca", "http://Teste");
         c.cadastraPesquisador("Luarte", "ESTUDANTE", "testador do buscador", "luarte@busca", "http://Teste");
+
+        c.cadastraPesquisa("teste", "TESTE");
+        c.cadastraPesquisa("pesquisa1", "teste para o buscador");
+        c.cadastraPesquisa("teste pra busca", "pesquisa");
+        c.cadastraPesquisa("Junit e a sociedade ", "pesquisa2");
+        c.cadastraPesquisa("Qualquer coisa pra testar", "pesquisa3");
+        c.cadastraPesquisa("Junit e a sociedade ", "pesquisa4");
+        c.cadastraPesquisa("Qualquer coisa pra testar", "pesquisa5");
+        c.cadastraAtividade("Uma simples atividade", "BAIXO", "E simples, entao e facil.");
+        c.cadastraAtividade("Uma atividade complicada", "ALTO", "E dificil, porque nao sei.");
+        c.cadastraAtividade("atividade1", "ALTO", "teste para o buscador");
+        c.cadastraAtividade("teste pra busca", "ALTO", "paradoxo");
+        c.cadastraObjetivo("GERAL", "teste pra busca", 2, 3);
+        c.cadastraObjetivo("ESPECIFICO", "teste para o buscador", 2, 3);
+        c.cadastraObjetivo("GERAL", "teste para quem esta buscando", 4, 5);
+        c.cadastraObjetivo("ESPECIFICO", "teste para me buscarem", 1, 1);
+        c.cadastraObjetivo("ESPECIFICO", "eu busco, tu buscas ele busca", 5, 2);
+        c.cadastraProblema("teste pra busca", 3);
+        c.cadastraProblema("teste para o buscador", 2);
+        c.cadastraProblema("precisei fazer mais um", 2);
+        c.cadastraProblema("Problema qualquer", 4);
+        c.cadastraPesquisador("Lucas", "ESTUDANTE", "testador de busca", "lucas@busca", "http://Teste");
+        c.cadastraPesquisador("Luarte", "ESTUDANTE", "testador do buscador", "luarte@busca", "http://Teste");
+        c.associaProblema("TES1", "P1");
+        c.associaProblema("PES3", "P4");
+        c.associaObjetivo("TES1", "O1");
+        c.associaObjetivo("PES3", "O4");
+        c.associaObjetivo("PES5", "03");
+
     }
 
     @org.junit.jupiter.api.Test
@@ -61,10 +98,10 @@ class ControleTest {
                 c.associaAtividade("TES1", "A"));
         assertEquals("Atividade nao encontrada", e.getMessage());
 
-        assertTrue(c.associaAtividade("TES1","A1"));
-        assertFalse(c.associaAtividade("TES1","A1"));
+        assertTrue(c.associaAtividade("TES1", "A1"));
+        assertFalse(c.associaAtividade("TES1", "A1"));
 
-        c.encerraPesquisa("TES1","AAAA");
+        c.encerraPesquisa("TES1", "AAAA");
 
         e = Assertions.assertThrows(IllegalArgumentException.class, () ->
                 c.associaAtividade("TES1", "A1"));
@@ -98,11 +135,11 @@ class ControleTest {
                 c.desassociaAtividade("TES1", "A"));
         assertEquals("Atividade nao encontrada", e.getMessage());
 
-        c.associaAtividade("TES1","A1");
-        assertTrue(c.desassociaAtividade("TES1","A1"));
-        assertFalse(c.desassociaAtividade("TES1","A1"));
+        c.associaAtividade("TES1", "A1");
+        assertTrue(c.desassociaAtividade("TES1", "A1"));
+        assertFalse(c.desassociaAtividade("TES1", "A1"));
 
-        c.encerraPesquisa("TES1","AAAA");
+        c.encerraPesquisa("TES1", "AAAA");
 
         e = Assertions.assertThrows(IllegalArgumentException.class, () ->
                 c.desassociaAtividade("TES1", "A1"));
@@ -113,34 +150,34 @@ class ControleTest {
     @org.junit.jupiter.api.Test
     void testExecutaAtividade() {
         e = Assertions.assertThrows(IllegalArgumentException.class, () ->
-                c.executaAtividade("",1,1));
+                c.executaAtividade("", 1, 1));
         assertEquals("Campo codigoAtividade nao pode ser nulo ou vazio.", e.getMessage());
 
         e = Assertions.assertThrows(IllegalArgumentException.class, () ->
-                c.executaAtividade(null,1,1));
+                c.executaAtividade(null, 1, 1));
         assertEquals("Campo codigoAtividade nao pode ser nulo ou vazio.", e.getMessage());
 
-        c.cadastraItem("A1","AAA");
+        c.cadastraItem("A1", "AAA");
         e = Assertions.assertThrows(IllegalArgumentException.class, () ->
-                c.executaAtividade("A1",1,1));
+                c.executaAtividade("A1", 1, 1));
         assertEquals("Atividade sem associacoes com pesquisas.", e.getMessage());
 
-        c.associaAtividade("TES1","A1");
+        c.associaAtividade("TES1", "A1");
 
         e = Assertions.assertThrows(IllegalArgumentException.class, () ->
-                c.executaAtividade("A1",-1,1));
+                c.executaAtividade("A1", -1, 1));
         assertEquals("Item nao pode ser nulo ou negativo.", e.getMessage());
 
         e = Assertions.assertThrows(IllegalArgumentException.class, () ->
-                c.executaAtividade("A1",2,1));
+                c.executaAtividade("A1", 2, 1));
         assertEquals("Item nao encontrado.", e.getMessage());
 
         e = Assertions.assertThrows(IllegalArgumentException.class, () ->
-                c.executaAtividade("A1",1,-1));
+                c.executaAtividade("A1", 1, -1));
         assertEquals("Duracao nao pode ser nula ou negativa.", e.getMessage());
 
-        c.executaAtividade("A1",1,2);
-        assertEquals(c.getDuracao("A1"),2);
+        c.executaAtividade("A1", 1, 2);
+        assertEquals(c.getDuracao("A1"), 2);
     }
 
     @Test
@@ -189,7 +226,199 @@ class ControleTest {
         assertEquals("Nenhum resultado encontrado", e.getMessage());
         assertEquals(5, c.contaResultadosBusca("conta"));
     }
+
+    @Test
+    void testAssociaProblemaTrue() {
+        assertTrue(c.associaProblema("PES2", "P4"));
+
+    }
+
+    @Test
+    void testAssociaProblemaFalse() {
+
+        assertFalse(c.associaProblema("PES3", "O4"));
+
+    }
+
+    @Test
+    void testAssociaPesquisaJaAssociadoComProblema() {
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.associaProblema("TES1", "P2"));
+        assertEquals("Pesquisa ja associada a um problema.", e.getMessage());
+
+    }
+
+
+    @Test
+    void testAssociaProblemaIdPesquisaVazio() {
+
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.associaProblema("", "P2"));
+        assertEquals("Campo idPesquisa nao pode ser nulo ou vazio.", e.getMessage());
+
+    }
+
+
+    @Test
+    void testAssociaProblemaIdProblemaVazio() {
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.associaProblema("TES1", ""));
+        assertEquals("Campo idProblema nao pode ser nulo ou vazio.", e.getMessage());
+
+
+    }
+
+    @Test
+    void testProblemaAssociaPesquisaInexistente() {
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.associaProblema("HAA1", "P2"));
+        assertEquals("Pesquisa nao encontrada.", e.getMessage());
+
+
+    }
+
+    @Test
+    void testProblemaAssociaPesquisaDesativada() {
+
+        c.encerraPesquisa("TES2", "cansei do projeto");
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.associaProblema("TES2", "P2"));
+        assertEquals("Pesquisa desativada.", e.getMessage());
+
+    }
+
+
+    @Test
+    void testDesassociaProblemaTrue() {
+
+        assertTrue(c.desassociaProblema("TES1"));
+    }
+
+    @Test
+    void testDesassociaProblemaFalse() {
+        c.desassociaProblema("PES1");
+        assertFalse(c.desassociaProblema("PES1"));
+    }
+
+    @Test
+    void testProblemaDesassociaPesquisaInexistente() {
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.desassociaProblema("KKK1"));
+        assertEquals("Pesquisa nao encontrada.", e.getMessage());
+
+    }
+
+    @Test
+    void testProblemaDesassociaPesquisaDesativada() {
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.desassociaProblema("TES2"));
+        assertEquals("Pesquisa desativada.", e.getMessage());
+
+    }
+
+    @Test
+    void testAssociaObjetivoTrue() {
+        assertTrue(c.associaObjetivo("PES5", "O3"));
+
+    }
+
+    @Test
+    void testAssociaObjetivoFalse() {
+
+        assertFalse(c.associaObjetivo("PES3", "O4"));
+
+    }
+
+    @Test
+    void testAssociaPesquisaJaAssociadaComObjetivo() {
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.associaObjetivo("PES3", "O1"));
+        assertEquals("Objetivo ja associado a uma pesquisa.", e.getMessage());
+
+    }
+
+
+    @Test
+    void testAssociaObjetivoIdPesquisaVazio() {
+
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.associaObjetivo("", "O2"));
+        assertEquals("Campo idPesquisa nao pode ser nulo ou vazio.", e.getMessage());
+
+    }
+
+
+    @Test
+    void testAssociaObjetivoIdProblemaVazio() {
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.associaObjetivo("TES1", ""));
+        assertEquals("Campo idObjetivo nao pode ser nulo ou vazio.", e.getMessage());
+
+
+    }
+
+    @Test
+    void testObjetivoAssociaPesquisaInexistente() {
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.associaObjetivo("BBB1", "O2"));
+        assertEquals("Pesquisa nao encontrada.", e.getMessage());
+
+
+    }
+
+    @Test
+    void testObjetivoAssociaPesquisaDesativada() {
+
+        c.encerraPesquisa("PES4", "jogabilidade horrivel");
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.associaObjetivo("PES4", "O2"));
+        assertEquals("Pesquisa desativada.", e.getMessage());
+
+    }
+
+    @Test
+    void testDesassociaObjetivoTrue() {
+
+        assertTrue(c.desassociaObjetivo("TES1", "O1"));
+    }
+
+    @Test
+    void testDesassociaObjetivoFalse() {
+        c.desassociaObjetivo("PES1", "O4");
+        assertFalse(c.desassociaObjetivo("PES1", "O4"));
+    }
+
+    @Test
+    void testObjetivoDesassociaPesquisaInexistente() {
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.desassociaObjetivo("KKK1", "O2"));
+        assertEquals("Pesquisa nao encontrada.", e.getMessage());
+
+    }
+
+    @Test
+    void testObjetivoDesassociaPesquisaDesativada() {
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.desassociaObjetivo("TES2", "O1"));
+        assertEquals("Pesquisa desativada.", e.getMessage());
+
+    }
 }
+
+
+
+
+
+
 
 
 

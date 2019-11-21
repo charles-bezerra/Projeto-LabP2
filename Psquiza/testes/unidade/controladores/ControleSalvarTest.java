@@ -1,7 +1,6 @@
 package unidade.controladores;
 
 
-import org.junit.BeforeClass;
 import org.junit.jupiter.api.*;
 import projetoLP2.controladores.Controle;
 import projetoLP2.excessoes.PesistenciaException;
