@@ -29,19 +29,18 @@ public class Pesistencia {
      * Constroi uma pesistencia com um arquivo de banco padrao
      */
     public Pesistencia(){
-        this.banco = "/banco/dados.ser";
+        this.banco = "banco/dados.ser";
         this.objetos = new ArrayList<>();
+        this.criaArquivo();
     }
 
     /**
-     * Controi uma pesistencia com um arquivo personalizado
-     *
-     * @param banco endereco do arquivo da pesistencia do sistema
+     * Cria o diretorio se nao existir
      */
-    public Pesistencia(String banco){
-        this();
-        this.banco = Verificador
-                .verificaString("Campo banco nao pode ser vazio ou nulo.", banco);
+    private void criaArquivo(){
+        File arquivo = new File(this.banco);
+        if (!arquivo.exists())
+            new File("banco/").mkdir();
     }
 
     /**
@@ -88,8 +87,12 @@ public class Pesistencia {
     public void fecha() throws PesistenciaException{
         this.objetos.clear();
         if ( arquivoSaida != null){
-            try{ arquivoSaida.close(); }
-            catch (IOException e){ throw new PesistenciaException(e); }
+            try{
+                arquivoSaida.close();
+            }
+            catch (IOException e){
+                throw new PesistenciaException(e);
+            }
         }
     }
 

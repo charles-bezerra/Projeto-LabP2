@@ -2,7 +2,10 @@ package unidade.controladores;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import projetoLP2.classes.Atividade;
+import projetoLP2.classes.Pesquisa;
 import projetoLP2.controladores.Controle;
 
 import java.io.File;
@@ -15,33 +18,36 @@ import static org.junit.jupiter.api.Assertions.*;
 class ControleTest {
     private static Controle c = new Controle();
     private Exception e;
+    private Controle cont = new Controle();
+    private Atividade a1,a2;
+    private Pesquisa p1,p2;
 
     @BeforeAll
     static void criaObjetos() {
         c.cadastraAtividade("Uma simples atividade", "BAIXO", "E simples, entao e facil.");
         c.cadastraAtividade("Uma atividade complicada", "ALTO", "E dificil, porque nao sei.");
+        c.cadastraAtividade("atividade1", "ALTO", "teste para o buscador");
+        c.cadastraAtividade("teste pra busca", "ALTO", "paradoxo");
+        c.cadastraAtividade("Uma simples atividade", "BAIXO", "E simples, entao e facil.");
+        c.cadastraAtividade("Uma atividade complicada", "ALTO", "E dificil, porque nao sei.");
         c.cadastraPesquisa("teste", "TESTE");
         c.cadastraPesquisa("pesquisa1", "teste para o buscador");
         c.cadastraPesquisa("teste pra busca", "pesquisa2");
-        c.cadastraAtividade("atividade1", "ALTO", "teste para o buscador");
-        c.cadastraAtividade("teste pra busca", "ALTO", "paradoxo");
-        c.cadastraObjetivo("GERAL", "teste pra busca", 2, 3);
-        c.cadastraObjetivo("ESPECIFICO", "teste para o buscador", 2, 3);
-        c.cadastraProblema("teste pra busca", 3);
-        c.cadastraProblema("teste para o buscador", 2);
-        c.cadastraPesquisador("Lucas", "ESTUDANTE", "testador de busca", "lucas@busca", "http://Teste");
-        c.cadastraPesquisador("Luarte", "ESTUDANTE", "testador do buscador", "luarte@busca", "http://Teste");
         c.cadastraPesquisa("Junit e a sociedade ", "pesquisa2");
         c.cadastraPesquisa("Qualquer coisa pra testar", "pesquisa3");
         c.cadastraPesquisa("Junit e a sociedade ", "pesquisa4");
         c.cadastraPesquisa("Qualquer coisa pra testar", "pesquisa5");
-        c.cadastraAtividade("Uma simples atividade", "BAIXO", "E simples, entao e facil.");
-        c.cadastraAtividade("Uma atividade complicada", "ALTO", "E dificil, porque nao sei.");
+        c.cadastraObjetivo("GERAL", "teste pra busca", 2, 3);
+        c.cadastraObjetivo("ESPECIFICO", "teste para o buscador", 2, 3);
+        c.cadastraProblema("teste pra busca", 3);
+        c.cadastraProblema("teste para o buscador", 2);
+        c.cadastraProblema("precisei fazer mais um", 2);
+        c.cadastraProblema("Problema qualquer", 4);
+        c.cadastraPesquisador("Lucas", "ESTUDANTE", "testador de busca", "lucas@busca", "http://Teste");
+        c.cadastraPesquisador("Luarte", "ESTUDANTE", "testador do buscador", "luarte@busca", "http://Teste");
         c.cadastraObjetivo("GERAL", "teste para quem esta buscando", 4, 5);
         c.cadastraObjetivo("ESPECIFICO", "teste para me buscarem", 1, 1);
         c.cadastraObjetivo("ESPECIFICO", "eu busco, tu buscas ele busca", 5, 2);
-        c.cadastraProblema("precisei fazer mais um", 2);
-        c.cadastraProblema("Problema qualquer", 4);
         c.associaProblema("TES1", "P1");
         c.associaProblema("PES3", "P4");
         c.associaObjetivo("TES1", "O1");
@@ -62,6 +68,28 @@ class ControleTest {
         c.executaAtividade("A3", 1, 8);
     }
 
+    @BeforeEach
+    void criaParaListarPesquisas(){
+        cont.cadastraPesquisa("teste", "TESTE");
+        cont.cadastraPesquisa("pesquisa1", "teste para o buscador");
+        cont.cadastraObjetivo("GERAL", "teste pra busca", 2, 3);
+        cont.cadastraObjetivo("ESPECIFICO", "teste para o buscador", 2, 3);
+        cont.cadastraProblema("teste pra busca", 3);
+        cont.cadastraProblema("teste para o buscador", 2);
+        a1 = new Atividade("tenta", "MEDIO","to triste");
+        a2 = new Atividade("Vai que dá", "ALTO", "perder a sanidade mental");
+        p1 = new Pesquisa("A ultima", "terminar junit");
+        p2 = new Pesquisa("A penultima", "terminar de novo junit");
+        p1.associaAtividade(a1);
+        p1.associaAtividade(a2);
+        a1.cadastraItem("primeiro item");
+        a1.cadastraItem("segundo item");
+        a1.cadastraItem("terceiro item");
+        a1.executaAtividade(1, 10);
+        a1.executaAtividade(2, 10);
+
+
+    }
     @org.junit.jupiter.api.Test
     void testAssociaAtividade() {
         e = Assertions.assertThrows(IllegalArgumentException.class, () ->
@@ -404,6 +432,80 @@ class ControleTest {
         e = Assertions.assertThrows(IllegalArgumentException.class, () ->
                 c.desassociaObjetivo("TES2", "O1"));
         assertEquals("Pesquisa desativada.", e.getMessage());
+
+    }
+
+    @Test
+    void listaPesquisasOrdemvazia(){
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.listaPesquisas(""));
+        assertEquals("Valor invalido da ordem", e.getMessage());
+
+    }
+
+    @Test
+    void listaPesquisasOrdemNula(){
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                c.listaPesquisas(null));
+        assertEquals("Valor invalido da ordem", e.getMessage());
+
+    }
+
+    @Test
+    void listaPesquisasProblema(){
+
+        assertEquals("PES3 - Qualquer coisa pra testar - pesquisa3 | TES1 - teste - TESTE | TES2 - pesquisa1 - teste para o buscador | PES5 - Qualquer coisa pra testar - pesquisa5 | PES4 - Junit e a sociedade  - pesquisa4 | PES2 - Junit e a sociedade  - pesquisa2 | PES1 - teste pra busca - pesquisa2", c.listaPesquisas("PROBLEMA"));
+
+    }
+
+    @Test
+    void listaPesquisasObjetivos(){
+
+        assertEquals("TES1 - teste - TESTE | PES3 - Qualquer coisa pra testar - pesquisa3 | TES2 - pesquisa1 - teste para o buscador | PES5 - Qualquer coisa pra testar - pesquisa5 | PES4 - Junit e a sociedade  - pesquisa4 | PES2 - Junit e a sociedade  - pesquisa2 | PES1 - teste pra busca - pesquisa2", c.listaPesquisas("OBJETIVOS"));
+
+    }
+
+    @Test
+    void listaPesquisasPesquisa(){
+
+        assertEquals("TES2 - pesquisa1 - teste para o buscador | TES1 - teste - TESTE | PES5 - Qualquer coisa pra testar - pesquisa5 | PES4 - Junit e a sociedade  - pesquisa4 | PES3 - Qualquer coisa pra testar - pesquisa3 | PES2 - Junit e a sociedade  - pesquisa2 | PES1 - teste pra busca - pesquisa2", c.listaPesquisas("PESQUISA"));
+
+    }
+
+    @Test
+    void proximaAtividadePesquisaNulaOuVazia(){
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                cont.proximaAtividade(null));
+        assertEquals("Pesquisa nao pode ser nula ou vazia.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                cont.proximaAtividade(""));
+        assertEquals("Pesquisa nao pode ser nula ou vazia.", e.getMessage());
+    }
+
+    @Test
+    void proximaAtividadePesquisaInexistente(){
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                cont.proximaAtividade("BBB2"));
+        assertEquals("Pesquisa nao encontrada.", e.getMessage());
+    }
+
+    @Test
+    void ConfiguraEstrategiaNulaOuVazia(){
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                cont.configuraEstrategia(null));
+        assertEquals("Estrategia nao pode ser nula ou vazia.", e.getMessage());
+
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                cont.configuraEstrategia(""));
+        assertEquals("Estrategia nao pode ser nula ou vazia.", e.getMessage());
+    }
+
+    @Test
+    void ConfiguraEstrategiaValorInvalido(){
+        e = Assertions.assertThrows(IllegalArgumentException.class, () ->
+                cont.configuraEstrategia("VAAAI BRASIlian"));
+        assertEquals("Valor invalido da estrategia", e.getMessage());
 
     }
 
