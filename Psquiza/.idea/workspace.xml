@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cdb510a-9570-4dba-890c-277e26352b25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/banco/dados.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diagrama/Diagrama_de_Classes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diagrama/Diagrama_de_Classes.ucls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/Interfaces/ControlePesistivel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/Interfaces/ControlePesistivel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/Psquiza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/Psquiza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/util/Pesistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/util/Pesistencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/unidade/controladores/ControleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/unidade/controladores/ControleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Diagrama_de_Classes.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
