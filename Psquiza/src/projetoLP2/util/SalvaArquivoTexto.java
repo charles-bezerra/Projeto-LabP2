@@ -14,10 +14,9 @@ public class SalvaArquivoTexto {
      * @param pesquisa a pesquisa que ira ceder os dados a serem salvos no arquivo txt
      * @throws IOException excecao caso haja falha ao gravar arquivo.
      */
-    public String gravarResultados(Pesquisa pesquisa) throws IOException {
+    public void gravarResultados(Pesquisa pesquisa) throws IOException {
         String nomeArquivo = pesquisa.getCod() + "-Resultados.txt";
         String dadosDoTxt = pesquisa.retornaDadosResultados();
-        return gravar(nomeArquivo, dadosDoTxt);
 
 
     }
@@ -27,10 +26,10 @@ public class SalvaArquivoTexto {
      * @param pesquisa a pesquisa que ira ceder os dados a serem salvos no arquivo txt
      * @throws IOException excecao caso haja falha ao gravar arquivo.
      */
-    public String gravarResumo(Pesquisa pesquisa) throws IOException {
+    public void gravarResumo(Pesquisa pesquisa) throws IOException {
         String nomeArquivo = "_" + pesquisa.getCod() + ".txt";
         String dadosDoTxt = pesquisa.retornaDadosResumo();
-        return gravar(nomeArquivo, dadosDoTxt);
+        gravar(nomeArquivo, dadosDoTxt);
     }
 
     /**
@@ -39,7 +38,7 @@ public class SalvaArquivoTexto {
      * @param dadosDoTxt String com o resumo ou o resultado, que sera salvo no arquivo txt.
      * @throws IOException excecao caso haja falha ao gravar arquivo.
      */
-    private String gravar(String nomeArquivo, String dadosDoTxt) throws IOException {
+    private void gravar(String nomeArquivo, String dadosDoTxt) throws IOException {
         File file = null;
         FileWriter writer = null;
         try {
@@ -53,6 +52,5 @@ public class SalvaArquivoTexto {
         } finally {
             writer.close();
         }
-        return file.getAbsolutePath();
     }
 }

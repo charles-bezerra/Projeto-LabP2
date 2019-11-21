@@ -67,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ObjetivoTest">
+  <component name="RunManager" selected="Application.Psquiza">
     <configuration name="Psquiza" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="projetoLP2.Psquiza" />
       <module name="Psquiza" />
@@ -145,10 +145,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ObjetivoTest" />
-        <item itemvalue="JUnit.ObjetivoTest.criaDescricaoNula" />
         <item itemvalue="Application.Psquiza" />
         <item itemvalue="JUnit.ControleTest" />
+        <item itemvalue="JUnit.ObjetivoTest" />
+        <item itemvalue="JUnit.ObjetivoTest.criaDescricaoNula" />
         <item itemvalue="JUnit.ControleTest.testGravarResultados" />
       </list>
     </recent_temporary>
