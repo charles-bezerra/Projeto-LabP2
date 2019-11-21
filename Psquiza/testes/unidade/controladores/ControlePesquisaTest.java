@@ -147,11 +147,6 @@ class ControlePesquisaTest {
     }
 
     @Test
-    void listaPesquisas() {
-
-    }
-
-    @Test
     void testAssociaAtividade() {
         e = assertThrows(IllegalArgumentException.class, () ->
                 pesquisas.associaAtividade("", a1) );
