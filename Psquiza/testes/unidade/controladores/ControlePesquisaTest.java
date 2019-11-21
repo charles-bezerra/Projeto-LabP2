@@ -94,55 +94,6 @@ class ControlePesquisaTest {
     }
 
     @Test
-    void alteraPesquisa() {
-
-    }
-
-    @Test
-    void encerraPesquisa() {
-    }
-
-    @Test
-    void ativaPesquisa() {
-    }
-
-    @Test
-    void pesquisaEhAtiva() {
-    }
-
-    @Test
-    void exibePesquisa() {
-    }
-
-    @Test
-    void getPesquisas() {
-    }
-
-    @Test
-    void ordenaPesquisa() {
-    }
-
-    @Test
-    void associaProblema() {
-    }
-
-    @Test
-    void desassociaProblema() {
-    }
-
-    @Test
-    void associaObjetivo() {
-    }
-
-    @Test
-    void desassociaObjetivo() {
-    }
-
-    @Test
-    void listaPesquisas() {
-    }
-
-    @Test
     void testAssociaAtividade() {
         e = assertThrows(IllegalArgumentException.class, () ->
                 pesquisas.associaAtividade("", a1) );

@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78749e4c-4af3-42f5-a81c-5d2da7798587" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/banco/dados.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/Interfaces/ControlePesistivel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/Interfaces/ControlePesistivel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/Psquiza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/Psquiza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/util/Pesistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/util/Pesistencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/unidade/controladores/ControlePesquisaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/unidade/controladores/ControlePesquisaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
