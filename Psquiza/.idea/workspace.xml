@@ -1,59 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae0336a7-0941-48e7-a384-4716acf65e95" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/testes/unidade/classes/ObjetivoTest.java" afterDir="false" />
+    <list default="true" id="78749e4c-4af3-42f5-a81c-5d2da7798587" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/banco/dados.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/controladores/Controle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projetoLP2/util/SalvaArquivoTexto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/util/SalvaArquivoTexto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/Interfaces/ControlePesistivel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/Interfaces/ControlePesistivel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/Psquiza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/Psquiza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projetoLP2/util/Pesistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projetoLP2/util/Pesistencia.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JUnit5 Test Class" />
-      </list>
-    </option>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="ProjectId" id="1Tu4ZKxsh692sKtXktYcy65kQri" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="findjar.last.used.dir" value="$PROJECT_DIR$/testes/unidade/controladores" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/testes/unidade/controladores" />
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="unidade.classes" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\USER\Documents\java\gitHub\Psquiza\Junit" />
-      <recent name="C:\Users\USER\Documents\java\gitHub\Psquiza" />
-      <recent name="C:\Users\USER\Documents\java\gitHub\Psquiza\libs" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -81,37 +50,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Psquiza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unidade.controladores.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unidade.controladores" />
-      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ControleTest.testGravarResultados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Psquiza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unidade.controladores.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unidade.controladores" />
-      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleTest" />
-      <option name="METHOD_NAME" value="testGravarResultados" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ObjetivoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Psquiza" />
       <extension name="coverage">
@@ -127,29 +65,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ObjetivoTest.criaDescricaoNula" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Psquiza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unidade.classes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unidade.classes" />
-      <option name="MAIN_CLASS_NAME" value="unidade.classes.ObjetivoTest" />
-      <option name="METHOD_NAME" value="criaDescricaoNula" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Psquiza" />
-        <item itemvalue="JUnit.ControleTest" />
         <item itemvalue="JUnit.ObjetivoTest" />
-        <item itemvalue="JUnit.ObjetivoTest.criaDescricaoNula" />
-        <item itemvalue="JUnit.ControleTest.testGravarResultados" />
       </list>
     </recent_temporary>
   </component>
@@ -157,30 +76,20 @@
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="ae0336a7-0941-48e7-a384-4716acf65e95" name="Default Changelist" comment="" />
-      <created>1574296700409</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1574296700409</updated>
-      <workItem from="1574296704249" duration="28000" />
-    </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

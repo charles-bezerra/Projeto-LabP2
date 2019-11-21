@@ -2,9 +2,27 @@ package projetoLP2;
 
 import easyaccept.EasyAccept;
 
+import java.util.Scanner;
+
 public class Psquiza {
     public static void main(String[] args){
-        args = new String[] {"projetoLP2.facades.Facade",
+        Scanner sc = new Scanner(System.in);
+        System.out.println("(1) - Testar US1 à US11;");
+        System.out.println("(2) - Testar US12;");
+        System.out.print("Opção: ");
+        int o = sc.nextInt();
+
+        switch (o){
+            case 1: testes(); break;
+            case 2: testePesistencia(); break;
+            default:
+                System.out.println("Opção indesponível!");
+                break;
+        }
+    }
+
+    public static void testes(){
+        String[] args = new String[] {"projetoLP2.facades.Facade",
                 "testes/aceitacao/use_case_1.txt",
                 "testes/aceitacao/use_case_2.txt",
                 "testes/aceitacao/use_case_3.txt",
@@ -18,9 +36,10 @@ public class Psquiza {
                 "testes/aceitacao/use_case_11.txt",
         };
         EasyAccept.main(args);
+    }
 
-
-        args = new String[] {"projetoLP2.facades.Facade",
+    public static void testePesistencia(){
+        String args[] = new String[] {"projetoLP2.facades.Facade",
                 "testes/aceitacao/use_case_12SALVAR.txt",
                 "testes/aceitacao/use_case_12CARREGAR.txt"
         };
