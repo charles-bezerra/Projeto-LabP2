@@ -1,0 +1,13 @@
+- Pesquisa: TES1 - teste - TESTE
+    - Pesquisadores:
+    - Problema:
+        - P1 - teste pra busca - 3
+    - Objetivos:
+        - O1 - GERAL - teste pra busca - 5
+    - Atividades:
+        - Uma atividade complicada (ALTO - E dificil, porque nao sei.)
+            - REALIZADO - ITEM1
+            - REALIZADO - ITEM2
+    - atividade1 (ALTO - teste para o buscador)
+            - REALIZADO - ITEM1
+            - PENDENTE - ITEM2

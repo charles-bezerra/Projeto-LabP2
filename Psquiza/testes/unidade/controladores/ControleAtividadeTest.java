@@ -1,7 +1,7 @@
 package unidade.controladores;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import projetoLP2.controladores.ControleAtividade;
 
@@ -11,17 +11,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ControleAtividadeTest {
     private static ControleAtividade controle = new ControleAtividade();
     private Exception e;
-    private static boolean only = true;
 
-    @BeforeEach
-    void criaAtividade() {
+    @BeforeAll
+     static void criaAtividade() {
         controle.cadastraAtividade("Uma simples atividade","BAIXO","E simples, entao e facil.");
         controle.cadastraAtividade("Uma atividade complicada","ALTO","E dificil, porque nao sei.");
-        if(only) {
-            controle.cadastraItem("A1" ,"item 1");
-            controle.cadastraItem("A1", "item 2");
-            only = false;
-        }
+        controle.cadastraItem("A1" ,"item 1");
+        controle.cadastraItem("A1", "item 2");
     }
 
     @Test

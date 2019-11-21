@@ -36,10 +36,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="findjar.last.used.dir" value="$PROJECT_DIR$/testes/unidade/controladores" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/testes/unidade/controladores" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Documents\java\gitHub\Psquiza\Junit" />
+      <recent name="C:\Users\USER\Documents\java\gitHub\Psquiza" />
+      <recent name="C:\Users\USER\Documents\java\gitHub\Psquiza\libs" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -53,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Psquiza">
+  <component name="RunManager" selected="JUnit.ControleTest">
     <configuration name="Psquiza" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="projetoLP2.Psquiza" />
       <module name="Psquiza" />
@@ -67,7 +75,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControleObjetivoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControleAtividadeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Psquiza" />
       <extension name="coverage">
         <pattern>
@@ -76,7 +84,22 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="unidade.controladores" />
-      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleObjetivoTest" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleAtividadeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControleSalvarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.controladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleSalvarTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -97,11 +120,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ControleTest.testGravarResumo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.controladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleTest" />
+      <option name="METHOD_NAME" value="testGravarResumo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Psquiza" />
         <item itemvalue="JUnit.ControleTest" />
-        <item itemvalue="JUnit.ControleObjetivoTest" />
+        <item itemvalue="JUnit.ControleTest.testGravarResumo" />
+        <item itemvalue="JUnit.ControleAtividadeTest" />
+        <item itemvalue="JUnit.ControleSalvarTest" />
+        <item itemvalue="Application.Psquiza" />
       </list>
     </recent_temporary>
   </component>
