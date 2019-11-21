@@ -442,14 +442,14 @@ public class Controle implements ControlePesistivel {
      * @return
      * @throws IOException excecao caso haja falha ao gravar arquivo.
      */
-    public String gravarResumo(String codigoPesquisa) throws IOException {
+    public void gravarResumo(String codigoPesquisa) throws IOException {
         Verificador.verificaString("Pesquisa nao pode ser nula ou vazia.", codigoPesquisa);
 
         if (! controlePesquisa.getPesquisas().containsKey(codigoPesquisa)){
             throw new IllegalArgumentException("Pesquisa nao encontrada.");
 
         }
-        return salvatxt.gravarResumo(controlePesquisa.getPesquisas().get(codigoPesquisa));
+        salvatxt.gravarResumo(controlePesquisa.getPesquisas().get(codigoPesquisa));
 
     }
 

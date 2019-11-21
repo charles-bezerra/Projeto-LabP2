@@ -26,19 +26,13 @@ class ControlePesquisaTest {
 
         a1 = new Atividade("Uma simples atividade", "BAIXO", "E simples, entao e facil.");
         a2 = new Atividade("Uma atividade complicada", "ALTO", "E dificil, porque nao sei.");
+
         a3 = new Atividade("Atividade boa", "ALTO", "boa, mas nem tanto");
         a4 = new Atividade("Boa atividade", "MEDIO", "ate que da");
         a5 = new Atividade("Mais ou menos", "BAIXO", "pensando bem");
 
         p1 = new Pesquisa("teste", "TESTE");
         p2 = new Pesquisa("testando", "junit");
-
-        a3.cadastraItem("O meu primeiro item");
-        a3.cadastraItem("O meu segundo item");
-        a3.executaAtividade(1, 10);
-        a3.executaAtividade(2,15);
-        a3.cadastraResultado("Deu certo");
-        a3.cadastraResultado("não deu muito certo");
     }
 
     @Test
@@ -124,7 +118,14 @@ class ControlePesquisaTest {
         assertEquals("Item nao pode ser nulo ou vazio.", e.getMessage());
     }
 
-    
+    @Test
+    void executaAtividade(){
+        a1.cadastraItem("O meu primeiro item");
+        a1.cadastraItem("O meu segundo item");
+        a1.executaAtividade(1, 10);
+        a1.executaAtividade(2,15);
+    }
+
     @Test
     void ativaPesquisa() {
     }

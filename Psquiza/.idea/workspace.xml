@@ -64,8 +64,14 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="JUnit.ControlePesquisaTest">
     <configuration name="ControleAtividadeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+=======
+  <component name="RunManager" selected="Application.Psquiza">
+    <configuration name="Psquiza" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="projetoLP2.Psquiza" />
+>>>>>>> 3dac568e630625e995894d19fc576426eb41905e
       <module name="Psquiza" />
       <extension name="coverage">
         <pattern>
@@ -144,11 +150,19 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="JUnit.ControlePesquisaTest" />
         <item itemvalue="JUnit.PesquisadorTest" />
         <item itemvalue="JUnit.ControlePesquisaTest.CadastraItemVazioOuNulo" />
         <item itemvalue="JUnit.ControlePesquisaTest.CadastraItem" />
         <item itemvalue="JUnit.ControleAtividadeTest" />
+=======
+        <item itemvalue="Application.Psquiza" />
+        <item itemvalue="JUnit.ControleTest" />
+        <item itemvalue="JUnit.ObjetivoTest" />
+        <item itemvalue="JUnit.ObjetivoTest.criaDescricaoNula" />
+        <item itemvalue="JUnit.ControleTest.testGravarResultados" />
+>>>>>>> 3dac568e630625e995894d19fc576426eb41905e
       </list>
     </recent_temporary>
   </component>
