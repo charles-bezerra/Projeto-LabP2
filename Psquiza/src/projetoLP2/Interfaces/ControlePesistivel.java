@@ -10,11 +10,6 @@ import projetoLP2.excessoes.PesistenciaException;
  */
 public interface ControlePesistivel {
     /**
-     * Endereco do banco padrao do sistema
-     */
-    String banco = "banco/dados.ser";
-
-    /**
      * Metodo de salvar
      * @throws PesistenciaException
      */
