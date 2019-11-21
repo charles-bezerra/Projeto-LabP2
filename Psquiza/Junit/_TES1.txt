@@ -11,3 +11,5 @@
     - atividade1 (ALTO - teste para o buscador)
             - REALIZADO - ITEM1
             - PENDENTE - ITEM2
+    - Uma simples atividade (BAIXO - E simples, entao e facil.)
+            - REALIZADO - ITEM1

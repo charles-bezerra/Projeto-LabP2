@@ -5,7 +5,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import projetoLP2.controladores.Controle;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -420,6 +422,11 @@ class ControleTest {
         assertEquals("Pesquisa nao encontrada.", e.getMessage());
 
         c.gravarResumo("TES1");
+        Scanner sc = new Scanner(new File("_TES1.txt"));
+        Scanner scJ = new Scanner(new File("Junit/_TES1.txt"));
+        while(sc.hasNext()) {
+            assertEquals(sc.next(), scJ.next());
+        }
     }
 
     @Test
@@ -437,6 +444,11 @@ class ControleTest {
         assertEquals("Pesquisa nao encontrada.", e.getMessage());
 
         c.gravarResultados("TES1");
+        Scanner sc = new Scanner(new File("TES1-Resultados.txt"));
+        Scanner scJ = new Scanner(new File("Junit/TES1-Resultados.txt"));
+        while(sc.hasNext()) {
+                assertEquals(sc.next(), scJ.next());
+        }
     }
 }
 

@@ -5,6 +5,7 @@ import projetoLP2.enums.Tipo;
 import projetoLP2.util.Verificador;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Classe que representa um objetivo.
@@ -104,6 +105,30 @@ public class Objetivo implements Comparable<Objetivo>, Serializable {
      * @return String com a descricao do objetivo
      */
 	public String getDescricao() { return descricao; }
+
+	/**
+	 * Retorna se este objeto e igual ao outro.
+	 *
+	 * @param o o objeto a ser comparado
+	 * @return a confirmacao se este objeto e igual ao outro
+	 */
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Objetivo objetivo = (Objetivo) o;
+		return Objects.equals(id, objetivo.id);
+	}
+
+	/**
+	 * Gera um valor que identifica este objetivo.
+	 *
+	 * @return o hashcode do objetivo.
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
 
 	/**
 	 * Retorna a representacao em String de um objetivo.

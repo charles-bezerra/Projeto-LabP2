@@ -3,6 +3,7 @@ package projetoLP2.classes;
 import projetoLP2.util.Verificador;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Classe que representa um problema.
@@ -49,6 +50,30 @@ public class Problema implements Comparable<Problema>, Serializable {
 	public String getId() { return this.id; }
 
 	public String getDescricao() { return descricao; }
+
+	/**
+	 * Retorna se este objeto e igual ao outro.
+	 *
+	 * @param o o objeto a ser comparado
+	 * @return a confirmacao se este objeto e igual ao outro
+	 */
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Problema problema = (Problema) o;
+		return Objects.equals(id, problema.id);
+	}
+
+	/**
+	 * Gera um valor que identifica este problema.
+	 *
+	 * @return o hashcode do problema.
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
 
 	/**
 	 * Retorna a representacao em String de um problema.

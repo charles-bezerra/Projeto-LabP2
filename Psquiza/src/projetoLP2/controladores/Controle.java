@@ -436,14 +436,14 @@ public class Controle implements ControlePesistivel {
     public String proximaAtividade(String codigoPesquisa) { return controlePesquisa.proximaAtividade(codigoPesquisa); }
 
 
-    public void gravarResumo(String codigoPesquisa) throws IOException {
+    public String gravarResumo(String codigoPesquisa) throws IOException {
         Verificador.verificaString("Pesquisa nao pode ser nula ou vazia.", codigoPesquisa);
 
         if (! controlePesquisa.getPesquisas().containsKey(codigoPesquisa)){
             throw new IllegalArgumentException("Pesquisa nao encontrada.");
 
         }
-        salvatxt.gravarResumo(controlePesquisa.getPesquisas().get(codigoPesquisa));
+        return salvatxt.gravarResumo(controlePesquisa.getPesquisas().get(codigoPesquisa));
 
     }
     public void gravarResultados(String codigoPesquisa) throws IOException {

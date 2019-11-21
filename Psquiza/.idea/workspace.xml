@@ -62,19 +62,6 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.ControleTest">
-    <configuration name="Psquiza" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="projetoLP2.Psquiza" />
-      <module name="Psquiza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="projetoLP2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ControleAtividadeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Psquiza" />
       <extension name="coverage">
@@ -120,6 +107,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ControleTest.testGravarResultados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Psquiza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unidade.controladores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unidade.controladores" />
+      <option name="MAIN_CLASS_NAME" value="unidade.controladores.ControleTest" />
+      <option name="METHOD_NAME" value="testGravarResultados" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ControleTest.testGravarResumo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Psquiza" />
       <extension name="coverage">
@@ -139,10 +142,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ControleTest" />
+        <item itemvalue="JUnit.ControleTest.testGravarResultados" />
         <item itemvalue="JUnit.ControleTest.testGravarResumo" />
         <item itemvalue="JUnit.ControleAtividadeTest" />
         <item itemvalue="JUnit.ControleSalvarTest" />
-        <item itemvalue="Application.Psquiza" />
       </list>
     </recent_temporary>
   </component>
